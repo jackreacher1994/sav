@@ -323,10 +323,13 @@ foreach($questions as $qk => $question){
 			 
 			 
 		 }
+
+
+
+		 // sort answer
+		 if($question['question_type']==$this->lang->line('sort_answer')){
 			 
-		
-		
-		
+		 }
 		
 		
 		

@@ -160,8 +160,8 @@ Class Quiz_model extends CI_Model
 	 return $query->result_array();
 
  }
- 
- 
+	
+	
  function up_question($quid,$qid){
   	$this->db->where('quid',$quid);
  	$query=$this->db->get('savsoft_quiz');
@@ -829,7 +829,55 @@ if($this->config->item('allow_result_email')){
 				}
 		 }
 		 
-		 
+		 //sort answer
+		 if($_POST['question_type'][$ak] == '6'){
+			 $qid=$qids[$ak];
+			 $query=$this->db->query(" select * from savsoft_options where qid='$qid' order by q_option_match ASC");
+			 $options_data=$query->result_array();
+			 $marks=0;
+			 $attempted=0;
+			 foreach($answer as $sk => $ansval){
+				 if($ansval != '0'){
+					 $selected_order = explode(",", $ansval);
+					 foreach($options_data as $option){
+						 foreach ($selected_order as $val){
+							 if($option['oid'] == explode("=", $val)[0]){
+								 $result = true;
+								 break;
+							 }
+							 else {
+								 $result = false;
+								 break;
+							 }
+						 }
+						 break;
+					 }
+					 if($result){
+						 $marks=1;
+					 }else{
+						 $marks=0;
+					 }
+					 $userdata=array(
+						 'rid'=>$rid,
+						 'qid'=>$qid,
+						 'uid'=>$uid,
+						 'q_option'=>$ansval,
+						 'score_u'=>$marks
+					 );
+					 $this->db->insert('savsoft_answers',$userdata);
+					 $attempted=1;
+				 }
+			 }
+			 if($attempted==1){
+				 if($marks==1){
+					 $correct_incorrect[$ak]=1;
+				 }else{
+					 $correct_incorrect[$ak]=2;
+				 }
+			 }else{
+				 $correct_incorrect[$ak]=0;
+			 }
+		 }
 		 
 		 
 		 

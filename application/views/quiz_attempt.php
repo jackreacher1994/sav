@@ -379,9 +379,11 @@ foreach($questions as $qk => $question){
 								data.push($(el).val()+"="+$(el).index());
 							});
 
-							$("input[name='answer_order']").val(data);
+							var temp = "answer_value" + <?php echo $qk;?>;
 
-							//alert($("input[name='answer_order']").val());
+							$("#"+temp).val(data);
+
+							//alert($("#"+temp).val());
 						}
 					});
 				});
@@ -409,7 +411,7 @@ foreach($questions as $qk => $question){
 		 ?>
 				</ul>
 
-			<input type="hidden" name="answer_order">
+			<input type="hidden" name="answer[<?php echo $qk;?>][]" value="<?php echo $save_ans;?>" id="answer_value<?php echo $qk;?>" >
 
 		</div> 
  </div>
