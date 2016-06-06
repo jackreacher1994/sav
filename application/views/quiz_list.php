@@ -63,8 +63,19 @@ foreach($result as $key => $val){
  <td><?php echo substr(strip_tags($val['quiz_name']),0,50);?></td>
 <td><?php echo $val['noq'];?></td>
  <td>
+     
+     <?php
+     if($val['maximum_attempts'] > $this->quiz_model->count_result($val['quid'],$logged_in['uid'])){
+     ?>
 <a href="<?php echo site_url('quiz/quiz_detail/'.$val['quid']);?>" class="btn btn-success"  ><?php echo $this->lang->line('attempt');?> </a>
-
+         <?php
+     } else {
+         ?>
+<i><?php echo $this->lang->line('maximum_attempt_invalid');?></i>
+         <?php
+     }
+     ?>
+     
 <?php 
 if($logged_in['su']=='1'){
 	?>

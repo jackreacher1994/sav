@@ -229,5 +229,6 @@ $lang['Review-Later'] = "Review-Later";
 $lang['Not-visited'] = "Not-visited";
 $lang['payment_gateway_plugin_missing'] = "Payment gateway plugin missing, you can not pay online.<br> Contact administrator to activate your subscription manually.";
 $lang['payment_gateway_plugin_missing2'] = "Payment gateway plugin missing.";
+$lang['maximum_attempt_invalid'] = "You have done maximum attempts.";
 
 

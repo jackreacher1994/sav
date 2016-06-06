@@ -73,8 +73,6 @@ Class User_model extends CI_Model
 	 $this->db->order_by('gid','desc');
 	$query=$this->db->get('savsoft_group');
 		return $query->result_array();
-		 
-	 
  }
  
  function verify_code($vcode){
