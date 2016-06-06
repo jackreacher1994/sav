@@ -152,7 +152,14 @@ Class Quiz_model extends CI_Model
 	 return $query->result_array();
 	 
  }
- 
+
+ function get_random_options($qids){
+
+
+	 $query=$this->db->query("select * from savsoft_options where qid in ($qids) order by RAND()");
+	 return $query->result_array();
+
+ }
  
  
  function up_question($quid,$qid){

@@ -49,6 +49,15 @@ Class Qbank_model extends CI_Model
 	 
 	 
  }
+
+	function get_option_order($qid){
+		$this->db->where('qid',$qid);
+		$this->db->order_by("q_option_match", "asc");
+		$query=$this->db->get('savsoft_options');
+		return $query->result_array();
+
+
+	}
  
  function remove_question($qid){
 	 
@@ -204,6 +213,38 @@ Class Qbank_model extends CI_Model
 	 return true;
 	 
  }
+
+
+	function insert_question_6(){
+		$userdata=array(
+			'question'=>$this->input->post('question'),
+			'description'=>$this->input->post('description'),
+			'question_type'=>$this->lang->line('sort_answer'),
+			'cid'=>$this->input->post('cid'),
+			'lid'=>$this->input->post('lid')
+		);
+		$this->db->insert('savsoft_qbank',$userdata);
+		$qid=$this->db->insert_id();
+
+		$right_order = explode(",", $this->input->post('right_order'));
+		foreach($this->input->post('option') as $key => $val){
+			foreach($right_order as $k => $v){
+				if(explode("=", $v)[0] == ($key + 1)){
+					$score=(1/count($this->input->post('option')));
+					$userdata=array(
+						'q_option'=>$val,
+						'q_option_match'=>explode("=", $v)[1],
+						'qid'=>$qid,
+						'score'=>$score,
+					);
+					$this->db->insert('savsoft_options',$userdata);
+				}
+			}
+		}
+
+		return true;
+
+	}
  
  
  
@@ -362,8 +403,41 @@ Class Qbank_model extends CI_Model
 	 return true;
 	 
  }
- 
- 
+
+	function update_question_6($qid){
+
+
+		$userdata=array(
+			'question'=>$this->input->post('question'),
+			'description'=>$this->input->post('description'),
+			'question_type'=>$this->lang->line('match_the_column'),
+			'cid'=>$this->input->post('cid'),
+			'lid'=>$this->input->post('lid')
+		);
+		$this->db->where('qid',$qid);
+		$this->db->update('savsoft_qbank',$userdata);
+		$this->db->where('qid',$qid);
+		$this->db->delete('savsoft_options');
+
+		$right_order = explode(",", $this->input->post('right_order'));
+		foreach($this->input->post('option') as $key => $val){
+			foreach($right_order as $k => $v){
+				if(explode("=", $v)[0] == ($key + 1)) {
+					$score = (1 / count($this->input->post('option')));
+					$userdata = array(
+						'q_option' => $val,
+						'q_option_match' => explode("=", $v)[1],
+						'qid' => $qid,
+						'score' => $score,
+					);
+					$this->db->insert('savsoft_options', $userdata);
+				}
+			}
+		}
+
+		return true;
+
+	}
  
  
  // category function start

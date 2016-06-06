@@ -131,6 +131,9 @@ if($val['question_type']==$this->lang->line('short_answer')){
 if($val['question_type']==$this->lang->line('long_answer')){
 	$qn=5;
 }
+if($val['question_type']==$this->lang->line('sort_answer')){
+	$qn=6;
+}
 
 
 ?>

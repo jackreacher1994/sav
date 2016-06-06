@@ -26,9 +26,8 @@
 		
 	<!-- bootstrap js -->
     <script src="<?php echo base_url('bootstrap/js/bootstrap.min.js');?>"></script>
-	
-	
-	
+
+      <script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
 	
  </head>
   <body>

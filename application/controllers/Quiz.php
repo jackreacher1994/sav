@@ -400,7 +400,8 @@ class Quiz extends CI_Controller {
 		// get questions
 		$data['questions']=$this->quiz_model->get_questions($data['quiz']['r_qids']);
 		// get options
-		$data['options']=$this->quiz_model->get_options($data['quiz']['r_qids']);
+		//$data['options']=$this->quiz_model->get_options($data['quiz']['r_qids']);
+		$data['options']=$this->quiz_model->get_random_options($data['quiz']['r_qids']);
 		$data['title']=$data['quiz']['quiz_name'];
 		$this->load->view('header',$data);
 		$this->load->view('quiz_attempt',$data);

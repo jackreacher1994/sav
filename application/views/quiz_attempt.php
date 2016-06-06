@@ -353,8 +353,63 @@ foreach($questions as $qk => $question){
 			<?php
 			
 		 }
+
+		 // sort_answer	
+
+		 if($question['question_type']==$this->lang->line('sort_answer')){
+			 $save_ans=array();
+			 foreach($saved_answers as $svk => $saved_answer){
+				 if($question['qid']==$saved_answer['qid']){
+					 $save_ans[]=$saved_answer['q_option'];
+				 }
+			 }
+
+
+			 ?>
+			<input type="hidden"  name="question_type[]"  id="q_type<?php echo $qk;?>" value="6">
+
+			<script>
+				$(function() {
+					$( "#sortable" ).sortable({
+						placeholder: "ui-sortable-placeholder",
+						stop: function(event, ui) {
+							var data = [];
+
+							$("#sortable li").each(function(i, el){
+								data.push($(el).val()+"="+$(el).index());
+							});
+
+							$("input[name='answer_order']").val(data);
+
+							//alert($("input[name='answer_order']").val());
+						}
+					});
+				});
+			</script>
+
+			<ul id="sortable">
+			 <?php
+			 $i=0;
+			 foreach($options as $ok => $option){
+				 if($option['qid']==$question['qid']){
+					 ?>
+				<li value="<?php echo ($ok + 1); ?>" class="ui-state-default">
+					<div class="op"> <?php echo $option['q_option'];?> </div>
+				</li>
+
+					 <?php
+					 $i+=1;
+				 }else{
+					 $i=0;
+
+				 }
+			 }
+		 }
 			
 		 ?>
+				</ul>
+
+			<input type="hidden" name="answer_order">
 
 		</div> 
  </div>

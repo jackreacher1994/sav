@@ -126,7 +126,7 @@ function updatelevel(vall,lid){
 
 
 function hidenop(vall){
-	if(vall == '1' || vall=='2' || vall=='3'){
+	if(vall == '1' || vall=='2' || vall=='3' || vall=='6'){
 		$("#nop").css('display','block');
 	}else{
 	$("#nop").css('display','none');

@@ -118,6 +118,13 @@ class Qbank extends CI_Controller {
 			}
 		redirect('qbank/new_question_5/'.$nop);
 		}
+			if($this->input->post('question_type')=='6'){
+				$nop=$this->input->post('nop');
+				if(!is_numeric($this->input->post('nop'))){
+					$nop=4;
+				}
+				redirect('qbank/new_question_6/'.$nop);
+			}
 
 		}
 		
@@ -265,10 +272,34 @@ class Qbank extends CI_Controller {
 		$this->load->view('new_question_5',$data);
 		$this->load->view('footer',$data);
 	}
-	
 
-	
-	
+
+
+	public function new_question_6($nop='4')
+	{
+		$logged_in=$this->session->userdata('logged_in');
+		if($logged_in['su']!='1'){
+			exit($this->lang->line('permission_denied'));
+		}
+		if($this->input->post('question')){
+			if($this->qbank_model->insert_question_6()){
+				$this->session->set_flashdata('message', "<div class='alert alert-success'>".$this->lang->line('data_added_successfully')." </div>");
+			}else{
+				$this->session->set_flashdata('message', "<div class='alert alert-danger'>".$this->lang->line('error_to_add_data')." </div>");
+			}
+			redirect('qbank/pre_new_question/');
+		}
+
+		$data['nop']=$nop;
+		$data['title']=$this->lang->line('add_new');
+		// fetching category list
+		$data['category_list']=$this->qbank_model->category_list();
+		// fetching level list
+		$data['level_list']=$this->qbank_model->level_list();
+		$this->load->view('header',$data);
+		$this->load->view('new_question_6',$data);
+		$this->load->view('footer',$data);
+	}
 	
 	
 	
@@ -423,6 +454,37 @@ class Qbank extends CI_Controller {
 		$data['level_list']=$this->qbank_model->level_list();
 		 $this->load->view('header',$data);
 		$this->load->view('edit_question_5',$data);
+		$this->load->view('footer',$data);
+	}
+
+	public function edit_question_6($qid)
+	{
+
+		$logged_in=$this->session->userdata('logged_in');
+		if($logged_in['su']!='1'){
+			exit($this->lang->line('permission_denied'));
+		}
+		if($this->input->post('question')){
+			if($this->qbank_model->update_question_6($qid)){
+				$this->session->set_flashdata('message', "<div class='alert alert-success'>".$this->lang->line('data_updated_successfully')." </div>");
+			}else{
+				$this->session->set_flashdata('message', "<div class='alert alert-danger'>".$this->lang->line('error_to_update_data')." </div>");
+			}
+			redirect('qbank/edit_question_6/'.$qid);
+		}
+
+
+		$data['title']=$this->lang->line('edit');
+		// fetching question
+		$data['question']=$this->qbank_model->get_question($qid);
+		$data['options']=$this->qbank_model->get_option($qid);
+		$data['options_order']=$this->qbank_model->get_option_order($qid);
+		// fetching category list
+		$data['category_list']=$this->qbank_model->category_list();
+		// fetching level list
+		$data['level_list']=$this->qbank_model->level_list();
+		$this->load->view('header',$data);
+		$this->load->view('edit_question_6',$data);
 		$this->load->view('footer',$data);
 	}
 	
