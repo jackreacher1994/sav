@@ -230,7 +230,8 @@ Class Qbank_model extends CI_Model
 		foreach($this->input->post('option') as $key => $val){
 			foreach($right_order as $k => $v){
 				if(explode("=", $v)[0] == ($key + 1)){
-					$score=(1/count($this->input->post('option')));
+					//$score=(1/count($this->input->post('option')));
+					$score = 0;
 					$userdata=array(
 						'q_option'=>$val,
 						'q_option_match'=>explode("=", $v)[1],
@@ -423,7 +424,8 @@ Class Qbank_model extends CI_Model
 		foreach($this->input->post('option') as $key => $val){
 			foreach($right_order as $k => $v){
 				if(explode("=", $v)[0] == ($key + 1)) {
-					$score = (1 / count($this->input->post('option')));
+					//$score = (1 / count($this->input->post('option')));
+					$score = 0;
 					$userdata = array(
 						'q_option' => $val,
 						'q_option_match' => explode("=", $v)[1],

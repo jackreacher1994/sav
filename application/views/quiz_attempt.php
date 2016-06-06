@@ -393,7 +393,7 @@ foreach($questions as $qk => $question){
 			 foreach($options as $ok => $option){
 				 if($option['qid']==$question['qid']){
 					 ?>
-				<li value="<?php echo ($ok + 1); ?>" class="ui-state-default">
+				<li value="<?php echo $option['oid']; ?>" class="ui-state-default">
 					<div class="op"> <?php echo $option['q_option'];?> </div>
 				</li>
 
