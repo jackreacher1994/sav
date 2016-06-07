@@ -389,12 +389,12 @@ foreach($questions as $qk => $question){
 				});
 			</script>
 
-			<ul id="sortable">
+			<ul id="sortable" class="list-group" style="list-style: none;">
 			 <?php
 			 foreach($options as $ok => $option){
 				 if($option['qid']==$question['qid']){
 					 ?>
-				<li value="<?php echo $option['oid']; ?>" class="ui-state-default">
+				<li value="<?php echo $option['oid']; ?>" class="ui-state-default list-group-item">
 					<div class="op"> <?php echo $option['q_option'];?> </div>
 				</li>
 

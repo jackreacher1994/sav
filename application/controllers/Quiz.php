@@ -228,9 +228,53 @@ class Quiz extends CI_Controller {
                 }
                 else
                 {
+                	$gids =$this->input->post('gids');
+				$quiz_name =$this->input->post('quiz_name');
+				$start_date=$this->input->post('start_date');
+				$end_date=$this->input->post('end_date');
+				$u=array();$emails=array();
+				for($i = 0; $i < count($gids); $i++){
+					array_push($u, $this->user_model->user_list_group($gids[$i]));		
+				}
+				
+				for ($i=0; $i < count($u); $i++) { 
+					foreach ($u[$i] as $key => $val) {	
+						foreach ($val as $key => $val2) {
+							array_push($emails,$val2);
+						}
+					}
+				}
+
+				$message = '<span style ="font-size:18px;">Chào bạn,</span>';
+				$message .= '<pre style ="font-size:16px;">Mời bạn truy cập vào trang <span style ="color:red;"> xxx </span> và thực hiện bài test: <p style ="color:red;"> ';
+				$message .= $quiz_name;
+				$message .= '</p>Trong khoảng thời gian từ: <p style="color: red">';
+				$message .= $start_date;
+				$message .= '</p> đến <p style ="color:red;">';
+				$message .= $end_date;
+				$message .= '</p></pre>';
+				
+				for ($i=0; $i < count($emails); $i++) {
+
+
+					$this->load->library('email', $config);
+					$this->email->set_newline("\r\n");
+					$this->email->from('trinhhuy2504@gmail.com', 'huyth');
+					$this->email->to($emails[$i]);
+					$this->email->subject('testing');
+					$this->email->message($message);
+					if($this->email->send())
+					{
+						echo 'Email sent.';    
+					}
+					else
+					{
+						show_error($this->email->print_debugger());  
+					}
+				}
 					$quid=$this->quiz_model->insert_quiz();
                    
-					redirect('quiz/edit_quiz/'.$quid);
+					redirect('quiz');
                 }       
 
 	}

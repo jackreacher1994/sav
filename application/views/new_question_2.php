@@ -42,8 +42,7 @@
 					?>
 					</select>
 			</div>
-			
-			
+	 	
 			<div class="form-group">	 
 					<label   ><?php echo $this->lang->line('select_level');?></label> 
 					<select class="form-control" name="lid">
@@ -57,7 +56,6 @@
 					?>
 					</select>
 			</div>
-
 			
 			
 

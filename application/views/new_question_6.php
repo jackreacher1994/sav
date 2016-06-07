@@ -44,7 +44,7 @@
                         </div>
 
 
-                        <div class="form-group">
+                    <div class="form-group">
                             <label   ><?php echo $this->lang->line('select_level');?></label>
                             <select class="form-control" name="lid">
                                 <?php
@@ -56,8 +56,7 @@
                                 }
                                 ?>
                             </select>
-                        </div>
-
+                        </div> 
 
 
 
@@ -98,11 +97,11 @@
                         </script>
                         <div class="form-group">
                             <label><?php echo $this->lang->line('right_order');?></label>
-                            <ul id="sortable">
+                            <ul id="sortable" class="list-group" style="list-style: none;">
                                 <?php
                                 for($i=1; $i<=$nop; $i++){
                                     ?>
-                                    <li value="<?php echo $i; ?>" class="ui-state-default"><?php echo $this->lang->line('options');?> <?php echo $i;?></li>
+                                    <li value="<?php echo $i; ?>" class="ui-state-default list-group-item"><?php echo $this->lang->line('options');?> <?php echo $i;?></li>
                                     <?php
                                 }
                                 ?>

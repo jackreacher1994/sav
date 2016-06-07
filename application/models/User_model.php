@@ -240,7 +240,11 @@ $new_password=rand('1111','9999');
 
 }
 
-
+function user_list_group($id_gr){
+		$this->db->select('email')->where('gid',$id_gr);
+		$query=$this->db->get('savsoft_users');
+		return $query->result_array();
+	}
 
  function update_user($uid){
 	 $logged_in=$this->session->userdata('logged_in');
@@ -344,8 +348,7 @@ $query=$this->db->get('savsoft_users');
 	 
 	 	$userdata=array(
 		'group_name'=>$this->input->post('group_name'),
-		'price'=>$this->input->post('price'),
-		'valid_for_days'=>$this->input->post('valid_for_days'),
+		
 			);
 		
 		if($this->db->insert('savsoft_group',$userdata)){
