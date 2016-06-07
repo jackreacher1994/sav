@@ -391,7 +391,6 @@ foreach($questions as $qk => $question){
 
 			<ul id="sortable">
 			 <?php
-			 $i=0;
 			 foreach($options as $ok => $option){
 				 if($option['qid']==$question['qid']){
 					 ?>
@@ -400,18 +399,15 @@ foreach($questions as $qk => $question){
 				</li>
 
 					 <?php
-					 $i+=1;
-				 }else{
-					 $i=0;
-
 				 }
-			 }
+			 } ?>
+			</ul>
+			 <input type="hidden" name="answer[<?php echo $qk;?>][]" value="<?php echo $save_ans;?>" id="answer_value<?php echo $qk;?>" >
+				<?php
 		 }
-			
-		 ?>
-				</ul>
 
-			<input type="hidden" name="answer[<?php echo $qk;?>][]" value="<?php echo $save_ans;?>" id="answer_value<?php echo $qk;?>" >
+		 ?>
+			
 
 		</div> 
  </div>

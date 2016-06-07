@@ -58,7 +58,7 @@ Class Qbank_model extends CI_Model
 
 
 	}
- 
+	
  function remove_question($qid){
 	 
 	 $this->db->where('qid',$qid);

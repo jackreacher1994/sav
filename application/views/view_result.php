@@ -328,7 +328,57 @@ foreach($questions as $qk => $question){
 
 		 // sort answer
 		 if($question['question_type']==$this->lang->line('sort_answer')){
-			 
+			 $save_ans='';
+			 foreach($saved_answers as $svk => $saved_answer){
+				 if($question['qid']==$saved_answer['qid']){
+					 $save_ans=$saved_answer['q_option'];
+				 }
+			 }
+			 ?>
+			 <input type="hidden"  name="question_type[]"  id="q_type<?php echo $qk;?>" value="6">
+			 <?php
+				 $selected_ans = explode(",", $save_ans);
+				 ?>
+				 <ul>
+					 <?php
+					 foreach ($selected_ans as $selected_an) {
+						 ?>
+
+						 <li>
+							 <div class="op">
+								 <?php
+								 echo $this->option_model->get_option(explode("=", $selected_an)[0])['q_option'];
+								 ?>
+							 </div>
+						 </li>
+
+
+						 <?php
+					 }
+					 ?>
+				 </ul>
+				 <?php
+			 echo "<br>".$this->lang->line('correct_options').':';
+			 $correct_options = [];
+				 foreach($options as $option) {
+					 if ($option['qid'] == $question['qid']) {
+						 $correct_options[] = $option;
+					 }
+				 }
+			 usort($correct_options, function($a, $b) {
+				 return $a['q_option_match'] - $b['q_option_match'];
+			 });
+			 ?>
+			 <ul>
+				 <?php
+			 foreach ($correct_options as $correct_option){
+				 ?>
+				 <li><?php echo $correct_option['q_option'] ?></li>
+				 <?php
+			 }
+				 ?>
+				 </ul>
+			 <?php
 		 }
 		
 		

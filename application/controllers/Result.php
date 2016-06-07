@@ -8,6 +8,7 @@ class Result extends CI_Controller {
 	   parent::__construct();
 	   $this->load->database();
 	   $this->load->model("result_model");
+	   $this->load->model("option_model");
 	   $this->lang->load('basic', $this->config->item('language'));
 		// redirect if not loggedin
 		if(!$this->session->userdata('logged_in')){
