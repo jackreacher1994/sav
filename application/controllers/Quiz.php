@@ -103,9 +103,7 @@ class Quiz extends CI_Controller {
 		$query=$this->db->query(" select * from savsoft_qbank where cid='$cid' and lid='$lid' ");
 		$nor=$query->num_rows();
 		for($i=0; $i<= $nor; $i++){
-			$val.="<option value='".$i."' >".$i."</option>";
-			
-			
+			$val.="<option value='".$i."' >".$i."</option>";		
 		}
 		$val.="</select>";
 		echo $val;

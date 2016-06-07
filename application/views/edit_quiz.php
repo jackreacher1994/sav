@@ -253,7 +253,7 @@ if(count($qcl)==0){
 					?>
 					</select>
 			 	<select  name="lid[]" onChange="no_q_available(this.value);">
-				<option value="0"><?php echo $this->lang->line('select');?> <?php echo $this->lang->line('level_name');?></option>
+				
 					<?php 
 					foreach($level_list as $key => $val){
 						?>

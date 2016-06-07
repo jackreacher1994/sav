@@ -31,7 +31,7 @@
 			
 			<div class="form-group">	 
 					<label   ><?php echo $this->lang->line('select_category');?></label> 
-					<select class="form-control" name="cid">
+					<select class="form-control" name="cid"  >
 					<?php 
 					foreach($category_list as $key => $val){
 						?>
@@ -45,8 +45,8 @@
 			
 			
 			<div class="form-group">	 
-					<label   ><?php echo $this->lang->line('select_level');?></label> 
-					<select class="form-control" name="lid">
+					<label style="display:none;"  ><?php echo $this->lang->line('select_level');?></label> 
+					<select class="form-control" name="lid" style="display:none;">
 					<?php 
 					foreach($level_list as $key => $val){
 						?>

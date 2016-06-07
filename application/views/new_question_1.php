@@ -45,13 +45,13 @@
 			
 			
 			<div class="form-group">	 
-					<label   ><?php echo $this->lang->line('select_level');?></label> 
-					<select class="form-control" name="lid">
+					<label  style="display:none;" ><?php echo $this->lang->line('select_level');?></label> 
+					<select class="form-control" name="lid" style="display:none;">
 					<?php 
 					foreach($level_list as $key => $val){
 						?>
 						
-						<option value="<?php echo $val['lid'];?>"><?php echo $val['level_name'];?></option>
+						<option  value="<?php echo $val['lid'];?>"><?php echo $val['level_name'];?></option>
 						<?php 
 					}
 					?>
