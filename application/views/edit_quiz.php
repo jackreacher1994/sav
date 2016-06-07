@@ -42,7 +42,7 @@
 					<label for="inputEmail"  ><?php echo $this->lang->line('duration');?></label> 
 					<input type="text" name="duration"  value="<?php echo $quiz['duration'];?>" class="form-control" placeholder="<?php echo $this->lang->line('duration');?>"  required  >
 			</div>
-				<div class="form-group">	 
+				<div class="form-group" style="display:none;">	 
 					<label for="inputEmail"  ><?php echo $this->lang->line('maximum_attempts');?></label> 
 					<input type="text" name="maximum_attempts"  value="<?php echo $quiz['maximum_attempts'];?>" class="form-control" placeholder="<?php echo $this->lang->line('maximum_attempts');?>"   required >
 			</div>
@@ -241,7 +241,7 @@ if(count($qcl)==0){
 	}
 	?>
 					<div class="form-group">	 
-				 	<select   name="cid[]" id="cid">
+				 	<select   name="cid[]" id="cid" onChange="no_q_available(this.value);">
 					<option value="0"><?php echo $this->lang->line('select');?> <?php echo $this->lang->line('category_name');?></option>
 					<?php 
 					foreach($category_list as $key => $val){
@@ -252,7 +252,7 @@ if(count($qcl)==0){
 					}
 					?>
 					</select>
-			 	<select  name="lid[]" onChange="no_q_available(this.value);">
+			 	<select  name="lid[]" id="lid" style="display:none;">
 				
 					<?php 
 					foreach($level_list as $key => $val){
