@@ -588,6 +588,12 @@ function show_question_stat(id){
 	}
 	 
 }
+
+function reload_attempt(){
+	lqn=qn;
+	setIndividual_time(lqn);
+	save_answer(lqn);
+}
  
 
 // end - quiz attempt functions 

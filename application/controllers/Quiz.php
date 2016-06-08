@@ -496,7 +496,8 @@ if(isset($_FILES['webcam'])){
 					}
 			$this->session->unset_userdata('rid');		
 					
- redirect('quiz');
+ //redirect('quiz');
+ redirect('result');
  }
  
  

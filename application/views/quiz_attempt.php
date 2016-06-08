@@ -10,6 +10,14 @@
 
 <script>
 
+$(window).bind('beforeunload',function(){
+	
+	javascript:reload_attempt();
+
+
+});
+
+
 var Timer;
 var TotalSeconds;
 
@@ -66,9 +74,7 @@ alert('Time Over');
 window.location="<?php echo site_url('quiz/submit_quiz/');?>";
 }
 
- 
 
- 
 
 </script>
 
