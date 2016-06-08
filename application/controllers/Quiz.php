@@ -272,7 +272,7 @@ class Quiz extends CI_Controller {
 				}
 					$quid=$this->quiz_model->insert_quiz();
                    
-					redirect('quiz');
+					redirect('/quiz/edit_quiz/'.$quid);
                 }       
 
 	}
