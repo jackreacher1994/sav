@@ -89,8 +89,15 @@ foreach($group_list as $gk => $group){
 <table class="table table-bordered">
 <tr>
  <th><?php echo $this->lang->line('result_id');?></th>
-<th><?php echo $this->lang->line('first_name');?> <?php echo $this->lang->line('last_name');?></th>
+    <?php
+    if($logged_in['su']=='1'){
+    ?>
+<th><?php echo $this->lang->line('full_name');?></th>
+        <?php
+    }
+    ?>
  <th><?php echo $this->lang->line('quiz_name');?></th>
+ <th><?php echo $this->lang->line('score_obtained');?></th>
  <th><?php echo $this->lang->line('status');?>
  <select onChange="sort_result('<?php echo $limit;?>',this.value);">
  <option value="0"><?php echo $this->lang->line('all');?></option>
@@ -117,8 +124,15 @@ foreach($result as $key => $val){
 ?>
 <tr>
  <td><?php echo $val['rid'];?></td>
+    <?php
+    if($logged_in['su']=='1'){
+    ?>
 <td><?php echo $val['first_name'];?> <?php echo $val['last_name'];?></td>
+        <?php
+    }
+    ?>
  <td><?php echo $val['quiz_name'];?></td>
+ <td><?php echo $val['score_obtained'];?></td>
  <td><?php echo $val['result_status'];?></td>
  <td><?php echo $val['percentage_obtained'];?>%</td>
 <td>

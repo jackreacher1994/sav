@@ -245,18 +245,21 @@ function show_question(vqn){
 	$(did).css('display','block');
 	// hide show next back btn
 	if(vqn >= 1){
-	$('#backbtn').css('visibility','visible');
+	//$('#backbtn').css('visibility','visible');
+	$('#backbtn').removeAttr("disabled");
 	}
 	
 	if(vqn < noq){
-	$('#nextbtn').css('visibility','visible');
+	//$('#nextbtn').css('visibility','visible');
+	$('#nextbtn').removeAttr("disabled");
 	}
 	if((parseInt(vqn)+1) == noq){
-	  
-	$('#nextbtn').css('visibility','hidden');
+	//$('#nextbtn').css('visibility','hidden');
+	$('#nextbtn').prop('disabled', true);
 	}
 	if(vqn == 0){
-	$('#backbtn').css('visibility','hidden');
+	//$('#backbtn').css('visibility','hidden');
+	$('#backbtn').prop('disabled', true);
 	}
 	
 	// last qn
@@ -277,10 +280,12 @@ function show_next_question(){
 	}
 	// hide show next back btn
 	if(qn >= 1){
-	$('#backbtn').css('visibility','visible');
+	//$('#backbtn').css('visibility','visible');
+	$('#backbtn').removeAttr("disabled");
 	}
 	if((parseInt(qn)+1) == noq){
-	$('#nextbtn').css('visibility','hidden');
+	//$('#nextbtn').css('visibility','hidden');
+	$('#nextbtn').prop('disabled', true);
 	}
 	change_color(lqn);
 	setIndividual_time(lqn);
@@ -300,10 +305,12 @@ function show_back_question(){
 	}
 	// hide show next back btn
 	if(qn < noq){
-	$('#nextbtn').css('visibility','visible');
+	//$('#nextbtn').css('visibility','visible');
+	$('#nextbtn').removeAttr("disabled");
 	}
 	if(qn == 0){
-	$('#backbtn').css('visibility','hidden');
+	//$('#backbtn').css('visibility','hidden');
+	$('#backbtn').prop('disabled', true);
 	}
 	change_color(lqn);
 	setIndividual_time(lqn);
@@ -587,6 +594,15 @@ function show_question_stat(id){
 		$(did).css('display','none');
 	}
 	 
+}
+
+function save_question() {
+	change_color(lqn);
+	setIndividual_time(lqn);
+	save_answer(lqn);
+
+	// last qn
+	lqn=qn;
 }
  
 

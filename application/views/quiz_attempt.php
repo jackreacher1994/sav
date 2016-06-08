@@ -10,6 +10,13 @@
 
 <script>
 
+$(window).bind('beforeunload',function(){
+
+	javascript:save_question();
+
+
+});
+
 var Timer;
 var TotalSeconds;
 
@@ -66,9 +73,7 @@ alert('Time Over');
 window.location="<?php echo site_url('quiz/submit_quiz/');?>";
 }
 
- 
 
- 
 
 </script>
 
@@ -475,9 +480,9 @@ foreach($questions as $qk => $question){
 	
 	<button class="btn btn-info"  onClick="javascript:clear_response();"  style="margin-top:2px;"  ><?php echo $this->lang->line('clear');?></button>
 
-	<button class="btn btn-success"  id="backbtn" style="visibility:hidden;" onClick="javascript:show_back_question();"  style="margin-top:2px;" ><?php echo $this->lang->line('back');?></button>
+	<button class="btn btn-success"  id="backbtn" onClick="javascript:show_back_question();"  style="margin-top:2px;" ><?php echo $this->lang->line('back');?></button>
 	
-	<button class="btn btn-success" id="nextbtn" onClick="javascript:show_next_question();" style="margin-top:2px;" ><?php echo $this->lang->line('save_next');?></button>
+	<button class="btn btn-success" id="nextbtn" onClick="javascript:show_next_question();" style="margin-top:2px;" ><?php echo $this->lang->line('next');?></button>
 	
 	<button class="btn btn-danger"  onClick="javascript:cancelmove();" style="margin-top:2px;" ><?php echo $this->lang->line('submit_quiz');?></button>
 </div>
