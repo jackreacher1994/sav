@@ -31,10 +31,10 @@ $config['tinymce']=true;
 
 
 // enable or disable result email. use true or false
-$config['allow_result_email']=false;
+$config['allow_result_email']=true;
 
 // email sending protocol mail or smtp
-$config['protocol']="mail";
+$config['protocol']="smtp";
 
 /*
 | SMTP configuration to send email to user just after submitting quiz
@@ -44,9 +44,9 @@ $config['protocol']="mail";
 // smtp hostname eg. smtp.gmail.com
 $config['smtp_hostname'] = "ssl://smtp.gmail.com";
 // smtp username
-$config['smtp_username'] = "username";
+$config['smtp_username'] = "trinhhuy2504@gmail.com";
 // smtp password
-$config['smtp_password'] = "password";
+$config['smtp_password'] = "trinhhuuhuy";
 // smtp outgoing port. eg for gmail its 465, outlook 587, yahoo 465 for other contact your mailing administrator
 $config['smtp_port'] = "465";
 // smtp timeout default 5 seconds
@@ -82,9 +82,9 @@ $config['result_subject'] = "Result generated for quiz [quiz_name]";
 
 
 // email send from
-$config['fromemail']="noeply@gmailll.com";
+$config['fromemail']="trinhhuy2504@gmail.com";
 // from name
-$config['fromname']="Administrator - Quiz Portal";
+$config['fromname']="Administrator - VED Quiz";
 
 
 
