@@ -480,35 +480,7 @@ class Quiz extends CI_Controller {
 
 
 
-<<<<<<< HEAD
-	function submit_quiz(){
 
-		if($this->quiz_model->submit_result()){
-			$this->session->set_flashdata('message', "<div class='alert alert-success'>".$this->lang->line('quiz_submit_successfully')." </div>");
-		}else{
-			$this->session->set_flashdata('message', "<div class='alert alert-danger'>".$this->lang->line('error_to_submit')." </div>");
-
-		}
-		$this->session->unset_userdata('rid');		
-
-		redirect('quiz');
-	}
-
-
-
-	function assign_score($rid,$qno,$score){
-		$logged_in=$this->session->userdata('logged_in');
-		if($logged_in['su']!='1'){
-			exit($this->lang->line('permission_denied'));
-		} 
-		$this->quiz_model->assign_score($rid,$qno,$score);
-
-		echo '1';
-
-	}
-
-
-=======
  function submit_quiz(){
 	 
 				if($this->quiz_model->submit_result()){
@@ -537,6 +509,6 @@ class Quiz extends CI_Controller {
  }
  
  
->>>>>>> 96a0b74dd3afa68c168b0d65d2b0b7bd9ff98013
+
 	
 }
