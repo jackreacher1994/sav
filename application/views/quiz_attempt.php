@@ -491,6 +491,8 @@ foreach($questions as $qk => $question){
 	
 	<button class="btn btn-success" id="nextbtn" onClick="javascript:show_next_question();" style="margin-top:2px;" ><?php echo $this->lang->line('next');?></button>
 	
+	<button class="btn btn-success" id="savebtn" onClick="javascript:save_question();" style="margin-top:2px;" ><?php echo $this->lang->line('save');?></button>
+	
 	<button class="btn btn-danger"  onClick="javascript:cancelmove();" style="margin-top:2px;" ><?php echo $this->lang->line('submit_quiz');?></button>
 </div>
 
