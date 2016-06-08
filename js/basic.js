@@ -353,7 +353,7 @@ function change_color(qn){
 		}		
 		}		
  		
-		if($(q_type).val()=='3' || $(q_type).val()=='4'){
+		if($(q_type).val()=='3' || $(q_type).val()=='4' || $(q_type).val()=='6'){
 		var answer_value="#answer_value"+lqn;
 		if($(answer_value).val()!=''){			
 		$(ldid).css('backgroundColor','#449d44');
@@ -375,8 +375,8 @@ function change_color(qn){
 			$(ldid).css('backgroundColor','#449d44');
 			$(ldid).css('color','#ffffff');	
 			}		
-		}		
-		
+		}
+
 	}
 	
 }

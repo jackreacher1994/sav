@@ -362,55 +362,62 @@ foreach($questions as $qk => $question){
 		 // sort_answer	
 
 		 if($question['question_type']==$this->lang->line('sort_answer')){
-			 $save_ans=array();
+			 $save_ans="";
 			 foreach($saved_answers as $svk => $saved_answer){
 				 if($question['qid']==$saved_answer['qid']){
-					 $save_ans[]=$saved_answer['q_option'];
+					 $save_ans=$saved_answer['q_option'];
 				 }
 			 }
-
-
+			 //print_r($save_ans);
 			 ?>
-			<input type="hidden"  name="question_type[]"  id="q_type<?php echo $qk;?>" value="6">
+			 <input type="hidden"  name="question_type[]"  id="q_type<?php echo $qk;?>" value="6">
 
-			<script>
-				$(function() {
-					$( "#sortable" ).sortable({
-						placeholder: "ui-sortable-placeholder",
-						stop: function(event, ui) {
-							var data = [];
+			 <script>
+				 $(function() {
+					 $( "#sortable" ).sortable({
+						 placeholder: "ui-sortable-placeholder",
+						 stop: function(event, ui) {
+							 var data = [];
+							 $("#sortable li").each(function(i, el){
+								 data.push($(el).val()+"="+$(el).index());
+							 });
+							 var temp = "answer_value" + <?php echo $qk;?>;
+							 $("#"+temp).val(data);
+							 //alert($("#"+temp).val());
+						 }
+					 });
+				 });
+			 </script>
 
-							$("#sortable li").each(function(i, el){
-								data.push($(el).val()+"="+$(el).index());
-							});
+			 <ul id="sortable" class="list-group" style="list-style: none;">
+				 <?php
+				 if($save_ans != ''){
+					 $selected_ans = explode(",", $save_ans);
+					 foreach ($selected_ans as $selected_an){
+						 ?>
+						 <li value="<?php echo explode("=", $selected_an)[0]; ?>" class="ui-state-default list-group-item">
+							 <div class="op">
+								 <?php echo $this->option_model->get_option(explode("=", $selected_an)[0])['q_option']; ?>
+							 </div>
+						 </li>
+						 <?php
+					 }
+				 } else {
+					 foreach ($options as $ok => $option) {
+						 if ($option['qid'] == $question['qid']) {
+							 ?>
+							 <li value="<?php echo $option['oid']; ?>" class="ui-state-default list-group-item">
+								 <div class="op"> <?php echo $option['q_option']; ?> </div>
+							 </li>
 
-							var temp = "answer_value" + <?php echo $qk;?>;
-
-							$("#"+temp).val(data);
-
-							//alert($("#"+temp).val());
-						}
-					});
-				});
-			</script>
-
-			<ul id="sortable" class="list-group" style="list-style: none;">
-			 <?php
-			 foreach($options as $ok => $option){
-				 if($option['qid']==$question['qid']){
-					 ?>
-				<li value="<?php echo $option['oid']; ?>" class="ui-state-default list-group-item">
-					<div class="op"> <?php echo $option['q_option'];?> </div>
-				</li>
-
-					 <?php
-				 }
-			 } ?>
-			</ul>
+							 <?php
+						 }
+					 }
+				 }?>
+			 </ul>
 			 <input type="hidden" name="answer[<?php echo $qk;?>][]" value="<?php echo $save_ans;?>" id="answer_value<?php echo $qk;?>" >
-				<?php
+			 <?php
 		 }
-
 		 ?>
 			
 

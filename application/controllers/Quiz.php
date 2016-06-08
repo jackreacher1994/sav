@@ -9,6 +9,7 @@ class Quiz extends CI_Controller {
 		$this->load->database();
 		$this->load->model("quiz_model");
 		$this->load->model("user_model");
+		$this->load->model("option_model");
 		$this->lang->load('basic', $this->config->item('language'));
 		// redirect if not loggedin
 		if(!$this->session->userdata('logged_in')){
@@ -456,6 +457,8 @@ class Quiz extends CI_Controller {
 		
 		
 	}
+	
+	
 	function set_ind_time(){
 		  // update questions time spent
 		$this->quiz_model->set_ind_time();

@@ -91,6 +91,8 @@
                                         });
 
                                         $("input[name='right_order']").val(data);
+
+                                        //alert($("input[name='right_order']").val());
                                     }
                                 });
                             });

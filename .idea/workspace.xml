@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ddd2c141-2b8b-4c94-b747-963fdf0fd8f2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/language/english/basic_lang.php" afterPath="$PROJECT_DIR$/application/language/english/basic_lang.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Quiz.php" afterPath="$PROJECT_DIR$/application/controllers/Quiz.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/new_question_6.php" afterPath="$PROJECT_DIR$/application/views/new_question_6.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/quiz_attempt.php" afterPath="$PROJECT_DIR$/application/views/quiz_attempt.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/basic.js" afterPath="$PROJECT_DIR$/js/basic.js" />
     </list>
@@ -29,92 +31,7 @@
     <favorites_list name="sav" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="quiz_attempt.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/quiz_attempt.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="484" column="165" selection-start-line="484" selection-start-column="165" selection-end-line="484" selection-end-column="165" />
-              <folding>
-                <element signature="n#style#0;n#div#3;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#1;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#2;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#3;n#div#1;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="basic_lang.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/language/english/basic_lang.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="452">
-              <caret line="236" column="0" selection-start-line="236" selection-start-column="0" selection-end-line="236" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="basic.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/basic.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="398">
-              <caret line="605" column="1" selection-start-line="605" selection-start-column="1" selection-end-line="605" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Quiz_model.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/models/Quiz_model.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="366">
-              <caret line="530" column="54" selection-start-line="530" selection-start-column="54" selection-end-line="530" selection-end-column="54" />
-              <folding>
-                <element signature="n#quiz_list#0;n#Quiz_model#0;n#!!top" expanded="false" />
-                <element signature="n#num_quiz#0;n#Quiz_model#0;n#!!top" expanded="false" />
-                <element signature="n#insert_quiz#0;n#Quiz_model#0;n#!!top" expanded="false" />
-                <element signature="n#update_quiz#0;n#Quiz_model#0;n#!!top" expanded="false" />
-                <element signature="n#get_questions#0;n#Quiz_model#0;n#!!top" expanded="false" />
-                <element signature="n#get_random_options#0;n#Quiz_model#0;n#!!top" expanded="false" />
-                <element signature="n#up_question#0;n#Quiz_model#0;n#!!top" expanded="false" />
-                <element signature="n#down_question#0;n#Quiz_model#0;n#!!top" expanded="false" />
-                <element signature="n#get_qcl#0;n#Quiz_model#0;n#!!top" expanded="false" />
-                <element signature="n#remove_qid#0;n#Quiz_model#0;n#!!top" expanded="false" />
-                <element signature="n#add_qid#0;n#Quiz_model#0;n#!!top" expanded="false" />
-                <element signature="n#get_quiz#0;n#Quiz_model#0;n#!!top" expanded="false" />
-                <element signature="n#remove_quiz#0;n#Quiz_model#0;n#!!top" expanded="false" />
-                <element signature="n#count_result#0;n#Quiz_model#0;n#!!top" expanded="false" />
-                <element signature="n#insert_result#0;n#Quiz_model#0;n#!!top" expanded="false" />
-                <element signature="n#open_result#0;n#Quiz_model#0;n#!!top" expanded="false" />
-                <element signature="n#quiz_result#0;n#Quiz_model#0;n#!!top" expanded="false" />
-                <element signature="n#saved_answers#0;n#Quiz_model#0;n#!!top" expanded="false" />
-                <marker date="1465224790513" expanded="true" signature="4024:4251" placeholder="select * fro... savsoft_qbank" />
-                <marker date="1465224790513" expanded="true" signature="4366:4458" placeholder="select * fro... savsoft_options" />
-                <marker date="1465224790513" expanded="true" signature="4568:4628" placeholder="select * fro... savsoft_options" />
-                <marker date="1465224790513" expanded="true" signature="4568:4634" placeholder="select * fro... savsoft_options" />
-                <marker date="1465224790513" expanded="true" signature="8025:8165" placeholder="select * fro... savsoft_qbank" />
-                <marker date="1465224790513" expanded="true" signature="8994:9154" placeholder="select * fro... savsoft_qbank" />
-                <marker date="1465224790513" expanded="true" signature="10165:10244" placeholder="select * fro... savsoft_result" />
-                <marker date="1465224790513" expanded="true" signature="10434:10553" placeholder="select * fro... savsoft_result" />
-                <marker date="1465224790513" expanded="true" signature="10659:10722" placeholder="select * fro... savsoft_answers" />
-                <marker date="1465224790513" expanded="true" signature="10860:10979" placeholder="select * fro... savsoft_result" />
-                <marker date="1465224790513" expanded="true" signature="12293:12341" placeholder="update savso... " />
-                <marker date="1465224790513" expanded="true" signature="12561:12680" placeholder="select * fro... savsoft_result" />
-                <marker date="1465224790513" expanded="true" signature="14181:14264" placeholder="update savso... " />
-                <marker date="1465224790513" expanded="true" signature="14422:14640" placeholder="select savso... savsoft_result" />
-                <marker date="1465224790513" expanded="true" signature="17203:17322" placeholder="select * fro... savsoft_result" />
-                <marker date="1465224790513" expanded="true" signature="17893:17939" placeholder="select * fro... savsoft_options" />
-                <marker date="1465224790513" expanded="true" signature="18820:18866" placeholder="select * fro... savsoft_options" />
-                <marker date="1465224790513" expanded="true" signature="20336:20382" placeholder="select * fro... savsoft_options" />
-                <marker date="1465224790513" expanded="true" signature="21373:21447" placeholder="select * fro... savsoft_options" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -130,17 +47,17 @@
         <option value="$PROJECT_DIR$/application/views/errors/edit_question_6.php" />
         <option value="$PROJECT_DIR$/application/views/question_list.php" />
         <option value="$PROJECT_DIR$/application/controllers/Qbank.php" />
-        <option value="$PROJECT_DIR$/application/views/edit_question_6.php" />
-        <option value="$PROJECT_DIR$/application/views/new_question_6.php" />
-        <option value="$PROJECT_DIR$/application/models/Quiz_model.php" />
         <option value="$PROJECT_DIR$/application/models/Qbank_model.php" />
         <option value="$PROJECT_DIR$/application/models/Option_model.php" />
         <option value="$PROJECT_DIR$/application/controllers/Result.php" />
-        <option value="$PROJECT_DIR$/application/views/view_result.php" />
-        <option value="$PROJECT_DIR$/application/controllers/Quiz.php" />
         <option value="$PROJECT_DIR$/application/views/result_list.php" />
         <option value="$PROJECT_DIR$/application/language/english/basic_lang.php" />
+        <option value="$PROJECT_DIR$/application/models/Quiz_model.php" />
+        <option value="$PROJECT_DIR$/application/views/new_question_6.php" />
+        <option value="$PROJECT_DIR$/application/views/edit_question_6.php" />
         <option value="$PROJECT_DIR$/js/basic.js" />
+        <option value="$PROJECT_DIR$/application/views/view_result.php" />
+        <option value="$PROJECT_DIR$/application/controllers/Quiz.php" />
         <option value="$PROJECT_DIR$/application/views/quiz_attempt.php" />
       </list>
     </option>
@@ -460,17 +377,18 @@
       <workItem from="1465213509911" duration="8992000" />
       <workItem from="1465268541937" duration="5445000" />
       <workItem from="1465352619896" duration="10779000" />
+      <workItem from="1465372134696" duration="8136000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38891000" />
+    <option name="totallyTimeSpent" value="47027000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32913387" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -502,23 +420,88 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="6" />
+      <option name="time" value="7" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/application/views/quiz_attempt.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8228">
+          <caret line="484" column="165" selection-start-line="484" selection-start-column="165" selection-end-line="484" selection-end-column="165" />
+          <folding>
+            <element signature="e#4264#5118#0#PHP" expanded="false" />
+            <element signature="e#5146#5751#0#PHP" expanded="false" />
+            <element signature="e#6610#8162#0#PHP" expanded="false" />
+            <element signature="n#style#0;n#ul#0;n#div#1;n#div#0;n#form#0;n#div#0;n#div#6;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/language/english/basic_lang.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/basic.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10285">
+          <caret line="605" column="1" selection-start-line="605" selection-start-column="1" selection-end-line="605" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/Quiz_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2210">
+          <caret line="530" column="54" selection-start-line="530" selection-start-column="54" selection-end-line="530" selection-end-column="54" />
+          <folding>
+            <element signature="n#quiz_list#0;n#Quiz_model#0;n#!!top" expanded="false" />
+            <element signature="n#num_quiz#0;n#Quiz_model#0;n#!!top" expanded="false" />
+            <element signature="n#insert_quiz#0;n#Quiz_model#0;n#!!top" expanded="false" />
+            <element signature="n#update_quiz#0;n#Quiz_model#0;n#!!top" expanded="false" />
+            <element signature="n#get_questions#0;n#Quiz_model#0;n#!!top" expanded="false" />
+            <element signature="n#get_random_options#0;n#Quiz_model#0;n#!!top" expanded="false" />
+            <element signature="n#up_question#0;n#Quiz_model#0;n#!!top" expanded="false" />
+            <element signature="n#down_question#0;n#Quiz_model#0;n#!!top" expanded="false" />
+            <element signature="n#get_qcl#0;n#Quiz_model#0;n#!!top" expanded="false" />
+            <element signature="n#remove_qid#0;n#Quiz_model#0;n#!!top" expanded="false" />
+            <element signature="n#add_qid#0;n#Quiz_model#0;n#!!top" expanded="false" />
+            <element signature="n#get_quiz#0;n#Quiz_model#0;n#!!top" expanded="false" />
+            <element signature="n#remove_quiz#0;n#Quiz_model#0;n#!!top" expanded="false" />
+            <element signature="n#count_result#0;n#Quiz_model#0;n#!!top" expanded="false" />
+            <element signature="n#open_result#0;n#Quiz_model#0;n#!!top" expanded="false" />
+            <element signature="n#quiz_result#0;n#Quiz_model#0;n#!!top" expanded="false" />
+            <marker date="1465372050744" expanded="true" signature="4024:4251" placeholder="select * fro... savsoft_qbank" />
+            <marker date="1465372050744" expanded="true" signature="4366:4458" placeholder="select * fro... savsoft_options" />
+            <marker date="1465372050744" expanded="true" signature="4568:4634" placeholder="select * fro... savsoft_options" />
+            <marker date="1465372050744" expanded="true" signature="8025:8165" placeholder="select * fro... savsoft_qbank" />
+            <marker date="1465372050744" expanded="true" signature="8994:9154" placeholder="select * fro... savsoft_qbank" />
+            <marker date="1465372050744" expanded="true" signature="10165:10244" placeholder="select * fro... savsoft_result" />
+            <marker date="1465372050744" expanded="true" signature="10434:10553" placeholder="select * fro... savsoft_result" />
+            <marker date="1465372050744" expanded="true" signature="10659:10722" placeholder="select * fro... savsoft_answers" />
+            <marker date="1465372050744" expanded="true" signature="10860:10979" placeholder="select * fro... savsoft_result" />
+            <marker date="1465372050744" expanded="true" signature="12293:12341" placeholder="update savso... " />
+            <marker date="1465372050744" expanded="true" signature="12561:12680" placeholder="select * fro... savsoft_result" />
+            <marker date="1465372050744" expanded="true" signature="14181:14264" placeholder="update savso... " />
+            <marker date="1465372050744" expanded="true" signature="14423:14641" placeholder="select savso... savsoft_result" />
+            <marker date="1465372050744" expanded="true" signature="17211:17330" placeholder="select * fro... savsoft_result" />
+            <marker date="1465372050744" expanded="true" signature="17901:17947" placeholder="select * fro... savsoft_options" />
+            <marker date="1465372050744" expanded="true" signature="18828:18874" placeholder="select * fro... savsoft_options" />
+            <marker date="1465372050744" expanded="true" signature="20344:20390" placeholder="select * fro... savsoft_options" />
+            <marker date="1465372050744" expanded="true" signature="21381:21455" placeholder="select * fro... savsoft_options" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/view_result.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5610">
           <caret line="330" column="13" selection-start-line="330" selection-start-column="13" selection-end-line="330" selection-end-column="13" />
-          <folding>
-            <marker date="1465273402793" expanded="true" signature="11503:11570" placeholder="..." />
-            <marker date="1465273402793" expanded="true" signature="11517:11570" placeholder="..." />
-            <marker date="1465273402793" expanded="true" signature="11731:11901" placeholder="..." />
-            <marker date="1465273402793" expanded="true" signature="11735:11801" placeholder="..." />
-            <marker date="1465273402793" expanded="true" signature="11812:11901" placeholder="..." />
-            <marker date="1465273402793" expanded="true" signature="12312:12375" placeholder="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -557,29 +540,26 @@
             <element signature="n#get_quiz#0;n#Quiz_model#0;n#!!top" expanded="false" />
             <element signature="n#remove_quiz#0;n#Quiz_model#0;n#!!top" expanded="false" />
             <element signature="n#count_result#0;n#Quiz_model#0;n#!!top" expanded="false" />
-            <element signature="n#insert_result#0;n#Quiz_model#0;n#!!top" expanded="false" />
             <element signature="n#open_result#0;n#Quiz_model#0;n#!!top" expanded="false" />
             <element signature="n#quiz_result#0;n#Quiz_model#0;n#!!top" expanded="false" />
-            <element signature="n#saved_answers#0;n#Quiz_model#0;n#!!top" expanded="false" />
-            <marker date="1465224790513" expanded="true" signature="4024:4251" placeholder="select * fro... savsoft_qbank" />
-            <marker date="1465224790513" expanded="true" signature="4366:4458" placeholder="select * fro... savsoft_options" />
-            <marker date="1465224790513" expanded="true" signature="4568:4628" placeholder="select * fro... savsoft_options" />
-            <marker date="1465224790513" expanded="true" signature="4568:4634" placeholder="select * fro... savsoft_options" />
-            <marker date="1465224790513" expanded="true" signature="8025:8165" placeholder="select * fro... savsoft_qbank" />
-            <marker date="1465224790513" expanded="true" signature="8994:9154" placeholder="select * fro... savsoft_qbank" />
-            <marker date="1465224790513" expanded="true" signature="10165:10244" placeholder="select * fro... savsoft_result" />
-            <marker date="1465224790513" expanded="true" signature="10434:10553" placeholder="select * fro... savsoft_result" />
-            <marker date="1465224790513" expanded="true" signature="10659:10722" placeholder="select * fro... savsoft_answers" />
-            <marker date="1465224790513" expanded="true" signature="10860:10979" placeholder="select * fro... savsoft_result" />
-            <marker date="1465224790513" expanded="true" signature="12293:12341" placeholder="update savso... " />
-            <marker date="1465224790513" expanded="true" signature="12561:12680" placeholder="select * fro... savsoft_result" />
-            <marker date="1465224790513" expanded="true" signature="14181:14264" placeholder="update savso... " />
-            <marker date="1465224790513" expanded="true" signature="14422:14640" placeholder="select savso... savsoft_result" />
-            <marker date="1465224790513" expanded="true" signature="17203:17322" placeholder="select * fro... savsoft_result" />
-            <marker date="1465224790513" expanded="true" signature="17893:17939" placeholder="select * fro... savsoft_options" />
-            <marker date="1465224790513" expanded="true" signature="18820:18866" placeholder="select * fro... savsoft_options" />
-            <marker date="1465224790513" expanded="true" signature="20336:20382" placeholder="select * fro... savsoft_options" />
-            <marker date="1465224790513" expanded="true" signature="21373:21447" placeholder="select * fro... savsoft_options" />
+            <marker date="1465372050744" expanded="true" signature="4024:4251" placeholder="select * fro... savsoft_qbank" />
+            <marker date="1465372050744" expanded="true" signature="4366:4458" placeholder="select * fro... savsoft_options" />
+            <marker date="1465372050744" expanded="true" signature="4568:4634" placeholder="select * fro... savsoft_options" />
+            <marker date="1465372050744" expanded="true" signature="8025:8165" placeholder="select * fro... savsoft_qbank" />
+            <marker date="1465372050744" expanded="true" signature="8994:9154" placeholder="select * fro... savsoft_qbank" />
+            <marker date="1465372050744" expanded="true" signature="10165:10244" placeholder="select * fro... savsoft_result" />
+            <marker date="1465372050744" expanded="true" signature="10434:10553" placeholder="select * fro... savsoft_result" />
+            <marker date="1465372050744" expanded="true" signature="10659:10722" placeholder="select * fro... savsoft_answers" />
+            <marker date="1465372050744" expanded="true" signature="10860:10979" placeholder="select * fro... savsoft_result" />
+            <marker date="1465372050744" expanded="true" signature="12293:12341" placeholder="update savso... " />
+            <marker date="1465372050744" expanded="true" signature="12561:12680" placeholder="select * fro... savsoft_result" />
+            <marker date="1465372050744" expanded="true" signature="14181:14264" placeholder="update savso... " />
+            <marker date="1465372050744" expanded="true" signature="14423:14641" placeholder="select savso... savsoft_result" />
+            <marker date="1465372050744" expanded="true" signature="17211:17330" placeholder="select * fro... savsoft_result" />
+            <marker date="1465372050744" expanded="true" signature="17901:17947" placeholder="select * fro... savsoft_options" />
+            <marker date="1465372050744" expanded="true" signature="18828:18874" placeholder="select * fro... savsoft_options" />
+            <marker date="1465372050744" expanded="true" signature="20344:20390" placeholder="select * fro... savsoft_options" />
+            <marker date="1465372050744" expanded="true" signature="21381:21455" placeholder="select * fro... savsoft_options" />
           </folding>
         </state>
       </provider>
@@ -600,11 +580,10 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="n#style#0;n#div#3;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#1;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#2;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#3;n#div#1;n#!!top" expanded="true" />
+            <element signature="e#4264#5118#0#PHP" expanded="false" />
+            <element signature="e#5146#5751#0#PHP" expanded="false" />
+            <element signature="e#6610#8162#0#PHP" expanded="false" />
+            <element signature="n#style#0;n#ul#0;n#div#1;n#div#0;n#form#0;n#div#0;n#div#6;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -614,13 +593,13 @@
         <state relative-caret-position="6851">
           <caret line="403" column="62" selection-start-line="403" selection-start-column="62" selection-end-line="403" selection-end-column="62" />
           <folding>
-            <marker date="1465354488873" expanded="true" signature="2456:2515" placeholder="select * fro... savsoft_qbank" />
-            <marker date="1465354488873" expanded="true" signature="6060:6075" placeholder="..." />
-            <marker date="1465354488873" expanded="true" signature="6126:6141" placeholder="..." />
-            <marker date="1465354488873" expanded="true" signature="6184:6194" placeholder="..." />
-            <marker date="1465354488873" expanded="true" signature="6243:6253" placeholder="..." />
-            <marker date="1465354488873" expanded="true" signature="6345:6355" placeholder="..." />
-            <marker date="1465354488873" expanded="true" signature="6426:6436" placeholder="..." />
+            <marker date="1465380225159" expanded="true" signature="2438:2497" placeholder="select * fro... savsoft_qbank" />
+            <marker date="1465380225159" expanded="true" signature="5878:5893" placeholder="..." />
+            <marker date="1465380225159" expanded="true" signature="5943:5958" placeholder="..." />
+            <marker date="1465380225159" expanded="true" signature="6001:6011" placeholder="..." />
+            <marker date="1465380225159" expanded="true" signature="6060:6070" placeholder="..." />
+            <marker date="1465380225159" expanded="true" signature="6160:6170" placeholder="..." />
+            <marker date="1465380225159" expanded="true" signature="6239:6249" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -699,13 +678,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/new_question_6.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="93" column="40" selection-start-line="93" selection-start-column="40" selection-end-line="93" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/Qbank.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
@@ -720,26 +692,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/edit_question_6.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1649">
-          <caret line="97" column="37" selection-start-line="97" selection-start-column="37" selection-end-line="97" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/config/sq_config.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="10" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/quiz_detail.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="55" selection-start-line="28" selection-start-column="55" selection-end-line="28" selection-end-column="55" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -761,7 +717,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-895">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -776,45 +731,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/view_result.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="379" column="22" selection-start-line="379" selection-start-column="22" selection-end-line="379" selection-end-column="22" />
-          <folding>
-            <marker date="1465273402793" expanded="true" signature="11503:11570" placeholder="..." />
-            <marker date="1465273402793" expanded="true" signature="11517:11570" placeholder="..." />
-            <marker date="1465273402793" expanded="true" signature="11731:11901" placeholder="..." />
-            <marker date="1465273402793" expanded="true" signature="11735:11801" placeholder="..." />
-            <marker date="1465273402793" expanded="true" signature="11812:11901" placeholder="..." />
-            <marker date="1465273402793" expanded="true" signature="12312:12375" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Result.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="28" column="12" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Quiz.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="499" column="17" selection-start-line="499" selection-start-column="17" selection-end-line="499" selection-end-column="17" />
-          <folding>
-            <marker date="1465354488873" expanded="true" signature="2456:2515" placeholder="select * fro... savsoft_qbank" />
-            <marker date="1465354488873" expanded="true" signature="6060:6075" placeholder="..." />
-            <marker date="1465354488873" expanded="true" signature="6126:6141" placeholder="..." />
-            <marker date="1465354488873" expanded="true" signature="6184:6194" placeholder="..." />
-            <marker date="1465354488873" expanded="true" signature="6243:6253" placeholder="..." />
-            <marker date="1465354488873" expanded="true" signature="6345:6355" placeholder="..." />
-            <marker date="1465354488873" expanded="true" signature="6426:6436" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/result_list.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -823,18 +739,79 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/basic.js">
+    <entry file="file://$PROJECT_DIR$/application/language/english/basic_lang.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="605" column="1" selection-start-line="605" selection-start-column="1" selection-end-line="605" selection-end-column="1" />
+        <state relative-caret-position="479">
+          <caret line="236" column="0" selection-start-line="236" selection-start-column="0" selection-end-line="236" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/quiz_detail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/new_question_6.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="397">
+          <caret line="94" column="42" selection-start-line="94" selection-start-column="42" selection-end-line="94" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/edit_question_6.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="96" column="42" selection-start-line="96" selection-start-column="42" selection-end-line="96" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Result.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="42" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/quiz_attempt.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="385" column="31" selection-start-line="385" selection-start-column="31" selection-end-line="385" selection-end-column="31" />
+          <folding>
+            <element signature="e#4264#5118#0#PHP" expanded="false" />
+            <element signature="e#5146#5751#0#PHP" expanded="false" />
+            <element signature="e#6610#8162#0#PHP" expanded="false" />
+            <element signature="n#style#0;n#ul#0;n#div#1;n#div#0;n#form#0;n#div#0;n#div#6;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Quiz.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="43" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
+          <folding>
+            <marker date="1465380225159" expanded="true" signature="2438:2497" placeholder="select * fro... savsoft_qbank" />
+            <marker date="1465380225159" expanded="true" signature="5878:5893" placeholder="..." />
+            <marker date="1465380225159" expanded="true" signature="5943:5958" placeholder="..." />
+            <marker date="1465380225159" expanded="true" signature="6001:6011" placeholder="..." />
+            <marker date="1465380225159" expanded="true" signature="6060:6070" placeholder="..." />
+            <marker date="1465380225159" expanded="true" signature="6160:6170" placeholder="..." />
+            <marker date="1465380225159" expanded="true" signature="6239:6249" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/models/Quiz_model.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="530" column="54" selection-start-line="530" selection-start-column="54" selection-end-line="530" selection-end-column="54" />
+        <state relative-caret-position="271">
+          <caret line="681" column="9" selection-start-line="681" selection-start-column="9" selection-end-line="681" selection-end-column="9" />
           <folding>
             <element signature="n#quiz_list#0;n#Quiz_model#0;n#!!top" expanded="false" />
             <element signature="n#num_quiz#0;n#Quiz_model#0;n#!!top" expanded="false" />
@@ -850,51 +827,42 @@
             <element signature="n#get_quiz#0;n#Quiz_model#0;n#!!top" expanded="false" />
             <element signature="n#remove_quiz#0;n#Quiz_model#0;n#!!top" expanded="false" />
             <element signature="n#count_result#0;n#Quiz_model#0;n#!!top" expanded="false" />
-            <element signature="n#insert_result#0;n#Quiz_model#0;n#!!top" expanded="false" />
             <element signature="n#open_result#0;n#Quiz_model#0;n#!!top" expanded="false" />
             <element signature="n#quiz_result#0;n#Quiz_model#0;n#!!top" expanded="false" />
-            <element signature="n#saved_answers#0;n#Quiz_model#0;n#!!top" expanded="false" />
-            <marker date="1465224790513" expanded="true" signature="4024:4251" placeholder="select * fro... savsoft_qbank" />
-            <marker date="1465224790513" expanded="true" signature="4366:4458" placeholder="select * fro... savsoft_options" />
-            <marker date="1465224790513" expanded="true" signature="4568:4628" placeholder="select * fro... savsoft_options" />
-            <marker date="1465224790513" expanded="true" signature="4568:4634" placeholder="select * fro... savsoft_options" />
-            <marker date="1465224790513" expanded="true" signature="8025:8165" placeholder="select * fro... savsoft_qbank" />
-            <marker date="1465224790513" expanded="true" signature="8994:9154" placeholder="select * fro... savsoft_qbank" />
-            <marker date="1465224790513" expanded="true" signature="10165:10244" placeholder="select * fro... savsoft_result" />
-            <marker date="1465224790513" expanded="true" signature="10434:10553" placeholder="select * fro... savsoft_result" />
-            <marker date="1465224790513" expanded="true" signature="10659:10722" placeholder="select * fro... savsoft_answers" />
-            <marker date="1465224790513" expanded="true" signature="10860:10979" placeholder="select * fro... savsoft_result" />
-            <marker date="1465224790513" expanded="true" signature="12293:12341" placeholder="update savso... " />
-            <marker date="1465224790513" expanded="true" signature="12561:12680" placeholder="select * fro... savsoft_result" />
-            <marker date="1465224790513" expanded="true" signature="14181:14264" placeholder="update savso... " />
-            <marker date="1465224790513" expanded="true" signature="14422:14640" placeholder="select savso... savsoft_result" />
-            <marker date="1465224790513" expanded="true" signature="17203:17322" placeholder="select * fro... savsoft_result" />
-            <marker date="1465224790513" expanded="true" signature="17893:17939" placeholder="select * fro... savsoft_options" />
-            <marker date="1465224790513" expanded="true" signature="18820:18866" placeholder="select * fro... savsoft_options" />
-            <marker date="1465224790513" expanded="true" signature="20336:20382" placeholder="select * fro... savsoft_options" />
-            <marker date="1465224790513" expanded="true" signature="21373:21447" placeholder="select * fro... savsoft_options" />
+            <marker date="1465372050744" expanded="true" signature="4024:4251" placeholder="select * fro... savsoft_qbank" />
+            <marker date="1465372050744" expanded="true" signature="4366:4458" placeholder="select * fro... savsoft_options" />
+            <marker date="1465372050744" expanded="true" signature="4568:4634" placeholder="select * fro... savsoft_options" />
+            <marker date="1465372050744" expanded="true" signature="8025:8165" placeholder="select * fro... savsoft_qbank" />
+            <marker date="1465372050744" expanded="true" signature="8994:9154" placeholder="select * fro... savsoft_qbank" />
+            <marker date="1465372050744" expanded="true" signature="10165:10244" placeholder="select * fro... savsoft_result" />
+            <marker date="1465372050744" expanded="true" signature="10434:10553" placeholder="select * fro... savsoft_result" />
+            <marker date="1465372050744" expanded="true" signature="10659:10722" placeholder="select * fro... savsoft_answers" />
+            <marker date="1465372050744" expanded="true" signature="10860:10979" placeholder="select * fro... savsoft_result" />
+            <marker date="1465372050744" expanded="true" signature="12293:12341" placeholder="update savso... " />
+            <marker date="1465372050744" expanded="true" signature="12561:12680" placeholder="select * fro... savsoft_result" />
+            <marker date="1465372050744" expanded="true" signature="14181:14264" placeholder="update savso... " />
+            <marker date="1465372050744" expanded="true" signature="14423:14641" placeholder="select savso... savsoft_result" />
+            <marker date="1465372050744" expanded="true" signature="17211:17330" placeholder="select * fro... savsoft_result" />
+            <marker date="1465372050744" expanded="true" signature="17901:17947" placeholder="select * fro... savsoft_options" />
+            <marker date="1465372050744" expanded="true" signature="18828:18874" placeholder="select * fro... savsoft_options" />
+            <marker date="1465372050744" expanded="true" signature="20344:20390" placeholder="select * fro... savsoft_options" />
+            <marker date="1465372050744" expanded="true" signature="21381:21455" placeholder="select * fro... savsoft_options" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/quiz_attempt.php">
+    <entry file="file://$PROJECT_DIR$/js/basic.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="484" column="165" selection-start-line="484" selection-start-column="165" selection-end-line="484" selection-end-column="165" />
-          <folding>
-            <element signature="n#style#0;n#div#3;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#1;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#2;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#3;n#div#1;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="642">
+          <caret line="377" column="9" selection-start-line="377" selection-start-column="9" selection-end-line="377" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/language/english/basic_lang.php">
+    <entry file="file://$PROJECT_DIR$/application/views/view_result.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="236" column="0" selection-start-line="236" selection-start-column="0" selection-end-line="236" selection-end-column="0" />
+        <state relative-caret-position="265">
+          <caret line="348" column="38" selection-start-line="348" selection-start-column="38" selection-end-line="348" selection-end-column="38" />
           <folding />
         </state>
       </provider>
