@@ -31,7 +31,7 @@ $config['tinymce']=true;
 
 
 // enable or disable result email. use true or false
-$config['allow_result_email']=true;
+$config['allow_result_email'] = true;
 
 // email sending protocol mail or smtp
 $config['protocol']="smtp";
@@ -42,7 +42,7 @@ $config['protocol']="smtp";
 */
 
 // smtp hostname eg. smtp.gmail.com
-$config['smtp_hostname'] = "ssl://smtp.gmail.com";
+$config['smtp_hostname'] = "smtp.gmail.com";
 // smtp username
 $config['smtp_username'] = "trinhhuy2504@gmail.com";
 // smtp password
@@ -57,7 +57,7 @@ $config['starttls'] = TRUE;
 $config['newline'] = "\r\n";
 // email message content text of html. 
 // In html email make sure you don't have any relative links or relative image paths otherwise they will not work.
-$config['smtp_mailtype'] = "text";
+$config['smtp_mailtype'] = "html";
 
 
 // activation email subject

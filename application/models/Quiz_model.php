@@ -592,9 +592,11 @@ function saved_answers($rid){
 	 }
 	 
 if($this->config->item('allow_result_email')){
-	$this->load->library('email');
+		$this->load->library('email');
 	$query = $this -> db -> query("select savsoft_result.*,savsoft_users.*,savsoft_quiz.* from savsoft_result, savsoft_users, savsoft_quiz where savsoft_users.uid=savsoft_result.uid and savsoft_quiz.quid=savsoft_result.quid and savsoft_result.rid='$rid'");
+
 	$qrr=$query->row_array();
+
   		if($this->config->item('protocol')=="smtp"){
 			$config['protocol'] = 'smtp';
 			$config['smtp_host'] = $this->config->item('smtp_hostname');
@@ -607,7 +609,9 @@ if($this->config->item('allow_result_email')){
 			$config['newline']  = $this->config->item('newline');
 
 			$this->email->initialize($config);
+
 		}
+
 			$toemail=$qrr['email'];
 			$fromemail=$this->config->item('fromemail');
 			$fromname=$this->config->item('fromname');
@@ -638,12 +642,13 @@ if($this->config->item('allow_result_email')){
 			$this->email->subject($subject);
 			$this->email->message($message);
 			if(!$this->email->send()){
-			 //print_r($this->email->print_debugger());
+			 print_r($this->email->print_debugger());
 			
 			}
+			
 	}
 	
-
+	
 	return true;
  }
  
