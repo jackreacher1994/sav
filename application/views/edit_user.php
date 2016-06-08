@@ -22,7 +22,7 @@
 		?>	
 		
 				<div class="form-group">	 
-				<?php echo $this->lang->line('group_name');?>: <?php echo $result['group_name'];?> (<?php echo $this->lang->line('price_');?>: <?php echo $result['price'];?>)
+				<?php echo $this->lang->line('group_name');?>: <?php echo $result['group_name'];?>
 				</div>
 				
 				
@@ -54,7 +54,7 @@
 					foreach($group_list as $key => $val){
 						?>
 						
-						<option value="<?php echo $val['gid'];?>" <?php if($result['gid']==$val['gid']){ echo 'selected';}?> ><?php echo $val['group_name'];?> (<?php echo $this->lang->line('price_');?>: <?php echo $val['price'];?>)</option>
+						<option value="<?php echo $val['gid'];?>" <?php if($result['gid']==$val['gid']){ echo 'selected';}?> ><?php echo $val['group_name'];?> </option>
 						<?php 
 					}
 					?>
@@ -89,7 +89,7 @@
 
 
 
-<div class="row">
+<!-- <div class="row">
 <div class="col-md-8">
 <h3><?php echo $this->lang->line('payment_history');?></h3>
 <table class="table table-bordered">
@@ -128,7 +128,7 @@ foreach($payment_history as $key => $val){
 
 </div>
 
-</div>
+</div> -->
 
 
  

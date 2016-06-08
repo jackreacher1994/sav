@@ -136,7 +136,7 @@ if($quiz['question_selection']=='0'){
  <th><?php echo $this->lang->line('question');?></th>
 <th><?php echo $this->lang->line('question_type');?></th>
 <th><?php echo $this->lang->line('category_name');?></th>
-<th><?php echo $this->lang->line('level_name');?></th>
+
 <th><?php echo $this->lang->line('action');?> </th>
 </tr>
 <?php 
@@ -156,7 +156,7 @@ foreach($questions as $key => $val){
  <td><?php echo substr(strip_tags($val['question']),0,50);?></td>
 <td><?php echo $val['question_type'];?></td>
 <td><?php echo $val['category_name'];?></td>
-<td><?php echo $val['level_name'];?></td>
+
 <td>
  
  <a href="<?php echo site_url('quiz/remove_qid/'.$quiz['quid'].'/'.$val['qid']);?>" title="<?php echo $this->lang->line('remove_from_quiz');?>"><img src="<?php echo base_url('images/cross.png');?>"></a>
@@ -215,7 +215,7 @@ if(count($qcl)==0){
 					}
 					?>
 					</select>
-			 	<select  name="lid[]" >
+			 	<select  name="lid[]" style="display:none;">
 				<option value="0"><?php echo $this->lang->line('select');?> <?php echo $this->lang->line('level_name');?></option>
 					<?php 
 					foreach($level_list as $key => $val){

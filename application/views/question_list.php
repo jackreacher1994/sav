@@ -41,8 +41,8 @@
 					}
 					?>
 					</select>
-			 	<select  name="lid">
-				<option value="0"><?php echo $this->lang->line('all_level');?></option>
+			 	<select  name="lid" style="display:none;">
+				<option value="0" ><?php echo $this->lang->line('all_level');?></option>
 					<?php 
 					foreach($level_list as $key => $val){
 						?>
@@ -61,7 +61,7 @@
  <th>#</th>
  <th><?php echo $this->lang->line('question');?></th>
 <th><?php echo $this->lang->line('question_type');?></th>
-<th><?php echo $this->lang->line('category_name');?> / <?php echo $this->lang->line('level_name');?></th>
+<th><?php echo $this->lang->line('category_name');?> </th>
  
 <th><?php echo $this->lang->line('percent_corrected');?></th>
 <th><?php echo $this->lang->line('action');?> </th>
@@ -102,7 +102,7 @@ foreach($result as $key => $val){
  
  </td>
 <td><?php echo $val['question_type'];?></td>
-<td><?php echo $val['category_name'];?> / <span style="font-size:12px;"><?php echo $val['level_name'];?></span></td>
+<td><?php echo $val['category_name'];?> </span></td>
  
 <td><?php if($val['no_time_served']!='0'){ $perc=($val['no_time_corrected']/$val['no_time_served'])*100; 
 ?>

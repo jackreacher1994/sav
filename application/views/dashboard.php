@@ -23,7 +23,7 @@
                         </div>
                         <a href="<?php echo site_url('user');?>">
                             <div class="panel-footer">
-                                <span class="pull-left"><?php echo $this->lang->line('users');?> <?php echo $this->lang->line('list');?></span>
+                                <span class="pull-left"><?php echo $this->lang->line('list');?> <?php echo $this->lang->line('users');?> </span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
                             </div>
@@ -47,7 +47,7 @@
                         </div>
                         <a href="<?php echo site_url('quiz');?>">
                             <div class="panel-footer">
-                                <span class="pull-left"><?php echo $this->lang->line('quiz');?> <?php echo $this->lang->line('list');?></span>
+                                <span class="pull-left"><?php echo $this->lang->line('list');?> <?php echo $this->lang->line('quiz');?> </span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
                             </div>
@@ -69,7 +69,7 @@
                             </div>
                         </div>
                         <a href="<?php echo site_url('qbank');?>">
-                            <div class="panel-footer"><?php echo $this->lang->line('question');?> <?php echo $this->lang->line('list');?></span>
+                            <div class="panel-footer"><?php echo $this->lang->line('list');?> <?php echo $this->lang->line('question');?> </span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
                             </div>

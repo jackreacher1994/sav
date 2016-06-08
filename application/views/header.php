@@ -61,7 +61,7 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $this->lang->line('users');?> <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                   <li><a href="<?php echo site_url('user/new_user');?>"><?php echo $this->lang->line('add_new');?></a></li>
-                  <li><a href="<?php echo site_url('user');?>"><?php echo $this->lang->line('users');?> <?php echo $this->lang->line('list');?></a></li>
+                  <li><a href="<?php echo site_url('user');?>"><?php echo $this->lang->line('list');?> <?php echo $this->lang->line('users');?> </a></li>
                   
                 </ul>
               </li>
@@ -72,7 +72,7 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $this->lang->line('qbank');?> <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                   <li><a href="<?php echo site_url('qbank/pre_new_question');?>"><?php echo $this->lang->line('add_new');?></a></li>
-                  <li><a href="<?php echo site_url('qbank');?>"><?php echo $this->lang->line('question');?> <?php echo $this->lang->line('list');?></a></li>
+                  <li><a href="<?php echo site_url('qbank');?>"><?php echo $this->lang->line('list');?> <?php echo $this->lang->line('question');?> </a></li>
                   
                 </ul>
               </li>
@@ -94,7 +94,7 @@
 			?>     <li><a href="<?php echo site_url('quiz/add_new');?>"><?php echo $this->lang->line('add_new');?></a></li>
               <?php 
 				}
-?>				 <li><a href="<?php echo site_url('quiz');?>"><?php echo $this->lang->line('quiz');?> <?php echo $this->lang->line('list');?></a></li>
+?>				 <li><a href="<?php echo site_url('quiz');?>"><?php echo $this->lang->line('list');?> <?php echo $this->lang->line('quiz');?> </a></li>
                
                 </ul>
               </li>
