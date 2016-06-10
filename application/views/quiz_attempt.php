@@ -148,13 +148,6 @@ $abc=array(
 '1'=>'B',
 '2'=>'C',
 '3'=>'D',
-'4'=>'E',
-'6'=>'F',
-'7'=>'G',
-'8'=>'H',
-'9'=>'I',
-'10'=>'J',
-'11'=>'K'
 );
 foreach($questions as $qk => $question){
 ?>
@@ -188,13 +181,8 @@ foreach($questions as $qk => $question){
 			?>
 			 
 		<div class="op"><?php echo $abc[$i];?>) <input type="radio" name="answer[<?php echo $qk;?>][]"  id="answer_value<?php echo $qk.'-'.$i;?>" value="<?php echo $option['oid'];?>"   <?php if(in_array($option['oid'],$save_ans)){ echo 'checked'; } ?>  > <?php echo $option['q_option'];?> </div>
-			 
-			 
 			 <?php 
 			 $i+=1;
-				}else{
-				$i=0;	
-					
 				}
 			}
 		 }
@@ -222,9 +210,6 @@ foreach($questions as $qk => $question){
 			 
 			 <?php 
 			 $i+=1;
-				}else{
-				$i=0;	
-					
 				}
 			}
 		 }
@@ -315,9 +300,6 @@ foreach($questions as $qk => $question){
 			 
 			 <?php 
 			 $i+=1;
-				}else{
-				$i=0;	
-					
 				}
 			}
 			?>

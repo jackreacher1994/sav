@@ -32,11 +32,11 @@
 			</div>
 				<div class="form-group">	 
 					<label for="inputEmail"  ><?php echo $this->lang->line('start_date');?></label> 
-					<input type="text" name="start_date"  value="<?php echo date('Y-m-d H:i:s',time());?>" class="form-control" placeholder="<?php echo $this->lang->line('start_date');?>"   required >
+					<input type="text" name="start_date"  value="" class="form-control" placeholder="<?php echo $this->lang->line('start_date');?>"   required >
 			</div>
 				<div class="form-group">	 
 					<label for="inputEmail"  ><?php echo $this->lang->line('end_date');?></label> 
-					<input type="text" name="end_date"  value="<?php echo date('Y-m-d H:i:s',(time()+(60*60*24*365)));?>" class="form-control" placeholder="<?php echo $this->lang->line('end_date');?>"   required >
+					<input type="text" name="end_date"  value="" class="form-control" placeholder="<?php echo $this->lang->line('end_date');?>"   required >
 			</div>
 				<div class="form-group">	 
 					<label for="inputEmail"  ><?php echo $this->lang->line('duration');?></label> 
