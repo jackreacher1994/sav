@@ -31,7 +31,7 @@ window.setTimeout("Tick()", 1000);
 
 function Tick() {
 if (TotalSeconds <= 0) {
-alert("Time's up!")
+/*alert("Time's up!")*/
 return;
 }
 
