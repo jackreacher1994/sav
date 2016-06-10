@@ -13,6 +13,7 @@
 $(window).bind('beforeunload',function(){
 
 	javascript:save_question();
+	return "<?php echo $this->lang->line('refresh_message'); ?>";
 
 
 });
@@ -140,7 +141,7 @@ if(count($categories) > 1 ){
 <form method="post" action="<?php echo site_url('quiz/submit_quiz/'.$quiz['rid']);?>" id="quiz_form" >
 <input type="hidden" name="rid" value="<?php echo $quiz['rid'];?>">
 <input type="hidden" name="noq" value="<?php echo $quiz['noq'];?>">
-<input type="hidden" name="individual_time"  id="individual_time" value="<?php echo $quiz['individual_time'];?>">
+<input type="hidden" name="individual_time"  id="individual_time" vealu="<?php echo $quiz['individual_time'];?>">
  
 <?php 
 $abc=array(

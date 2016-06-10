@@ -1,5 +1,5 @@
 <?php
-$lang['savsoft_quiz'] = "Savsoft Quiz v3.0";
+$lang['savsoft_quiz'] = "VED Quiz v0.1";
 $lang['installation_process'] = "Installation Process";
 $lang['installation_completed'] = "Installation Completed. Visit base URL {base_url} to login.<br><br>Default login info:<br> Email: admin@example.com <br>Password: admin<br><br>For more information or customization visit <a href='http://savsoftquiz.com/'>www.SavsoftQuiz.com/</a> ";
 $lang['installation_failed'] = "Installation Failed";
@@ -32,7 +32,7 @@ $lang['quiz'] = "Quiz";
 $lang['result'] = "Result";
 $lang['no_registered_user'] = "Number of User Registered";
 $lang['no_questions_qbank'] = "Questions  in Question Bank";
- $lang['no_registered_quiz'] = "Number of quiz available";
+$lang['no_registered_quiz'] = "Number of quiz available";
 $lang['recently_registered'] = "Recently Registered Users";
 $lang['logout'] = "Logout";
 $lang['userlist'] = "User List";
@@ -229,10 +229,11 @@ $lang['Review-Later'] = "Review-Later";
 $lang['Not-visited'] = "Not-visited";
 $lang['payment_gateway_plugin_missing'] = "Payment gateway plugin missing, you can not pay online.<br> Contact administrator to activate your subscription manually.";
 $lang['payment_gateway_plugin_missing2'] = "Payment gateway plugin missing.";
-$lang['maximum_attempt_invalid'] = "Bạn đã thực hiện bài kiểm tra này.";
-$lang['sort_answer'] = "Câu hỏi sắp xếp";
-$lang['right_order'] = "Thứ tự đúng";
-$lang['full_name'] = "Tên đầy đủ";
-$lang['save'] = "Lưu";
+$lang['maximum_attempt_invalid'] = "You have done this test.";
+$lang['sort_answer'] = "Order answer";
+$lang['right_order'] = "Right order";
+$lang['full_name'] = "Full name";
+$lang['save'] = "Save";
+$lang['refresh_message'] = "Your answer may not be saved. Do you still want to refresh the page?";
 
 

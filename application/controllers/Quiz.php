@@ -1,5 +1,5 @@
 <?php
-date_default_timezone_set('Asia/Ho_Chi_Minh');
+//date_default_timezone_set('Asia/Ho_Chi_Minh');
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Quiz extends CI_Controller {
@@ -410,10 +410,11 @@ class Quiz extends CI_Controller {
 		if(!$this->session->userdata('logged_in')){
 			exit($this->lang->line('permission_denied'));
 		}
+
 		// get result and quiz info and validate time period
 		$data['quiz']=$this->quiz_model->quiz_result($rid);
 		$data['saved_answers']=$this->quiz_model->saved_answers($rid);
-		
+		//$data['quiz']['start_time']  = time();
 
 
 
@@ -443,8 +444,16 @@ class Quiz extends CI_Controller {
 		echo date("d/m/Y H:i:s", time());
 		echo time();*/
 		// remaining time in seconds 
+		/*echo date('Y-m-d H:i:s',$data['quiz']['start_time']);
+		echo '<br>';
+		echo date('Y-m-d H:i:s',time());*/
+		/*echo '<br>';
+		$a = $data['quiz']['duration'];
+		$countdown = strtotime("+$a minutes",$data['quiz']['start_time']) ;
+		echo date('Y-m-d H:i:s',$countdown);*/
 		if(time() < $data['quiz']['start_time'])
 		{
+			
 			$data['seconds']=$data['quiz']['duration']*60;
 		}
 		else{
@@ -453,11 +462,11 @@ class Quiz extends CI_Controller {
 		
 		//echo $data['seconds'];
 		// get questions
-		$data['questions']=$this->quiz_model->get_questions($data['quiz']['r_qids']);
+		$data['questions'] = $this->quiz_model->get_questions($data['quiz']['r_qids']);
 		// get options
 		//$data['options']=$this->quiz_model->get_options($data['quiz']['r_qids']);
-		$data['options']=$this->quiz_model->get_random_options($data['quiz']['r_qids']);
-		$data['title']=$data['quiz']['quiz_name'];
+		$data['options'] = $this->quiz_model->get_random_options($data['quiz']['r_qids']);
+		$data['title'] = $data['quiz']['quiz_name'];
 		$this->load->view('header',$data);
 		$this->load->view('quiz_attempt',$data);
 		$this->load->view('footer',$data);
