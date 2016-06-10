@@ -350,21 +350,28 @@ foreach($questions as $qk => $question){
 					 $save_ans=$saved_answer['q_option'];
 				 }
 			 }
-			 //print_r($save_ans);
+			 //echo $save_ans;
 			 ?>
 			 <input type="hidden"  name="question_type[]"  id="q_type<?php echo $qk;?>" value="6">
 
 			 <script>
 				 $(function() {
+					 var data1 = [];
+					 $("#sortable li").each(function(i, el){
+						 data1.push($(el).val()+"="+$(el).index());
+					 });
+					 var temp = "answer_value" + <?php echo $qk;?>;
+					 $("#"+temp).val(data1);
+					 //alert($("#"+temp).val());
+
 					 $( "#sortable" ).sortable({
 						 placeholder: "ui-sortable-placeholder",
 						 stop: function(event, ui) {
-							 var data = [];
+							 var data2 = [];
 							 $("#sortable li").each(function(i, el){
-								 data.push($(el).val()+"="+$(el).index());
+								 data2.push($(el).val()+"="+$(el).index());
 							 });
-							 var temp = "answer_value" + <?php echo $qk;?>;
-							 $("#"+temp).val(data);
+							 $("#"+temp).val(data2);
 							 //alert($("#"+temp).val());
 						 }
 					 });
