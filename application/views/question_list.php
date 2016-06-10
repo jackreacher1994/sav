@@ -184,8 +184,8 @@ if(($limit-($this->config->item('number_of_rows')))>=0){ $back=$limit-($this->co
 						<?php 
 					}
 					?></select>
- <select name="did"  >
- <option value="0"><?php echo $this->lang->line('select_level');?></option>
+ <select name="did" style="display:none;">
+ 
 <?php 
 					foreach($level_list as $key => $val){
 						?>

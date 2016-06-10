@@ -429,7 +429,7 @@ class Quiz extends CI_Controller {
 		// end date/time
 		//date_default_timezone_set('Asia/Ho_Chi_Minh');
 		
-		$data['quiz']['start_time']  = time();
+		//$data['quiz']['start_time']  = time();
 		if(($data['quiz']['start_time']+($data['quiz']['duration']*60)) < time()){
 			$this->quiz_model->submit_result($rid);
 			$this->session->unset_userdata('rid');
@@ -437,13 +437,20 @@ class Quiz extends CI_Controller {
 			redirect('quiz/quiz_detail/'.$data['quiz']['quid']);
 		}
 				 
-/*		 echo $data['quiz']['start_time'];
+		/*echo $data['quiz']['start_time'];
 		echo date('Y-m-d H:i:s',$data['quiz']['start_time']);
 		echo '<br>';
-echo date("d/m/Y H:i:s", time());
-echo time();*/
+		echo date("d/m/Y H:i:s", time());
+		echo time();*/
 		// remaining time in seconds 
-		$data['seconds']=($data['quiz']['duration']*60) -  (time()- $data['quiz']['start_time']);
+		if(time() < $data['quiz']['start_time'])
+		{
+			$data['seconds']=$data['quiz']['duration']*60;
+		}
+		else{
+			$data['seconds'] = ($data['quiz']['duration']*60) - (time() - $data['quiz']['start_time']);
+		}
+		
 		//echo $data['seconds'];
 		// get questions
 		$data['questions']=$this->quiz_model->get_questions($data['quiz']['r_qids']);
