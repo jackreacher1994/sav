@@ -13,6 +13,7 @@
 $(window).bind('beforeunload',function(){
 
 	javascript:save_question();
+	return "<?php echo $this->lang->line('refresh_message'); ?>";
 
 
 });
