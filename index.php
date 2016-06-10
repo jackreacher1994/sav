@@ -4,7 +4,7 @@ ob_start();
 * Set default time zone 
 * find supported parameter or time zones at http://php.net/manual/en/timezones.php
 */
-date_default_timezone_set('Asia/Kolkata');
+date_default_timezone_set('Asia/Ho_Chi_Minh');
 /**
  * CodeIgniter
  *
@@ -78,7 +78,7 @@ switch (ENVIRONMENT)
 
 	case 'testing':
 	case 'production':
-		ini_set('display_errors', 0);
+		ini_set('display_errors', 1);
 		if (version_compare(PHP_VERSION, '5.3', '>='))
 		{
 			error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_STRICT & ~E_USER_NOTICE & ~E_USER_DEPRECATED);

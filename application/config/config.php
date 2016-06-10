@@ -44,11 +44,11 @@ $config['protocol']="smtp";
 // smtp hostname eg. smtp.gmail.com
 $config['smtp_hostname'] = "smtp.gmail.com";
 // smtp username
-$config['smtp_username'] = "trinhhuy2504@gmail.com";
+$config['smtp_username'] = "noreply@ved.com.vn";
 // smtp password
-$config['smtp_password'] = "trinhhuuhuy";
+$config['smtp_password'] = "kqkolqlhaoaqdell";
 // smtp outgoing port. eg for gmail its 465, outlook 587, yahoo 465 for other contact your mailing administrator
-$config['smtp_port'] = "465";
+$config['smtp_port'] = 465;
 // smtp timeout default 5 seconds
 $config['smtp_timeout'] = "5";
 // smtp tls

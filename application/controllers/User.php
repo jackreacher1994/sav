@@ -8,6 +8,7 @@ class User extends CI_Controller {
 	   parent::__construct();
 	   $this->load->database();
 	   $this->load->model("user_model");
+	   $this->load->model("quiz_model");
 	   $this->lang->load('basic', $this->config->item('language'));
 		// redirect if not loggedin
 		if(!$this->session->userdata('logged_in')){
@@ -246,10 +247,12 @@ class User extends CI_Controller {
 		}
 
 	function logout(){
-		
+		//echo $this->session->userdata('logged_in')['uid'];//die();
+		$this->quiz_model->close_result($this->session->userdata('logged_in')['uid']);
+
 		$this->session->unset_userdata('logged_in');		
 					
- redirect('login');
+ 		redirect('login');
 		
 	}
 }

@@ -266,9 +266,9 @@ class Quiz extends CI_Controller {
 					show_error($this->email->print_debugger());  
 				}
 			}
-					$quid=$this->quiz_model->insert_quiz();
+			$quid=$this->quiz_model->insert_quiz();
 
-					redirect('/quiz/edit_quiz/'.$quid);
+			redirect('/quiz/edit_quiz/'.$quid);
 		}       
 
 	}
@@ -395,8 +395,21 @@ class Quiz extends CI_Controller {
 		
 	}
 	
-	
-	
+
+	function curPageURL() {
+		$pageURL = 'http';
+		if ($_SERVER["HTTPS"] == "on") {
+			$pageURL .= “s”;
+		}
+		$pageURL .= "://";
+		if ($_SERVER["SERVER_PORT"] != "80") {
+			$pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"];
+		} else {
+			$pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
+		}
+		return $pageURL;
+	}
+
 	function attempt($rid){
 		$srid=$this->session->userdata('rid');
 						// if linked and session rid is not matched then something wrong.
@@ -415,9 +428,7 @@ class Quiz extends CI_Controller {
 		$data['quiz']=$this->quiz_model->quiz_result($rid);
 		$data['saved_answers']=$this->quiz_model->saved_answers($rid);
 		//$data['quiz']['start_time']  = time();
-
-
-
+		
 		// end date/time
 		if($data['quiz']['end_date'] < time()){
 			$this->quiz_model->submit_result($rid);
@@ -426,10 +437,10 @@ class Quiz extends CI_Controller {
 			redirect('quiz/quiz_detail/'.$data['quiz']['quid']);
 		}
 
-		
+
 		// end date/time
 		//date_default_timezone_set('Asia/Ho_Chi_Minh');
-		
+
 		//$data['quiz']['start_time']  = time();
 		if(($data['quiz']['start_time']+($data['quiz']['duration']*60)) < time()){
 			$this->quiz_model->submit_result($rid);
@@ -437,12 +448,12 @@ class Quiz extends CI_Controller {
 			$this->session->set_flashdata('message', "<div class='alert alert-danger'>".$this->lang->line('time_over')." </div>");
 			redirect('quiz/quiz_detail/'.$data['quiz']['quid']);
 		}
-				 
+
 		/*echo $data['quiz']['start_time'];
 		echo date('Y-m-d H:i:s',$data['quiz']['start_time']);
 		echo '<br>';
-		echo date("d/m/Y H:i:s", time());
-		echo time();*/
+		echo date("d/m/Y H:i:s", time());*/
+		//echo time();
 		// remaining time in seconds 
 		/*echo date('Y-m-d H:i:s',$data['quiz']['start_time']);
 		echo '<br>';
@@ -511,34 +522,34 @@ class Quiz extends CI_Controller {
 
 
 
- function submit_quiz(){
-	 
-				if($this->quiz_model->submit_result()){
-                        $this->session->set_flashdata('message', "<div class='alert alert-success'>".$this->lang->line('quiz_submit_successfully')." </div>");
-					}else{
-						    $this->session->set_flashdata('message', "<div class='alert alert-danger'>".$this->lang->line('error_to_submit')." </div>");
-						
-					}
-			$this->session->unset_userdata('rid');		
-					
+	function submit_quiz(){
+
+		if($this->quiz_model->submit_result()){
+			$this->session->set_flashdata('message', "<div class='alert alert-success'>".$this->lang->line('quiz_submit_successfully')." </div>");
+		}else{
+			$this->session->set_flashdata('message', "<div class='alert alert-danger'>".$this->lang->line('error_to_submit')." </div>");
+
+		}
+		$this->session->unset_userdata('rid');		
+
  //redirect('quiz');
- redirect('result');
- }
- 
- 
- 
- function assign_score($rid,$qno,$score){
-	 $logged_in=$this->session->userdata('logged_in');
-			if($logged_in['su']!='1'){
-				exit($this->lang->line('permission_denied'));
-			} 
-			$this->quiz_model->assign_score($rid,$qno,$score);
-			
-			echo '1';
-	 
- }
- 
- 
+		redirect('result');
+	}
+
+
+
+	function assign_score($rid,$qno,$score){
+		$logged_in=$this->session->userdata('logged_in');
+		if($logged_in['su']!='1'){
+			exit($this->lang->line('permission_denied'));
+		} 
+		$this->quiz_model->assign_score($rid,$qno,$score);
+
+		echo '1';
+
+	}
+
+
 
 	
 }

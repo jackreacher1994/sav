@@ -436,7 +436,7 @@ $noq=$quiz['noq'];
 		$query=$this->db->query("select * from savsoft_result  where savsoft_result.result_status='$result_open' "); 
 	if($query->num_rows() >= '1'){
 		$result=$query->row_array();
-return $result['rid'];		
+		return $result['rid'];		
 	}else{
 		return '0';
 	}
@@ -444,6 +444,9 @@ return $result['rid'];
 	 
  }
  
+ function close_result($uid){
+ 	$query=$this->db->query("update savsoft_result  set savsoft_result.result_status='Closed' where  uid = '$uid' and result_status = 'Open'"); 
+ }
  function quiz_result($rid){
 	 
 	 
