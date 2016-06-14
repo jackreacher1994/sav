@@ -68,6 +68,13 @@
  							<input type="radio" name="view_answer"    value="1" <?php if($quiz['view_answer']==1){ echo 'checked'; } ?>  > <?php echo $this->lang->line('yes');?>&nbsp;&nbsp;&nbsp;
  							<input type="radio" name="view_answer"    value="0"   <?php if($quiz['view_answer']==0){ echo 'checked'; } ?>  > <?php echo $this->lang->line('no');?>
  						</div>
+
+						<div class="form-group">
+							<label for="inputEmail" ><?php echo $this->lang->line('allow_back');?></label> <br>
+							<input type="radio" name="allow_back"    value="1" <?php if($quiz['allow_back']==1){ echo 'checked'; } ?>  > <?php echo $this->lang->line('yes');?>&nbsp;&nbsp;&nbsp;
+							<input type="radio" name="allow_back"    value="0"   <?php if($quiz['allow_back']==0){ echo 'checked'; } ?>  > <?php echo $this->lang->line('no');?>
+						</div>
+						
  						<?php 
  						if($this->config->item('webcam')==true){
  							?>

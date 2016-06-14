@@ -455,7 +455,7 @@ function save_answer(qn){
 							$('#save_answer_signal1').css('backgroundColor','#00ff00');
 								setTimeout(function(){
 							$('#save_answer_signal1').css('backgroundColor','#666666');		
-								},5000);
+								},100);
 								
 								    var str = $( "form" ).serialize();
  
@@ -470,7 +470,7 @@ function save_answer(qn){
 							$('#save_answer_signal2').css('backgroundColor','#00ff00');
 								setTimeout(function(){
 							$('#save_answer_signal2').css('backgroundColor','#666666');		
-								},5000);
+								},100);
 								
 								},
 							error: function(xhr,status,strErr){
@@ -480,7 +480,7 @@ function save_answer(qn){
 							$('#save_answer_signal2').css('backgroundColor','#ff0000');
 								setTimeout(function(){
 							$('#save_answer_signal2').css('backgroundColor','#666666');		
-								},5500);
+								},100);
 
 								}	
 							});
@@ -534,7 +534,7 @@ function submit_quiz(){
 	$('#processing').html("Processing...<br>");
 	setTimeout(function(){
 	window.location=base_url+"index.php/quiz/submit_quiz/";
-	},3000);
+	},100);
 }
 
 

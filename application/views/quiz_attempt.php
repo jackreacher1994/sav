@@ -83,7 +83,6 @@ window.location="<?php echo site_url('quiz/submit_quiz/');?>";
 
 
 
-
 <div class="save_answer_signal" id="save_answer_signal2"></div>
 <div class="save_answer_signal" id="save_answer_signal1"></div>
 
@@ -428,7 +427,7 @@ foreach($questions as $qk => $question){
 		for($j=0; $j < $quiz['noq']; $j++ ){
 			?>
 			
-			<div class="qbtn" onClick="javascript:show_question('<?php echo $j;?>');" id="qbtn<?php echo $j;?>" ><?php echo ($j+1);?></div>
+			<div class="qbtn" id="qbtn<?php echo $j;?>" ><?php echo ($j+1);?></div>
 			
 			<?php 
 		}
@@ -446,10 +445,10 @@ foreach($questions as $qk => $question){
 
 	
 <table>
-<tr><td style="font-size:12px;"><div class="qbtn" style="background:#449d44;">&nbsp;</div> <?php echo $this->lang->line('Answered');?> Answered</td></tr>
-<tr><td style="font-size:12px;"><div class="qbtn" style="background:#c9302c;">&nbsp;</div> <?php echo $this->lang->line('UnAnswered');?> UnAnswered</td></tr>
-<tr><td style="font-size:12px;"><div class="qbtn" style="background:#ec971f;">&nbsp;</div> <?php echo $this->lang->line('Review-Later');?> Review-Later</td></tr>
-<tr><td style="font-size:12px;"><div class="qbtn" style="background:#212121;">&nbsp;</div> <?php echo $this->lang->line('Not-visited');?> Not-visited</td></tr>
+<tr><td style="font-size:12px;"><div class="qbtn" style="background:#449d44;">&nbsp;</div> <?php echo $this->lang->line('Answered');?></td></tr>
+<tr><td style="font-size:12px;"><div class="qbtn" style="background:#c9302c;">&nbsp;</div> <?php echo $this->lang->line('UnAnswered');?></td></tr>
+<tr><td style="font-size:12px;"><div class="qbtn" style="background:#ec971f;">&nbsp;</div> <?php echo $this->lang->line('Review-Later');?></td></tr>
+<tr><td style="font-size:12px;"><div class="qbtn" style="background:#212121;">&nbsp;</div> <?php echo $this->lang->line('Not-visited');?></td></tr>
 </table>
 
 
@@ -480,8 +479,6 @@ foreach($questions as $qk => $question){
 	
 	<button class="btn btn-success" id="nextbtn" onClick="javascript:show_next_question();" style="margin-top:2px;" ><?php echo $this->lang->line('next');?></button>
 	
-	<button class="btn btn-success" id="savebtn" onClick="javascript:save_question();" style="margin-top:2px;" ><?php echo $this->lang->line('save');?></button>
-	
 	<button class="btn btn-danger"  onClick="javascript:cancelmove();" style="margin-top:2px;" ><?php echo $this->lang->line('submit_quiz');?></button>
 </div>
 
@@ -507,7 +504,20 @@ function increasectime(){
 }
  setInterval(increasectime,1000);
  setInterval(setIndividual_time,30000);
- 
+
+
+<?php
+if($quiz['allow_back']=='0'){
+?>
+$('#backbtn').css('visibility','hidden');
+<?php
+}	else {
+?>
+$('#backbtn').css('visibility','visible');
+<?php
+}
+?>
+
 </script>
  
  

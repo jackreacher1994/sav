@@ -237,6 +237,7 @@ $lang['save'] = "Save";
 $lang['refresh_message'] = "Your answer may not be saved. Do you still want to refresh the page?";
 $lang['form_email'] = "Form Email";
 $lang['use'] = "Use";
+$lang['allow_back'] = "Allow back to old questions";
 
 
 

@@ -340,7 +340,10 @@ Class User_model extends CI_Model
 
 		$this->db->where('uid',$uid);
 		if($this->db->delete('savsoft_users')){
-			log_message('info','Da them user'); 
+
+			
+			log_message('ved', 'Da xoa user co ID '.$uid.'.');
+
 			return true;
 		}else{
 			
