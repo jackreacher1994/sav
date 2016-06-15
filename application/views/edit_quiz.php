@@ -249,7 +249,7 @@
  							}
  							?>
  							<div class="form-group">	 
- 								<select   name="cid[]" id="cid" onChange="no_q_available(this.value);">
+ 								<select   name="cid[]" id="cid" >
  									<option value="0"><?php echo $this->lang->line('select');?> <?php echo $this->lang->line('category_name');?></option>
  									<?php 
  									foreach($category_list as $key => $val){
@@ -260,8 +260,8 @@
  									}
  									?>
  								</select>
- 								<select  name="lid[]" id="lid" >
-
+ 								<select  name="lid[]" id="lid" onChange="no_q_available(this.value);">
+ 									<option value="0"><?php echo $this->lang->line('select');?> <?php echo $this->lang->line('level_name');?></option>
  									<?php 
  									foreach($level_list as $key => $val){
  										?>

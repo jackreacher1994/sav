@@ -7,12 +7,11 @@ Class Quiz_model extends CI_Model
 	  $logged_in=$this->session->userdata('logged_in');
 			if($logged_in['su']=='0'){
 			$uid=$logged_in['uid'];
-			//$where="FIND_IN_SET('".$uid."', uid)"; 
-			//$this->db->join('quiz_assign_user',$where,'AND quiz_assign_user.quid = savsoft_quiz.quid');
-
+			$where="FIND_IN_SET('".$uid."', uids)"; 
+			 
 			$gid=$logged_in['gid'];
-			$where2="FIND_IN_SET('".$gid."', gids)";  
-			 $this->db->where($where2);
+			$where .=" OR FIND_IN_SET('".$gid."', gids)";  
+			 $this->db->where($where);
 			}
 			
 			
@@ -67,14 +66,14 @@ Class Quiz_model extends CI_Model
 	return $quid;
 	 
  }
- function submit_assign_user_for_quiz(){
+ function submit_assign_user_for_quiz($quid){
  	 $userdata=array(
- 	 'uid'=>implode(',',$this->input->post('uids')),
-	 'quid' => $this->input->post('quid'),
-	 'assign_date'=> time()
+ 	 'uids'=>implode(',',$this->input->post('uids')),	 
+	 'date_assign_user'=> time()
 	 );
-	  $this->db->insert('quiz_assign_user',$userdata);
-	  $quid=$this->db->insert_id();
+	 $this->db->where('quid',$quid);
+	  $this->db->update('savsoft_quiz',$userdata);
+	  
 	return $quid;
  }
 

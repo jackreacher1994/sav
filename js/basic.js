@@ -201,8 +201,8 @@ window.location=base_url+"index.php/quiz/down_question/"+global_quid+"/"+global_
 
 
 
-function no_q_available(cid){
-	var lid=document.getElementById('lid').value;
+function no_q_available(lid){
+	var cid=document.getElementById('cid').value;
 	
 		var formData = {cid:cid};
 	$.ajax({

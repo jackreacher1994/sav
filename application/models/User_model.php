@@ -76,6 +76,7 @@ Class User_model extends CI_Model
 	}
 
 	function user_list_2(){
+
 		$this->db->join('savsoft_group', 'savsoft_group.gid = savsoft_users.gid');
 		$this->db->join('savsoft_status', 'savsoft_status.sid = savsoft_users.sid');
 		$this->db->order_by('savsoft_users.uid','desc');
@@ -339,10 +340,13 @@ Class User_model extends CI_Model
 
 		$this->db->where('uid',$uid);
 		if($this->db->delete('savsoft_users')){
+
+			
 			log_message('ved', 'Da xoa user co ID '.$uid.'.');
+
 			return true;
 		}else{
-
+			
 			return false;
 		}
 
