@@ -322,6 +322,8 @@ class Quiz extends CI_Controller {
 		{
 			$quid=$this->quiz_model->update_quiz($quid);
 
+			log_message('ved', $this->lang->line('user') . ' ' . $logged_in['uid'] . ' ' . $this->lang->line('update_quiz') . ' ' . $quid);
+
 			redirect('quiz/edit_quiz/'.$quid);
 		}       
 
@@ -336,6 +338,7 @@ class Quiz extends CI_Controller {
 
 		if($this->quiz_model->remove_quiz($quid)){
 			$this->session->set_flashdata('message', "<div class='alert alert-success'>".$this->lang->line('removed_successfully')." </div>");
+			log_message('ved', $this->lang->line('user') . ' ' . $logged_in['uid'] . ' ' . $this->lang->line('remove_quiz') . ' ' . $quid);
 		}else{
 			$this->session->set_flashdata('message', "<div class='alert alert-danger'>".$this->lang->line('error_to_remove')." </div>");
 

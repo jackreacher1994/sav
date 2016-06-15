@@ -54,7 +54,8 @@ class Qbank extends CI_Controller {
 			
 			if($this->qbank_model->remove_question($qid)){
                         $this->session->set_flashdata('message', "<div class='alert alert-success'>".$this->lang->line('removed_successfully')." </div>");
-					}else{
+				log_message('ved', $this->lang->line('user') . ' ' . $logged_in['uid'] . ' ' . $this->lang->line('remove_question') . ' ' . $qid);		
+			}else{
 						    $this->session->set_flashdata('message', "<div class='alert alert-danger'>".$this->lang->line('error_to_remove')." </div>");
 						
 					}
@@ -313,6 +314,7 @@ class Qbank extends CI_Controller {
 			if($this->input->post('question')){
 				if($this->qbank_model->update_question_1($qid)){
                 $this->session->set_flashdata('message', "<div class='alert alert-success'>".$this->lang->line('data_updated_successfully')." </div>");
+					log_message('ved', $this->lang->line('user') . ' ' . $logged_in['uid'] . ' ' . $this->lang->line('update_question') . ' ' . $qid);
 				}else{
 				 $this->session->set_flashdata('message', "<div class='alert alert-danger'>".$this->lang->line('error_to_update_data')." </div>");
 				}
@@ -344,6 +346,7 @@ class Qbank extends CI_Controller {
 			if($this->input->post('question')){
 				if($this->qbank_model->update_question_2($qid)){
                 $this->session->set_flashdata('message', "<div class='alert alert-success'>".$this->lang->line('data_updated_successfully')." </div>");
+					log_message('ved', $this->lang->line('user') . ' ' . $logged_in['uid'] . ' ' . $this->lang->line('update_question') . ' ' . $qid);
 				}else{
 				 $this->session->set_flashdata('message', "<div class='alert alert-danger'>".$this->lang->line('error_to_update_data')." </div>");
 				}
@@ -375,6 +378,7 @@ class Qbank extends CI_Controller {
 			if($this->input->post('question')){
 				if($this->qbank_model->update_question_3($qid)){
                 $this->session->set_flashdata('message', "<div class='alert alert-success'>".$this->lang->line('data_updated_successfully')." </div>");
+					log_message('ved', $this->lang->line('user') . ' ' . $logged_in['uid'] . ' ' . $this->lang->line('update_question') . ' ' . $qid);
 				}else{
 				 $this->session->set_flashdata('message', "<div class='alert alert-danger'>".$this->lang->line('error_to_update_data')." </div>");
 				}
@@ -406,6 +410,7 @@ class Qbank extends CI_Controller {
 			if($this->input->post('question')){
 				if($this->qbank_model->update_question_4($qid)){
                 $this->session->set_flashdata('message', "<div class='alert alert-success'>".$this->lang->line('data_updated_successfully')." </div>");
+					log_message('ved', $this->lang->line('user') . ' ' . $logged_in['uid'] . ' ' . $this->lang->line('update_question') . ' ' . $qid);
 				}else{
 				 $this->session->set_flashdata('message', "<div class='alert alert-danger'>".$this->lang->line('error_to_update_data')." </div>");
 				}
@@ -437,6 +442,7 @@ class Qbank extends CI_Controller {
 			if($this->input->post('question')){
 				if($this->qbank_model->update_question_5($qid)){
                 $this->session->set_flashdata('message', "<div class='alert alert-success'>".$this->lang->line('data_updated_successfully')." </div>");
+					log_message('ved', $this->lang->line('user') . ' ' . $logged_in['uid'] . ' ' . $this->lang->line('update_question') . ' ' . $qid);
 				}else{
 				 $this->session->set_flashdata('message', "<div class='alert alert-danger'>".$this->lang->line('error_to_update_data')." </div>");
 				}
@@ -467,6 +473,7 @@ class Qbank extends CI_Controller {
 		if($this->input->post('question')){
 			if($this->qbank_model->update_question_6($qid)){
 				$this->session->set_flashdata('message', "<div class='alert alert-success'>".$this->lang->line('data_updated_successfully')." </div>");
+				log_message('ved', $this->lang->line('user') . ' ' . $logged_in['uid'] . ' ' . $this->lang->line('update_question') . ' ' . $qid);
 			}else{
 				$this->session->set_flashdata('message', "<div class='alert alert-danger'>".$this->lang->line('error_to_update_data')." </div>");
 			}
@@ -540,6 +547,7 @@ class Qbank extends CI_Controller {
 	
 				if($this->qbank_model->update_category($cid)){
                 echo "<div class='alert alert-success'>".$this->lang->line('data_updated_successfully')." </div>";
+					log_message('ved', $this->lang->line('user') . ' ' . $logged_in['uid'] . ' ' . $this->lang->line('update_category') . ' ' . $cid);
 				}else{
 				 echo "<div class='alert alert-danger'>".$this->lang->line('error_to_update_data')." </div>";
 						
@@ -560,7 +568,8 @@ class Qbank extends CI_Controller {
 			
 			if($this->qbank_model->remove_category($cid)){
                         $this->session->set_flashdata('message', "<div class='alert alert-success'>".$this->lang->line('removed_successfully')." </div>");
-					}else{
+				log_message('ved', $this->lang->line('user') . ' ' . $logged_in['uid'] . ' ' . $this->lang->line('remove_category') . ' ' . $cid);		
+			}else{
 						    $this->session->set_flashdata('message', "<div class='alert alert-danger'>".$this->lang->line('error_to_remove')." </div>");
 						
 					}
@@ -634,11 +643,12 @@ class Qbank extends CI_Controller {
 	
 				if($this->qbank_model->update_level($lid)){
                 echo "<div class='alert alert-success'>".$this->lang->line('data_updated_successfully')." </div>";
+					log_message('ved', $this->lang->line('user') . ' ' . $logged_in['uid'] . ' ' . $this->lang->line('update_level') . ' ' . $lid);
 				}else{
 				 echo "<div class='alert alert-danger'>".$this->lang->line('error_to_update_data')." </div>";
 						
 				}
-				 
+		
 	
 	}
 	
@@ -654,7 +664,8 @@ class Qbank extends CI_Controller {
 			
 			if($this->qbank_model->remove_level($lid)){
                         $this->session->set_flashdata('message', "<div class='alert alert-success'>".$this->lang->line('removed_successfully')." </div>");
-					}else{
+				log_message('ved', $this->lang->line('user') . ' ' . $logged_in['uid'] . ' ' . $this->lang->line('remove_level') . ' ' . $lid);		
+			}else{
 						    $this->session->set_flashdata('message', "<div class='alert alert-danger'>".$this->lang->line('error_to_remove')." </div>");
 						
 					}
