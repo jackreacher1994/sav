@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ddd2c141-2b8b-4c94-b747-963fdf0fd8f2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Login.php" afterPath="$PROJECT_DIR$/application/controllers/Login.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Qbank.php" afterPath="$PROJECT_DIR$/application/controllers/Qbank.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Quiz.php" afterPath="$PROJECT_DIR$/application/controllers/Quiz.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/User.php" afterPath="$PROJECT_DIR$/application/controllers/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/language/english/basic_lang.php" afterPath="$PROJECT_DIR$/application/language/english/basic_lang.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/header.php" afterPath="$PROJECT_DIR$/application/views/header.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/quiz_list.php" afterPath="$PROJECT_DIR$/application/views/quiz_list.php" />
     </list>
     <ignored path="sav.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,7 +28,18 @@
     <favorites_list name="sav" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="header.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/views/header.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="476">
+              <caret line="127" column="18" selection-start-line="127" selection-start-column="18" selection-end-line="127" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -66,7 +72,6 @@
         <option value="$PROJECT_DIR$/application/models/User_model.php" />
         <option value="$PROJECT_DIR$/system/core/Log.php" />
         <option value="$PROJECT_DIR$/application/core/MY_Log.php" />
-        <option value="$PROJECT_DIR$/application/views/header.php" />
         <option value="$PROJECT_DIR$/application/views/quiz_list.php" />
         <option value="$PROJECT_DIR$/application/controllers/Login.php" />
         <option value="$PROJECT_DIR$/application/controllers/Qbank.php" />
@@ -74,6 +79,7 @@
         <option value="$PROJECT_DIR$/application/logs/log-15-06-2016.txt" />
         <option value="$PROJECT_DIR$/application/controllers/Quiz.php" />
         <option value="$PROJECT_DIR$/application/controllers/User.php" />
+        <option value="$PROJECT_DIR$/application/views/header.php" />
       </list>
     </option>
   </component>
@@ -117,7 +123,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -332,6 +337,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -415,22 +421,22 @@
       <workItem from="1465450325566" duration="880000" />
       <workItem from="1465525516164" duration="6442000" />
       <workItem from="1465545700833" duration="1901000" />
-      <workItem from="1465957633707" duration="12980000" />
+      <workItem from="1465957633707" duration="13685000" />
+      <workItem from="1465980700728" duration="837000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70452000" />
+    <option name="totallyTimeSpent" value="71994000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32913387" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32913387" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -441,6 +447,7 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32913387" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -509,7 +516,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -547,7 +553,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="202">
           <caret line="974" column="9" selection-start-line="974" selection-start-column="9" selection-end-line="974" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -612,7 +617,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="186" column="19" selection-start-line="186" selection-start-column="19" selection-end-line="186" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -627,7 +631,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1150">
           <caret line="72" column="64" selection-start-line="72" selection-start-column="64" selection-end-line="72" selection-end-column="64" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -635,7 +638,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1258">
           <caret line="77" column="30" selection-start-line="77" selection-start-column="30" selection-end-line="77" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -643,7 +645,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="235">
           <caret line="146" column="0" selection-start-line="146" selection-start-column="0" selection-end-line="146" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -651,7 +652,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="303">
           <caret line="130" column="13" selection-start-line="130" selection-start-column="13" selection-end-line="130" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -659,7 +659,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="89" column="39" selection-start-line="89" selection-start-column="39" selection-end-line="89" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -667,7 +666,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4182">
           <caret line="457" column="35" selection-start-line="457" selection-start-column="35" selection-end-line="457" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -675,7 +673,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
           <caret line="479" column="165" selection-start-line="479" selection-start-column="165" selection-end-line="479" selection-end-column="165" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -683,27 +680,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="27" column="46" selection-start-line="27" selection-start-column="46" selection-end-line="27" selection-end-column="46" />
-          <folding>
-            <marker date="1465962638224" expanded="true" signature="4580:4807" placeholder="select * fro... savsoft_qbank" />
-            <marker date="1465962638224" expanded="true" signature="4922:5014" placeholder="select * fro... savsoft_options" />
-            <marker date="1465962638224" expanded="true" signature="5124:5190" placeholder="select * fro... savsoft_options" />
-            <marker date="1465962638224" expanded="true" signature="8581:8721" placeholder="select * fro... savsoft_qbank" />
-            <marker date="1465962638224" expanded="true" signature="9550:9710" placeholder="select * fro... savsoft_qbank" />
-            <marker date="1465962638224" expanded="true" signature="10721:10800" placeholder="select * fro... savsoft_result" />
-            <marker date="1465962638224" expanded="true" signature="10988:11099" placeholder="update savso... " />
-            <marker date="1465962638224" expanded="true" signature="11168:11287" placeholder="select * fro... savsoft_result" />
-            <marker date="1465962638224" expanded="true" signature="11393:11456" placeholder="select * fro... savsoft_answers" />
-            <marker date="1465962638224" expanded="true" signature="11594:11713" placeholder="select * fro... savsoft_result" />
-            <marker date="1465962638224" expanded="true" signature="13027:13075" placeholder="update savso... " />
-            <marker date="1465962638224" expanded="true" signature="13295:13414" placeholder="select * fro... savsoft_result" />
-            <marker date="1465962638224" expanded="true" signature="14915:14998" placeholder="update savso... " />
-            <marker date="1465962638224" expanded="true" signature="15157:15375" placeholder="select savso... savsoft_result" />
-            <marker date="1465962638224" expanded="true" signature="17945:18064" placeholder="select * fro... savsoft_result" />
-            <marker date="1465962638224" expanded="true" signature="18635:18681" placeholder="select * fro... savsoft_options" />
-            <marker date="1465962638224" expanded="true" signature="19562:19608" placeholder="select * fro... savsoft_options" />
-            <marker date="1465962638224" expanded="true" signature="21078:21124" placeholder="select * fro... savsoft_options" />
-            <marker date="1465962638224" expanded="true" signature="22115:22189" placeholder="select * fro... savsoft_options" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -711,7 +687,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="75" column="35" selection-start-line="75" selection-start-column="35" selection-end-line="75" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -719,31 +694,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-102">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/logs/log-2016-06-15.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
-          <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/libraries/MY_Log.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3">
-          <caret line="53" column="50" selection-start-line="53" selection-start-column="50" selection-end-line="53" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/application/logs/log-2016-06-15.txt" />
+    <entry file="file://$PROJECT_DIR$/application/libraries/MY_Log.php" />
     <entry file="file://$PROJECT_DIR$/application/config/config.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1208">
           <caret line="360" column="41" selection-start-line="360" selection-start-column="41" selection-end-line="360" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -751,7 +710,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="341" column="59" selection-start-line="341" selection-start-column="59" selection-end-line="341" selection-end-column="59" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -759,7 +717,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -767,7 +724,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="438">
           <caret line="104" column="82" selection-start-line="104" selection-start-column="82" selection-end-line="104" selection-end-column="82" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -775,7 +731,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="213">
           <caret line="81" column="134" selection-start-line="81" selection-start-column="134" selection-end-line="81" selection-end-column="134" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -783,7 +738,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1581">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -791,15 +745,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
           <caret line="579" column="25" selection-start-line="579" selection-start-column="25" selection-end-line="579" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-504">
-          <caret line="94" column="125" selection-start-line="94" selection-start-column="125" selection-end-line="94" selection-end-column="125" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -807,7 +752,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
           <caret line="79" column="118" selection-start-line="79" selection-start-column="12" selection-end-line="79" selection-end-column="118" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -815,23 +759,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
           <caret line="338" column="31" selection-start-line="338" selection-start-column="31" selection-end-line="338" selection-end-column="31" />
-          <folding>
-            <element signature="n#__construct#0;n#Qbank#0;n#!!top" expanded="false" />
-            <element signature="n#index#0;n#Qbank#0;n#!!top" expanded="false" />
-            <element signature="n#remove_question#0;n#Qbank#0;n#!!top" expanded="false" />
-            <element signature="n#pre_question_list#0;n#Qbank#0;n#!!top" expanded="false" />
-            <element signature="n#pre_new_question#0;n#Qbank#0;n#!!top" expanded="false" />
-            <element signature="n#edit_question_1#0;n#Qbank#0;n#!!top" expanded="false" />
-            <element signature="n#edit_question_2#0;n#Qbank#0;n#!!top" expanded="false" />
-            <element signature="n#edit_question_3#0;n#Qbank#0;n#!!top" expanded="false" />
-            <element signature="n#edit_question_4#0;n#Qbank#0;n#!!top" expanded="false" />
-            <element signature="n#edit_question_5#0;n#Qbank#0;n#!!top" expanded="false" />
-            <element signature="n#edit_question_6#0;n#Qbank#0;n#!!top" expanded="false" />
-            <element signature="n#update_category#0;n#Qbank#0;n#!!top" expanded="false" />
-            <element signature="n#remove_category#0;n#Qbank#0;n#!!top" expanded="false" />
-            <element signature="n#update_level#0;n#Qbank#0;n#!!top" expanded="false" />
-            <element signature="n#remove_level#0;n#Qbank#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -839,13 +766,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3540">
           <caret line="331" column="39" selection-start-line="331" selection-start-column="39" selection-end-line="331" selection-end-column="39" />
-          <folding>
-            <element signature="n#__construct#0;n#Quiz#0;n#!!top" expanded="false" />
-            <element signature="n#index#0;n#Quiz#0;n#!!top" expanded="false" />
-            <element signature="n#update_quiz#0;n#Quiz#0;n#!!top" expanded="false" />
-            <element signature="n#remove_quiz#0;n#Quiz#0;n#!!top" expanded="false" />
-            <marker date="1465975688146" expanded="true" signature="2926:2985" placeholder="select * fro... savsoft_qbank" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -853,30 +773,21 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
           <caret line="250" column="4" selection-start-line="250" selection-start-column="4" selection-end-line="250" selection-end-column="4" />
-          <folding>
-            <element signature="n#__construct#0;n#User#0;n#!!top" expanded="false" />
-            <element signature="n#index#0;n#User#0;n#!!top" expanded="false" />
-            <element signature="n#remove_user#0;n#User#0;n#!!top" expanded="false" />
-            <element signature="n#update_user#0;n#User#0;n#!!top" expanded="false" />
-            <element signature="n#update_group#0;n#User#0;n#!!top" expanded="false" />
-            <element signature="n#remove_group#0;n#User#0;n#!!top" expanded="false" />
-            <element signature="n#logout#0;n#User#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/application/logs/log-15-06-2016.txt" />
     <entry file="file://$PROJECT_DIR$/application/language/english/basic_lang.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="91">
           <caret line="244" column="33" selection-start-line="244" selection-start-column="33" selection-end-line="244" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/logs/log-15-06-2016.txt">
+    <entry file="file://$PROJECT_DIR$/application/views/header.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="46" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="46" />
+        <state relative-caret-position="476">
+          <caret line="127" column="18" selection-start-line="127" selection-start-column="18" selection-end-line="127" selection-end-column="18" />
           <folding />
         </state>
       </provider>
