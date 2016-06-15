@@ -67,12 +67,23 @@ Class Quiz_model extends CI_Model
 	 
  }
  function submit_assign_user_for_quiz($quid){
+ 	 
+ 	 $this->db->select('uids');
+ 	 $uids_db = $this->db->get('savsoft_quiz');
+ 	 $result=$uids_db->result();
+ 	 $arr_db = explode(',', $result['1']->uids);
+	 $arr_uids = $this->input->post('uids');
+ 	 	for($j = 0; $j <sizeof($arr_uids);$j++){
+ 	 		array_push($arr_db,$arr_uids[$j]);
+ 	 	}
+ 	 	$result =  array_unique($arr_db);
  	 $userdata=array(
- 	 'uids'=>implode(',',$this->input->post('uids')),	 
+ 	 'uids'=>implode(',',$result),	 
 	 'date_assign_user'=> time()
 	 );
+	
 	 $this->db->where('quid',$quid);
-	  $this->db->update('savsoft_quiz',$userdata);
+	 $this->db->update('savsoft_quiz',$userdata);
 	  
 	return $quid;
  }

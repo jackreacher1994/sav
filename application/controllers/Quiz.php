@@ -575,7 +575,14 @@ class Quiz extends CI_Controller {
 		} 
 		$quid =$this->input->post('quid');
 
-		$quid=$this->quiz_model->submit_assign_user_for_quiz($quid);
+		
+		if($this->quiz_model->submit_assign_user_for_quiz($quid)){
+			$this->session->set_flashdata('message', "<div class='alert alert-success'>Assign Sucsessfully </div>");
+		}else{
+			$this->session->set_flashdata('message', "<div class='alert alert-danger'>Assign Unsucsessfully </div>");
+
+		}
+		redirect('/quiz');
 	}
 
 	
