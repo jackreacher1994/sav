@@ -53,7 +53,8 @@ Class Quiz_model extends CI_Model
 	 'view_answer'=>$this->input->post('view_answer'),
 	 'camera_req'=>$this->input->post('camera_req'),
 	 'gids'=>implode(',',$this->input->post('gids')),
-	 'question_selection'=>$this->input->post('question_selection')
+	 'question_selection'=>$this->input->post('question_selection'),
+	 'allow_back'=>$this->input->post('allow_back')
 	 );
 	 if($this->input->post('gen_certificate')){
 		$userdata['gen_certificate']=$this->input->post('gen_certificate'); 
@@ -93,7 +94,8 @@ Class Quiz_model extends CI_Model
 	 'form_email'=>$this->input->post('form_email'),
 	 'view_answer'=>$this->input->post('view_answer'),
 	 'camera_req'=>$this->input->post('camera_req'),
-	 'gids'=>implode(',',$this->input->post('gids'))
+	 'gids'=>implode(',',$this->input->post('gids')),
+	 'allow_back'=>$this->input->post('allow_back')
 	 );
 	 	 if($this->input->post('gen_certificate')){
 		$userdata['gen_certificate']=$this->input->post('gen_certificate'); 

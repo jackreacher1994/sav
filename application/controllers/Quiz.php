@@ -534,10 +534,10 @@ class Quiz extends CI_Controller {
 			$this->session->set_flashdata('message', "<div class='alert alert-danger'>".$this->lang->line('error_to_submit')." </div>");
 
 		}
-		$this->session->unset_userdata('rid');		
-
- //redirect('quiz');
-		redirect('result');
+		
+		$rid = $this->session->userdata['rid'];
+		$this->session->unset_userdata('rid');
+		redirect('result/view_result/'.$rid);
 	}
 
 
