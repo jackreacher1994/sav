@@ -31,9 +31,7 @@ class Dashboard extends CI_Controller {
 		$logged_in=$this->session->userdata('logged_in');
 			if($logged_in['su']=='1'){
 				
-		$data['result']=$this->user_model->user_list(0);
-				
-				
+		
 		$data['num_users']=$this->user_model->num_users();
 		$data['num_qbank']=$this->qbank_model->num_qbank();
 		$data['num_quiz']=$this->quiz_model->num_quiz();

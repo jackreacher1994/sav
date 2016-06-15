@@ -45,8 +45,8 @@
 
 
                     <div class="form-group">
-                            <label style="display:none;"  ><?php echo $this->lang->line('select_level');?></label>
-                            <select class="form-control" name="lid" style="display:none;">
+                            <label><?php echo $this->lang->line('select_level');?></label>
+                            <select class="form-control" name="lid">
                                 <?php
                                 foreach($level_list as $key => $val){
                                     ?>

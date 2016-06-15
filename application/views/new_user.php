@@ -67,7 +67,13 @@
 						<option value="1"><?php echo $this->lang->line('administrator');?></option>
 					</select>
 			</div>
-
+			<div class="form-group">	 
+					<label   >Status</label> 
+					<select class="form-control" name="sid">
+						<option value="1">Active</option>
+						<option value="2">Inactive></option>
+					</select>
+			</div>
  
 	<button class="btn btn-default" type="submit"><?php echo $this->lang->line('submit');?></button>
  

@@ -62,26 +62,11 @@ foreach($result as $key => $val){
  <td><?php echo $val['quid'];?></td>
  <td><?php echo substr(strip_tags($val['quiz_name']),0,50);?></td>
 <td><?php echo $val['noq'];?></td>
- <td>
-     
-     <?php
-     if($val['maximum_attempts'] > $this->quiz_model->count_result($val['quid'],$logged_in['uid'])){
-     ?>
-<a href="<?php echo site_url('quiz/quiz_detail/'.$val['quid']);?>" class="btn btn-success"  ><?php echo $this->lang->line('attempt');?> </a>
-         <?php
-     } else {
-         ?>
-<i><?php echo $this->lang->line('maximum_attempt_invalid');?></i>
-         <?php
-     }
-     ?>
-     
+ <td>  
 <?php 
 if($logged_in['su']=='1'){
-	?>
-<a href="<?php echo site_url('quiz/assign_user_for_quiz/'.$val['quid']);?>" class="btn btn-success">Assygn For User</a>			
-<a href="<?php echo site_url('quiz/edit_quiz/'.$val['quid']);?>"><img src="<?php echo base_url('images/edit.png');?>"></a>
-<a href="javascript:remove_entry('quiz/remove_quiz/<?php echo $val['quid'];?>');"><img src="<?php echo base_url('images/cross.png');?>"></a>
+	?>			
+<a href="<?php echo site_url('quiz/insert_quiz_use_old/'.$val['quid']);?>" class="btn btn-warning"><?php echo $this->lang->line('use');?> </a>
 <?php 
 }
 ?>

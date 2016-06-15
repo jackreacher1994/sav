@@ -36,6 +36,22 @@ class Quiz extends CI_Controller {
 		$this->load->view('quiz_list',$data);
 		$this->load->view('footer',$data);
 	}
+
+	public function add_new_quiz($limit='0'){
+
+		$logged_in=$this->session->userdata('logged_in');
+		if($logged_in['su']!='1'){
+			exit($this->lang->line('permission_denied'));
+		}
+
+		$data['limit']=$limit;
+		$data['title']='Tạo mới bằng cách sử dụng mẫu';
+		// fetching quiz list
+		$data['result']=$this->quiz_model->quiz_list($limit);
+		$this->load->view('header',$data);
+		$this->load->view('add_new_quiz',$data);
+		$this->load->view('footer',$data);
+	}
 	
 	public function add_new()
 	{
@@ -55,14 +71,6 @@ class Quiz extends CI_Controller {
 		$this->load->view('footer',$data);
 	}
 	
-
-
-	
-	
-	
-	
-	
-	
 	
 	public function edit_quiz($quid)
 	{
@@ -71,8 +79,6 @@ class Quiz extends CI_Controller {
 		if($logged_in['su']!='1'){
 			exit($this->lang->line('permission_denied'));
 		}
-
-
 
 		$data['title']=$this->lang->line('edit').' '.$this->lang->line('quiz');
 		// fetching group list
@@ -225,6 +231,7 @@ class Quiz extends CI_Controller {
 			$quiz_name =$this->input->post('quiz_name');
 			$start_date=$this->input->post('start_date');
 			$end_date=$this->input->post('end_date');
+
 			$u=array();$emails=array();
 			for($i = 0; $i < count($gids); $i++){
 				array_push($u, $this->user_model->user_list_group($gids[$i]));		
@@ -238,21 +245,14 @@ class Quiz extends CI_Controller {
 				}
 			}
 
-			$message = '<span style ="font-size:18px;">Chào bạn,</span>';
-			$message .= '<pre style ="font-size:16px;">Mời bạn truy cập vào trang <span style ="color:red;"> xxx </span> và thực hiện bài test: <p style ="color:red;"> ';
-			$message .= $quiz_name;
-			$message .= '</p>Trong khoảng thời gian từ: <p style="color: red">';
-			$message .= $start_date;
-			$message .= '</p> đến <p style ="color:red;">';
-			$message .= $end_date;
-			$message .= '</p></pre>';
+			$message = $this->input->post('form_email');
 
 			for ($i=0; $i < count($emails); $i++) {
 
 
 				$this->load->library('email', $config);
 				$this->email->set_newline("\r\n");
-				$this->email->from('trinhhuy2504@gmail.com', 'huyth');
+				$this->email->from('noreply@ved.com.vn', 'huyth');
 				$this->email->subject('testing');
 				$this->email->message($message);
 				$this->email->to($emails[$i]);
@@ -267,9 +267,39 @@ class Quiz extends CI_Controller {
 				}
 			}
 			$quid=$this->quiz_model->insert_quiz();
-
+			/*echo $quid;
+			die();*/
 			redirect('/quiz/edit_quiz/'.$quid);
+			//redirect('/quiz');
 		}       
+
+	}
+
+	public function insert_quiz_use_old($quid){
+
+		$logged_in=$this->session->userdata('logged_in');
+		if($logged_in['su']!='1'){
+			exit($this->lang->line('permission_denied'));
+		}
+
+		$data['title']=$this->lang->line('add').' '.$this->lang->line('quiz');
+		// fetching group list
+		$data['group_list']=$this->user_model->group_list();
+		$data['quiz']=$this->quiz_model->get_quiz($quid);
+		if($data['quiz']['question_selection']=='0'){
+			$data['questions']=$this->quiz_model->get_questions($data['quiz']['qids']);
+
+		}else{
+			$this->load->model("qbank_model");
+			$data['qcl']=$this->quiz_model->get_qcl($data['quiz']['quid']);
+
+			$data['category_list']=$this->qbank_model->category_list();
+			$data['level_list']=$this->qbank_model->level_list();
+
+		}
+		$this->load->view('header',$data);
+		$this->load->view('insert_quiz_use_old',$data);
+		$this->load->view('footer',$data);
 
 	}
 	
@@ -295,17 +325,7 @@ class Quiz extends CI_Controller {
 			redirect('quiz/edit_quiz/'.$quid);
 		}       
 
-	}
-	
-	
-	
-	
-
-	
-	
-	
-	
-	
+	}	
 	
 	public function remove_quiz($quid){
 
@@ -325,9 +345,6 @@ class Quiz extends CI_Controller {
 
 	}
 	
-
-
-
 	public function quiz_detail($quid){
 		
 		$logged_in=$this->session->userdata('logged_in');
@@ -449,19 +466,6 @@ class Quiz extends CI_Controller {
 			redirect('quiz/quiz_detail/'.$data['quiz']['quid']);
 		}
 
-		/*echo $data['quiz']['start_time'];
-		echo date('Y-m-d H:i:s',$data['quiz']['start_time']);
-		echo '<br>';
-		echo date("d/m/Y H:i:s", time());*/
-		//echo time();
-		// remaining time in seconds 
-		/*echo date('Y-m-d H:i:s',$data['quiz']['start_time']);
-		echo '<br>';
-		echo date('Y-m-d H:i:s',time());*/
-		/*echo '<br>';
-		$a = $data['quiz']['duration'];
-		$countdown = strtotime("+$a minutes",$data['quiz']['start_time']) ;
-		echo date('Y-m-d H:i:s',$countdown);*/
 		if(time() < $data['quiz']['start_time'])
 		{
 			
@@ -549,7 +553,27 @@ class Quiz extends CI_Controller {
 
 	}
 
+	function assign_user_for_quiz($qid){
+		$logged_in=$this->session->userdata('logged_in');
+		if($logged_in['su']!='1'){
+			exit($this->lang->line('permission_denied'));
+		} 
+		$data['title']='Assign User Into A Test';
+		$data['result']=$this->user_model->user_list_2();
+		$data['quid'] = $qid;
+		
+		$this->load->view('header',$data);
+		$this->load->view('user_list_2.php',$data);
+		$this->load->view('footer',$data);
+	}
 
+	function submit_assign_user_for_quiz(){
+		$logged_in=$this->session->userdata('logged_in');
+		if($logged_in['su']!='1'){
+			exit($this->lang->line('permission_denied'));
+		} 
+		$quid=$this->quiz_model->submit_assign_user_for_quiz();
+	}
 
 	
 }

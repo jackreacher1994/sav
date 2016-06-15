@@ -6,9 +6,13 @@ Class Quiz_model extends CI_Model
 	  
 	  $logged_in=$this->session->userdata('logged_in');
 			if($logged_in['su']=='0'){
+			$uid=$logged_in['uid'];
+			//$where="FIND_IN_SET('".$uid."', uid)"; 
+			//$this->db->join('quiz_assign_user',$where,'AND quiz_assign_user.quid = savsoft_quiz.quid');
+
 			$gid=$logged_in['gid'];
-			$where="FIND_IN_SET('".$gid."', gids)";  
-			 $this->db->where($where);
+			$where2="FIND_IN_SET('".$gid."', gids)";  
+			 $this->db->where($where2);
 			}
 			
 			
@@ -45,7 +49,7 @@ Class Quiz_model extends CI_Model
 	 'pass_percentage'=>$this->input->post('pass_percentage'),
 	 'correct_score'=>$this->input->post('correct_score'),
 	 'incorrect_score'=>$this->input->post('incorrect_score'),
-	 'ip_address'=>$this->input->post('ip_address'),
+	 'form_email'=>$this->input->post('form_email'),
 	 'view_answer'=>$this->input->post('view_answer'),
 	 'camera_req'=>$this->input->post('camera_req'),
 	 'gids'=>implode(',',$this->input->post('gids')),
@@ -62,7 +66,17 @@ Class Quiz_model extends CI_Model
 	return $quid;
 	 
  }
- 
+ function submit_assign_user_for_quiz(){
+ 	 $userdata=array(
+ 	 'uid'=>implode(',',$this->input->post('uids')),
+	 'quid' => $this->input->post('quid'),
+	 'assign_date'=> time()
+	 );
+	  $this->db->insert('quiz_assign_user',$userdata);
+	  $quid=$this->db->insert_id();
+	return $quid;
+ }
+
  
  function update_quiz($quid){
 	 
@@ -76,7 +90,7 @@ Class Quiz_model extends CI_Model
 	 'pass_percentage'=>$this->input->post('pass_percentage'),
 	 'correct_score'=>$this->input->post('correct_score'),
 	 'incorrect_score'=>$this->input->post('incorrect_score'),
-	 'ip_address'=>$this->input->post('ip_address'),
+	 'form_email'=>$this->input->post('form_email'),
 	 'view_answer'=>$this->input->post('view_answer'),
 	 'camera_req'=>$this->input->post('camera_req'),
 	 'gids'=>implode(',',$this->input->post('gids'))

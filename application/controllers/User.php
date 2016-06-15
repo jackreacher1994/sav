@@ -3,13 +3,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class User extends CI_Controller {
 
-	 function __construct()
-	 {
-	   parent::__construct();
-	   $this->load->database();
-	   $this->load->model("user_model");
-	   $this->load->model("quiz_model");
-	   $this->lang->load('basic', $this->config->item('language'));
+	function __construct()
+	{
+		parent::__construct();
+		$this->load->database();
+		$this->load->model("user_model");
+		$this->load->model("quiz_model");
+		$this->lang->load('basic', $this->config->item('language'));
 		// redirect if not loggedin
 		if(!$this->session->userdata('logged_in')){
 			redirect('login');
@@ -17,150 +17,164 @@ class User extends CI_Controller {
 		}
 		$logged_in=$this->session->userdata('logged_in');
 		if($logged_in['base_url'] != base_url()){
-		$this->session->unset_userdata('logged_in');		
-		redirect('login');
+			$this->session->unset_userdata('logged_in');		
+			redirect('login');
 		}
 		
-	 }
+	}
 
-	public function index($limit='0')
+	public function index($limit ='0',$gid ='0',$sid = '0')
 	{
-		
+		$this->load->helper('form');
 		$logged_in=$this->session->userdata('logged_in');
-		 
-			if($logged_in['su']!='1'){
+
+		if($logged_in['su']!='1'){
 			exit($this->lang->line('permission_denied'));
-			}
-			
-			
+		}
+
+		//fetching user group;
+		$data['group_list']=$this->user_model->group_list();
+
+		$data['status_list']=$this->user_model->status_list();
 		$data['limit']=$limit;
+		$data['gid']=$gid;
+		$data['sid']=$sid;
 		$data['title']=$this->lang->line('userlist');
+		
 		// fetching user list
-		$data['result']=$this->user_model->user_list($limit);
+		$data['result']=$this->user_model->user_list($limit,$gid,$sid);
+		
+		//var_dump($data);
 		$this->load->view('header',$data);
 		$this->load->view('user_list',$data);
 		$this->load->view('footer',$data);
 	}
 	
+	function pre_user_list($limit='0',$gid='0',$sid='0'){
+		$gid=$this->input->post('gid');
+		$sid=$this->input->post('sid');
+		redirect('user/index/'.$limit.'/'.$gid.'/'.$sid);
+	}
+
 	public function new_user()
 	{
 		
-			$logged_in=$this->session->userdata('logged_in');
-			if($logged_in['su']!='1'){
+		$logged_in=$this->session->userdata('logged_in');
+		if($logged_in['su']!='1'){
 			exit($this->lang->line('permission_denied'));
-			}
-			
-			
-		 $data['title']=$this->lang->line('add_new').' '.$this->lang->line('user');
+		}
+
+
+		$data['title']=$this->lang->line('add_new').' '.$this->lang->line('user');
 		// fetching group list
 		$data['group_list']=$this->user_model->group_list();
-		 $this->load->view('header',$data);
+		$this->load->view('header',$data);
 		$this->load->view('new_user',$data);
 		$this->load->view('footer',$data);
 	}
 	
-		public function insert_user()
+	public function insert_user()
 	{
-	 	
+
 		
-			$logged_in=$this->session->userdata('logged_in');
-			if($logged_in['su']!='1'){
-				exit($this->lang->line('permission_denied'));
-			}
+		$logged_in=$this->session->userdata('logged_in');
+		if($logged_in['su']!='1'){
+			exit($this->lang->line('permission_denied'));
+		}
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules('email', 'Email', 'required|is_unique[savsoft_users.email]');
-        $this->form_validation->set_rules('password', 'Password', 'required');
-          if ($this->form_validation->run() == FALSE)
-                {
-                     $this->session->set_flashdata('message', "<div class='alert alert-danger'>".validation_errors()." </div>");
-					redirect('user/new_user/');
-                }
-                else
-                {
-					if($this->user_model->insert_user()){
-                        $this->session->set_flashdata('message', "<div class='alert alert-success'>".$this->lang->line('data_added_successfully')." </div>");
-					}else{
-						    $this->session->set_flashdata('message', "<div class='alert alert-danger'>".$this->lang->line('error_to_add_data')." </div>");
-						
-					}
-					redirect('user/new_user/');
-                }       
+		$this->form_validation->set_rules('password', 'Password', 'required');
+		if ($this->form_validation->run() == FALSE)
+		{
+			$this->session->set_flashdata('message', "<div class='alert alert-danger'>".validation_errors()." </div>");
+			redirect('user/new_user/');
+		}
+		else
+		{
+			if($this->user_model->insert_user()){
+				$this->session->set_flashdata('message', "<div class='alert alert-success'>".$this->lang->line('data_added_successfully')." </div>");
+			}else{
+				$this->session->set_flashdata('message', "<div class='alert alert-danger'>".$this->lang->line('error_to_add_data')." </div>");
+
+			}
+			redirect('user/new_user/');
+		}       
 
 	}
 
-		public function remove_user($uid){
+	public function remove_user($uid){
 
-			$logged_in=$this->session->userdata('logged_in');
-			if($logged_in['su']!='1'){
-				exit($this->lang->line('permission_denied'));
-			}
-			if($uid=='1'){
-					exit($this->lang->line('permission_denied'));
-			}
-			
-			if($this->user_model->remove_user($uid)){
-                        $this->session->set_flashdata('message', "<div class='alert alert-success'>".$this->lang->line('removed_successfully')." </div>");
-					}else{
-						    $this->session->set_flashdata('message', "<div class='alert alert-danger'>".$this->lang->line('error_to_remove')." </div>");
-						
-					}
-					redirect('user');
-                     
-			
+		$logged_in=$this->session->userdata('logged_in');
+		if($logged_in['su']!='1'){
+			exit($this->lang->line('permission_denied'));
 		}
+		if($uid=='1'){
+			exit($this->lang->line('permission_denied'));
+		}
+
+		if($this->user_model->remove_user($uid)){
+			$this->session->set_flashdata('message', "<div class='alert alert-success'>".$this->lang->line('removed_successfully')." </div>");
+		}else{
+			$this->session->set_flashdata('message', "<div class='alert alert-danger'>".$this->lang->line('error_to_remove')." </div>");
+
+		}
+		redirect('user');
+
+
+	}
 
 	public function edit_user($uid)
 	{
 		
-			$logged_in=$this->session->userdata('logged_in');
-			if($logged_in['su']!='1'){
-			 $uid=$logged_in['uid'];
-			}
-			
-			$data['uid']=$uid;
-		 $data['title']=$this->lang->line('edit').' '.$this->lang->line('user');
+		$logged_in=$this->session->userdata('logged_in');
+		if($logged_in['su']!='1'){
+			$uid=$logged_in['uid'];
+		}
+
+		$data['uid']=$uid;
+		$data['title']=$this->lang->line('edit').' '.$this->lang->line('user');
 		// fetching user
 		$data['result']=$this->user_model->get_user($uid);
 		$this->load->model("payment_model");
 		$data['payment_history']=$this->payment_model->get_payment_history($uid);
 		// fetching group list
 		$data['group_list']=$this->user_model->group_list();
-		 $this->load->view('header',$data);
-			if($logged_in['su']=='1'){
-		$this->load->view('edit_user',$data);
-			}else{
-		$this->load->view('myaccount',$data);
-				
-			}
+		$this->load->view('header',$data);
+		if($logged_in['su']=='1'){
+			$this->load->view('edit_user',$data);
+		}else{
+			$this->load->view('myaccount',$data);
+
+		}
 		$this->load->view('footer',$data);
 	}
 
-		public function update_user($uid)
+	public function update_user($uid)
 	{
 		
 		
-			$logged_in=$this->session->userdata('logged_in');
-						 
-			if($logged_in['su']!='1'){
-			 $uid=$logged_in['uid'];
-			}
+		$logged_in=$this->session->userdata('logged_in');
+
+		if($logged_in['su']!='1'){
+			$uid=$logged_in['uid'];
+		}
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules('email', 'Email', 'required');
-           if ($this->form_validation->run() == FALSE)
-                {
-                     $this->session->set_flashdata('message', "<div class='alert alert-danger'>".validation_errors()." </div>");
-					redirect('user/edit_user/'.$uid);
-                }
-                else
-                {
-					if($this->user_model->update_user($uid)){
-                        $this->session->set_flashdata('message', "<div class='alert alert-success'>".$this->lang->line('data_updated_successfully')." </div>");
-					}else{
-						    $this->session->set_flashdata('message', "<div class='alert alert-danger'>".$this->lang->line('error_to_update_data')." </div>");
-						
-					}
-					redirect('user/edit_user/'.$uid);
-                }       
+		if ($this->form_validation->run() == FALSE)
+		{
+			$this->session->set_flashdata('message', "<div class='alert alert-danger'>".validation_errors()." </div>");
+			redirect('user/edit_user/'.$uid);
+		}
+		else
+		{
+			if($this->user_model->update_user($uid)){
+				$this->session->set_flashdata('message', "<div class='alert alert-success'>".$this->lang->line('data_updated_successfully')." </div>");
+			}else{
+				$this->session->set_flashdata('message', "<div class='alert alert-danger'>".$this->lang->line('error_to_update_data')." </div>");
+
+			}
+			redirect('user/edit_user/'.$uid);
+		}       
 
 	}
 	
@@ -168,7 +182,12 @@ class User extends CI_Controller {
 	public function group_list(){
 		
 		// fetching group list
+		$logged_in=$this->session->userdata('logged_in');
+		if($logged_in['su'] !='1'){
+			exit($this->lang->line('permission_denied'));
+		}
 		$data['group_list']=$this->user_model->group_list();
+
 		$data['title']=$this->lang->line('group_list');
 		$this->load->view('header',$data);
 		$this->load->view('group_list',$data);
@@ -180,42 +199,42 @@ class User extends CI_Controller {
 	}
 	
 	
-		public function insert_group()
+	public function insert_group()
 	{
 		
 		
-			$logged_in=$this->session->userdata('logged_in');
-			if($logged_in['su']!='1'){
-				exit($this->lang->line('permission_denied'));
-			}
-	
-				if($this->user_model->insert_group()){
-                $this->session->set_flashdata('message', "<div class='alert alert-success'>".$this->lang->line('data_added_successfully')." </div>");
-				}else{
-				 $this->session->set_flashdata('message', "<div class='alert alert-danger'>".$this->lang->line('error_to_add_data')." </div>");
-						
-				}
-				redirect('user/group_list/');
-	
+		$logged_in=$this->session->userdata('logged_in');
+		if($logged_in['su']!='1'){
+			exit($this->lang->line('permission_denied'));
+		}
+		
+		if($this->user_model->insert_group()){
+			$this->session->set_flashdata('message', "<div class='alert alert-success'>".$this->lang->line('data_added_successfully')." </div>");
+		}else{
+			$this->session->set_flashdata('message', "<div class='alert alert-danger'>".$this->lang->line('error_to_add_data')." </div>");
+
+		}
+		redirect('user/group_list/');
+
 	}
 	
-			public function update_group($gid)
+	public function update_group($gid)
 	{
 		
 		
-			$logged_in=$this->session->userdata('logged_in');
-			if($logged_in['su']!='1'){
-				exit($this->lang->line('permission_denied'));
-			}
-	
-				if($this->user_model->update_group($gid)){
-                echo "<div class='alert alert-success'>".$this->lang->line('data_updated_successfully')." </div>";
-				}else{
-				 echo "<div class='alert alert-danger'>".$this->lang->line('error_to_update_data')." </div>";
-						
-				}
-				 
-	
+		$logged_in=$this->session->userdata('logged_in');
+		if($logged_in['su']!='1'){
+			exit($this->lang->line('permission_denied'));
+		}
+
+		if($this->user_model->update_group($gid)){
+			echo "<div class='alert alert-success'>".$this->lang->line('data_updated_successfully')." </div>";
+		}else{
+			echo "<div class='alert alert-danger'>".$this->lang->line('error_to_update_data')." </div>";
+
+		}
+
+
 	}
 	
 	
@@ -228,31 +247,31 @@ class User extends CI_Controller {
 	
 	
 	
-			public function remove_group($gid){
+	public function remove_group($gid){
 
-			$logged_in=$this->session->userdata('logged_in');
-			if($logged_in['su']!='1'){
-				exit($this->lang->line('permission_denied'));
-			} 
-			
-			if($this->user_model->remove_group($gid)){
-                        $this->session->set_flashdata('message', "<div class='alert alert-success'>".$this->lang->line('removed_successfully')." </div>");
-					}else{
-						    $this->session->set_flashdata('message', "<div class='alert alert-danger'>".$this->lang->line('error_to_remove')." </div>");
-						
-					}
-					redirect('user/group_list');
-                     
-			
+		$logged_in=$this->session->userdata('logged_in');
+		if($logged_in['su']!='1'){
+			exit($this->lang->line('permission_denied'));
+		} 
+
+		if($this->user_model->remove_group($gid)){
+			$this->session->set_flashdata('message', "<div class='alert alert-success'>".$this->lang->line('removed_successfully')." </div>");
+		}else{
+			$this->session->set_flashdata('message', "<div class='alert alert-danger'>".$this->lang->line('error_to_remove')." </div>");
+
 		}
+		redirect('user/group_list');
+
+
+	}
 
 	function logout(){
 		//echo $this->session->userdata('logged_in')['uid'];//die();
 		$this->quiz_model->close_result($this->session->userdata('logged_in')['uid']);
 
 		$this->session->unset_userdata('logged_in');		
-					
- 		redirect('login');
+
+		redirect('login');
 		
 	}
 }

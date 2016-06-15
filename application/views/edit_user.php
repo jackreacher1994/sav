@@ -73,6 +73,13 @@
 						<option value="1" <?php if($result['su']==1){ echo 'selected';}?>  ><?php echo $this->lang->line('administrator');?></option>
 					</select>
 			</div>
+				<div class="form-group">	 
+					<label   >Status</label> 
+					<select class="form-control" name="sid">
+						<option value="1" <?php if($result['sid']==1){ echo 'selected';}?>  >Active</option>
+						<option value="2" <?php if($result['sid']==2){ echo 'selected';}?>  >Inactive</option>
+					</select>
+			</div>
 
  
 	<button class="btn btn-default" type="submit"><?php echo $this->lang->line('submit');?></button>

@@ -20,7 +20,7 @@
 <table class="table table-bordered">
 <tr>
  <th><?php echo $this->lang->line('group_name');?></th>
- 
+
 <th><?php echo $this->lang->line('action');?> </th>
 </tr>
 <?php 
@@ -43,15 +43,16 @@ foreach($group_list as $key => $val){
 <a href="javascript:remove_entry('user/remove_group/<?php echo $val['gid'];?>');"><img src="<?php echo base_url('images/cross.png');?>"></a>
 
 </td>
-</tr>
 
+</tr>
 <?php 
-}
-?>
+}?>
+
 <tr>
  <td>
  
  <input type="text"   class="form-control"   name="group_name" value="" placeholder="<?php echo $this->lang->line('group_name');?>"  required ></td>
+
 
 
 <td>
@@ -59,6 +60,8 @@ foreach($group_list as $key => $val){
  
 </td>
 </tr>
+
+
 </table>
 </form>
 </div>

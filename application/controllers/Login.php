@@ -22,7 +22,6 @@ class Login extends CI_Controller {
 	public function index()
 	{
 		
-		
 		if($this->session->userdata('logged_in')){
 			$logged_in=$this->session->userdata('logged_in');
 			if($logged_in['su']=='1'){
@@ -41,12 +40,7 @@ class Login extends CI_Controller {
 		$this->load->view('footer',$data);
 	}
 	
-	
- 
-	
-	
-	
-	
+
 	
 		public function registration()
 	{
@@ -63,13 +57,11 @@ class Login extends CI_Controller {
 		
 		$username=$this->input->post('email');
 		$password=$this->input->post('password');
-		 
 		if($this->user_model->login($username,$password)){
 			
 			// row exist fetch userdata
 			$user=$this->user_model->login($username,$password);
-			
-			
+		
 			// validate if user assigned to paid group
 			if($user['price'] > '0'){
 				

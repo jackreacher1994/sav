@@ -29,8 +29,8 @@ class Qbank extends CI_Controller {
 			exit($this->lang->line('permission_denied'));
 			}
 			
-			 $data['category_list']=$this->qbank_model->category_list();
-		 $data['level_list']=$this->qbank_model->level_list();
+		$data['category_list']=$this->qbank_model->category_list();
+		$data['level_list']=$this->qbank_model->level_list();
 		
 		$data['limit']=$limit;
 		$data['cid']=$cid;
@@ -493,6 +493,11 @@ class Qbank extends CI_Controller {
 	public function category_list(){
 		
 		// fetching group list
+		$logged_in=$this->session->userdata('logged_in');
+		if($logged_in['su'] !='1'){
+			exit($this->lang->line('permission_denied'));
+		}
+		
 		$data['category_list']=$this->qbank_model->category_list();
 		$data['title']=$this->lang->line('category_list');
 		$this->load->view('header',$data);

@@ -27,7 +27,7 @@
 	<!-- bootstrap js -->
     <script src="<?php echo base_url('bootstrap/js/bootstrap.min.js');?>"></script>
 
-      <script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
+      <script src="http://code.jquery.com/jquery-1.12.3.js"></script>
 	
  </head>
   <body>
@@ -92,6 +92,7 @@
                  <?php  
 				if($logged_in['su']==1){
 			?>     <li><a href="<?php echo site_url('quiz/add_new');?>"><?php echo $this->lang->line('add_new');?></a></li>
+					<li><a href="<?php echo site_url('quiz/add_new_quiz');?>">Tạo mới bắng cách sử dụng mẫu</a></li>
               <?php 
 				}
 ?>				 <li><a href="<?php echo site_url('quiz');?>"><?php echo $this->lang->line('list');?> <?php echo $this->lang->line('quiz');?> </a></li>
@@ -101,7 +102,7 @@
 	
 
 	           <li><a href="<?php echo site_url('result');?>"><?php echo $this->lang->line('result');?></a></li>
-			 
+			 	<li><a href="#">Assign Role</a></li>
 			 
 			  <?php  
 				if($logged_in['su']==1){

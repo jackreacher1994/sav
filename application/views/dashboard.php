@@ -75,52 +75,6 @@
                             </div>
                         </a>
  </div>
- 
- 
- 
- 
-
 </div>
- 
 <div class="row"></div>
-<div class="row"  > 
-<hr><br> 
-<h4><?php echo $this->lang->line('recently_registered');?></h4>
-<table class="table table-bordered" >
-<tr>
- <th><?php echo $this->lang->line('email');?></th>
-<th><?php echo $this->lang->line('first_name');?> <?php echo $this->lang->line('last_name');?></th>
-<th><?php echo $this->lang->line('group_name');?> </th>
-<th><?php echo $this->lang->line('contact_no');?> </th>
-</tr>
-<?php 
-if(count($result)==0){
-	?>
-<tr>
- <td colspan="3"><?php echo $this->lang->line('no_record_found');?></td>
-</tr>	
-	
-	
-	<?php
-}
-foreach($result as $key => $val){
-?>
-<tr>
- <td><?php echo $val['email'];?></td>
-<td><?php echo $val['first_name'];?> <?php echo $val['last_name'];?></td>
- <td><?php echo $val['group_name'];?></td>
-<td><?php echo $val['contact_no'];?></td>
-</tr>
-
-<?php 
-}
-?>
-</table>
-
-
-</div>
-
-
-
-
 </div>

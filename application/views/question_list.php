@@ -41,8 +41,8 @@
 					}
 					?>
 					</select>
-			 	<select  name="lid" style="display:none;">
-				<option value="0" ><?php echo $this->lang->line('all_level');?></option>
+			 	<select  name="lid">
+				<option value="0"><?php echo $this->lang->line('all_level');?></option>
 					<?php 
 					foreach($level_list as $key => $val){
 						?>
@@ -61,7 +61,7 @@
  <th>#</th>
  <th><?php echo $this->lang->line('question');?></th>
 <th><?php echo $this->lang->line('question_type');?></th>
-<th><?php echo $this->lang->line('category_name');?> </th>
+<th><?php echo $this->lang->line('category_name');?> / <?php echo $this->lang->line('level_name');?></th>
  
 <th><?php echo $this->lang->line('percent_corrected');?></th>
 <th><?php echo $this->lang->line('action');?> </th>
@@ -102,7 +102,7 @@ foreach($result as $key => $val){
  
  </td>
 <td><?php echo $val['question_type'];?></td>
-<td><?php echo $val['category_name'];?> </span></td>
+<td><?php echo $val['category_name'];?> / <span style="font-size:12px;"><?php echo $val['level_name'];?></span></td>
  
 <td><?php if($val['no_time_served']!='0'){ $perc=($val['no_time_corrected']/$val['no_time_served'])*100; 
 ?>
@@ -130,9 +130,6 @@ if($val['question_type']==$this->lang->line('short_answer')){
 }
 if($val['question_type']==$this->lang->line('long_answer')){
 	$qn=5;
-}
-if($val['question_type']==$this->lang->line('sort_answer')){
-	$qn=6;
 }
 
 
@@ -173,7 +170,7 @@ if(($limit-($this->config->item('number_of_rows')))>=0){ $back=$limit-($this->co
 		<div class="panel-body"> 
 
 <?php echo form_open('qbank/import',array('enctype'=>'multipart/form-data')); ?>
- <h4><?php echo $this->lang->line('import_question');?></h4>
+ <h4><?php echo $this->lang->line('import_question');?></h4> 
  <select name="cid"   >
  <option value="0"><?php echo $this->lang->line('select_category');?></option>
 <?php 
@@ -184,13 +181,8 @@ if(($limit-($this->config->item('number_of_rows')))>=0){ $back=$limit-($this->co
 						<?php 
 					}
 					?></select>
-
- <select name="did" style="display:none;">
- 
-
- <select name="did">
+ <select name="did"  >
  <option value="0"><?php echo $this->lang->line('select_level');?></option>
-
 <?php 
 					foreach($level_list as $key => $val){
 						?>

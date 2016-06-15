@@ -235,5 +235,8 @@ $lang['right_order'] = "Right order";
 $lang['full_name'] = "Full name";
 $lang['save'] = "Save";
 $lang['refresh_message'] = "Your answer may not be saved. Do you still want to refresh the page?";
+$lang['form_email'] = "Form Email";
+$lang['use'] = "Use";
+
 
 
