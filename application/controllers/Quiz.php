@@ -267,6 +267,7 @@ class Quiz extends CI_Controller {
 				}
 			}*/
 			$quid=$this->quiz_model->insert_quiz();
+			log_message('ved', $this->lang->line('user') . ' ' . $logged_in['uid'] . ' ' . $this->lang->line('insert_quiz') . ' ' . $quid);
 			/*echo $quid;
 			die();*/
 			redirect('/quiz/edit_quiz/'.$quid);
