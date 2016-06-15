@@ -81,7 +81,7 @@ Class Quiz_model extends CI_Model
  	 'uids'=>implode(',',$result),	 
 	 'date_assign_user'=> time()
 	 );
-	
+
 	 $this->db->where('quid',$quid);
 	 $this->db->update('savsoft_quiz',$userdata);
 	  
@@ -911,12 +911,7 @@ if($this->config->item('allow_result_email')){
 			 }else{
 				 $correct_incorrect[$ak]=0;
 			 }
-		 }
-		 
-		 
-		 
-		 
-		 
+		 } 
 		 
 	 }
 	 
@@ -945,6 +940,12 @@ if($this->config->item('allow_result_email')){
 	 $this->db->update('savsoft_result',$userdata);
 	 
 	 return true;
+ }
+ function get_formemail_quiz($quid){
+ 	$this->db->select('form_email');
+		$this->db->where('savsoft_quiz.quid',$quid);
+		$query=$this->db->get('savsoft_quiz');
+		return $query->row_array();
  }
  
  

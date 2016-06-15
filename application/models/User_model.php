@@ -417,7 +417,12 @@ Class User_model extends CI_Model
 		}
 	}
 
-
+	function get_email_user($uid){
+		$this->db->select('email');
+		$this->db->where('savsoft_users.uid',$uid);
+		$query=$this->db->get('savsoft_users');
+		return $query->row_array();
+	}
 
 
 
