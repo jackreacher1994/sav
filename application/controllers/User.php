@@ -115,6 +115,7 @@ class User extends CI_Controller {
 
 		if($this->user_model->remove_user($uid)){
 			$this->session->set_flashdata('message', "<div class='alert alert-success'>".$this->lang->line('removed_successfully')." </div>");
+			log_message('ved', $this->lang->line('user') . ' ' . $logged_in['uid'] . ' ' . $this->lang->line('remove_user') . ' ' . $uid);
 		}else{
 			$this->session->set_flashdata('message', "<div class='alert alert-danger'>".$this->lang->line('error_to_remove')." </div>");
 
@@ -171,6 +172,7 @@ class User extends CI_Controller {
 		{
 			if($this->user_model->update_user($uid)){
 				$this->session->set_flashdata('message', "<div class='alert alert-success'>".$this->lang->line('data_updated_successfully')." </div>");
+				log_message('ved', $this->lang->line('user') . ' ' . $logged_in['uid'] . ' ' . $this->lang->line('update_user') . ' ' . $uid);
 			}else{
 				$this->session->set_flashdata('message', "<div class='alert alert-danger'>".$this->lang->line('error_to_update_data')." </div>");
 
@@ -231,6 +233,7 @@ class User extends CI_Controller {
 
 		if($this->user_model->update_group($gid)){
 			echo "<div class='alert alert-success'>".$this->lang->line('data_updated_successfully')." </div>";
+			log_message('ved', $this->lang->line('user') . ' ' . $logged_in['uid'] . ' ' . $this->lang->line('update_group') . ' ' . $gid);
 		}else{
 			echo "<div class='alert alert-danger'>".$this->lang->line('error_to_update_data')." </div>";
 
@@ -258,6 +261,7 @@ class User extends CI_Controller {
 
 		if($this->user_model->remove_group($gid)){
 			$this->session->set_flashdata('message', "<div class='alert alert-success'>".$this->lang->line('removed_successfully')." </div>");
+			log_message('ved', $this->lang->line('user') . ' ' . $logged_in['uid'] . ' ' . $this->lang->line('remove_group') . ' ' . $gid);
 		}else{
 			$this->session->set_flashdata('message', "<div class='alert alert-danger'>".$this->lang->line('error_to_remove')." </div>");
 
@@ -268,10 +272,14 @@ class User extends CI_Controller {
 	}
 
 	function logout(){
+		$logged_in=$this->session->userdata('logged_in');
+		
 		//echo $this->session->userdata('logged_in')['uid'];//die();
 		$this->quiz_model->close_result($this->session->userdata('logged_in')['uid']);
 
-		$this->session->unset_userdata('logged_in');		
+		$this->session->unset_userdata('logged_in');
+
+		log_message('ved', $this->lang->line('user') . ' ' . $logged_in['uid'] . ' ' . $this->lang->line('logged_out'));
 
 		redirect('login');
 		

@@ -77,6 +77,7 @@ class Login extends CI_Controller {
 			$user['base_url']=base_url();
 			// creating login cookie
 			$this->session->set_userdata('logged_in', $user);
+			log_message('ved', $this->lang->line('user') . ' ' . $user['uid'] . ' ' . $this->lang->line('logged_in'));
 			// redirect to dashboard
 			if($user['su']=='1'){
 				redirect('dashboard');

@@ -238,6 +238,29 @@ $lang['refresh_message'] = "Your answer may not be saved. Do you still want to r
 $lang['form_email'] = "Form Email";
 $lang['use'] = "Use";
 $lang['allow_back'] = "Allow back to old questions";
-
+$lang['assign_permission'] = "Assign Permission";
+$lang['add_new_with_temp'] = "Add new with templates";
+$lang['assign_user'] = "Assign for user";
+$lang['user'] = "User";
+$lang['logged_in'] = "logged in";
+$lang['logged_out'] = "logged out";
+$lang['insert_question'] = "inserted question";
+$lang['update_question'] = "updated question";
+$lang['remove_question'] = "deleted question";
+$lang['insert_category'] = "inserted category";
+$lang['update_category'] = "updated category";
+$lang['remove_category'] = "deleted category";
+$lang['insert_level'] = "inserted level";
+$lang['update_level'] = "updated level";
+$lang['remove_level'] = "deleted level";
+$lang['insert_group'] = "inserted group";
+$lang['update_group'] = "updated group";
+$lang['remove_group'] = "deleted group";
+$lang['insert_user'] = "inserted user";
+$lang['update_user'] = "updated user";
+$lang['remove_user'] = "deleted user";
+$lang['insert_quiz'] = "inserted quiz";
+$lang['update_quiz'] = "updated quiz";
+$lang['remove_quiz'] = "deleted quiz";
 
 
