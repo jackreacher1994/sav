@@ -76,7 +76,15 @@ Class User_model extends CI_Model
 	}
 
 	function user_list_2(){
+		if($this->input->post('search')){
+			$search=$this->input->post('search');
+			$this->db->or_where('savsoft_users.email',$search);
+			$this->db->or_where('savsoft_users.first_name',$search);
+			$this->db->or_where('savsoft_users.last_name',$search);
+			$this->db->or_where('savsoft_users.contact_no',$search);
 
+
+		}
 		$this->db->join('savsoft_group', 'savsoft_group.gid = savsoft_users.gid');
 		$this->db->join('savsoft_status', 'savsoft_status.sid = savsoft_users.sid');
 		$this->db->order_by('savsoft_users.uid','desc');
@@ -340,10 +348,7 @@ Class User_model extends CI_Model
 
 		$this->db->where('uid',$uid);
 		if($this->db->delete('savsoft_users')){
-
 			
-			log_message('ved', 'Da xoa user co ID '.$uid.'.');
-
 			return true;
 		}else{
 			
@@ -358,6 +363,7 @@ Class User_model extends CI_Model
 
 		$this->db->where('gid',$gid);
 		if($this->db->delete('savsoft_group')){
+			
 			return true;
 		}else{
 
@@ -411,7 +417,12 @@ Class User_model extends CI_Model
 		}
 	}
 
-
+	function get_email_user($uid){
+		$this->db->select('email');
+		$this->db->where('savsoft_users.uid',$uid);
+		$query=$this->db->get('savsoft_users');
+		return $query->row_array();
+	}
 
 
 

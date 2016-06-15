@@ -572,13 +572,46 @@ class Quiz extends CI_Controller {
 	}
 
 	function submit_assign_user_for_quiz(){
+
 		$logged_in=$this->session->userdata('logged_in');
 		if($logged_in['su']!='1'){
 			exit($this->lang->line('permission_denied'));
 		} 
 		$quid =$this->input->post('quid');
+		$uids =$this->input->post('uids');
+		$emails = array();
+		for($i = 0; $i < sizeof($uids); $i++ ){
+			array_push($emails,$this->user_model->get_email_user($uids[$i]));
+		}
+		$message = $this->quiz_model->get_formemail_quiz($quid);
 
-		$quid=$this->quiz_model->submit_assign_user_for_quiz($quid);
+		for ($j=0; $j < sizeof($emails); $j++) {
+
+
+			$this->load->library('email', $config);
+			$this->email->set_newline("\r\n");
+			$this->email->from('noreply@ved.com.vn', 'VED Adminstrator');
+			$this->email->subject('testing');
+			$this->email->message($message);
+			$this->email->to($emails[$i]);
+
+			if($this->email->send())
+			{
+				echo 'Email sent.';    
+			}
+			else
+			{
+				show_error($this->email->print_debugger());  
+			}
+		}
+		if($this->quiz_model->submit_assign_user_for_quiz($quid)){
+
+			$this->session->set_flashdata('message', "<div class='alert alert-success'>Assign Sucsessfully </div>");
+		}else{
+			$this->session->set_flashdata('message', "<div class='alert alert-danger'>Assign Unsucsessfully </div>");
+
+		}
+		redirect('/quiz');
 	}
 
 	

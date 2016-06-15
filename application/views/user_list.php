@@ -5,7 +5,7 @@
  	<div class="row">
 
  		<div class="col-lg-6">
-
+  <form method="post" action="<?php echo site_url('user/index/');?>">
  			<div class="input-group">
  				<input type="text" class="form-control" name="search" placeholder="<?php echo $this->lang->line('search');?>...">
  				<span class="input-group-btn">
