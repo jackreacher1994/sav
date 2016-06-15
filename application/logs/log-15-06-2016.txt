@@ -17,3 +17,7 @@ ERROR - 07:47:49 15-06-2016 --> Severity: 4096 --> Object of class stdClass coul
 ERROR - 07:48:36 15-06-2016 --> Severity: Error --> Cannot use object of type stdClass as array C:\xampp\htdocs\sav\application\models\Quiz_model.php 77
 ERROR - 07:48:56 15-06-2016 --> Severity: Error --> Cannot use object of type stdClass as array C:\xampp\htdocs\sav\application\models\Quiz_model.php 77
 ERROR - 07:52:05 15-06-2016 --> Severity: Parsing Error --> syntax error, unexpected ')' C:\xampp\htdocs\sav\application\models\Quiz_model.php 74
+VED - 08:45:29 15-06-2016 --> User 1 logged out
+VED - 08:47:05 15-06-2016 --> User 1 logged in
+ERROR - 08:51:42 15-06-2016 --> Severity: Error --> Call to undefined function get_email_user() C:\xampp\htdocs\sav\application\controllers\Quiz.php 584
+VED - 14:27:19 15-06-2016 --> User 1 logged in
