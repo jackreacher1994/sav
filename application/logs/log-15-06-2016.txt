@@ -1,0 +1,19 @@
+ERROR - 07:01:30 15-06-2016 --> Severity: Parsing Error --> syntax error, unexpected ';' C:\xampp\htdocs\sav\application\controllers\Quiz.php 579
+ERROR - 07:01:36 15-06-2016 --> Severity: Parsing Error --> syntax error, unexpected ';' C:\xampp\htdocs\sav\application\controllers\Quiz.php 579
+ERROR - 07:01:46 15-06-2016 --> Severity: Parsing Error --> syntax error, unexpected ';' C:\xampp\htdocs\sav\application\controllers\Quiz.php 579
+ERROR - 07:01:47 15-06-2016 --> Severity: Parsing Error --> syntax error, unexpected ';' C:\xampp\htdocs\sav\application\controllers\Quiz.php 579
+ERROR - 07:01:48 15-06-2016 --> Severity: Parsing Error --> syntax error, unexpected ';' C:\xampp\htdocs\sav\application\controllers\Quiz.php 579
+ERROR - 07:01:48 15-06-2016 --> Severity: Parsing Error --> syntax error, unexpected ';' C:\xampp\htdocs\sav\application\controllers\Quiz.php 579
+ERROR - 07:01:48 15-06-2016 --> Severity: Parsing Error --> syntax error, unexpected ';' C:\xampp\htdocs\sav\application\controllers\Quiz.php 579
+ERROR - 07:01:48 15-06-2016 --> Severity: Parsing Error --> syntax error, unexpected ';' C:\xampp\htdocs\sav\application\controllers\Quiz.php 579
+ERROR - 07:01:48 15-06-2016 --> Severity: Parsing Error --> syntax error, unexpected ';' C:\xampp\htdocs\sav\application\controllers\Quiz.php 579
+ERROR - 07:38:40 15-06-2016 --> Severity: Parsing Error --> syntax error, unexpected '}' C:\xampp\htdocs\sav\application\models\Quiz_model.php 88
+ERROR - 07:40:29 15-06-2016 --> Severity: Warning --> explode() expects parameter 2 to be string, array given C:\xampp\htdocs\sav\application\models\Quiz_model.php 76
+ERROR - 07:40:58 15-06-2016 --> Severity: Warning --> explode() expects parameter 2 to be string, array given C:\xampp\htdocs\sav\application\models\Quiz_model.php 76
+ERROR - 07:43:21 15-06-2016 --> Query error: Unknown column '$quid' in 'where clause' - Invalid query: Select uids from savsoft_quiz where quid = $quid
+ERROR - 07:44:09 15-06-2016 --> Query error: Unknown column '$quid' in 'where clause' - Invalid query: select uids from savsoft_quiz where quid = $quid
+ERROR - 07:47:31 15-06-2016 --> Severity: 4096 --> Object of class stdClass could not be converted to string C:\xampp\htdocs\sav\application\models\Quiz_model.php 77
+ERROR - 07:47:49 15-06-2016 --> Severity: 4096 --> Object of class stdClass could not be converted to string C:\xampp\htdocs\sav\application\models\Quiz_model.php 77
+ERROR - 07:48:36 15-06-2016 --> Severity: Error --> Cannot use object of type stdClass as array C:\xampp\htdocs\sav\application\models\Quiz_model.php 77
+ERROR - 07:48:56 15-06-2016 --> Severity: Error --> Cannot use object of type stdClass as array C:\xampp\htdocs\sav\application\models\Quiz_model.php 77
+ERROR - 07:52:05 15-06-2016 --> Severity: Parsing Error --> syntax error, unexpected ')' C:\xampp\htdocs\sav\application\models\Quiz_model.php 74
