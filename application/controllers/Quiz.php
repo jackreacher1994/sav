@@ -247,7 +247,7 @@ class Quiz extends CI_Controller {
 
 			$message = $this->input->post('form_email');
 
-			for ($i=0; $i < count($emails); $i++) {
+			/*for ($i=0; $i < count($emails); $i++) {
 
 
 				$this->load->library('email', $config);
@@ -265,7 +265,7 @@ class Quiz extends CI_Controller {
 				{
 					show_error($this->email->print_debugger());  
 				}
-			}
+			}*/
 			$quid=$this->quiz_model->insert_quiz();
 			/*echo $quid;
 			die();*/
@@ -372,7 +372,7 @@ class Quiz extends CI_Controller {
 		}
 		$data['quiz']=$this->quiz_model->get_quiz($quid);
 		// validate assigned group
-		if(!in_array($gid,explode(',',$data['quiz']['gids']))){
+		if((!in_array($gid,explode(',',$data['quiz']['gids']))) && (!in_array($uid,explode(',',$data['quiz']['uids'])))){
 			$this->session->set_flashdata('message', "<div class='alert alert-danger'>".$this->lang->line('quiz_not_assigned_to_your_group')." </div>");
 			redirect('quiz/quiz_detail/'.$quid);
 		}
@@ -559,8 +559,9 @@ class Quiz extends CI_Controller {
 			exit($this->lang->line('permission_denied'));
 		} 
 		$data['title']='Assign User Into A Test';
-		$data['result']=$this->user_model->user_list_2();
 		$data['quid'] = $qid;
+		$data['result']=$this->user_model->user_list_2();
+		
 		
 		$this->load->view('header',$data);
 		$this->load->view('user_list_2.php',$data);
@@ -572,7 +573,9 @@ class Quiz extends CI_Controller {
 		if($logged_in['su']!='1'){
 			exit($this->lang->line('permission_denied'));
 		} 
-		$quid=$this->quiz_model->submit_assign_user_for_quiz();
+		$quid =$this->input->post('quid');
+
+		$quid=$this->quiz_model->submit_assign_user_for_quiz($quid);
 	}
 
 	

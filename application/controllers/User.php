@@ -98,7 +98,8 @@ class User extends CI_Controller {
 
 			}
 			redirect('user/new_user/');
-		}       
+		} 
+
 
 	}
 
@@ -118,6 +119,7 @@ class User extends CI_Controller {
 			$this->session->set_flashdata('message', "<div class='alert alert-danger'>".$this->lang->line('error_to_remove')." </div>");
 
 		}
+		
 		redirect('user');
 
 
