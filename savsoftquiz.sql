@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 10, 2016 at 04:45 AM
+-- Generation Time: Jun 15, 2016 at 02:12 AM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.11
 
@@ -34,7 +34,22 @@ CREATE TABLE IF NOT EXISTS `savsoft_answers` (
   `score_u` float NOT NULL DEFAULT '0',
   `rid` int(11) NOT NULL,
   PRIMARY KEY (`aid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=964 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=999 ;
+
+--
+-- Dumping data for table `savsoft_answers`
+--
+
+INSERT INTO `savsoft_answers` (`aid`, `qid`, `q_option`, `uid`, `score_u`, `rid`) VALUES
+(967, 45, '196', 5, 1, 132),
+(968, 54, '232', 5, 0, 132),
+(972, 54, '231', 1, 1, 133),
+(973, 45, '196', 1, 1, 134),
+(994, 52, '224', 1, 0, 137),
+(995, 50, '215', 1, 0, 137),
+(996, 47, '203', 1, 1, 137),
+(997, 49, '211', 1, 0, 137),
+(998, 63, '268', 1, 0, 137);
 
 -- --------------------------------------------------------
 
@@ -45,16 +60,16 @@ CREATE TABLE IF NOT EXISTS `savsoft_answers` (
 CREATE TABLE IF NOT EXISTS `savsoft_category` (
   `cid` int(11) NOT NULL AUTO_INCREMENT,
   `category_name` varchar(1000) NOT NULL,
+  `gid` int(11) NOT NULL,
   PRIMARY KEY (`cid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `savsoft_category`
 --
 
-INSERT INTO `savsoft_category` (`cid`, `category_name`) VALUES
-(2, 'CS-Trắc Nghiệm Game'),
-(3, 'CS-Trắc Nghiệm Cyperbay');
+INSERT INTO `savsoft_category` (`cid`, `category_name`, `gid`) VALUES
+(2, 'CS-Trắc Nghiệm Game', 0);
 
 -- --------------------------------------------------------
 
@@ -64,6 +79,7 @@ INSERT INTO `savsoft_category` (`cid`, `category_name`) VALUES
 
 CREATE TABLE IF NOT EXISTS `savsoft_group` (
   `gid` int(11) NOT NULL AUTO_INCREMENT,
+  `parent_id` int(11) NOT NULL,
   `group_name` varchar(1000) NOT NULL,
   `price` float NOT NULL,
   `valid_for_days` int(11) NOT NULL DEFAULT '0',
@@ -74,10 +90,10 @@ CREATE TABLE IF NOT EXISTS `savsoft_group` (
 -- Dumping data for table `savsoft_group`
 --
 
-INSERT INTO `savsoft_group` (`gid`, `group_name`, `price`, `valid_for_days`) VALUES
-(1, 'GCafe', 0, 0),
-(3, 'GOP', 100, 90),
-(4, 'COD', 1900, 120);
+INSERT INTO `savsoft_group` (`gid`, `parent_id`, `group_name`, `price`, `valid_for_days`) VALUES
+(1, 0, 'Admin', 0, 0),
+(3, 0, 'RSD', 0, 0),
+(4, 0, 'COD', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -113,7 +129,7 @@ CREATE TABLE IF NOT EXISTS `savsoft_options` (
   `q_option_match` varchar(1000) DEFAULT NULL,
   `score` float NOT NULL DEFAULT '0',
   PRIMARY KEY (`oid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=374 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=382 ;
 
 --
 -- Dumping data for table `savsoft_options`
@@ -256,14 +272,6 @@ INSERT INTO `savsoft_options` (`oid`, `qid`, `q_option`, `q_option_match`, `scor
 (223, 52, 'Tài khoản NV dưới hạn mức thanh toán', NULL, 0),
 (224, 52, 'Kho hết thẻ, các mục bán hàng bị vô hiệu hóa ', NULL, 0),
 (225, 52, 'Cả a,b,c đều đúng', NULL, 1),
-(226, 53, 'Cài đặt CBP - RSD, từ xa', NULL, 1),
-(227, 53, 'Cài đặt CBP - RSD, tại nhà', NULL, 0),
-(228, 53, 'Cài đặt CBP - CBS, tại nhà', NULL, 0),
-(229, 53, 'Cài đặt CBP - CBS, từ xa', NULL, 0),
-(230, 54, 'Cài đặt CBP - RSD, tại nhà', NULL, 0),
-(231, 54, 'Cài đặt CBP - RSD, từ xa', NULL, 1),
-(232, 54, 'Cài đặt CBP - CBS, tại nhà', NULL, 0),
-(233, 54, 'Cài đặt CBP - CBS, từ xa', NULL, 0),
 (234, 55, '2, sau Trung Quốc', NULL, 0),
 (235, 55, '3, sau Thái Lan và Hàn Quốc', NULL, 0),
 (236, 55, '3, sau Hàn Quốc và Thái Lan', NULL, 1),
@@ -403,7 +411,15 @@ INSERT INTO `savsoft_options` (`oid`, `qid`, `q_option`, `q_option_match`, `scor
 (370, 90, 'Ưu tiên từ xa', NULL, 1),
 (371, 90, 'Ưu tiên tại nhà', NULL, 0),
 (372, 90, 'Không ưu tiên, từ xa', NULL, 0),
-(373, 90, 'Không ưu tiên, tại nhà', NULL, 0);
+(373, 90, 'Không ưu tiên, tại nhà', NULL, 0),
+(374, 1, '<p>4</p>', NULL, 1),
+(375, 1, '<p>6</p>', NULL, 0),
+(376, 1, '<p>8</p>', NULL, 0),
+(377, 1, '<p>10</p>', NULL, 0),
+(378, 2, '<p>6</p>', NULL, 1),
+(379, 2, '<p>9</p>', NULL, 0),
+(380, 2, '<p>12</p>', NULL, 0),
+(381, 2, '<p>15</p>', NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -426,6 +442,18 @@ CREATE TABLE IF NOT EXISTS `savsoft_payment` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `savsoft_permission`
+--
+
+CREATE TABLE IF NOT EXISTS `savsoft_permission` (
+  `pid` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `permission_name` varchar(255) NOT NULL,
+  PRIMARY KEY (`pid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `savsoft_qbank`
 --
 
@@ -441,85 +469,15 @@ CREATE TABLE IF NOT EXISTS `savsoft_qbank` (
   `no_time_incorrected` int(11) NOT NULL DEFAULT '0',
   `no_time_unattempted` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`qid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=91 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `savsoft_qbank`
 --
 
 INSERT INTO `savsoft_qbank` (`qid`, `question_type`, `question`, `description`, `cid`, `lid`, `no_time_served`, `no_time_corrected`, `no_time_incorrected`, `no_time_unattempted`) VALUES
-(17, 'Multiple Choice Single Answer', '', '', 0, 0, 0, 0, 0, 0),
-(18, 'Multiple Choice Single Answer', 'Khi cài mới Cyberpay KH thế chấp bao nhiêu tiền để mượn máy in nhiệt?', '', 0, 0, 0, 0, 0, 0),
-(19, 'Multiple Choice Single Answer', 'Có bao nhiêu hình thức nạp tiền vào Cyberpay?', '', 0, 0, 0, 0, 0, 0),
-(20, 'Multiple Choice Single Answer', 'Số tiền tối thiểu KH gửi yêu cầu nạp tiền mặt là bao nhiêu?', '', 0, 0, 0, 0, 0, 0),
-(21, 'Multiple Choice Single Answer', 'Lần đầu tiên ký hợp đồng KH bắt buộc nạp tối thiểu bao nhiêu tiền?', '', 0, 0, 0, 0, 0, 0),
-(22, 'Multiple Choice Single Answer', 'Các hình thức nạp tiền vào tài khoản Cyberpay?', '', 0, 0, 0, 0, 0, 0),
-(23, 'Multiple Choice Single Answer', 'Có bao nhiêu ngân hàng chấp nhận thanh toán Online Cyberpay?', '', 0, 0, 0, 0, 0, 0),
-(24, 'Multiple Choice Single Answer', 'Có bao nhiêu ngân hàng chấp nhận thanh toán Cyberpay tại quầy miễn phí giao dịch?', '', 0, 0, 0, 0, 0, 0),
-(25, 'Multiple Choice Single Answer', 'Những trường hợp nào KH không thực hiện được giao dịch bán hàng (bán thẻ, thanh toán phí Gcafe, thanh toán hóa đơn)?', '', 0, 0, 0, 0, 0, 0),
-(26, 'Multiple Choice Single Answer', 'KH là phòng máy CSM đăng ký cài mới CBP, CS tạo phiếu gì?', '', 0, 0, 0, 0, 0, 0),
-(27, 'Multiple Choice Single Answer', 'KH là đại lý sim/thẻ, quán cafe, tạp hóa, khách hàng cá nhân muốn cài đặt Cyberpay, CS tạo phiếu gì?', '', 0, 0, 0, 0, 0, 0),
-(28, 'Multiple Choice Single Answer', 'Game Fifa Online 3 chính thức ra mắt vào thời gian nào ?', '', 0, 0, 0, 0, 0, 0),
-(29, 'Multiple Choice Single Answer', 'Việt Nam là quốc gia thứ mấy được chính thức phát hành game Fifa Online 3 ?', '', 0, 0, 0, 0, 0, 0),
-(30, 'Multiple Choice Single Answer', 'Game Fifa Online 3 có điểm gì vượt trội so với người anh tiền nhiệm Fifa Online 2 ?', '', 0, 0, 0, 0, 0, 0),
-(31, 'Multiple Choice Single Answer', 'Tên HLV của tài khoản được đặt tối đa bao nhiêu kí tự ?', '', 0, 0, 0, 0, 0, 0),
-(32, 'Multiple Choice Single Answer', 'Mất thời gian bao lâu để xóa một HLV ?', '', 0, 0, 0, 0, 0, 0),
-(33, 'Multiple Choice Single Answer', 'Câu nào dưới đây không phải là câu hỏi bảo mật pass 2 mặc định trên hệ thống ?', '', 0, 0, 0, 0, 0, 0),
-(34, 'Multiple Choice Single Answer', 'Điểm MP là gì, bao lâu sẽ reset lại điểm MP ?', '', 0, 0, 0, 0, 0, 0),
-(35, 'Multiple Choice Single Answer', 'Điểm GP là gì, bao lâu sẽ reset lại điểm GP ?', '', 0, 0, 0, 0, 0, 0),
-(36, 'Multiple Choice Single Answer', 'Những chế độ thi đấu chính trong game là gì ?', '', 0, 0, 0, 0, 0, 0),
-(37, 'Multiple Choice Single Answer', ' Ưu đãi nào dưới đây là không đúng đối với khách hàng mua thẻ VIP ?', '', 0, 0, 0, 0, 0, 0),
-(38, 'Multiple Choice Single Answer', ' KH báo không đăng nhập được Gcafe Pro để update game, hiện tại không có game nào được update', '', 0, 0, 0, 0, 0, 0),
-(39, 'Multiple Choice Single Answer', 'KH báo máy chủ tính tiền bị virus, chạy chậm nhưng vẫn tính tiền được', '', 0, 0, 0, 0, 0, 0),
-(40, 'Multiple Choice Single Answer', 'Cài Driver Card màn hình cho 4 máy ( BR), cùng cấu hình.', '', 0, 0, 0, 0, 0, 0),
-(41, 'Multiple Choice Single Answer', 'Không đăng nhập được PMTT, báo lỗi tiếng anh', '', 0, 0, 0, 0, 0, 0),
-(42, 'Multiple Choice Single Answer', ' PM BR chơi game LMHT và FO3 thường xuyên bị treo và đứng máy', '', 0, 0, 0, 0, 0, 0),
-(43, 'Multiple Choice Single Answer', ' Mở băng MCTT để PM xóa một vài chương trình', '', 0, 0, 0, 0, 0, 0),
-(45, 'Multiple Choice Single Answer', 'Khi cài mới Cyberpay KH thế chấp bao nhiêu tiền để mượn máy in nhiệt?', '', 3, 1, 22, 0, 0, 22),
-(46, 'Multiple Choice Single Answer', 'Có bao nhiêu hình thức nạp tiền vào Cyberpay?', '', 3, 1, 22, 2, 1, 19),
-(47, 'Multiple Choice Single Answer', 'Số tiền tối thiểu KH gửi yêu cầu nạp tiền mặt là bao nhiêu?', '', 3, 1, 32, 1, 1, 30),
-(48, 'Multiple Choice Single Answer', 'Lần đầu tiên ký hợp đồng KH bắt buộc nạp tối thiểu bao nhiêu tiền?', '', 3, 1, 24, 1, 0, 23),
-(49, 'Multiple Choice Single Answer', 'Các hình thức nạp tiền vào tài khoản Cyberpay?', '', 3, 1, 23, 3, 0, 20),
-(50, 'Multiple Choice Single Answer', 'Có bao nhiêu ngân hàng chấp nhận thanh toán Online Cyberpay?', '', 3, 1, 25, 0, 1, 24),
-(51, 'Multiple Choice Single Answer', 'Có bao nhiêu ngân hàng chấp nhận thanh toán Cyberpay tại quầy miễn phí giao dịch?', '', 3, 1, 21, 1, 2, 18),
-(52, 'Multiple Choice Single Answer', 'Những trường hợp nào KH không thực hiện được giao dịch bán hàng (bán thẻ, thanh toán phí Gcafe, thanh toán hóa đơn)?', '', 3, 1, 26, 1, 0, 25),
-(53, 'Multiple Choice Single Answer', 'KH là phòng máy CSM đăng ký cài mới CBP, CS tạo phiếu gì?', '', 3, 1, 29, 1, 0, 28),
-(54, 'Multiple Choice Single Answer', 'KH là đại lý sim/thẻ, quán cafe, tạp hóa, khách hàng cá nhân muốn cài đặt Cyberpay, CS tạo phiếu gì?', '', 3, 1, 23, 0, 2, 21),
-(55, 'Multiple Choice Single Answer', 'Việt Nam là quốc gia thứ mấy được chính thức phát hành game Fifa Online 3 ?', '', 2, 1, 58, 0, 2, 56),
-(56, 'Multiple Choice Single Answer', 'Game Fifa Online 3 có điểm gì vượt trội so với người anh tiền nhiệm Fifa Online 2 ?', '', 2, 1, 60, 1, 1, 58),
-(57, 'Multiple Choice Single Answer', 'Tên HLV của tài khoản được đặt tối đa bao nhiêu kí tự ?', '', 2, 1, 67, 0, 3, 64),
-(58, 'Multiple Choice Single Answer', 'Mất thời gian bao lâu để xóa một HLV ?', '', 2, 1, 61, 0, 2, 59),
-(59, 'Multiple Choice Single Answer', 'Câu nào dưới đây không phải là câu hỏi bảo mật pass 2 mặc định trên hệ thống ?', '', 2, 1, 61, 1, 1, 59),
-(60, 'Multiple Choice Single Answer', 'Điểm MP là gì, bao lâu sẽ reset lại điểm MP ?', '', 2, 1, 73, 0, 3, 70),
-(61, 'Multiple Choice Single Answer', 'Điểm GP là gì, bao lâu sẽ reset lại điểm GP ?', '', 2, 1, 58, 2, 0, 56),
-(62, 'Multiple Choice Single Answer', 'Những chế độ thi đấu chính trong game là gì ?', '', 2, 1, 64, 0, 2, 62),
-(63, 'Multiple Choice Single Answer', ' Ưu đãi nào dưới đây là không đúng đối với khách hàng mua thẻ VIP ?', '', 2, 1, 59, 1, 3, 55),
-(65, 'Multiple Choice Single Answer', 'Khi cài mới Cyberpay KH thế chấp bao nhiêu tiền để mượn máy in nhiệt?', '', 1, 1, 0, 0, 0, 0),
-(66, 'Multiple Choice Single Answer', 'Có bao nhiêu hình thức nạp tiền vào Cyberpay?', '', 1, 1, 0, 0, 0, 0),
-(67, 'Multiple Choice Single Answer', 'Số tiền tối thiểu KH gửi yêu cầu nạp tiền mặt là bao nhiêu?', '', 1, 1, 0, 0, 0, 0),
-(68, 'Multiple Choice Single Answer', 'Lần đầu tiên ký hợp đồng KH bắt buộc nạp tối thiểu bao nhiêu tiền?', '', 1, 1, 0, 0, 0, 0),
-(69, 'Multiple Choice Single Answer', 'Các hình thức nạp tiền vào tài khoản Cyberpay?', '', 1, 1, 0, 0, 0, 0),
-(70, 'Multiple Choice Single Answer', 'Có bao nhiêu ngân hàng chấp nhận thanh toán Online Cyberpay?', '', 1, 1, 0, 0, 0, 0),
-(71, 'Multiple Choice Single Answer', 'Có bao nhiêu ngân hàng chấp nhận thanh toán Cyberpay tại quầy miễn phí giao dịch?', '', 1, 1, 0, 0, 0, 0),
-(72, 'Multiple Choice Single Answer', 'Những trường hợp nào KH không thực hiện được giao dịch bán hàng (bán thẻ, thanh toán phí Gcafe, thanh toán hóa đơn)?', '', 1, 1, 0, 0, 0, 0),
-(73, 'Multiple Choice Single Answer', 'KH là phòng máy CSM đăng ký cài mới CBP, CS tạo phiếu gì?', '', 1, 1, 0, 0, 0, 0),
-(74, 'Multiple Choice Single Answer', 'KH là đại lý sim/thẻ, quán cafe, tạp hóa, khách hàng cá nhân muốn cài đặt Cyberpay, CS tạo phiếu gì?', '', 1, 1, 0, 0, 0, 0),
-(75, 'Multiple Choice Single Answer', 'Game Fifa Online 3 chính thức ra mắt vào thời gian nào ?', '', 1, 1, 0, 0, 0, 0),
-(76, 'Multiple Choice Single Answer', 'Việt Nam là quốc gia thứ mấy được chính thức phát hành game Fifa Online 3 ?', '', 1, 1, 0, 0, 0, 0),
-(77, 'Multiple Choice Single Answer', 'Game Fifa Online 3 có điểm gì vượt trội so với người anh tiền nhiệm Fifa Online 2 ?', '', 1, 1, 0, 0, 0, 0),
-(78, 'Multiple Choice Single Answer', 'Tên HLV của tài khoản được đặt tối đa bao nhiêu kí tự ?', '', 1, 1, 0, 0, 0, 0),
-(79, 'Multiple Choice Single Answer', 'Mất thời gian bao lâu để xóa một HLV ?', '', 1, 1, 0, 0, 0, 0),
-(80, 'Multiple Choice Single Answer', 'Câu nào dưới đây không phải là câu hỏi bảo mật pass 2 mặc định trên hệ thống ?', '', 1, 1, 0, 0, 0, 0),
-(81, 'Multiple Choice Single Answer', 'Điểm MP là gì, bao lâu sẽ reset lại điểm MP ?', '', 1, 1, 0, 0, 0, 0),
-(82, 'Multiple Choice Single Answer', 'Điểm GP là gì, bao lâu sẽ reset lại điểm GP ?', '', 1, 1, 0, 0, 0, 0),
-(83, 'Multiple Choice Single Answer', 'Những chế độ thi đấu chính trong game là gì ?', '', 1, 1, 0, 0, 0, 0),
-(84, 'Multiple Choice Single Answer', ' Ưu đãi nào dưới đây là không đúng đối với khách hàng mua thẻ VIP ?', '', 1, 1, 0, 0, 0, 0),
-(85, 'Multiple Choice Single Answer', ' KH báo không đăng nhập được Gcafe Pro để update game, hiện tại không có game nào được update', '', 1, 1, 0, 0, 0, 0),
-(86, 'Multiple Choice Single Answer', 'KH báo máy chủ tính tiền bị virus, chạy chậm nhưng vẫn tính tiền được', '', 1, 1, 0, 0, 0, 0),
-(87, 'Multiple Choice Single Answer', 'Cài Driver Card màn hình cho 4 máy ( BR), cùng cấu hình.', '', 1, 1, 0, 0, 0, 0),
-(88, 'Multiple Choice Single Answer', 'Không đăng nhập được PMTT, báo lỗi tiếng anh', '', 1, 1, 0, 0, 0, 0),
-(89, 'Multiple Choice Single Answer', ' PM BR chơi game LMHT và FO3 thường xuyên bị treo và đứng máy', '', 1, 1, 0, 0, 0, 0),
-(90, 'Multiple Choice Single Answer', ' Mở băng MCTT để PM xóa một vài chương trình', '', 1, 1, 0, 0, 0, 0);
+(1, 'Multiple Choice Single Answer', '<p>2+2 = ?</p>', '', 2, 1, 0, 0, 0, 0),
+(2, 'Multiple Choice Single Answer', '<p>3+3 =?&nbsp;</p>', '', 2, 1, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -534,7 +492,15 @@ CREATE TABLE IF NOT EXISTS `savsoft_qcl` (
   `lid` int(11) NOT NULL,
   `noq` int(11) NOT NULL,
   PRIMARY KEY (`qcl_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=122 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=135 ;
+
+--
+-- Dumping data for table `savsoft_qcl`
+--
+
+INSERT INTO `savsoft_qcl` (`qcl_id`, `quid`, `cid`, `lid`, `noq`) VALUES
+(133, 11, 3, 1, 4),
+(134, 11, 2, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -549,11 +515,13 @@ CREATE TABLE IF NOT EXISTS `savsoft_quiz` (
   `start_date` int(11) NOT NULL,
   `end_date` int(11) NOT NULL,
   `gids` text NOT NULL,
+  `uids` text NOT NULL,
+  `date_assign_user` int(11) NOT NULL,
   `qids` text NOT NULL,
   `noq` int(11) NOT NULL,
   `correct_score` float NOT NULL,
   `incorrect_score` float NOT NULL,
-  `ip_address` text NOT NULL,
+  `form_email` text NOT NULL,
   `duration` int(11) NOT NULL DEFAULT '10',
   `maximum_attempts` int(11) NOT NULL DEFAULT '1',
   `pass_percentage` float NOT NULL DEFAULT '50',
@@ -562,8 +530,17 @@ CREATE TABLE IF NOT EXISTS `savsoft_quiz` (
   `question_selection` int(11) NOT NULL DEFAULT '1',
   `gen_certificate` int(11) NOT NULL DEFAULT '0',
   `certificate_text` text,
+  `allow_back` int(11) NOT NULL,
   PRIMARY KEY (`quid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=21 ;
+
+--
+-- Dumping data for table `savsoft_quiz`
+--
+
+INSERT INTO `savsoft_quiz` (`quid`, `quiz_name`, `description`, `start_date`, `end_date`, `gids`, `uids`, `date_assign_user`, `qids`, `noq`, `correct_score`, `incorrect_score`, `form_email`, `duration`, `maximum_attempts`, `pass_percentage`, `view_answer`, `camera_req`, `question_selection`, `gen_certificate`, `certificate_text`, `allow_back`) VALUES
+(19, 'test 02', '', 1465812414, 1497348414, '4', '', 0, '1,2', 2, 1, 0, '', 10, 100, 50, 1, 0, 0, 0, NULL, 0),
+(20, 'Test 03', '', 1465963611, 1497499611, '4,3', '10,7,3,12,11', 1465952587, '', 0, 1, 0, '', 10, 100, 50, 1, 0, 1, 0, NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -590,7 +567,47 @@ CREATE TABLE IF NOT EXISTS `savsoft_result` (
   `photo` varchar(100) NOT NULL,
   `manual_valuation` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`rid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=125 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=139 ;
+
+--
+-- Dumping data for table `savsoft_result`
+--
+
+INSERT INTO `savsoft_result` (`rid`, `quid`, `uid`, `result_status`, `start_time`, `end_time`, `categories`, `category_range`, `r_qids`, `individual_time`, `total_time`, `score_obtained`, `percentage_obtained`, `attempted_ip`, `score_individual`, `photo`, `manual_valuation`) VALUES
+(125, 11, 1, 'Fail', 1465540681, 1465540757, 'CS-Trắc Nghiệm Cyperbay,CS-Trắc Nghiệm Game', '4,1', '54,47,46,52,59', '190,0,0,0,0', 190, 0, 0, '::1', '0,0,0,0,0', '', 0),
+(126, 11, 1, 'Fail', 1465543513, 1465543637, 'CS-Trắc Nghiệm Cyperbay,CS-Trắc Nghiệm Game', '4,1', '45,50,51,53,60', '29,6,0,0,0', 35, 0, 0, '::1', '0,0,0,0,0', '', 0),
+(127, 11, 5, 'Fail', 1465543668, 1465543791, 'CS-Trắc Nghiệm Cyperbay,CS-Trắc Nghiệm Game', '4,1', '45,54,48,46,62', '89,0,0,0,0', 89, 0, 0, '::1', '0,0,0,0,0', '', 0),
+(128, 11, 5, 'Fail', 1465543818, 1465543940, 'CS-Trắc Nghiệm Cyperbay,CS-Trắc Nghiệm Game', '4,1', '54,45,50,51,56', '115,0,0,0,0', 115, 0, 0, '::1', '0,0,0,0,0', '', 0),
+(129, 11, 5, 'Fail', 1465544242, 1465544364, 'CS-Trắc Nghiệm Cyperbay,CS-Trắc Nghiệm Game', '4,1', '51,52,53,46,56', '42,0,0,0,0', 42, 0, 0, '::1', '0,0,0,0,0', '', 0),
+(130, 11, 5, 'Fail', 1465544375, 1465544512, 'CS-Trắc Nghiệm Cyperbay,CS-Trắc Nghiệm Game', '4,1', '50,47,45,46,59', '118,0,0,0,0', 118, 0, 0, '::1', '0,0,0,0,0', '', 0),
+(131, 11, 5, 'Fail', 1465544576, 1465544699, 'CS-Trắc Nghiệm Cyperbay,CS-Trắc Nghiệm Game', '4,1', '46,53,54,52,63', '108,0,0,0,0', 108, 0, 0, '::1', '0,0,0,0,0', '', 0),
+(132, 11, 5, 'Fail', 1465545411, 0, 'CS-Trắc Nghiệm Cyperbay,CS-Trắc Nghiệm Game', '4,1', '45,54,50,46,63', '0,5,2,0,0', 0, 0, 0, '::1', '1,2,0,0,0', '', 0),
+(133, 11, 1, 'Fail', 1465546081, 1465547220, 'CS-Trắc Nghiệm Cyperbay,CS-Trắc Nghiệm Game', '4,1', '54,45,48,49,61', '4,97,0,0,0', 101, 1, 20, '::1', '1,0,0,0,0', '', 0),
+(134, 11, 1, 'Closed', 1465547224, 0, 'CS-Trắc Nghiệm Cyperbay,CS-Trắc Nghiệm Game', '4,1', '45,49,48,52,58', '20,0,0,0,0', 0, 0, 0, '::1', '1,0,0,0,0', '', 0),
+(135, 11, 5, 'Closed', 1465547544, 0, 'CS-Trắc Nghiệm Cyperbay,CS-Trắc Nghiệm Game', '4,1', '48,49,53,46,61', '11,0,0,0,0', 0, 0, 0, '::1', '0,0,0,0,0', '', 0),
+(136, 11, 1, 'Fail', 1465548918, 1465793014, 'CS-Trắc Nghiệm Cyperbay,CS-Trắc Nghiệm Game', '4,1', '54,48,53,45,58', '5,0,0,0,0', 5, 0, 0, '::1', '0,0,0,0,0', '', 0),
+(137, 11, 1, 'Fail', 1465811416, 1465811477, 'CS-Trắc Nghiệm Cyperbay,CS-Trắc Nghiệm Game', '4,1', '52,50,47,49,63', '37,6,1,3,14', 61, 1, 20, '::1', '2,2,1,2,2', '', 0),
+(138, 11, 5, 'Closed', 1465962734, 0, 'CS-Trắc Nghiệm Game', '1', '2', '0', 0, 0, 0, '::1', '0', '', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `savsoft_status`
+--
+
+CREATE TABLE IF NOT EXISTS `savsoft_status` (
+  `sid` int(11) unsigned NOT NULL,
+  `name_status` varchar(255) NOT NULL,
+  PRIMARY KEY (`sid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `savsoft_status`
+--
+
+INSERT INTO `savsoft_status` (`sid`, `name_status`) VALUES
+(1, 'Active'),
+(2, 'Inactive');
 
 -- --------------------------------------------------------
 
@@ -607,20 +624,23 @@ CREATE TABLE IF NOT EXISTS `savsoft_users` (
   `contact_no` varchar(1000) NOT NULL,
   `gid` int(11) NOT NULL DEFAULT '1',
   `su` int(11) NOT NULL DEFAULT '0',
+  `pid` int(11) NOT NULL,
+  `sid` int(11) NOT NULL,
   `subscription_expired` int(11) NOT NULL DEFAULT '0',
   `verify_code` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`uid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
 
 --
 -- Dumping data for table `savsoft_users`
 --
 
-INSERT INTO `savsoft_users` (`uid`, `password`, `email`, `first_name`, `last_name`, `contact_no`, `gid`, `su`, `subscription_expired`, `verify_code`) VALUES
-(1, '21232f297a57a5a743894a0e4a801fc3', 'admin@example.com', 'Admin', 'Admin', '1234567890', 1, 1, 1776290400, 0),
-(5, '202cb962ac59075b964b07152d234b70', 'user@example.com', 'User', 'User', '1234567890', 1, 0, 1776882600, 0),
-(6, '25f9e794323b453885f5181f1b624d0b', 'trinhhuyk57@gmail.com', 'huy', 'trịnh', '', 1, 0, 1780684200, 0),
-(7, '25f9e794323b453885f5181f1b624d0b', 'trinhhuy2504@gmail.com', '', '', '', 4, 0, 0, 3499);
+INSERT INTO `savsoft_users` (`uid`, `password`, `email`, `first_name`, `last_name`, `contact_no`, `gid`, `su`, `pid`, `sid`, `subscription_expired`, `verify_code`) VALUES
+(1, '21232f297a57a5a743894a0e4a801fc3', 'admin@example.com', 'Admin', 'Admin', '1234567890', 1, 1, 0, 1, 1776290400, 0),
+(5, '202cb962ac59075b964b07152d234b70', 'user@example.com', 'User', 'User', '1234567890', 3, 0, 0, 1, 1776882600, 0),
+(10, '25f9e794323b453885f5181f1b624d0b', 'test02@example.com.vn', '', '', '', 4, 0, 0, 1, 1781197200, 0),
+(11, '202cb962ac59075b964b07152d234b70', 'test01@example.com', 'test01', 'test01', '', 4, 0, 0, 1, 1781283600, 0),
+(12, '202cb962ac59075b964b07152d234b70', 'test03@example.com', '', '', '', 4, 0, 0, 1, 1781283600, 0);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

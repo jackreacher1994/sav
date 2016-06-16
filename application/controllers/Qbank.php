@@ -143,8 +143,10 @@ class Qbank extends CI_Controller {
 			exit($this->lang->line('permission_denied'));
 			}
 			if($this->input->post('question')){
-				if($this->qbank_model->insert_question_1()){
+				$qid = $this->qbank_model->insert_question_1();
+				if($qid){
                 $this->session->set_flashdata('message', "<div class='alert alert-success'>".$this->lang->line('data_added_successfully')." </div>");
+					log_message('ved', $this->lang->line('user') . ' ' . $logged_in['uid'] . ' ' . $this->lang->line('insert_question') . ' ' . $qid);
 				}else{
 				 $this->session->set_flashdata('message', "<div class='alert alert-danger'>".$this->lang->line('error_to_add_data')." </div>");
 				}
@@ -171,8 +173,10 @@ class Qbank extends CI_Controller {
 			exit($this->lang->line('permission_denied'));
 			}
 			if($this->input->post('question')){
-				if($this->qbank_model->insert_question_2()){
+				$qid = $this->qbank_model->insert_question_2();
+				if($qid){
                 $this->session->set_flashdata('message', "<div class='alert alert-success'>".$this->lang->line('data_added_successfully')." </div>");
+					log_message('ved', $this->lang->line('user') . ' ' . $logged_in['uid'] . ' ' . $this->lang->line('insert_question') . ' ' . $qid);
 				}else{
 				 $this->session->set_flashdata('message', "<div class='alert alert-danger'>".$this->lang->line('error_to_add_data')." </div>");
 				}
@@ -199,8 +203,10 @@ class Qbank extends CI_Controller {
 			exit($this->lang->line('permission_denied'));
 			}
 			if($this->input->post('question')){
-				if($this->qbank_model->insert_question_3()){
+				$qid = $this->qbank_model->insert_question_3();
+				if($qid){
                 $this->session->set_flashdata('message', "<div class='alert alert-success'>".$this->lang->line('data_added_successfully')." </div>");
+					log_message('ved', $this->lang->line('user') . ' ' . $logged_in['uid'] . ' ' . $this->lang->line('insert_question') . ' ' . $qid);
 				}else{
 				 $this->session->set_flashdata('message', "<div class='alert alert-danger'>".$this->lang->line('error_to_add_data')." </div>");
 				}
@@ -227,8 +233,10 @@ class Qbank extends CI_Controller {
 			exit($this->lang->line('permission_denied'));
 			}
 			if($this->input->post('question')){
-				if($this->qbank_model->insert_question_4()){
+				$qid = $this->qbank_model->insert_question_4();
+				if($qid){
                 $this->session->set_flashdata('message', "<div class='alert alert-success'>".$this->lang->line('data_added_successfully')." </div>");
+					log_message('ved', $this->lang->line('user') . ' ' . $logged_in['uid'] . ' ' . $this->lang->line('insert_question') . ' ' . $qid);
 				}else{
 				 $this->session->set_flashdata('message', "<div class='alert alert-danger'>".$this->lang->line('error_to_add_data')." </div>");
 				}
@@ -255,8 +263,10 @@ class Qbank extends CI_Controller {
 			exit($this->lang->line('permission_denied'));
 			}
 			if($this->input->post('question')){
-				if($this->qbank_model->insert_question_5()){
+				$qid = $this->qbank_model->insert_question_5();
+				if($qid){
                 $this->session->set_flashdata('message', "<div class='alert alert-success'>".$this->lang->line('data_added_successfully')." </div>");
+					log_message('ved', $this->lang->line('user') . ' ' . $logged_in['uid'] . ' ' . $this->lang->line('insert_question') . ' ' . $qid);
 				}else{
 				 $this->session->set_flashdata('message', "<div class='alert alert-danger'>".$this->lang->line('error_to_add_data')." </div>");
 				}
@@ -283,8 +293,10 @@ class Qbank extends CI_Controller {
 			exit($this->lang->line('permission_denied'));
 		}
 		if($this->input->post('question')){
-			if($this->qbank_model->insert_question_6()){
+			$qid = $this->qbank_model->insert_question_6();
+			if($qid){
 				$this->session->set_flashdata('message', "<div class='alert alert-success'>".$this->lang->line('data_added_successfully')." </div>");
+				log_message('ved', $this->lang->line('user') . ' ' . $logged_in['uid'] . ' ' . $this->lang->line('insert_question') . ' ' . $qid);
 			}else{
 				$this->session->set_flashdata('message', "<div class='alert alert-danger'>".$this->lang->line('error_to_add_data')." </div>");
 			}
@@ -510,10 +522,6 @@ class Qbank extends CI_Controller {
 		$this->load->view('header',$data);
 		$this->load->view('category_list',$data);
 		$this->load->view('footer',$data);
-
-		
-		
-		
 	}
 	
 	
@@ -525,9 +533,10 @@ class Qbank extends CI_Controller {
 			if($logged_in['su']!='1'){
 				exit($this->lang->line('permission_denied'));
 			}
-	
-				if($this->qbank_model->insert_category()){
+				$cid = $this->qbank_model->insert_category();
+				if($cid){
                 $this->session->set_flashdata('message', "<div class='alert alert-success'>".$this->lang->line('data_added_successfully')." </div>");
+					log_message('ved', $this->lang->line('user') . ' ' . $logged_in['uid'] . ' ' . $this->lang->line('insert_category') . ' ' . $cid);
 				}else{
 				 $this->session->set_flashdata('message', "<div class='alert alert-danger'>".$this->lang->line('error_to_add_data')." </div>");
 						
@@ -621,9 +630,10 @@ class Qbank extends CI_Controller {
 			if($logged_in['su']!='1'){
 				exit($this->lang->line('permission_denied'));
 			}
-	
-				if($this->qbank_model->insert_level()){
+				$lid = $this->qbank_model->insert_level();
+				if($lid){
                 $this->session->set_flashdata('message', "<div class='alert alert-success'>".$this->lang->line('data_added_successfully')." </div>");
+					log_message('ved', $this->lang->line('user') . ' ' . $logged_in['uid'] . ' ' . $this->lang->line('insert_level') . ' ' . $lid);
 				}else{
 				 $this->session->set_flashdata('message', "<div class='alert alert-danger'>".$this->lang->line('error_to_add_data')." </div>");
 						

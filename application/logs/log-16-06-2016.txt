@@ -1,0 +1,153 @@
+VED - 02:27:01 16-06-2016 --> User 1 logged in
+VED - 09:36:48 16-06-2016 --> User 1 logged in
+VED - 09:37:47 16-06-2016 --> User 1 insert permission 
+VED - 09:38:08 16-06-2016 --> User 1 insert permission 
+VED - 09:38:27 16-06-2016 --> User 1 insert permission 
+VED - 09:38:38 16-06-2016 --> User 1 insert permission 
+VED - 09:58:14 16-06-2016 --> User 1 insert permission 
+VED - 09:58:35 16-06-2016 --> User 1 insert permission 
+VED - 09:58:56 16-06-2016 --> User 1 insert permission 
+VED - 09:59:24 16-06-2016 --> User 1 insert permission 
+VED - 10:15:25 16-06-2016 --> User 1 update permission 1
+VED - 10:15:27 16-06-2016 --> User 1 update permission 4
+VED - 10:15:28 16-06-2016 --> User 1 update permission 3
+VED - 10:15:29 16-06-2016 --> User 1 update permission 2
+VED - 10:15:45 16-06-2016 --> User 1 update permission 1
+VED - 10:15:51 16-06-2016 --> User 1 update permission 4
+VED - 10:26:37 16-06-2016 --> User 1 insert permission 
+VED - 10:29:38 16-06-2016 --> User 1 insert permission 
+VED - 10:29:52 16-06-2016 --> User 1 insert permission 
+VED - 10:30:01 16-06-2016 --> User 1 insert permission 
+VED - 10:30:10 16-06-2016 --> User 1 insert permission 
+VED - 10:30:33 16-06-2016 --> User 1 insert permission 
+VED - 10:30:41 16-06-2016 --> User 1 insert permission 
+ERROR - 10:46:20 16-06-2016 --> Severity: Error --> Call to undefined method Permission_model::group_permission_list() C:\xampp\htdocs\sav\application\controllers\Permission.php 29
+ERROR - 10:48:15 16-06-2016 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\sav\application\views\group_permission_list.php 36
+ERROR - 10:50:22 16-06-2016 --> Query error: Column 'group_permission_name' cannot be null - Invalid query: INSERT INTO `savsoft_group_permission` (`group_permission_name`) VALUES (NULL)
+ERROR - 10:50:22 16-06-2016 --> 404 Page Not Found: Permission/group_permission_list
+ERROR - 10:51:28 16-06-2016 --> 404 Page Not Found: Permission/group_permission_list
+ERROR - 10:51:36 16-06-2016 --> Query error: Column 'group_permission_name' cannot be null - Invalid query: INSERT INTO `savsoft_group_permission` (`group_permission_name`) VALUES (NULL)
+VED - 10:52:57 16-06-2016 --> User 1 insert group permission 
+VED - 10:53:07 16-06-2016 --> User 1 insert group permission 
+ERROR - 10:56:19 16-06-2016 --> Severity: Compile Error --> Cannot redeclare Permission_model::remove_permission() C:\xampp\htdocs\sav\application\models\Permission_model.php 125
+VED - 10:57:43 16-06-2016 --> User 1 insert group permission 
+VED - 10:57:56 16-06-2016 --> User 1 insert group permission 
+VED - 10:58:11 16-06-2016 --> User 1 insert group permission 
+VED - 10:58:16 16-06-2016 --> User 1 insert group permission 
+ERROR - 10:58:19 16-06-2016 --> Severity: Warning --> Missing argument 1 for Permission::remove_group_permission() C:\xampp\htdocs\sav\application\controllers\Permission.php 72
+VED - 10:58:19 16-06-2016 --> User 1 remove group permission 
+ERROR - 10:58:19 16-06-2016 --> 404 Page Not Found: Permission/grou_permission_list
+ERROR - 10:58:31 16-06-2016 --> 404 Page Not Found: Permission/grou_permission_list
+ERROR - 10:58:36 16-06-2016 --> Severity: Warning --> Missing argument 1 for Permission::remove_group_permission() C:\xampp\htdocs\sav\application\controllers\Permission.php 72
+VED - 10:58:36 16-06-2016 --> User 1 remove group permission 
+ERROR - 10:58:36 16-06-2016 --> 404 Page Not Found: Permission/group_permission_list
+ERROR - 10:58:51 16-06-2016 --> Severity: Warning --> Missing argument 1 for Permission::remove_group_permission() C:\xampp\htdocs\sav\application\controllers\Permission.php 72
+VED - 10:58:51 16-06-2016 --> User 1 remove group permission 
+VED - 11:00:08 16-06-2016 --> User 1 remove group permission 
+VED - 11:05:01 16-06-2016 --> User 1 insert permission 8
+VED - 11:06:01 16-06-2016 --> User 1 insert permission 9
+VED - 11:06:17 16-06-2016 --> User 1 insert permission 10
+VED - 11:06:30 16-06-2016 --> User 1 insert permission 11
+ERROR - 11:08:48 16-06-2016 --> Query error: Unknown column '$val["gpid"]' in 'on clause' - Invalid query: SELECT `savsoft_group_permission`.`group_permission_name`
+FROM `savsoft_permission`
+JOIN `savsoft_group_permission` ON `savsoft_group_permission`.`gpid` = `$val["gpid"]`
+ LIMIT 1
+ERROR - 11:08:48 16-06-2016 --> Severity: Error --> Call to a member function row_array() on a non-object C:\xampp\htdocs\sav\application\views\permission_list.php 46
+ERROR - 11:09:44 16-06-2016 --> Query error: Unknown column '$val["gpid"]' in 'on clause' - Invalid query: SELECT `savsoft_group_permission`.`group_permission_name`
+FROM `savsoft_permission`
+JOIN `savsoft_group_permission` ON `savsoft_group_permission`.`gpid` = `$val["gpid"]`
+ERROR - 11:09:44 16-06-2016 --> Severity: Error --> Call to a member function row_array() on a non-object C:\xampp\htdocs\sav\application\views\permission_list.php 46
+ERROR - 11:22:47 16-06-2016 --> 404 Page Not Found: Permission/assign_permisstion
+ERROR - 11:34:34 16-06-2016 --> 404 Page Not Found: Permission/assign_permisstion
+ERROR - 11:34:36 16-06-2016 --> 404 Page Not Found: Permission/assign_permisstion
+ERROR - 12:50:36 16-06-2016 --> 404 Page Not Found: Permission/12
+ERROR - 12:50:38 16-06-2016 --> 404 Page Not Found: Permission/12
+ERROR - 12:51:22 16-06-2016 --> 404 Page Not Found: Permission/12
+ERROR - 13:08:45 16-06-2016 --> 404 Page Not Found: Permission/12
+ERROR - 13:09:08 16-06-2016 --> 404 Page Not Found: Permission/12
+ERROR - 13:09:18 16-06-2016 --> 404 Page Not Found: Permission/12
+ERROR - 13:09:19 16-06-2016 --> 404 Page Not Found: Permission/12
+ERROR - 13:09:19 16-06-2016 --> 404 Page Not Found: Permission/12
+ERROR - 13:09:19 16-06-2016 --> 404 Page Not Found: Permission/12
+ERROR - 13:09:19 16-06-2016 --> 404 Page Not Found: Permission/12
+ERROR - 13:09:19 16-06-2016 --> 404 Page Not Found: Permission/12
+ERROR - 13:13:00 16-06-2016 --> Severity: Parsing Error --> syntax error, unexpected '}' C:\xampp\htdocs\sav\application\views\assign_group_permission.php 27
+ERROR - 13:13:16 16-06-2016 --> Severity: Parsing Error --> syntax error, unexpected '}' C:\xampp\htdocs\sav\application\views\assign_group_permission.php 27
+ERROR - 13:13:17 16-06-2016 --> Severity: Parsing Error --> syntax error, unexpected '}' C:\xampp\htdocs\sav\application\views\assign_group_permission.php 27
+ERROR - 13:19:54 16-06-2016 --> 404 Page Not Found: Permission/submit_assign_user_for_group_permission
+ERROR - 13:30:36 16-06-2016 --> Severity: Parsing Error --> syntax error, unexpected ';', expecting ')' C:\xampp\htdocs\sav\application\models\Permission_model.php 68
+VED - 13:30:53 16-06-2016 --> User 1 logged out
+VED - 13:31:04 16-06-2016 --> User 1 logged in
+ERROR - 13:31:55 16-06-2016 --> Severity: Error --> Call to a member function submit_assign_user_for_group_permission() on a non-object C:\xampp\htdocs\sav\application\controllers\Permission.php 196
+ERROR - 13:32:14 16-06-2016 --> Query error: Unknown column 'uid' in 'where clause' - Invalid query: UPDATE `savsoft_quiz` SET `gpid` = '1', `pid` = '0'
+WHERE `uid` IS NULL
+ERROR - 13:32:45 16-06-2016 --> Query error: Unknown column 'uid' in 'where clause' - Invalid query: UPDATE `savsoft_quiz` SET `gpid` = '1', `pid` = '0'
+WHERE `uid` IS NULL
+ERROR - 13:32:45 16-06-2016 --> 404 Page Not Found: Permission/index
+ERROR - 13:32:51 16-06-2016 --> Query error: Unknown column 'uid' in 'where clause' - Invalid query: UPDATE `savsoft_quiz` SET `gpid` = '1', `pid` = '0'
+WHERE `uid` IS NULL
+ERROR - 13:32:51 16-06-2016 --> 404 Page Not Found: Permission/index
+ERROR - 13:34:46 16-06-2016 --> Query error: Unknown column 'uid' in 'where clause' - Invalid query: UPDATE `savsoft_quiz` SET `gpid` = '1', `pid` = '0'
+WHERE `uid` IS NULL
+ERROR - 13:53:07 16-06-2016 --> Severity: Parsing Error --> syntax error, unexpected end of file C:\xampp\htdocs\sav\application\views\header.php 142
+VED - 13:58:31 16-06-2016 --> User 1 logged out
+VED - 13:58:39 16-06-2016 --> User 12 logged in
+VED - 13:58:42 16-06-2016 --> User 12 logged out
+VED - 13:59:06 16-06-2016 --> User 11 logged in
+VED - 13:59:19 16-06-2016 --> User 11 logged out
+VED - 13:59:26 16-06-2016 --> User 11 logged in
+VED - 13:59:50 16-06-2016 --> User 11 logged out
+VED - 14:00:03 16-06-2016 --> User 11 logged in
+VED - 14:02:20 16-06-2016 --> User 11 logged out
+VED - 14:02:25 16-06-2016 --> User 1 logged in
+VED - 14:24:31 16-06-2016 --> User 1 insert group permission 
+VED - 14:24:50 16-06-2016 --> User 1 insert group permission 
+VED - 14:25:08 16-06-2016 --> User 1 insert group permission 
+VED - 14:25:30 16-06-2016 --> User 1 insert group permission 
+VED - 14:25:51 16-06-2016 --> User 1 insert group permission 
+ERROR - 14:32:49 16-06-2016 --> Query error: Unknown column 'pid' in 'order clause' - Invalid query: SELECT *
+FROM `savsoft_permission`
+ORDER BY `pid` DESC
+ERROR - 14:32:49 16-06-2016 --> Severity: Error --> Call to a member function result_array() on a non-object C:\xampp\htdocs\sav\application\models\Permission_model.php 89
+ERROR - 14:35:23 16-06-2016 --> Query error: Unknown column 'pid' in 'order clause' - Invalid query: SELECT *
+FROM `savsoft_permission`
+ORDER BY `pid` DESC
+ERROR - 14:35:23 16-06-2016 --> Severity: Error --> Call to a member function result_array() on a non-object C:\xampp\htdocs\sav\application\models\Permission_model.php 89
+ERROR - 14:35:53 16-06-2016 --> Query error: Unknown column 'pid' in 'order clause' - Invalid query: SELECT *
+FROM `savsoft_permission`
+ORDER BY `pid` DESC
+ERROR - 14:35:53 16-06-2016 --> Severity: Error --> Call to a member function result_array() on a non-object C:\xampp\htdocs\sav\application\models\Permission_model.php 89
+ERROR - 14:35:54 16-06-2016 --> Query error: Unknown column 'pid' in 'order clause' - Invalid query: SELECT *
+FROM `savsoft_permission`
+ORDER BY `pid` DESC
+ERROR - 14:35:54 16-06-2016 --> Severity: Error --> Call to a member function result_array() on a non-object C:\xampp\htdocs\sav\application\models\Permission_model.php 89
+ERROR - 14:35:54 16-06-2016 --> Query error: Unknown column 'pid' in 'order clause' - Invalid query: SELECT *
+FROM `savsoft_permission`
+ORDER BY `pid` DESC
+ERROR - 14:35:54 16-06-2016 --> Severity: Error --> Call to a member function result_array() on a non-object C:\xampp\htdocs\sav\application\models\Permission_model.php 89
+ERROR - 14:35:54 16-06-2016 --> Query error: Unknown column 'pid' in 'order clause' - Invalid query: SELECT *
+FROM `savsoft_permission`
+ORDER BY `pid` DESC
+ERROR - 14:35:54 16-06-2016 --> Severity: Error --> Call to a member function result_array() on a non-object C:\xampp\htdocs\sav\application\models\Permission_model.php 89
+ERROR - 14:35:54 16-06-2016 --> Query error: Unknown column 'pid' in 'order clause' - Invalid query: SELECT *
+FROM `savsoft_permission`
+ORDER BY `pid` DESC
+ERROR - 14:35:54 16-06-2016 --> Severity: Error --> Call to a member function result_array() on a non-object C:\xampp\htdocs\sav\application\models\Permission_model.php 89
+VED - 14:37:03 16-06-2016 --> User 1 insert permission 1
+VED - 14:37:29 16-06-2016 --> User 1 insert permission 2
+VED - 14:37:53 16-06-2016 --> User 1 insert permission 3
+VED - 14:38:28 16-06-2016 --> User 1 insert permission 4
+ERROR - 15:00:14 16-06-2016 --> Severity: Parsing Error --> syntax error, unexpected '{' C:\xampp\htdocs\sav\application\views\header.php 64
+VED - 15:01:06 16-06-2016 --> User 11 logged in
+ERROR - 15:10:33 16-06-2016 --> Severity: Parsing Error --> syntax error, unexpected ')' C:\xampp\htdocs\sav\application\models\Permission_model.php 158
+ERROR - 15:11:27 16-06-2016 --> Severity: 4096 --> Object of class stdClass could not be converted to string C:\xampp\htdocs\sav\application\models\Permission_model.php 159
+ERROR - 15:11:54 16-06-2016 --> Severity: Error --> Cannot use object of type stdClass as array C:\xampp\htdocs\sav\application\models\Permission_model.php 159
+VED - 15:18:13 16-06-2016 --> User 1 update permission 5
+VED - 15:18:14 16-06-2016 --> User 1 update permission 1
+VED - 15:18:18 16-06-2016 --> User 1 update permission 1
+VED - 15:22:34 16-06-2016 --> User 11 logged out
+VED - 15:22:41 16-06-2016 --> User 12 logged in
+ERROR - 15:45:46 16-06-2016 --> 404 Page Not Found: Permission/index
+ERROR - 16:00:51 16-06-2016 --> Severity: Error --> Call to undefined function result() C:\xampp\htdocs\sav\application\models\Permission_model.php 17
+ERROR - 16:01:37 16-06-2016 --> 404 Page Not Found: Permission/index
+ERROR - 16:10:31 16-06-2016 --> Severity: Parsing Error --> syntax error, unexpected end of file C:\xampp\htdocs\sav\application\views\assign_group_permission.php 65

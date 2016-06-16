@@ -262,5 +262,6 @@ $lang['remove_user'] = "deleted user";
 $lang['insert_quiz'] = "inserted quiz";
 $lang['update_quiz'] = "updated quiz";
 $lang['remove_quiz'] = "deleted quiz";
+$lang['remove_result'] = "deleted result";
 
 

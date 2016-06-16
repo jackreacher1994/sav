@@ -91,8 +91,10 @@ class User extends CI_Controller {
 		}
 		else
 		{
-			if($this->user_model->insert_user()){
+			$uid = $this->user_model->insert_user();
+			if($uid){
 				$this->session->set_flashdata('message', "<div class='alert alert-success'>".$this->lang->line('data_added_successfully')." </div>");
+				log_message('ved', $this->lang->line('user') . ' ' . $logged_in['uid'] . ' ' . $this->lang->line('insert_user') . ' ' . $uid);
 			}else{
 				$this->session->set_flashdata('message', "<div class='alert alert-danger'>".$this->lang->line('error_to_add_data')." </div>");
 
@@ -211,9 +213,11 @@ class User extends CI_Controller {
 		if($logged_in['su']!='1'){
 			exit($this->lang->line('permission_denied'));
 		}
-		
-		if($this->user_model->insert_group()){
+
+		$gid = $this->user_model->insert_group();
+		if($gid){
 			$this->session->set_flashdata('message', "<div class='alert alert-success'>".$this->lang->line('data_added_successfully')." </div>");
+			log_message('ved', $this->lang->line('user') . ' ' . $logged_in['uid'] . ' ' . $this->lang->line('insert_group') . ' ' . $gid);
 		}else{
 			$this->session->set_flashdata('message', "<div class='alert alert-danger'>".$this->lang->line('error_to_add_data')." </div>");
 

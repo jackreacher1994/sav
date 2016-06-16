@@ -53,31 +53,46 @@
               <?php  
 				if($logged_in['su']==1){
 			?>
-			  
+			  <?php 
+			 	if($logged_in['gpid'] == 1 || $logged_in['gpid'] == 0){
+			 		?>
 			  <li <?php if($this->uri->segment(1)=='dashboard'){ echo "class='active'"; } ?> ><a href="<?php echo site_url('dashboard');?>"><?php echo $this->lang->line('dashboard');?></a></li>
-            
-			 
 			  <li class="dropdown" <?php if($this->uri->segment(1)=='user'){ echo "class='active'"; } ?> >
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $this->lang->line('users');?> <span class="caret"></span></a>
+                	
                 <ul class="dropdown-menu">
+                <?php if ($logged_in['pid'] == 1 || $logged_in['pid'] == 0){
+                ?>
                   <li><a href="<?php echo site_url('user/new_user');?>"><?php echo $this->lang->line('add_new');?></a></li>
+                  <?php } ?>
+                   <?php if ($logged_in['pid'] == 2 || $logged_in['pid'] == 0){
+                ?>
                   <li><a href="<?php echo site_url('user');?>"><?php echo $this->lang->line('list');?> <?php echo $this->lang->line('users');?> </a></li>
-                  
+                      <?php } ?>
+                      <?php if ($logged_in['pid'] == 2 || $logged_in['pid'] == 0){
+                ?>
+                      <li><a href="<?php echo site_url('user/group_list');?>"><?php echo $this->lang->line('group_list');?></a></li>
+                      <?php } ?>
                 </ul>
               </li>
+			 <?php }
+			 	?>
 			 
-			 
-			 
+			 <?php 
+			 	if($logged_in['gpid'] == 2 || $logged_in['gpid'] == 0){
+			 	?>
 			  <li class="dropdown" <?php if($this->uri->segment(1)=='qbank'){ echo "class='active'"; } ?> >
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $this->lang->line('qbank');?> <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                   <li><a href="<?php echo site_url('qbank/pre_new_question');?>"><?php echo $this->lang->line('add_new');?></a></li>
                   <li><a href="<?php echo site_url('qbank');?>"><?php echo $this->lang->line('list');?> <?php echo $this->lang->line('question');?> </a></li>
-                  
+                    <li><a href="<?php echo site_url('qbank/category_list');?>"><?php echo $this->lang->line('category_list');?></a></li>
+                    <li><a href="<?php echo site_url('qbank/level_list');?>"><?php echo $this->lang->line('level_list');?></a></li>
                 </ul>
               </li>
 			 
-			 
+			 <?php }
+			 	?>
 			 
 		    <?php 
 				}else{
@@ -90,7 +105,7 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $this->lang->line('quiz');?> <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                  <?php  
-				if($logged_in['su']==1){
+				if($logged_in['su'] == 1 && ( $logged_in['gpid'] == 3 || $logged_in['gpid'] == 0) ){
 			?>     <li><a href="<?php echo site_url('quiz/add_new');?>"><?php echo $this->lang->line('add_new');?></a></li>
 					<li><a href="<?php echo site_url('quiz/add_new_quiz');?>"><?php echo $this->lang->line('add_new_with_temp');?></a></li>
               <?php 
@@ -102,44 +117,27 @@
 	
 
 	           <li><a href="<?php echo site_url('result');?>"><?php echo $this->lang->line('result');?></a></li>
-			 	<li><a href="#"><?php echo $this->lang->line('assign_permission');?></a></li>
-			 
+			 	
 			  <?php  
 				if($logged_in['su']==1){
 			?>
 			 
-			 
-			  <li class="dropdown" <?php if($this->uri->segment(1)=='user_group'){ echo "class='active'"; } ?> >
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $this->lang->line('setting');?> <span class="caret"></span></a>
+			  <li class="dropdown" <?php if($this->uri->segment(1)=='permission'){ echo "class='active'"; } ?> >
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $this->lang->line('assign_permission');?> <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                 
-                  <li><a href="<?php echo site_url('user/group_list');?>"><?php echo $this->lang->line('group_list');?></a></li>
-                  <li><a href="<?php echo site_url('qbank/category_list');?>"><?php echo $this->lang->line('category_list');?></a></li>
-                   <li><a href="<?php echo site_url('qbank/level_list');?>"><?php echo $this->lang->line('level_list');?></a></li>
-                  
-<!--					<li><a href="--><?php //echo site_url('dashboard/config');?><!--">--><?php //echo $this->lang->line('config');?><!--</a></li>-->
-<!--					 -->
-<!--					<li><a href="--><?php //echo site_url('dashboard/css');?><!--">--><?php //echo $this->lang->line('custom_css');?><!--</a></li>-->
-						  
-                  
+                <li><a href="<?php echo site_url('permission/permission_group');?>">Group permission</a></li>
+                  <li><a href="<?php echo site_url('permission/permission_list');?>">List permission</a></li>
+                  <li><a href="<?php echo site_url('permission/user_assign_permission');?>">Assign Permission</a></li>
                 </ul>
               </li>
+			 
+
 			
 			<?php 
 				}
 				?>
              <li><a href="<?php echo site_url('user/logout');?>"><?php echo $this->lang->line('logout');?></a></li>
-              <!--
-			  <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
-                 
-                </ul>
-              </li>
-			  -->
+           
 			  
             </ul>
              

@@ -84,6 +84,43 @@ function updatecategory(vall,cid){
 	
 }
 
+function updatepermission(vall,pid){
+	 
+	var formData = {permission_name:vall};
+	$.ajax({
+		 type: "POST",
+		 data : formData,
+			url: base_url + "index.php/permission/update_permission/"+pid,
+		success: function(data){
+		$("#message").html(data);
+			
+			},
+		error: function(xhr,status,strErr){
+			//alert(status);
+			}	
+		});
+	
+}
+
+
+function updategrouppermission(vall,gpid){
+	 
+	var formData = {group_permission_name:vall};
+	$.ajax({
+		 type: "POST",
+		 data : formData,
+			url: base_url + "index.php/permission/update_group_permission/"+gpid,
+		success: function(data){
+		$("#message").html(data);
+			
+			},
+		error: function(xhr,status,strErr){
+			//alert(status);
+			}	
+		});
+	
+}
+
 
 
 function getexpiry(){

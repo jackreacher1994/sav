@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 15, 2016 at 02:12 AM
+-- Generation Time: Jun 16, 2016 at 08:46 AM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.11
 
@@ -94,6 +94,30 @@ INSERT INTO `savsoft_group` (`gid`, `parent_id`, `group_name`, `price`, `valid_f
 (1, 0, 'Admin', 0, 0),
 (3, 0, 'RSD', 0, 0),
 (4, 0, 'COD', 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `savsoft_group_permission`
+--
+
+CREATE TABLE IF NOT EXISTS `savsoft_group_permission` (
+  `gpid` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `group_permission_name` varchar(255) NOT NULL,
+  `description` varchar(255) NOT NULL,
+  PRIMARY KEY (`gpid`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+--
+-- Dumping data for table `savsoft_group_permission`
+--
+
+INSERT INTO `savsoft_group_permission` (`gpid`, `group_permission_name`, `description`) VALUES
+(1, 'USERS', 'Qu?n  lý nhóm User'),
+(2, 'QUESTIONS', 'Qu?n lý nhóm Question Bank'),
+(3, 'QUIZ', 'Qu?n lý nhóm Quiz'),
+(4, 'RESULT', 'Qu?n lý nhóm Result'),
+(5, 'PERMISSION', 'Qu?n lý nhóm Permission');
 
 -- --------------------------------------------------------
 
@@ -447,9 +471,21 @@ CREATE TABLE IF NOT EXISTS `savsoft_payment` (
 
 CREATE TABLE IF NOT EXISTS `savsoft_permission` (
   `pid` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `gpid` int(11) NOT NULL,
   `permission_name` varchar(255) NOT NULL,
+  `description` varchar(255) NOT NULL,
   PRIMARY KEY (`pid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `savsoft_permission`
+--
+
+INSERT INTO `savsoft_permission` (`pid`, `gpid`, `permission_name`, `description`) VALUES
+(1, 0, 'Qu?n  lý nhóm User', ''),
+(2, 1, 'View List User', 'Xem thông tin user'),
+(3, 1, 'Group User', 'Thêm m?i nhóm User'),
+(4, 2, 'Add new question', 'Thêm m?i câu h?i');
 
 -- --------------------------------------------------------
 
@@ -624,6 +660,7 @@ CREATE TABLE IF NOT EXISTS `savsoft_users` (
   `contact_no` varchar(1000) NOT NULL,
   `gid` int(11) NOT NULL DEFAULT '1',
   `su` int(11) NOT NULL DEFAULT '0',
+  `gpid` int(11) NOT NULL,
   `pid` int(11) NOT NULL,
   `sid` int(11) NOT NULL,
   `subscription_expired` int(11) NOT NULL DEFAULT '0',
@@ -635,12 +672,12 @@ CREATE TABLE IF NOT EXISTS `savsoft_users` (
 -- Dumping data for table `savsoft_users`
 --
 
-INSERT INTO `savsoft_users` (`uid`, `password`, `email`, `first_name`, `last_name`, `contact_no`, `gid`, `su`, `pid`, `sid`, `subscription_expired`, `verify_code`) VALUES
-(1, '21232f297a57a5a743894a0e4a801fc3', 'admin@example.com', 'Admin', 'Admin', '1234567890', 1, 1, 0, 1, 1776290400, 0),
-(5, '202cb962ac59075b964b07152d234b70', 'user@example.com', 'User', 'User', '1234567890', 3, 0, 0, 1, 1776882600, 0),
-(10, '25f9e794323b453885f5181f1b624d0b', 'test02@example.com.vn', '', '', '', 4, 0, 0, 1, 1781197200, 0),
-(11, '202cb962ac59075b964b07152d234b70', 'test01@example.com', 'test01', 'test01', '', 4, 0, 0, 1, 1781283600, 0),
-(12, '202cb962ac59075b964b07152d234b70', 'test03@example.com', '', '', '', 4, 0, 0, 1, 1781283600, 0);
+INSERT INTO `savsoft_users` (`uid`, `password`, `email`, `first_name`, `last_name`, `contact_no`, `gid`, `su`, `gpid`, `pid`, `sid`, `subscription_expired`, `verify_code`) VALUES
+(1, '21232f297a57a5a743894a0e4a801fc3', 'admin@example.com', 'Admin', 'Admin', '1234567890', 1, 1, 1, 1, 1, 1776290400, 0),
+(5, '202cb962ac59075b964b07152d234b70', 'user@example.com', 'User', 'User', '1234567890', 1, 0, 0, 0, 1, 1776882600, 0),
+(10, '202cb962ac59075b964b07152d234b70', 'test02@example.com.vn', '', '', '', 4, 0, 2, 4, 1, 1781197200, 0),
+(11, '202cb962ac59075b964b07152d234b70', 'test01@example.com', 'test01', 'test01', '', 4, 1, 1, 0, 1, 1781283600, 0),
+(12, '202cb962ac59075b964b07152d234b70', 'test03@example.com', '', '', '', 4, 1, 1, 0, 1, 1781283600, 0);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

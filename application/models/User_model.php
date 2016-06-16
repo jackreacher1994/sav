@@ -150,7 +150,8 @@ Class User_model extends CI_Model
 		
 		if($this->db->insert('savsoft_users',$userdata)){
 			
-			return true;
+			//return true;
+			return $this->db->insert_id();
 		}else{
 			
 			return false;
@@ -395,7 +396,8 @@ Class User_model extends CI_Model
 		
 		if($this->db->insert('savsoft_group',$userdata)){
 			
-			return true;
+			//return true;
+			return $this->db->insert_id();
 		}else{
 			
 			return false;

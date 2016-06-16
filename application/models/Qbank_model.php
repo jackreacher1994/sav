@@ -104,7 +104,8 @@ Class Qbank_model extends CI_Model
 
 		}
 
-		return true;
+		//return true;
+		return $this->db->insert_id();
 
 	}
 
@@ -136,7 +137,8 @@ Class Qbank_model extends CI_Model
 
 		}
 
-		return true;
+		//return true;
+		return $this->db->insert_id();
 
 	}
 
@@ -166,7 +168,8 @@ Class Qbank_model extends CI_Model
 
 		}
 
-		return true;
+		//return true;
+		return $this->db->insert_id();
 
 	}
 
@@ -197,7 +200,8 @@ Class Qbank_model extends CI_Model
 
 		}
 
-		return true;
+		//return true;
+		return $this->db->insert_id();
 
 	}
 
@@ -217,7 +221,8 @@ Class Qbank_model extends CI_Model
 		$qid=$this->db->insert_id();
 
 
-		return true;
+		//return true;
+		return $this->db->insert_id();
 
 	}
 
@@ -251,7 +256,8 @@ Class Qbank_model extends CI_Model
 			}
 		}
 
-		return true;
+		//return true;
+		return $this->db->insert_id();
 
 	}
 
@@ -506,7 +512,8 @@ Class Qbank_model extends CI_Model
 		
 		if($this->db->insert('savsoft_category',$userdata)){
 			
-			return true;
+			//return true;
+			return $this->db->insert_id();
 		}else{
 			
 			return false;
@@ -574,7 +581,8 @@ Class Qbank_model extends CI_Model
 		
 		if($this->db->insert('savsoft_level',$userdata)){
 			
-			return true;
+			//return true;
+			return $this->db->insert_id();
 		}else{
 			
 			return false;

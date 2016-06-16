@@ -56,7 +56,8 @@ class Result extends CI_Controller {
 			
 			if($this->result_model->remove_result($rid)){
                         $this->session->set_flashdata('message', "<div class='alert alert-success'>".$this->lang->line('removed_successfully')." </div>");
-					}else{
+				log_message('ved', $this->lang->line('user') . ' ' . $logged_in['uid'] . ' ' . $this->lang->line('remove_result') . ' ' . $rid);		
+			}else{
 						    $this->session->set_flashdata('message', "<div class='alert alert-danger'>".$this->lang->line('error_to_remove')." </div>");
 						
 					}
