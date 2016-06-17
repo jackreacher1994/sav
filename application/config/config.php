@@ -311,9 +311,7 @@ $config['directory_trigger'] = 'd';
 |
 */
 
-$config['log_threshold'] = 3;
-
-$config['log_threshold'] = 5;
+$config['log_threshold'] = 0;
 
 
 /*

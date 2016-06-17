@@ -9,9 +9,8 @@ function remove_entry(redir_cont){
 
 
 
-function updategroup(vall,gid){
-	 
-	var formData = {group_name:vall};
+function updategroup(val1, val2, gid){
+	var formData = {group_name:val1, parent_id:val2};
 	$.ajax({
 		 type: "POST",
 		 data : formData,

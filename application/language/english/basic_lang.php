@@ -263,5 +263,7 @@ $lang['insert_quiz'] = "inserted quiz";
 $lang['update_quiz'] = "updated quiz";
 $lang['remove_quiz'] = "deleted quiz";
 $lang['remove_result'] = "deleted result";
+$lang['parent_group'] = "Parent group";
+$lang['no_parent_group'] = "No parent group";
 
 

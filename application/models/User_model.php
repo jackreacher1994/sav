@@ -106,6 +106,18 @@ Class User_model extends CI_Model
 		return $query->result_array();
 	}
 
+	function parent_list(){
+
+
+
+		$this->db->where('parent_id',0);
+		$this->db->order_by('gid','desc');
+		$query=$this->db->get('savsoft_group');
+
+
+		return $query->result_array();
+	}
+
 	function status_list(){
 		$this->db->order_by('sid','desc');
 		$query=$this->db->get('savsoft_status');
@@ -327,6 +339,9 @@ Class User_model extends CI_Model
 		if($this->input->post('group_name')){
 			$userdata['group_name']=$this->input->post('group_name');
 		}
+		if($this->input->post('parent_id') != null){
+			$userdata['parent_id']=$this->input->post('parent_id');
+		}
 		if($this->input->post('price')){
 			$userdata['price']=$this->input->post('price');
 		}
@@ -361,6 +376,9 @@ Class User_model extends CI_Model
 
 
 	function remove_group($gid){
+		if($this->db->where('parent_id',$gid)->count_all_results('savsoft_group')){
+			return false;
+		}
 
 		$this->db->where('gid',$gid);
 		if($this->db->delete('savsoft_group')){
@@ -388,11 +406,12 @@ Class User_model extends CI_Model
 
 
 	function insert_group(){
-
-		$userdata=array(
-			'group_name'=>$this->input->post('group_name'),
-
-			);
+		if($this->input->post('group_name')){
+			$userdata['group_name']=$this->input->post('group_name');
+		}
+		if($this->input->post('parent_id') != null){
+			$userdata['parent_id']=$this->input->post('parent_id');
+		}
 		
 		if($this->db->insert('savsoft_group',$userdata)){
 			

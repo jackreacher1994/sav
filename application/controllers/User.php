@@ -193,6 +193,7 @@ class User extends CI_Controller {
 			exit($this->lang->line('permission_denied'));
 		}
 		$data['group_list']=$this->user_model->group_list();
+		$data['parent_list'] = $this->user_model->parent_list();
 
 		$data['title']=$this->lang->line('group_list');
 		$this->load->view('header',$data);
