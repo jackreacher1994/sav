@@ -265,5 +265,7 @@ $lang['remove_quiz'] = "deleted quiz";
 $lang['remove_result'] = "deleted result";
 $lang['parent_group'] = "Parent group";
 $lang['no_parent_group'] = "No parent group";
+$lang['super_administrator'] = "Super administrator";
+$lang['group_administrator'] = "Group administrator";
 
 

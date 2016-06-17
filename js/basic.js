@@ -642,4 +642,16 @@ function save_question() {
 }
  
 
-// end - quiz attempt functions 
+// end - quiz attempt functions
+
+function change_account_type(su){
+	if(su == 1){
+		$("#selectGroup").hide();
+	} else if(su == 2) {
+		$("#selectGroup").show();
+	} else if(su == 3) {
+		$("#selectGroup").hide();
+	} else {
+		$("#selectGroup").show();
+	}
+}

@@ -38,6 +38,16 @@ class Dashboard extends CI_Controller {
 		
 		
 			}
+
+		if($logged_in['su']=='2'){
+
+
+			$data['num_users']=$this->user_model->num_users_by_group($logged_in['gid']);
+			$data['num_qbank']=$this->qbank_model->num_qbank();
+			$data['num_quiz']=$this->quiz_model->num_quiz();
+
+
+		}
 			
 
 		
