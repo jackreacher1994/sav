@@ -67,7 +67,7 @@ Class User_model extends CI_Model
 			$this->db->where('savsoft_users.sid',$sid);
 		}
 		$this->db->join('savsoft_group', 'savsoft_group.gid = savsoft_users.gid');
-		$this->db->join('savsoft_status', 'savsoft_status.sid = savsoft_users.sid');
+		//$this->db->join('savsoft_status', 'savsoft_status.sid = savsoft_users.sid');
 		$this->db->limit($this->config->item('number_of_rows'),$limit);
 		$this->db->order_by('savsoft_users.uid','desc');
 		$query=$this->db->get('savsoft_users');
@@ -118,11 +118,11 @@ Class User_model extends CI_Model
 		return $query->result_array();
 	}
 
-	function status_list(){
+	/*function status_list(){
 		$this->db->order_by('sid','desc');
 		$query=$this->db->get('savsoft_status');
 		return $query->result_array();
-	}
+	}*/
 	function verify_code($vcode){
 		$this->db->where('verify_code',$vcode);
 		$query=$this->db->get('savsoft_users');

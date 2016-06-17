@@ -43,14 +43,8 @@
  				</select>
  				<select   name="sid">
  					<option value="0">Status</option>
- 					<?php 
- 					foreach($status_list as $key => $val){
- 						?>
-
- 						<option value="<?php echo $val['sid'];?>" <?php if($val['sid'] == $sid){ echo 'selected';} ?> ><?php echo $val['name_status'];?></option>
- 						<?php 
- 					}
- 					?>
+ 					<option value="1">Active</option>
+ 					<option value="2">Inactive</option>
  				</select>
  				
  				<button class="btn btn-default" type="submit"><?php echo $this->lang->line('filter');?></button>
@@ -81,7 +75,16 @@
  					<td><?php echo $val['email'];?></td>
  					<td><?php echo $val['first_name'];?> <?php echo $val['last_name'];?></td>
  					<td><?php echo $val['group_name'];?> </td>
- 					<td><?php echo $val['name_status'];?> </td>
+ 					<?php
+ 						if($val['sid'] == 1){
+ 						?>
+ 						<td>Active</td>
+ 					<?php	
+ 						} else { ?>
+ 						<td>Inactive</td>
+ 					<?php	}
+ 					?>
+ 					
  					<td>
  						<a href="<?php echo site_url('user/edit_user/'.$val['uid']);?>"><img src="<?php echo base_url('images/edit.png');?>"></a>
  						<a href="javascript:remove_entry('user/remove_user/<?php echo $val['uid'];?>');"><img src="<?php echo base_url('images/cross.png');?>"></a>

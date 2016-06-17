@@ -35,7 +35,7 @@ class User extends CI_Controller {
 		//fetching user group;
 		$data['group_list']=$this->user_model->group_list();
 
-		$data['status_list']=$this->user_model->status_list();
+		//$data['status_list']=$this->user_model->status_list();
 		$data['limit']=$limit;
 		$data['gid']=$gid;
 		$data['sid']=$sid;
