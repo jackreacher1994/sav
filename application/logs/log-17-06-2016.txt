@@ -1,0 +1,17 @@
+VED - 09:16:49 17-06-2016 --> User 1 logged in
+VED - 09:39:19 17-06-2016 --> User 1 logged out
+VED - 09:41:54 17-06-2016 --> User 1 logged in
+ERROR - 09:41:55 17-06-2016 --> Severity: Parsing Error --> syntax error, unexpected '}' C:\xampp\htdocs\sav\application\views\header.php 144
+ERROR - 09:43:31 17-06-2016 --> Severity: Parsing Error --> syntax error, unexpected '}' C:\xampp\htdocs\sav\application\views\header.php 140
+ERROR - 09:45:38 17-06-2016 --> Query error: Table 'savsoftquiz.savsoft_group_permission' doesn't exist - Invalid query: SELECT *
+FROM `savsoft_group_permission`
+ORDER BY `gpid` DESC
+ERROR - 09:45:38 17-06-2016 --> Severity: Error --> Call to a member function result_array() on a non-object C:\xampp\htdocs\sav\application\models\Permission_model.php 10
+ERROR - 09:48:40 17-06-2016 --> Query error: Table 'savsoftquiz.savsoft_group_permission' doesn't exist - Invalid query: SELECT *
+FROM `savsoft_group_permission`
+ORDER BY `gpid` DESC
+ERROR - 09:48:40 17-06-2016 --> Severity: Error --> Call to a member function result_array() on a non-object C:\xampp\htdocs\sav\application\models\Permission_model.php 10
+ERROR - 09:48:46 17-06-2016 --> Query error: Unknown column 'pid' in 'order clause' - Invalid query: SELECT *
+FROM `savsoft_permission`
+ORDER BY `pid` DESC
+ERROR - 09:48:46 17-06-2016 --> Severity: Error --> Call to a member function result_array() on a non-object C:\xampp\htdocs\sav\application\models\Permission_model.php 93

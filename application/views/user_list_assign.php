@@ -51,9 +51,7 @@
  				<tr>
  					<td><?php echo $val['email'];?></td>
  					<td>
- 						<a href="<?php echo site_url('permission/assign_group_permission/'.$val['uid']);?>" class="btn btn-success">Assign Group permission</a>
  						<a href="<?php echo site_url('permission/assign_permission/'.$val['uid']);?>" class="btn btn-success">Assign Permission</a>
-
  					</td>
  				</tr>
 

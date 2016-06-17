@@ -53,34 +53,23 @@
               <?php  
 				if($logged_in['su']==1){
 			?>
-			  <?php 
-			 	if($logged_in['gpid'] == 1 || $logged_in['gpid'] == 0){
-			 		?>
+			 
 			  <li <?php if($this->uri->segment(1)=='dashboard'){ echo "class='active'"; } ?> ><a href="<?php echo site_url('dashboard');?>"><?php echo $this->lang->line('dashboard');?></a></li>
 			  <li class="dropdown" <?php if($this->uri->segment(1)=='user'){ echo "class='active'"; } ?> >
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $this->lang->line('users');?> <span class="caret"></span></a>
                 	
                 <ul class="dropdown-menu">
-                <?php if ($logged_in['pid'] == 1 || $logged_in['pid'] == 0){
-                ?>
+               
                   <li><a href="<?php echo site_url('user/new_user');?>"><?php echo $this->lang->line('add_new');?></a></li>
-                  <?php } ?>
-                   <?php if ($logged_in['pid'] == 2 || $logged_in['pid'] == 0){
-                ?>
+               
                   <li><a href="<?php echo site_url('user');?>"><?php echo $this->lang->line('list');?> <?php echo $this->lang->line('users');?> </a></li>
-                      <?php } ?>
-                      <?php if ($logged_in['pid'] == 2 || $logged_in['pid'] == 0){
-                ?>
+                  
+                 
                       <li><a href="<?php echo site_url('user/group_list');?>"><?php echo $this->lang->line('group_list');?></a></li>
-                      <?php } ?>
                 </ul>
               </li>
-			 <?php }
-			 	?>
-			 
-			 <?php 
-			 	if($logged_in['gpid'] == 2 || $logged_in['gpid'] == 0){
-			 	?>
+			
+		
 			  <li class="dropdown" <?php if($this->uri->segment(1)=='qbank'){ echo "class='active'"; } ?> >
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $this->lang->line('qbank');?> <span class="caret"></span></a>
                 <ul class="dropdown-menu">
@@ -91,8 +80,7 @@
                 </ul>
               </li>
 			 
-			 <?php }
-			 	?>
+			
 			 
 		    <?php 
 				}else{
