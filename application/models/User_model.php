@@ -47,6 +47,12 @@ Class User_model extends CI_Model
 		return $query->num_rows();
 	}
 
+	function num_users_by_group($gid){
+		$this->db->where('gid',$gid);
+		$query=$this->db->get('savsoft_users');
+		return $query->num_rows();
+	}
+
 
 
 	function user_list($limit,$gid='0',$sid = '0'){
@@ -118,6 +124,26 @@ Class User_model extends CI_Model
 		return $query->result_array();
 	}
 
+	function num_child($gid){
+
+
+
+		return $this->db->where('parent_id',$gid)->count_all_results('savsoft_group');
+		
+	}
+
+	function child_list($gid){
+
+
+
+		$this->db->where('parent_id',$gid);
+		$this->db->order_by('gid','desc');
+		$query=$this->db->get('savsoft_group');
+
+
+		return $query->result_array();
+	}
+
 	/*function status_list(){
 		$this->db->order_by('sid','desc');
 		$query=$this->db->get('savsoft_status');
@@ -145,6 +171,7 @@ Class User_model extends CI_Model
 
 
 	function insert_user(){
+		$logged_in=$this->session->userdata('logged_in');
 
 		$userdata=array(
 			'email'=>$this->input->post('email'),
@@ -159,7 +186,15 @@ Class User_model extends CI_Model
 			'sid'=>$this->input->post('sid'),
 			
 			);
-		
+
+		if($this->input->post('su') == 1){
+			$userdata['gid'] = 0;
+		}
+
+		if($this->input->post('su') == 3){
+			$userdata['gid'] = $logged_in['gid'];
+		}
+
 		if($this->db->insert('savsoft_users',$userdata)){
 			
 			//return true;

@@ -11,7 +11,9 @@
 	
 	<!-- custom css -->
 	<link href="<?php echo base_url('css/style.css');?>" rel="stylesheet">
-	
+
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
 	<script>
 	
 	var base_url="<?php echo base_url();?>";
@@ -51,7 +53,7 @@
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
               <?php  
-				if($logged_in['su']==1){
+				if($logged_in['su']==1 || $logged_in['su']==2 || $logged_in['su']==3){
 			?>
 			 
 			  <li <?php if($this->uri->segment(1)=='dashboard'){ echo "class='active'"; } ?> ><a href="<?php echo site_url('dashboard');?>"><?php echo $this->lang->line('dashboard');?></a></li>
@@ -107,7 +109,7 @@
 	           <li><a href="<?php echo site_url('result');?>"><?php echo $this->lang->line('result');?></a></li>
 			 	
 			  <?php  
-				if($logged_in['su']==1){
+				if($logged_in['su']==1 || $logged_in['su']==2 || $logged_in['su']==3){
 			?>
 			 
 			  <li class="dropdown" <?php if($this->uri->segment(1)=='permission'){ echo "class='active'"; } ?> >

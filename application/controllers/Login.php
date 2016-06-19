@@ -24,15 +24,15 @@ class Login extends CI_Controller {
 		
 		if($this->session->userdata('logged_in')){
 			$logged_in=$this->session->userdata('logged_in');
-			if($logged_in['su']=='1'){
+			if($logged_in['su']=='1' || $logged_in['su']=='2' || $logged_in['su']=='3'){
 				redirect('dashboard');
 			}else{
 				redirect('quiz');	
 			}
 			
 		}
-		
-		
+
+		$data['login_url']="#";
 		
 		$data['title']=$this->lang->line('login');
 		$this->load->view('header',$data);
@@ -79,7 +79,7 @@ class Login extends CI_Controller {
 			$this->session->set_userdata('logged_in', $user);
 			log_message('ved', $this->lang->line('user') . ' ' . $user['uid'] . ' ' . $this->lang->line('logged_in'));
 			// redirect to dashboard
-			if($user['su']=='1'){
+			if($user['su']=='1' || $user['su']=='2' || $user['su']=='3'){
 				redirect('dashboard');
 			}else{
 				redirect('quiz');	

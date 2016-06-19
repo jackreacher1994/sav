@@ -42,15 +42,23 @@
 					<label for="inputEmail" class="sr-only"><?php echo $this->lang->line('contact_no');?></label> 
 					<input type="text" name="contact_no"  class="form-control" placeholder="<?php echo $this->lang->line('contact_no');?>"   autofocus>
 			</div>
-				<div class="form-group">	 
+				<div class="form-group" id="selectGroup">
 					<label   ><?php echo $this->lang->line('select_group');?></label> 
 					<select class="form-control" name="gid" id="gid" onChange="getexpiry();">
 					<?php 
-					foreach($group_list as $key => $val){
+					foreach($parent_list as $parent){
 						?>
-						
-						<option value="<?php echo $val['gid'];?>"><?php echo $val['group_name'];?> (<?php echo $this->lang->line('price_');?>: <?php echo $val['price'];?>)</option>
-						<?php 
+						<option value="<?php echo $parent['gid'];?>"><?php echo $parent['group_name'];?></option>
+						<?php
+						if($this->user_model->num_child($parent['gid'])) {
+							$child_list = $this->user_model->child_list($parent['gid']);
+							foreach ($child_list as $child) {
+								?>
+								<option value="<?php echo $child['gid']; ?>">
+									<?php echo '&nbsp;&nbsp;&nbsp;'.$child['group_name']; ?></option>
+								<?php
+							}
+						}
 					}
 					?>
 					</select>
@@ -62,9 +70,11 @@
 
 				<div class="form-group">	 
 					<label   ><?php echo $this->lang->line('account_type');?></label> 
-					<select class="form-control" name="su">
+					<select class="form-control" name="su" id="su" onchange="change_account_type(this.value)">
+						<option value="1"><?php echo $this->lang->line('super_administrator');?></option>
+						<option value="2"><?php echo $this->lang->line('group_administrator');?></option>
+						<option value="3"><?php echo $this->lang->line('administrator');?></option>
 						<option value="0"><?php echo $this->lang->line('user');?></option>
-						<option value="1"><?php echo $this->lang->line('administrator');?></option>
 					</select>
 			</div>
 			<div class="form-group">	 
@@ -93,5 +103,17 @@
 
 </div>
 <script>
+	$(document).ready(function(){
+		var su = $("#su").val();
+		if(su == 1){
+			$("#selectGroup").hide();
+		} else if(su == 2) {
+			$("#selectGroup").show();
+		} else if(su == 3) {
+			$("#selectGroup").hide();
+		} else {
+			$("#selectGroup").show();
+		}
+	});
 getexpiry();
 </script>

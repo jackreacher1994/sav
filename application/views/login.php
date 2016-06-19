@@ -13,7 +13,7 @@
 
 	<div class="login-panel panel panel-default">
 		<div class="panel-body"> 
-		<img src="<?php echo base_url('images/logo.png');?>">
+<!--		<img src="--><?php //echo base_url('images/logo.png');?><!--">-->
 		
 
 			<form class="form-signin" method="post" action="<?php echo site_url('login/verifylogin');?>">
@@ -39,14 +39,9 @@
 					 
 					<button class="btn btn-lg btn-primary btn-block" type="submit"><?php echo $this->lang->line('login');?></button>
 			</div>
-<?php 
-if($this->config->item('user_registration')){
-	?>
-	<a href="<?php echo site_url('login/registration');?>"><?php echo $this->lang->line('register_new_account');?></a>
-	&nbsp;&nbsp;&nbsp;&nbsp;
-<?php
-}
-?>
+
+	<a class='btn btn-danger' href="<?php echo $login_url;?>"><i class="fa fa-google-plus"></i></a>
+
 	<a href="<?php echo site_url('login/forgot');?>"><?php echo $this->lang->line('forgot_password');?></a>
 
 			</form>

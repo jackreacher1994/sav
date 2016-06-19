@@ -28,12 +28,16 @@ class User extends CI_Controller {
 		$this->load->helper('form');
 		$logged_in=$this->session->userdata('logged_in');
 
-		if($logged_in['su']!='1'){
+		if($logged_in['su']!='1' && $logged_in['su']!='2' && $logged_in['su']!='3'){
 			exit($this->lang->line('permission_denied'));
 		}
 
 		//fetching user group;
 		$data['group_list']=$this->user_model->group_list();
+
+		if($logged_in['su']=='2'){
+			$gid = $logged_in['gid'];
+		}
 
 		//$data['status_list']=$this->user_model->status_list();
 		$data['limit']=$limit;
@@ -67,7 +71,8 @@ class User extends CI_Controller {
 
 		$data['title']=$this->lang->line('add_new').' '.$this->lang->line('user');
 		// fetching group list
-		$data['group_list']=$this->user_model->group_list();
+		$data['parent_list']=$this->user_model->parent_list();
+		
 		$this->load->view('header',$data);
 		$this->load->view('new_user',$data);
 		$this->load->view('footer',$data);
