@@ -4,17 +4,20 @@ Class Permission_model extends CI_Model{
 // group_permission_list
 
 	function group_permission_list(){
-
-		$this->db->order_by('gpid','desc');
-		$query=$this->db->get('savsoft_group_permission');
+		$this->db->where('parent_id','0');
+		$this->db->order_by('id','asc');
+		$query=$this->db->get('savsoft_permission');
 		return $query->result_array();
 	}
 
-	function check_group_permission($uid){
-		$this->db->select('gpid');
+	function check_permission($uid){
+			$this->db->select('pid');
 		$this->db->where('uid',$uid);
 		$query = $this->db->get('savsoft_users');
-		return $query->row_array();
+		$test= $query->row_array();
+		$array_pid = explode(',', $test['pid']);
+	
+		return $array_pid ;
 	}
 	function insert_group_permission(){
 
@@ -88,7 +91,8 @@ Class Permission_model extends CI_Model{
 
 	// permission
 	function permission_list(){
-		$this->db->order_by('pid','desc');
+		
+		$this->db->order_by('id','desc');
 		$query=$this->db->get('savsoft_permission');
 		return $query->result_array();
 
@@ -106,7 +110,7 @@ Class Permission_model extends CI_Model{
 
 		$userdata=array(
 			'permission_name'=> $this->input->post('permission_name'),
-			'gpid' => $this->input->post('gpid'),
+			'parent_id' => $this->input->post('parent_id'),
 			'description' => $this->input->post('description')
 			);
 		
@@ -124,11 +128,10 @@ Class Permission_model extends CI_Model{
 
 		$userdata=array(
 			'permission_name'=>$this->input->post('permission_name'),
-			'gpid' => $this->input->post('gpid'),
 			'description' => $this->input->post('description')
 			);
 
-		$this->db->where('pid',$pid);
+		$this->db->where('id',$pid);
 		if($this->db->update('savsoft_permission',$userdata)){
 			
 			return true;
@@ -143,7 +146,7 @@ Class Permission_model extends CI_Model{
 
 	function remove_permission($pid){
 
-		$this->db->where('pid',$pid);
+		$this->db->where('id',$pid);
 		if($this->db->delete('savsoft_permission')){
 			return true;
 		}else{
@@ -155,16 +158,9 @@ Class Permission_model extends CI_Model{
 	}
 
 	function submit_assign_permission($uid){
-		$pid = $this->input->post('pid');
-		$this->db->where('pid',$pid);
-		$this->db->select('gpid');
-		
-		$quid = $this->db->get('savsoft_permission');
-		$result = $quid->result();
 
 		$userdata=array(	 
-			'pid'=> $pid,
-			'gpid' => $result[0]->gpid,
+			 'pid'=>implode(',',$this->input->post('pids'))
 			);
 
 		$this->db->where('uid',$uid);

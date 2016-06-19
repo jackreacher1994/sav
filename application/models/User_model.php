@@ -86,7 +86,7 @@ Class User_model extends CI_Model
 
 		}
 		$this->db->join('savsoft_group', 'savsoft_group.gid = savsoft_users.gid');
-		$this->db->join('savsoft_status', 'savsoft_status.sid = savsoft_users.sid');
+		//$this->db->join('savsoft_status', 'savsoft_status.sid = savsoft_users.sid');
 		$this->db->order_by('savsoft_users.uid','desc');
 		$query=$this->db->get('savsoft_users');
 

@@ -38,10 +38,10 @@
  					foreach($permission_list as $key => $val){
  						?>
  						<tr>
- 							<td><input type="text"   class="form-control"  value="<?php echo $val['permission_name'];?>" onBlur="updatepermission(this.value,'<?php echo $val['pid'];?>');" ></td>
+ 							<td><input type="text"   class="form-control"  value="<?php echo $val['permission_name'];?>" onBlur="updatepermission(this.value,'<?php echo $val['id'];?>');" ></td>
  		<?php
- 			$this->db->select('savsoft_group_permission.group_permission_name');
- 			$this->db->join('savsoft_group_permission', 'savsoft_group_permission.gpid ='.$val['gpid']);
+ 			$this->db->select('permission_name');
+ 			$this->db->where('parent_id', $val['id']);
  			$this->db->limit(1);
  			$query=$this->db->get('savsoft_permission');
  			$permission_parent_name = $query->row_array();
@@ -49,9 +49,10 @@
  		?>
  <td><?php echo $permission_parent_name['group_permission_name'];?>
 </td>
-<td><?php echo $val['description'];?></td>
+<td><?php echo $val['description']?></td>
+
 <td>
-	<a href="javascript:remove_entry('permission/remove_permission/<?php echo $val['pid'];?>');"><img src="<?php echo base_url('images/cross.png');?>"></a>
+	<a href="javascript:remove_entry('permission/remove_permission/<?php echo $val['id'];?>');"><img src="<?php echo base_url('images/cross.png');?>"></a>
 </td>
 </tr>
 
@@ -62,13 +63,13 @@
 	<td>
 
 		<input type="text"   class="form-control"   name="permission_name" value="" placeholder="Permission name"  required ></td>
-		<td><select name="gpid">
+		<td><select name="parent_id">
 			<option value="0">Select Group Permission</option>
 			<?php
 			foreach ($permission_group as $key => $val) { 	
 				?>
 
-				<option value="<?php echo $val['gpid'];?>" <?php if($val['gpid'] == $sid){ echo 'selected';} ?> ><?php echo $val['group_permission_name'];?></option>
+				<option value="<?php echo $val['id'];?>" <?php if($val['id'] == $sid){ echo 'selected';} ?> ><?php echo $val['permission_name'];?></option>
 				<?php 
 			}
 			?>

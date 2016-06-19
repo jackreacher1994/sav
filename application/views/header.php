@@ -113,7 +113,7 @@
 			  <li class="dropdown" <?php if($this->uri->segment(1)=='permission'){ echo "class='active'"; } ?> >
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $this->lang->line('assign_permission');?> <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                <li><a href="<?php echo site_url('permission/permission_group');?>">Group permission</a></li>
+              <!--   <li><a href="<?php echo site_url('permission/permission_group');?>">Group permission</a></li> -->
                   <li><a href="<?php echo site_url('permission/permission_list');?>">List permission</a></li>
                   <li><a href="<?php echo site_url('permission/user_assign_permission');?>">Assign Permission</a></li>
                 </ul>

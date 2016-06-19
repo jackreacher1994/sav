@@ -21,7 +21,7 @@ class Permission extends CI_Controller {
 		}
 	}
 // Group permission
-	public function permission_group(){
+/*	public function permission_group(){
 		// fetching group permission
 		$logged_in=$this->session->userdata('logged_in');
 		if($logged_in['su'] !='1'){
@@ -33,9 +33,9 @@ class Permission extends CI_Controller {
 		$this->load->view('header',$data);
 		$this->load->view('group_permission_list',$data);
 		$this->load->view('footer',$data);
-	}
+	}*/
 
-	public function insert_group_permission(){
+/*	public function insert_group_permission(){
 		$logged_in=$this->session->userdata('logged_in');
 		if($logged_in['su']!='1'){
 			exit($this->lang->line('permission_denied'));
@@ -87,7 +87,7 @@ class Permission extends CI_Controller {
 		redirect('permission/permission_group');
 
 
-	}
+	}*/
 
 //permission
 	public function permission_list(){
@@ -172,41 +172,6 @@ class Permission extends CI_Controller {
 		$this->load->view('footer',$data);
 	}
 
-	public function assign_group_permission($uid){
-		$logged_in=$this->session->userdata('logged_in');
-		if($logged_in['su']!='1'){
-			exit($this->lang->line('permission_denied'));
-		} 
-		$data['title']='Assign Group Permission';
-		$data['uid'] = $uid;
-		$data['check_gpid'] = $this->permission_model->check_group_permission($uid);
-		$data['result']=$this->permission_model->group_permission_list();
-		
-		
-		$this->load->view('header',$data);
-		$this->load->view('assign_group_permission.php',$data);
-		$this->load->view('footer',$data);
-	}
-
-	public function submit_assign_user_for_group_permission(){
-		$logged_in=$this->session->userdata('logged_in');
-		if($logged_in['su']!='1'){
-			exit($this->lang->line('permission_denied'));
-		} 
-		//$quid =$this->input->post('quid');
-		$uid =$this->input->post('uid');
-
-		if($this->permission_model->submit_assign_user_for_group_permission($uid)){
-
-			$this->session->set_flashdata('message', "<div class='alert alert-success'>Assign Sucsessfully </div>");
-		}else{
-			$this->session->set_flashdata('message', "<div class='alert alert-danger'>Assign Unsucsessfully </div>");
-
-		}
-		redirect('/permission/user_assign_permission');
-
-	}
-
 	public function assign_permission($uid){
 
 		$logged_in=$this->session->userdata('logged_in');
@@ -214,7 +179,10 @@ class Permission extends CI_Controller {
 			exit($this->lang->line('permission_denied'));
 		} 
 		$data['title']='Assign Permission';
+		$data['check_pid'] = $this->permission_model->check_permission($uid);
+
 		$data['uid'] = $uid;
+		$data['group_permission_list']=$this->permission_model->group_permission_list();
 		$data['result']=$this->permission_model->permission_list();
 		
 		
