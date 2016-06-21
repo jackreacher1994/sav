@@ -25,11 +25,17 @@ class Qbank extends CI_Controller {
 	{
 		$this->load->helper('form');
 		$logged_in=$this->session->userdata('logged_in');
-			if($logged_in['su']!='1'){
+			if($logged_in['su']!='1' && $logged_in['su']!='2' && $logged_in['su']!='3'){
 			exit($this->lang->line('permission_denied'));
 			}
 			
-		$data['category_list']=$this->qbank_model->category_list();
+		if($logged_in['su'] =='2' || $logged_in['su'] =='3'){
+			$data['category_list']=$this->qbank_model->category_list_user($logged_in['gid']);
+		}
+		else {
+			$data['category_list']=$this->qbank_model->category_list();
+		}
+		
 		$data['level_list']=$this->qbank_model->level_list();
 		
 		$data['limit']=$limit;
@@ -79,7 +85,7 @@ class Qbank extends CI_Controller {
 	
 		
 			$logged_in=$this->session->userdata('logged_in');
-			if($logged_in['su']!='1'){
+			if($logged_in['su']!='1' && $logged_in['su'] !='2' && $logged_in['su'] != '3'){
 			exit($this->lang->line('permission_denied'));
 			}
 			
@@ -139,7 +145,7 @@ class Qbank extends CI_Controller {
 	{
 		
 			$logged_in=$this->session->userdata('logged_in');
-			if($logged_in['su']!='1'){
+			if($logged_in['su']!='1' && $logged_in['su'] !='2' && $logged_in['su'] != '3' ){
 			exit($this->lang->line('permission_denied'));
 			}
 			if($this->input->post('question')){
@@ -156,7 +162,13 @@ class Qbank extends CI_Controller {
 		 $data['nop']=$nop;
 		 $data['title']=$this->lang->line('add_new');
 		// fetching category list
-		$data['category_list']=$this->qbank_model->category_list();
+
+		if($logged_in['su'] =='2' || $logged_in['su'] =='3'){
+			$data['category_list']=$this->qbank_model->category_list_user($logged_in['gid']);
+		}
+		else {
+			$data['category_list']=$this->qbank_model->category_list();
+		}
 		// fetching level list
 		$data['level_list']=$this->qbank_model->level_list();
 		 $this->load->view('header',$data);
@@ -169,7 +181,7 @@ class Qbank extends CI_Controller {
 	{
 		
 			$logged_in=$this->session->userdata('logged_in');
-			if($logged_in['su']!='1'){
+			if($logged_in['su']!='1' && $logged_in['su'] !='2' && $logged_in['su'] != '3'){
 			exit($this->lang->line('permission_denied'));
 			}
 			if($this->input->post('question')){
@@ -186,7 +198,12 @@ class Qbank extends CI_Controller {
 		 $data['nop']=$nop;
 		 $data['title']=$this->lang->line('add_new');
 		// fetching category list
-		$data['category_list']=$this->qbank_model->category_list();
+		if($logged_in['su'] =='2' || $logged_in['su'] =='3'){
+			$data['category_list']=$this->qbank_model->category_list_user($logged_in['gid']);
+		}
+		else {
+			$data['category_list']=$this->qbank_model->category_list();
+		}
 		// fetching level list
 		$data['level_list']=$this->qbank_model->level_list();
 		 $this->load->view('header',$data);
@@ -199,7 +216,7 @@ class Qbank extends CI_Controller {
 	{
 		
 			$logged_in=$this->session->userdata('logged_in');
-			if($logged_in['su']!='1'){
+			if($logged_in['su']!='1' && $logged_in['su'] !='2' && $logged_in['su'] != '3' ){
 			exit($this->lang->line('permission_denied'));
 			}
 			if($this->input->post('question')){
@@ -216,7 +233,12 @@ class Qbank extends CI_Controller {
 		 $data['nop']=$nop;
 		 $data['title']=$this->lang->line('add_new');
 		// fetching category list
-		$data['category_list']=$this->qbank_model->category_list();
+		if($logged_in['su'] =='2' || $logged_in['su'] =='3'){
+			$data['category_list']=$this->qbank_model->category_list_user($logged_in['gid']);
+		}
+		else {
+			$data['category_list']=$this->qbank_model->category_list();
+		}
 		// fetching level list
 		$data['level_list']=$this->qbank_model->level_list();
 		 $this->load->view('header',$data);
@@ -229,7 +251,7 @@ class Qbank extends CI_Controller {
 	{
 		
 			$logged_in=$this->session->userdata('logged_in');
-			if($logged_in['su']!='1'){
+			if($logged_in['su']!='1' && $logged_in['su'] !='2' && $logged_in['su'] != '3'){
 			exit($this->lang->line('permission_denied'));
 			}
 			if($this->input->post('question')){
@@ -246,7 +268,12 @@ class Qbank extends CI_Controller {
 		 $data['nop']=$nop;
 		 $data['title']=$this->lang->line('add_new');
 		// fetching category list
-		$data['category_list']=$this->qbank_model->category_list();
+		if($logged_in['su'] =='2' || $logged_in['su'] =='3'){
+			$data['category_list']=$this->qbank_model->category_list_user($logged_in['gid']);
+		}
+		else {
+			$data['category_list']=$this->qbank_model->category_list();
+		}
 		// fetching level list
 		$data['level_list']=$this->qbank_model->level_list();
 		 $this->load->view('header',$data);
@@ -259,7 +286,7 @@ class Qbank extends CI_Controller {
 	{
 		
 			$logged_in=$this->session->userdata('logged_in');
-			if($logged_in['su']!='1'){
+			if($logged_in['su']!='1' && $logged_in['su'] !='2' && $logged_in['su'] != '3'){
 			exit($this->lang->line('permission_denied'));
 			}
 			if($this->input->post('question')){
@@ -276,7 +303,12 @@ class Qbank extends CI_Controller {
 		 $data['nop']=$nop;
 		 $data['title']=$this->lang->line('add_new');
 		// fetching category list
-		$data['category_list']=$this->qbank_model->category_list();
+		if($logged_in['su'] =='2' || $logged_in['su'] =='3'){
+			$data['category_list']=$this->qbank_model->category_list_user($logged_in['gid']);
+		}
+		else {
+			$data['category_list']=$this->qbank_model->category_list();
+		}
 		// fetching level list
 		$data['level_list']=$this->qbank_model->level_list();
 		 $this->load->view('header',$data);
@@ -289,7 +321,7 @@ class Qbank extends CI_Controller {
 	public function new_question_6($nop='4')
 	{
 		$logged_in=$this->session->userdata('logged_in');
-		if($logged_in['su']!='1'){
+		if($logged_in['su']!='1' && $logged_in['su'] !='2' && $logged_in['su'] != '3'){
 			exit($this->lang->line('permission_denied'));
 		}
 		if($this->input->post('question')){
@@ -306,7 +338,12 @@ class Qbank extends CI_Controller {
 		$data['nop']=$nop;
 		$data['title']=$this->lang->line('add_new');
 		// fetching category list
-		$data['category_list']=$this->qbank_model->category_list();
+		if($logged_in['su'] =='2' || $logged_in['su'] =='3'){
+			$data['category_list']=$this->qbank_model->category_list_user($logged_in['gid']);
+		}
+		else {
+			$data['category_list']=$this->qbank_model->category_list();
+		}
 		// fetching level list
 		$data['level_list']=$this->qbank_model->level_list();
 		$this->load->view('header',$data);
@@ -320,7 +357,7 @@ class Qbank extends CI_Controller {
 	{
 		
 			$logged_in=$this->session->userdata('logged_in');
-			if($logged_in['su']!='1'){
+			if($logged_in['su']!='1' && $logged_in['su']!='2' && $logged_in['su']!='3'){
 			exit($this->lang->line('permission_denied'));
 			}
 			if($this->input->post('question')){
@@ -339,7 +376,12 @@ class Qbank extends CI_Controller {
 		$data['question']=$this->qbank_model->get_question($qid);
 		$data['options']=$this->qbank_model->get_option($qid);
 		// fetching category list
-		$data['category_list']=$this->qbank_model->category_list();
+		if($logged_in['su'] =='2' || $logged_in['su'] =='3'){
+			$data['category_list']=$this->qbank_model->category_list_user($logged_in['gid']);
+		}
+		else {
+			$data['category_list']=$this->qbank_model->category_list();
+		}
 		// fetching level list
 		$data['level_list']=$this->qbank_model->level_list();
 		 $this->load->view('header',$data);
@@ -352,7 +394,7 @@ class Qbank extends CI_Controller {
 	{
 		
 			$logged_in=$this->session->userdata('logged_in');
-			if($logged_in['su']!='1'){
+			if($logged_in['su']!='1' && $logged_in['su']!='2' && $logged_in['su']!='3'){
 			exit($this->lang->line('permission_denied'));
 			}
 			if($this->input->post('question')){
@@ -371,7 +413,12 @@ class Qbank extends CI_Controller {
 		$data['question']=$this->qbank_model->get_question($qid);
 		$data['options']=$this->qbank_model->get_option($qid);
 		// fetching category list
-		$data['category_list']=$this->qbank_model->category_list();
+		if($logged_in['su'] =='2' || $logged_in['su'] =='3'){
+			$data['category_list']=$this->qbank_model->category_list_user($logged_in['gid']);
+		}
+		else {
+			$data['category_list']=$this->qbank_model->category_list();
+		}
 		// fetching level list
 		$data['level_list']=$this->qbank_model->level_list();
 		 $this->load->view('header',$data);
@@ -384,7 +431,7 @@ class Qbank extends CI_Controller {
 	{
 		
 			$logged_in=$this->session->userdata('logged_in');
-			if($logged_in['su']!='1'){
+			if($logged_in['su']!='1' && $logged_in['su']!='2' && $logged_in['su']!='3'){
 			exit($this->lang->line('permission_denied'));
 			}
 			if($this->input->post('question')){
@@ -403,7 +450,12 @@ class Qbank extends CI_Controller {
 		$data['question']=$this->qbank_model->get_question($qid);
 		$data['options']=$this->qbank_model->get_option($qid);
 		// fetching category list
-		$data['category_list']=$this->qbank_model->category_list();
+		if($logged_in['su'] =='2' || $logged_in['su'] =='3'){
+			$data['category_list']=$this->qbank_model->category_list_user($logged_in['gid']);
+		}
+		else {
+			$data['category_list']=$this->qbank_model->category_list();
+		}
 		// fetching level list
 		$data['level_list']=$this->qbank_model->level_list();
 		 $this->load->view('header',$data);
@@ -416,7 +468,7 @@ class Qbank extends CI_Controller {
 	{
 		
 			$logged_in=$this->session->userdata('logged_in');
-			if($logged_in['su']!='1'){
+			if($logged_in['su']!='1' && $logged_in['su']!='2' && $logged_in['su']!='3'){
 			exit($this->lang->line('permission_denied'));
 			}
 			if($this->input->post('question')){
@@ -435,7 +487,12 @@ class Qbank extends CI_Controller {
 		$data['question']=$this->qbank_model->get_question($qid);
 		$data['options']=$this->qbank_model->get_option($qid);
 		// fetching category list
-		$data['category_list']=$this->qbank_model->category_list();
+		if($logged_in['su'] =='2' || $logged_in['su'] =='3'){
+			$data['category_list']=$this->qbank_model->category_list_user($logged_in['gid']);
+		}
+		else {
+			$data['category_list']=$this->qbank_model->category_list();
+		}
 		// fetching level list
 		$data['level_list']=$this->qbank_model->level_list();
 		 $this->load->view('header',$data);
@@ -448,7 +505,7 @@ class Qbank extends CI_Controller {
 	{
 		
 			$logged_in=$this->session->userdata('logged_in');
-			if($logged_in['su']!='1'){
+			if($logged_in['su']!='1' && $logged_in['su']!='2' && $logged_in['su']!='3'){
 			exit($this->lang->line('permission_denied'));
 			}
 			if($this->input->post('question')){
@@ -467,7 +524,12 @@ class Qbank extends CI_Controller {
 		$data['question']=$this->qbank_model->get_question($qid);
 		$data['options']=$this->qbank_model->get_option($qid);
 		// fetching category list
-		$data['category_list']=$this->qbank_model->category_list();
+		if($logged_in['su'] =='2' || $logged_in['su'] =='3'){
+			$data['category_list']=$this->qbank_model->category_list_user($logged_in['gid']);
+		}
+		else {
+			$data['category_list']=$this->qbank_model->category_list();
+		}
 		// fetching level list
 		$data['level_list']=$this->qbank_model->level_list();
 		 $this->load->view('header',$data);
@@ -479,7 +541,7 @@ class Qbank extends CI_Controller {
 	{
 
 		$logged_in=$this->session->userdata('logged_in');
-		if($logged_in['su']!='1'){
+		if($logged_in['su']!='1' && $logged_in['su']!='2' && $logged_in['su']!='3'){
 			exit($this->lang->line('permission_denied'));
 		}
 		if($this->input->post('question')){
@@ -499,7 +561,12 @@ class Qbank extends CI_Controller {
 		$data['options']=$this->qbank_model->get_option($qid);
 		$data['options_order']=$this->qbank_model->get_option_order($qid);
 		// fetching category list
-		$data['category_list']=$this->qbank_model->category_list();
+		if($logged_in['su'] =='2' || $logged_in['su'] =='3'){
+			$data['category_list']=$this->qbank_model->category_list_user($logged_in['gid']);
+		}
+		else {
+			$data['category_list']=$this->qbank_model->category_list();
+		}
 		// fetching level list
 		$data['level_list']=$this->qbank_model->level_list();
 		$this->load->view('header',$data);
@@ -513,11 +580,15 @@ class Qbank extends CI_Controller {
 		
 		// fetching group list
 		$logged_in=$this->session->userdata('logged_in');
-		if($logged_in['su'] !='1'){
+		if($logged_in['su'] !='1' && $logged_in['su'] !='2' && $logged_in['su'] !='3'){
 			exit($this->lang->line('permission_denied'));
 		}
-		
-		$data['category_list']=$this->qbank_model->category_list();
+		if($logged_in['su'] =='2' || $logged_in['su'] =='3'){
+			$data['category_list']=$this->qbank_model->category_list_user($logged_in['gid']);
+		}
+		else {
+			$data['category_list']=$this->qbank_model->category_list();
+		}
 		$data['title']=$this->lang->line('category_list');
 		$this->load->view('header',$data);
 		$this->load->view('category_list',$data);
@@ -530,7 +601,7 @@ class Qbank extends CI_Controller {
 		
 		
 			$logged_in=$this->session->userdata('logged_in');
-			if($logged_in['su']!='1'){
+			if($logged_in['su']!='1' && $logged_in['su'] !='2' && $logged_in['su'] !='3'){
 				exit($this->lang->line('permission_denied'));
 			}
 				$cid = $this->qbank_model->insert_category();
@@ -550,7 +621,7 @@ class Qbank extends CI_Controller {
 		
 		
 			$logged_in=$this->session->userdata('logged_in');
-			if($logged_in['su']!='1'){
+			if($logged_in['su']!='1' && $logged_in['su'] !='2' && $logged_in['su'] !='3'){
 				exit($this->lang->line('permission_denied'));
 			}
 	
@@ -571,7 +642,7 @@ class Qbank extends CI_Controller {
 			public function remove_category($cid){
 
 			$logged_in=$this->session->userdata('logged_in');
-			if($logged_in['su']!='1'){
+			if($logged_in['su']!='1' && $logged_in['su'] !='2' && $logged_in['su'] !='3'){
 				exit($this->lang->line('permission_denied'));
 			} 
 			

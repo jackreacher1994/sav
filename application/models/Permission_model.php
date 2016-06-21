@@ -14,8 +14,8 @@ Class Permission_model extends CI_Model{
 			$this->db->select('pid');
 		$this->db->where('uid',$uid);
 		$query = $this->db->get('savsoft_users');
-		$test= $query->row_array();
-		$array_pid = explode(',', $test['pid']);
+		$result= $query->row_array();
+		$array_pid = explode(',', $result['pid']);
 	
 		return $array_pid ;
 	}

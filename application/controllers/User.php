@@ -28,18 +28,19 @@ class User extends CI_Controller {
 		$this->load->helper('form');
 		$logged_in=$this->session->userdata('logged_in');
 
-		if($logged_in['su']!='1' && $logged_in['su']!='2' && $logged_in['su']!='3'){
+		if($logged_in['su'] !='1' && $logged_in['su'] !='2' && $logged_in['su']!='3'){
 			exit($this->lang->line('permission_denied'));
 		}
 
 		//fetching user group;
 		$data['group_list']=$this->user_model->group_list();
 
-		if($logged_in['su']=='2'){
+		if($logged_in['su']=='2' || $logged_in['su']=='3'){
 			$gid = $logged_in['gid'];
 		}
 
 		//$data['status_list']=$this->user_model->status_list();
+		$data['su'] = $logged_in['su'];
 		$data['limit']=$limit;
 		$data['gid']=$gid;
 		$data['sid']=$sid;
@@ -64,7 +65,7 @@ class User extends CI_Controller {
 	{
 		
 		$logged_in=$this->session->userdata('logged_in');
-		if($logged_in['su']!='1'){
+		if($logged_in['su']!='1' && $logged_in['su'] != '2' && $logged_in['su'] != '3'){
 			exit($this->lang->line('permission_denied'));
 		}
 
@@ -83,7 +84,7 @@ class User extends CI_Controller {
 
 		
 		$logged_in=$this->session->userdata('logged_in');
-		if($logged_in['su']!='1'){
+		if($logged_in['su']!='1' && $logged_in['su'] != '2' && $logged_in['su'] != '3'){
 			exit($this->lang->line('permission_denied'));
 		}
 		$this->load->library('form_validation');
@@ -189,34 +190,34 @@ class User extends CI_Controller {
 
 	}
 	
-	
 	public function group_list(){
 		
-		// fetching group list
 		$logged_in=$this->session->userdata('logged_in');
-		if($logged_in['su'] !='1'){
+		if($logged_in['su'] !='1' && $logged_in['su'] !='2' && $logged_in['su']!='3' ){
 			exit($this->lang->line('permission_denied'));
 		}
-		$data['group_list']=$this->user_model->group_list();
+		if( $logged_in['su'] =='2' || $logged_in['su'] =='3'){
+			$data['group_list']=$this->user_model->group_list_user($logged_in['gid']);
+		}
+		else{
+			$data['group_list']=$this->user_model->group_list();
+		}
+		
+		
 		$data['parent_list'] = $this->user_model->parent_list();
 
 		$data['title']=$this->lang->line('group_list');
 		$this->load->view('header',$data);
 		$this->load->view('group_list',$data);
-		$this->load->view('footer',$data);
-
-		
-		
-		
+		$this->load->view('footer',$data);		
 	}
 	
 	
 	public function insert_group()
 	{
 		
-		
 		$logged_in=$this->session->userdata('logged_in');
-		if($logged_in['su']!='1'){
+		if($logged_in['su']!='1' && $logged_in['su'] !='2' && $logged_in['su']!='3' ){
 			exit($this->lang->line('permission_denied'));
 		}
 

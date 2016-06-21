@@ -20,74 +20,7 @@ class Permission extends CI_Controller {
 			redirect('login');
 		}
 	}
-// Group permission
-/*	public function permission_group(){
-		// fetching group permission
-		$logged_in=$this->session->userdata('logged_in');
-		if($logged_in['su'] !='1'){
-			exit($this->lang->line('permission_denied'));
-		}
-		$data['group_permission_list']=$this->permission_model->group_permission_list();
-		
-		$data['title']='List Group Permission';
-		$this->load->view('header',$data);
-		$this->load->view('group_permission_list',$data);
-		$this->load->view('footer',$data);
-	}*/
 
-/*	public function insert_group_permission(){
-		$logged_in=$this->session->userdata('logged_in');
-		if($logged_in['su']!='1'){
-			exit($this->lang->line('permission_denied'));
-		}
-		$pid = $this->permission_model->insert_group_permission();
-		if($pid){
-			$this->session->set_flashdata('message', "<div class='alert alert-success'>".$this->lang->line('data_added_successfully')." </div>");
-			log_message('ved', $this->lang->line('user') . ' ' . $logged_in['uid'] . ' insert group permission ' . $gpid);
-		}else{
-			$this->session->set_flashdata('message', "<div class='alert alert-danger'>".$this->lang->line('error_to_add_data')." </div>");
-
-		}
-		redirect('permission/permission_group/');
-	}
-
-	public function update_group_permission($gpid)
-	{
-		
-		
-		$logged_in=$this->session->userdata('logged_in');
-		if($logged_in['su']!='1'){
-			exit($this->lang->line('permission_denied'));
-		}
-
-		if($this->permission_model->update_group_permission($gpid)){
-			echo "<div class='alert alert-success'>".$this->lang->line('data_updated_successfully')." </div>";
-			log_message('ved', $this->lang->line('user') . ' ' . $logged_in['uid'] . ' update group permission ' . $gpid);
-		}else{
-			echo "<div class='alert alert-danger'>".$this->lang->line('error_to_update_data')." </div>";
-
-		}
-
-
-	}
-	public function remove_group_permission($gpid){
-
-		$logged_in=$this->session->userdata('logged_in');
-		if($logged_in['su']!='1'){
-			exit($this->lang->line('permission_denied'));
-		} 
-
-		if($this->permission_model->remove_group_permission($gpid)){
-			$this->session->set_flashdata('message', "<div class='alert alert-success'>".$this->lang->line('removed_successfully')." </div>");
-			log_message('ved', $this->lang->line('user') . ' ' . $logged_in['uid'] . ' remove group permission ' . $pid);		
-		}else{
-			$this->session->set_flashdata('message', "<div class='alert alert-danger'>".$this->lang->line('error_to_remove')." </div>");
-
-		}
-		redirect('permission/permission_group');
-
-
-	}*/
 
 //permission
 	public function permission_list(){
