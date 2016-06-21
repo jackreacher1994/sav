@@ -33,7 +33,8 @@ class Result extends CI_Controller {
 		$data['quiz_list']=$this->result_model->quiz_list();
 		// group list
 		 $this->load->model("user_model");
-		$data['group_list']=$this->user_model->group_list();
+                 $logged_in=$this->session->userdata('logged_in');
+		$data['group_list']=$this->user_model->group_list($logged_in);
 		
 		$this->load->view('header',$data);
 		$this->load->view('result_list',$data);

@@ -100,16 +100,27 @@ Class User_model extends CI_Model
 	}
 
 
-	function group_list(){
-
-
-
+	function group_list($logged){
  		//$this->db->join('savsoft_office','savsoft_office.id = savsoft_group.oid');
-		$this->db->order_by('gid','desc');
+                $result = array();
+                switch($logged['su'])
+                {
+                    case 1:
+                        $this->db->where('parent_id', '');
+                        $this->db->order_by('gid','desc');
+                        $this->db->get('savsoft_group');
+                        break;
+                    case 2:
+                    case 3:
+                        $group = $logged['gid'];
+                        $this->db->where('parent_id', $group);
+                        break;
+                    default:
+                        break;
+                }
 		$query=$this->db->get('savsoft_group');
-
-
-		return $query->result_array();
+                $result = $query->result_array();
+		return $result;
 	}
 
 	function parent_list(){

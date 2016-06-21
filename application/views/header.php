@@ -95,7 +95,7 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $this->lang->line('quiz');?> <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                  <?php  
-				if($logged_in['su'] == 1 && ( $logged_in['gpid'] == 3 || $logged_in['gpid'] == 0) ){
+				if($logged_in['su'] != 0){
 			?>     <li><a href="<?php echo site_url('quiz/add_new');?>"><?php echo $this->lang->line('add_new');?></a></li>
 					<li><a href="<?php echo site_url('quiz/add_new_quiz');?>"><?php echo $this->lang->line('add_new_with_temp');?></a></li>
               <?php 
