@@ -23,11 +23,7 @@ class Result extends CI_Controller {
 	 }
 
 	public function index($limit='0',$status='0')
-	{
-		
-	 
-			
-			
+	{				
 		$data['limit']=$limit;
 		$data['status']=$status;
 		$data['title']=$this->lang->line('resultlist');
@@ -74,9 +70,11 @@ class Result extends CI_Controller {
 		$quid=$this->input->post('quid');
 		$gid=$this->input->post('gid');
 		$result=$this->result_model->generate_report($quid,$gid);
-		$csvdata=$this->lang->line('result_id').",".$this->lang->line('email').",".$this->lang->line('first_name').",".$this->lang->line('last_name').",".$this->lang->line('group_name').",".$this->lang->line('quiz_name').",".$this->lang->line('score_obtained').",".$this->lang->line('percentage_obtained').",".$this->lang->line('status')."\r\n";
+		$csvdata=$this->lang->line('result_id').",".$this->lang->line('email').",".$this->lang->line('first_name').",".$this->lang->line('last_name').",".$this->lang->line('group_name').",".$this->lang->line('start_time').", ".$this->lang->line('execution_time').", ".$this->lang->line('quiz_name').",".$this->lang->line('score_obtained').",".$this->lang->line('percentage_obtained').",".$this->lang->line('status')."\r\n";
 		foreach($result as $rk => $val){
-		$csvdata.=$val['rid'].",".$val['email'].",".$val['first_name'].",".$val['last_name'].",".$val['group_name'].",".$val['quiz_name'].",".$val['score_obtained'].",".$val['percentage_obtained'].",".$val['result_status']."\r\n";
+                $start_time = Date('d/m/Y', $val['start_time']).'; '. Date('H:i', $val['start_time']).'/'.Date('H:i', $val['end_time']);
+                $execution_time = round(($val['end_time'] - $val['start_time'])/60) . ' min';
+		$csvdata.=$val['rid'].",".$val['email'].",".$val['first_name'].",".$val['last_name'].",".$val['group_name'].",".$start_time.", ".$execution_time.", ".$val['quiz_name'].",".$val['score_obtained'].",".$val['percentage_obtained'].",".$val['result_status']."\r\n";
 		}
 		$filename=time().'.csv';
 		force_download($filename, $csvdata);

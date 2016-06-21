@@ -96,6 +96,9 @@ foreach($group_list as $gk => $group){
         <?php
     }
     ?>
+<th><?php echo $this->lang->line('email');?></th>
+<th><?php echo $this->lang->line('start_time');?></th>
+<th><?php echo $this->lang->line('execution_time');?></th>
  <th><?php echo $this->lang->line('quiz_name');?></th>
  <th><?php echo $this->lang->line('score_obtained');?></th>
  <th><?php echo $this->lang->line('status');?>
@@ -107,6 +110,7 @@ foreach($group_list as $gk => $group){
  </select>
  </th>
  <th><?php echo $this->lang->line('percentage_obtained');?></th>
+  <th><?php echo $this->lang->line('group');?>
 <th><?php echo $this->lang->line('action');?> </th>
 </tr>
 <?php 
@@ -131,10 +135,14 @@ foreach($result as $key => $val){
         <?php
     }
     ?>
+<td><?php echo $val['email'];?></td>
+<td><?php echo Date('d/m/Y', $val['start_time']).'; '. Date('H:i', $val['start_time']).'/'.Date('H:i', $val['end_time']) ?></td>
+<td><?php echo round(($val['end_time'] - $val['start_time'])/60);?> min</td>
  <td><?php echo $val['quiz_name'];?></td>
  <td><?php echo $val['score_obtained'];?></td>
  <td><?php echo $val['result_status'];?></td>
  <td><?php echo $val['percentage_obtained'];?>%</td>
+ <td><?php echo $val['group_name'];?></td>
 <td>
 <a href="<?php echo site_url('result/view_result/'.$val['rid']);?>" class="btn btn-success" ><?php echo $this->lang->line('view');?> </a>
 <?php 
