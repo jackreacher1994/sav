@@ -114,6 +114,7 @@ Class User_model extends CI_Model
                     case 3:
                         $group = $logged['gid'];
                         $this->db->where('parent_id', $group);
+                        $this->db->order_by('gid','desc');
                         break;
                     default:
                         break;
@@ -124,9 +125,6 @@ Class User_model extends CI_Model
 	}
 
 	function parent_list(){
-
-
-
 		$this->db->where('parent_id',0);
 		$this->db->order_by('gid','desc');
 		$query=$this->db->get('savsoft_group');
