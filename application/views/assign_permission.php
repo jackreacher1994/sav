@@ -29,8 +29,7 @@
               $this->db->order_by('savsoft_permission.id','desc');
               $query = $this->db->get('savsoft_permission');
               $result2 = $query -> result_array();
-             // print_r($result2);
-             // die();
+           
               foreach($result2 as $key => $val2){
                 ?>
                 <tr>

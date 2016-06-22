@@ -98,8 +98,8 @@ Class User_model extends CI_Model
 
 		return $query->result_array();
 	}
-
-
+        
+        
 	function group_list($logged){
  		//$this->db->join('savsoft_office','savsoft_office.id = savsoft_group.oid');
                 $result = array();
@@ -123,22 +123,27 @@ Class User_model extends CI_Model
                 $result = $query->result_array();
 		return $result;
 	}
+		return $query->result_array();
+	}
+
+	function group_list_user($gid){
+		$this->db->where('gid',$gid);
+		$query=$this->db->get('savsoft_group');
+		$result = $query->row_array();
+		$this->db->where('parent_id',$result['parent_id']);
+		$query2=$this->db->get('savsoft_group');
+		return $query2->result_array();
+	}
 
 	function parent_list(){
 		$this->db->where('parent_id',0);
 		$this->db->order_by('gid','desc');
 		$query=$this->db->get('savsoft_group');
-
-
 		return $query->result_array();
 	}
 
 	function num_child($gid){
-
-
-
-		return $this->db->where('parent_id',$gid)->count_all_results('savsoft_group');
-		
+		return $this->db->where('parent_id',$gid)->count_all_results('savsoft_group');	
 	}
 
 	function child_list($gid){

@@ -41,22 +41,14 @@
 							<td><input type="text"   class="form-control"  value="<?php echo $val['group_name'];?>" onBlur="updategroup(this.value, null,'<?php echo $val['gid'];?>');" ></td>
 
 							<td>
-								<select class="form-control" onChange="updategroup(null, this.value,'<?php echo $val['gid'];?>');">
-									<option value="0"><?php echo $this->lang->line('no_parent_group');?></option>
 									<?php
 									foreach($parent_list as $parent){
-										if($parent['gid'] != $val['gid']) {
-											?>
-
-											<option
-												value="<?php echo $parent['gid']; ?>" <?php if ($val['parent_id'] == $parent['gid']) {
-												echo 'selected';
-											} ?>><?php echo $parent['group_name']; ?></option>
-											<?php
+										if($parent['gid'] == $val['parent_id']) {	
+										echo $parent['group_name'];
+											}
 										}
-									}
 									?>
-								</select>
+								
 							</td>
 
 							<td>
