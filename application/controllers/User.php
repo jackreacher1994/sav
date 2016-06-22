@@ -12,6 +12,7 @@ class User extends CI_Controller {
 		$this->lang->load('basic', $this->config->item('language'));
 		// redirect if not loggedin
 		if(!$this->session->userdata('logged_in')){
+			$this->session->set_userdata('last_page', current_url());
 			redirect('login');
 			
 		}
@@ -289,7 +290,7 @@ class User extends CI_Controller {
 		$this->quiz_model->close_result($this->session->userdata('logged_in')['uid']);
 
 		$this->session->unset_userdata('logged_in');
-
+		$this->session->unset_userdata('last_page');
 		log_message('ved', $this->lang->line('user') . ' ' . $logged_in['uid'] . ' ' . $this->lang->line('logged_out'));
 
 		redirect('login');

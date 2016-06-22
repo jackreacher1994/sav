@@ -11,12 +11,7 @@ class Login extends CI_Controller {
 	   $this->lang->load('basic', $this->config->item('language'));
 		if($this->db->database ==''){
 		redirect('install');	
-		}
-		 
-		 
-		 
-		
-		
+		}	
 	 }
 
 	public function index()
@@ -25,7 +20,9 @@ class Login extends CI_Controller {
 		if($this->session->userdata('logged_in')){
 			$logged_in=$this->session->userdata('logged_in');
 			if($logged_in['su']=='1' || $logged_in['su']=='2' || $logged_in['su']=='3'){
+
 				redirect('dashboard');
+
 			}else{
 				redirect('quiz');	
 			}
@@ -78,9 +75,21 @@ class Login extends CI_Controller {
 			log_message('ved', $this->lang->line('user') . ' ' . $user['uid'] . ' ' . $this->lang->line('logged_in'));
 			// redirect to dashboard
 			if($user['su']=='1' || $user['su']=='2' || $user['su']=='3'){
-				redirect('dashboard');
+				if($this->session->userdata('last_page'))
+				{
+					redirect($this->session->userdata('last_page'));
+				}
+				else{
+					redirect('dashboard');
+				}
+				
 			}else{
-				redirect('quiz');	
+				if($this->session->userdata('last_page'))
+				{
+					redirect($this->session->userdata('last_page'));
+				}
+				else{
+				redirect('quiz');	}
 			}
 		}else{
 			 
