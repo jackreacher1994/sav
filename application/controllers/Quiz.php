@@ -29,7 +29,7 @@ class Quiz extends CI_Controller {
 	{
 		
 		$logged_in=$this->session->userdata('logged_in');	
-		echo $logged_in['uid'];	
+		//echo $logged_in['uid'];	
 		$data['limit']=$limit;
 		$data['title']=$this->lang->line('quiz');
 		// fetching quiz list
