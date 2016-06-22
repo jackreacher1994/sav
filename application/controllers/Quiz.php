@@ -1,5 +1,5 @@
 <?php
-//date_default_timezone_set('Asia/Ho_Chi_Minh');
+
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Quiz extends CI_Controller {
@@ -28,7 +28,8 @@ class Quiz extends CI_Controller {
 	public function index($limit='0')
 	{
 		
-		$logged_in=$this->session->userdata('logged_in');		
+		$logged_in=$this->session->userdata('logged_in');	
+		echo $logged_in['uid'];	
 		$data['limit']=$limit;
 		$data['title']=$this->lang->line('quiz');
 		// fetching quiz list
@@ -41,9 +42,9 @@ class Quiz extends CI_Controller {
 	public function add_new_quiz($limit='0'){
 
 		$logged_in=$this->session->userdata('logged_in');
-//		if($logged_in['su']!='1'){
-//			exit($this->lang->line('permission_denied'));
-//		}
+		if($logged_in['su']!='1' && $logged_in['su']!='2' && $logged_in['su']!='3'){
+			exit($this->lang->line('permission_denied'));
+		}
 
 		$data['limit']=$limit;
 		$data['title']='Tạo mới bằng cách sử dụng mẫu';
@@ -58,11 +59,9 @@ class Quiz extends CI_Controller {
 	{
 		
 		$logged_in=$this->session->userdata('logged_in');
-		//if($logged_in['su']!='1'){
-		//	exit($this->lang->line('permission_denied'));
-		//}
-
-
+		if($logged_in['su']!='1' && $logged_in['su']!='2' && $logged_in['su']!='3'){
+			exit($this->lang->line('permission_denied'));
+		}
 
 		$data['title']=$this->lang->line('add_new').' '.$this->lang->line('quiz');
 		// fetching group list
@@ -78,7 +77,7 @@ class Quiz extends CI_Controller {
 	{
 		
 		$logged_in=$this->session->userdata('logged_in');
-		if($logged_in['su']!='1'){
+		if($logged_in['su']!='1' && $logged_in['su']!='2' && $logged_in['su']!='3'){
 			exit($this->lang->line('permission_denied'));
 		}
 
@@ -150,7 +149,7 @@ class Quiz extends CI_Controller {
 
 		
 		$logged_in=$this->session->userdata('logged_in');
-		if($logged_in['su']!='1'){
+		if($logged_in['su']!='1' && $logged_in['su']!='2' && $logged_in['su']!='3'){
 			exit($this->lang->line('permission_denied'));
 		}
 
@@ -183,7 +182,7 @@ class Quiz extends CI_Controller {
 	
 	function up_question($quid,$qid,$not='1'){
 		$logged_in=$this->session->userdata('logged_in');
-		if($logged_in['su']!="1"){
+		if($logged_in['su']!='1' && $logged_in['su']!='2' && $logged_in['su']!='3'){
 			exit($this->lang->line('permission_denied'));
 			return;
 		}		
@@ -200,7 +199,7 @@ class Quiz extends CI_Controller {
 	
 	function down_question($quid,$qid,$not='1'){
 		$logged_in=$this->session->userdata('logged_in');
-		if($logged_in['su']!="1"){
+		if($logged_in['su']!='1' && $logged_in['su']!='2' && $logged_in['su']!='3'){
 			exit($this->lang->line('permission_denied'));
 			return;
 		}	
@@ -217,7 +216,7 @@ class Quiz extends CI_Controller {
 	{
 
 		$logged_in=$this->session->userdata('logged_in');
-		if($logged_in['su']!='1'){
+		if($logged_in['su']!='1' && $logged_in['su']!='2' && $logged_in['su']!='3'){
 			exit($this->lang->line('permission_denied'));
 		}
 		$this->load->library('form_validation');
@@ -249,7 +248,7 @@ class Quiz extends CI_Controller {
 
 			$message = $this->input->post('form_email');
 
-			/*for ($i=0; $i < count($emails); $i++) {
+			for ($i=0; $i < count($emails); $i++) {
 
 
 				$this->load->library('email', $config);
@@ -267,13 +266,12 @@ class Quiz extends CI_Controller {
 				{
 					show_error($this->email->print_debugger());  
 				}
-			}*/
+			}
 			$quid=$this->quiz_model->insert_quiz();
 			log_message('ved', $this->lang->line('user') . ' ' . $logged_in['uid'] . ' ' . $this->lang->line('insert_quiz') . ' ' . $quid);
-			/*echo $quid;
-			die();*/
+			
 			redirect('/quiz/edit_quiz/'.$quid);
-			//redirect('/quiz');
+			
 		}       
 
 	}
@@ -281,7 +279,7 @@ class Quiz extends CI_Controller {
 	public function insert_quiz_use_old($quid){
 
 		$logged_in=$this->session->userdata('logged_in');
-		if($logged_in['su']!='1'){
+		if($logged_in['su']!='1' && $logged_in['su']!='2' && $logged_in['su']!='3'){
 			exit($this->lang->line('permission_denied'));
 		}
 
@@ -311,7 +309,7 @@ class Quiz extends CI_Controller {
 		
 		
 		$logged_in=$this->session->userdata('logged_in');
-		if($logged_in['su']!='1'){
+		if($logged_in['su']!='1' && $logged_in['su']!='2' && $logged_in['su']!='3'){
 			exit($this->lang->line('permission_denied'));
 		}
 		$this->load->library('form_validation');
@@ -327,7 +325,7 @@ class Quiz extends CI_Controller {
 
 			log_message('ved', $this->lang->line('user') . ' ' . $logged_in['uid'] . ' ' . $this->lang->line('update_quiz') . ' ' . $quid);
 
-			redirect('quiz/edit_quiz/'.$quid);
+			redirect('/quiz');
 		}       
 
 	}	
@@ -335,7 +333,7 @@ class Quiz extends CI_Controller {
 	public function remove_quiz($quid){
 
 		$logged_in=$this->session->userdata('logged_in');
-		if($logged_in['su']!='1'){
+		if($logged_in['su']!='1' && $logged_in['su']!='2' && $logged_in['su']!='3'){
 			exit($this->lang->line('permission_denied'));
 		} 
 
@@ -461,10 +459,7 @@ class Quiz extends CI_Controller {
 		}
 
 
-		// end date/time
-		//date_default_timezone_set('Asia/Ho_Chi_Minh');
-
-		//$data['quiz']['start_time']  = time();
+		
 		if(($data['quiz']['start_time']+($data['quiz']['duration']*60)) < time()){
 			$this->quiz_model->submit_result($rid);
 			$this->session->unset_userdata('rid');
@@ -481,11 +476,9 @@ class Quiz extends CI_Controller {
 			$data['seconds'] = ($data['quiz']['duration']*60) - (time() - $data['quiz']['start_time']);
 		}
 		
-		//echo $data['seconds'];
-		// get questions
+		
 		$data['questions'] = $this->quiz_model->get_questions($data['quiz']['r_qids']);
-		// get options
-		//$data['options']=$this->quiz_model->get_options($data['quiz']['r_qids']);
+		
 		$data['options'] = $this->quiz_model->get_random_options($data['quiz']['r_qids']);
 		$data['title'] = $data['quiz']['quiz_name'];
 		$this->load->view('header',$data);
@@ -550,7 +543,7 @@ class Quiz extends CI_Controller {
 
 	function assign_score($rid,$qno,$score){
 		$logged_in=$this->session->userdata('logged_in');
-		if($logged_in['su']!='1'){
+		if($logged_in['su']!='1' && $logged_in['su']!='2' && $logged_in['su']!='3'){
 			exit($this->lang->line('permission_denied'));
 		} 
 		$this->quiz_model->assign_score($rid,$qno,$score);
@@ -561,7 +554,7 @@ class Quiz extends CI_Controller {
 
 	function assign_user_for_quiz($qid){
 		$logged_in=$this->session->userdata('logged_in');
-		if($logged_in['su']!='1'){
+		if($logged_in['su']!='1' && $logged_in['su']!='2' && $logged_in['su']!='3'){
 			exit($this->lang->line('permission_denied'));
 		} 
 		$data['title']='Assign User Into A Test';
@@ -577,7 +570,7 @@ class Quiz extends CI_Controller {
 	function submit_assign_user_for_quiz(){
 
 		$logged_in=$this->session->userdata('logged_in');
-		if($logged_in['su']!='1'){
+		if($logged_in['su']!='1' && $logged_in['su']!='2' && $logged_in['su']!='3'){
 			exit($this->lang->line('permission_denied'));
 		} 
 		$quid =$this->input->post('quid');

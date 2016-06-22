@@ -20,8 +20,6 @@
  							echo $this->session->flashdata('message');	
  						}
  						?>	
-
-
  						<div class="form-group">	 
  							<label for="inputEmail" class="sr-only"><?php echo $this->lang->line('quiz_name');?></label> 
  							<input type="text"  name="quiz_name"  value="<?php echo $quiz['quiz_name'];?>" class="form-control" placeholder="<?php echo $this->lang->line('quiz_name');?>"  required autofocus>
@@ -284,9 +282,6 @@
  						}
 
  						?>	
-
-
-
  						<button class="btn btn-success" type="submit"><?php echo $this->lang->line('submit');?></button>
 
  					</div>

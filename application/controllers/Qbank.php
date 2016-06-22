@@ -660,24 +660,6 @@ class Qbank extends CI_Controller {
 		}
 	// category functions end
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-		
-	
 	// level functions start
 	public function level_list(){
 		
@@ -686,18 +668,12 @@ class Qbank extends CI_Controller {
 		$data['title']=$this->lang->line('level_list');
 		$this->load->view('header',$data);
 		$this->load->view('level_list',$data);
-		$this->load->view('footer',$data);
-
-		
-		
-		
+		$this->load->view('footer',$data);		
 	}
 	
 	
 		public function insert_level()
 	{
-		
-		
 			$logged_in=$this->session->userdata('logged_in');
 			if($logged_in['su']!='1'){
 				exit($this->lang->line('permission_denied'));
@@ -734,9 +710,6 @@ class Qbank extends CI_Controller {
 	
 	}
 	
-	
-	
-	
 			public function remove_level($lid){
 
 			$logged_in=$this->session->userdata('logged_in');
@@ -756,16 +729,6 @@ class Qbank extends CI_Controller {
 			
 		}
 	// level functions end
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	function import()
 		{	

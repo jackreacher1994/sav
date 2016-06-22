@@ -115,7 +115,7 @@ class User extends CI_Controller {
 	public function remove_user($uid){
 
 		$logged_in=$this->session->userdata('logged_in');
-		if($logged_in['su']!='1'){
+		if($logged_in['su']!='1'  && $logged_in['su'] != '2' && $logged_in['su'] != '3'){
 			exit($this->lang->line('permission_denied'));
 		}
 		if($uid=='1'){
@@ -139,7 +139,7 @@ class User extends CI_Controller {
 	{
 		
 		$logged_in=$this->session->userdata('logged_in');
-		if($logged_in['su']!='1'){
+		if($logged_in['su']!='1'  && $logged_in['su'] != '2' && $logged_in['su'] != '3'){
 			$uid=$logged_in['uid'];
 		}
 
@@ -167,7 +167,7 @@ class User extends CI_Controller {
 		
 		$logged_in=$this->session->userdata('logged_in');
 
-		if($logged_in['su']!='1'){
+		if($logged_in['su']!='1'  && $logged_in['su'] != '2' && $logged_in['su'] != '3'){
 			$uid=$logged_in['uid'];
 		}
 		$this->load->library('form_validation');
@@ -239,7 +239,7 @@ class User extends CI_Controller {
 		
 		
 		$logged_in=$this->session->userdata('logged_in');
-		if($logged_in['su']!='1'){
+		if($logged_in['su']!='1'  && $logged_in['su'] != '2' && $logged_in['su'] != '3'){
 			exit($this->lang->line('permission_denied'));
 		}
 
