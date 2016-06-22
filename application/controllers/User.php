@@ -149,7 +149,7 @@ class User extends CI_Controller {
 		$this->load->model("payment_model");
 		$data['payment_history']=$this->payment_model->get_payment_history($uid);
 		// fetching group list
-		$data['group_list']=$this->user_model->group_list();
+		$data['group_list']=$this->user_model->group_list($logged_in);
 		$this->load->view('header',$data);
 		if($logged_in['su']=='1'){
 			$this->load->view('edit_user',$data);
@@ -200,7 +200,7 @@ class User extends CI_Controller {
 			$data['group_list']=$this->user_model->group_list_user($logged_in['gid']);
 		}
 		else{
-			$data['group_list']=$this->user_model->group_list();
+			$data['group_list']=$this->user_model->group_list($logged_in);
 		}
 		
 		
