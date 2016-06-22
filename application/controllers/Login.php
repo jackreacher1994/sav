@@ -31,8 +31,6 @@ class Login extends CI_Controller {
 			}
 			
 		}
-
-		$data['login_url']="#";
 		
 		$data['title']=$this->lang->line('login');
 		$this->load->view('header',$data);
@@ -202,6 +200,55 @@ class Login extends CI_Controller {
 
 	}
 
-	
-	
+	public function social($provider_name)
+	{
+		$this->load->library('oauth/OAuth2');
+		$this->load->config('social', TRUE);
+
+		$provider = $this->oauth2->provider($provider_name, array(
+			'id' => $this->config->item($provider_name.'_id', 'social'),
+			'secret' => $this->config->item($provider_name.'_secret', 'social'),
+		));
+
+
+		if ( ! $this->input->get('code'))
+		{
+			$provider->authorize();
+		}
+		else
+		{
+			try
+			{
+				$token = $provider->access($this->input->get('code'));
+
+				$user = $provider->get_user_info($token);
+				//print_r($user); die;
+
+				if($this->user_model->checkGoogleId($user['uid'])){
+					exit('Da co trong db.');
+				} else {
+					$userdata=array(
+						'email'=>$user['email'],
+						'password'=>md5('123456'),
+						'first_name'=>$user['first_name'],
+						'last_name'=>$user['last_name'],
+						'google_id'=>$user['uid'],
+						'sid'=>0,
+						'gid'=>0,
+						'su'=>0,
+					);
+
+					if($this->user_model->insert_user3($userdata))
+						exit('Chua co trong db. Da them.');
+				}
+			}
+
+			catch (OAuth2_Exception $e)
+			{
+				show_error($e);
+			}
+
+		}
+	}
+
 }

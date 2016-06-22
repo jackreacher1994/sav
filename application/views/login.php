@@ -40,7 +40,9 @@
 					<button class="btn btn-lg btn-primary btn-block" type="submit"><?php echo $this->lang->line('login');?></button>
 			</div>
 
-	<a class='btn btn-danger' href="<?php echo $login_url;?>"><i class="fa fa-google-plus"></i></a>
+<!--	<a class='btn btn-danger' href="index.php/login/social/google"><i class="fa fa-google-plus"></i></a>-->
+
+	<a class='btn btn-danger' href="<?php echo site_url('login/social/google') ?>"><i class="fa fa-google-plus"></i></a>
 
 	<a href="<?php echo site_url('login/forgot');?>"><?php echo $this->lang->line('forgot_password');?></a>
 

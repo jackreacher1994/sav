@@ -143,7 +143,9 @@ Class User_model extends CI_Model
                 $result = $query->result_array();
 		return $result;
 	}
+
 		
+
 
 	function group_list_user($gid){
 		$this->db->where('gid',$gid);
@@ -301,7 +303,17 @@ Class User_model extends CI_Model
 	}
 
 
+	function insert_user3($userdata){
+		
+		if($this->db->insert('savsoft_users',$userdata)){
 
+			return true;
+		}else{
+
+			return false;
+		}
+
+	}
 
 
 
@@ -509,7 +521,14 @@ Class User_model extends CI_Model
 		return $query->row_array();
 	}
 
-
+	function checkGoogleId($id){
+		$this->db->where('google_id',$id);
+		$query=$this->db->get('savsoft_users');
+		if($query->num_rows())
+			return true;
+		else
+			return false;
+	}
 
 
 }

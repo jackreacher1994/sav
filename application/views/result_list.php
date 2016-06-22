@@ -6,7 +6,7 @@ $logged_in=$this->session->userdata('logged_in');
   
 
 <?php 
-if($logged_in['su']=='1'){
+if($logged_in['su']=='1' || $logged_in['su']=='2' || $logged_in['su']=='3'){
 	?>
    <div class="row">
  

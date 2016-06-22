@@ -2,16 +2,73 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ddd2c141-2b8b-4c94-b747-963fdf0fd8f2" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/config/social.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/config/googleplus.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/libraries/google-api-php-client/Google_Client.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/libraries/google-api-php-client/auth/Google_AssertionCredentials.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/libraries/google-api-php-client/auth/Google_Auth.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/libraries/google-api-php-client/auth/Google_AuthNone.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/libraries/google-api-php-client/auth/Google_LoginTicket.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/libraries/google-api-php-client/auth/Google_OAuth2.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/libraries/google-api-php-client/auth/Google_P12Signer.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/libraries/google-api-php-client/auth/Google_PemVerifier.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/libraries/google-api-php-client/auth/Google_Signer.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/libraries/google-api-php-client/auth/Google_Verifier.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/libraries/google-api-php-client/cache/Google_ApcCache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/libraries/google-api-php-client/cache/Google_Cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/libraries/google-api-php-client/cache/Google_FileCache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/libraries/google-api-php-client/cache/Google_MemcacheCache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/libraries/google-api-php-client/config.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/libraries/google-api-php-client/contrib/Google_AdexchangebuyerService.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/libraries/google-api-php-client/contrib/Google_AdsenseService.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/libraries/google-api-php-client/contrib/Google_AdsensehostService.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/libraries/google-api-php-client/contrib/Google_AnalyticsService.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/libraries/google-api-php-client/contrib/Google_BigqueryService.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/libraries/google-api-php-client/contrib/Google_BloggerService.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/libraries/google-api-php-client/contrib/Google_BooksService.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/libraries/google-api-php-client/contrib/Google_CalendarService.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/libraries/google-api-php-client/contrib/Google_ComputeService.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/libraries/google-api-php-client/contrib/Google_CustomsearchService.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/libraries/google-api-php-client/contrib/Google_DriveService.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/libraries/google-api-php-client/contrib/Google_FreebaseService.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/libraries/google-api-php-client/contrib/Google_FusiontablesService.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/libraries/google-api-php-client/contrib/Google_GanService.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/libraries/google-api-php-client/contrib/Google_LatitudeService.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/libraries/google-api-php-client/contrib/Google_LicensingService.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/libraries/google-api-php-client/contrib/Google_ModeratorService.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/libraries/google-api-php-client/contrib/Google_Oauth2Service.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/libraries/google-api-php-client/contrib/Google_OrkutService.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/libraries/google-api-php-client/contrib/Google_PagespeedonlineService.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/libraries/google-api-php-client/contrib/Google_PlusMomentsService.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/libraries/google-api-php-client/contrib/Google_PlusService.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/libraries/google-api-php-client/contrib/Google_PredictionService.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/libraries/google-api-php-client/contrib/Google_ShoppingService.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/libraries/google-api-php-client/contrib/Google_SiteVerificationService.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/libraries/google-api-php-client/contrib/Google_StorageService.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/libraries/google-api-php-client/contrib/Google_TaskqueueService.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/libraries/google-api-php-client/contrib/Google_TasksService.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/libraries/google-api-php-client/contrib/Google_TranslateService.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/libraries/google-api-php-client/contrib/Google_UrlshortenerService.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/libraries/google-api-php-client/contrib/Google_WebfontsService.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/libraries/google-api-php-client/contrib/Google_YoutubeService.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/libraries/google-api-php-client/external/URITemplateParser.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/libraries/google-api-php-client/io/Google_CacheParser.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/libraries/google-api-php-client/io/Google_CurlIO.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/libraries/google-api-php-client/io/Google_HttpRequest.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/libraries/google-api-php-client/io/Google_IO.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/libraries/google-api-php-client/io/Google_REST.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/libraries/google-api-php-client/io/cacerts.pem" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/libraries/google-api-php-client/service/Google_BatchRequest.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/libraries/google-api-php-client/service/Google_MediaFileUpload.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/libraries/google-api-php-client/service/Google_Model.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/libraries/google-api-php-client/service/Google_Service.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/libraries/google-api-php-client/service/Google_ServiceResource.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/libraries/google-api-php-client/service/Google_Utils.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/savsoftquiz.sql" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Dashboard.php" afterPath="$PROJECT_DIR$/application/controllers/Dashboard.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Login.php" afterPath="$PROJECT_DIR$/application/controllers/Login.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/User.php" afterPath="$PROJECT_DIR$/application/controllers/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/language/english/basic_lang.php" afterPath="$PROJECT_DIR$/application/language/english/basic_lang.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/User_model.php" afterPath="$PROJECT_DIR$/application/models/User_model.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/header.php" afterPath="$PROJECT_DIR$/application/views/header.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/login.php" afterPath="$PROJECT_DIR$/application/views/login.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/new_user.php" afterPath="$PROJECT_DIR$/application/views/new_user.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/basic.js" afterPath="$PROJECT_DIR$/js/basic.js" />
     </list>
     <ignored path="sav.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,21 +94,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="login.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="login.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/login.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
-              <caret line="42" column="53" selection-start-line="42" selection-start-column="53" selection-end-line="42" selection-end-column="53" />
+            <state relative-caret-position="459">
+              <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Login.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="social.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/config/social.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="54" selection-start-line="3" selection-start-column="54" selection-end-line="3" selection-end-column="54" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Login.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/controllers/Login.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="34" column="29" selection-start-line="34" selection-start-column="29" selection-end-line="34" selection-end-column="29" />
+            <state relative-caret-position="421">
+              <caret line="237" column="32" selection-start-line="237" selection-start-column="32" selection-end-line="237" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="User_model.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/models/User_model.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-46">
+              <caret line="171" column="0" selection-start-line="171" selection-start-column="0" selection-end-line="171" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -96,13 +173,13 @@
         <option value="$PROJECT_DIR$/application/language/english/basic_lang.php" />
         <option value="$PROJECT_DIR$/js/basic.js" />
         <option value="$PROJECT_DIR$/application/views/new_user.php" />
-        <option value="$PROJECT_DIR$/application/models/User_model.php" />
         <option value="$PROJECT_DIR$/application/controllers/Dashboard.php" />
         <option value="$PROJECT_DIR$/application/controllers/User.php" />
         <option value="$PROJECT_DIR$/application/views/header.php" />
         <option value="$PROJECT_DIR$/application/config/googleplus.php" />
-        <option value="$PROJECT_DIR$/application/views/login.php" />
+        <option value="$PROJECT_DIR$/application/models/User_model.php" />
         <option value="$PROJECT_DIR$/application/controllers/Login.php" />
+        <option value="$PROJECT_DIR$/application/views/login.php" />
       </list>
     </option>
   </component>
@@ -146,7 +223,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -226,28 +302,6 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="errors" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sav" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sav" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="models" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -266,7 +320,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="logs" />
+              <option name="myItemId" value="libraries" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -285,6 +339,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="libraries" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="oauth" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -366,6 +424,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -376,15 +435,15 @@
     <property name="js-jscs-nodeInterpreter" value="D:\Program Files\nodejs\node.exe" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\xampp\htdocs\sav\application\config" />
+      <recent name="D:\xampp\htdocs\sav\application\views" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\xampp\htdocs\sav\application\libraries" />
       <recent name="D:\xampp\htdocs\sav\application\third_party" />
       <recent name="D:\xampp\htdocs\sav\application\language\english" />
       <recent name="D:\xampp\htdocs\sav\js\dragdrop" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\xampp\htdocs\sav\application\config" />
-      <recent name="D:\xampp\htdocs\sav\application\views" />
     </key>
   </component>
   <component name="RunManager" selected="PHP Script.Quiz_model.php">
@@ -455,15 +514,16 @@
       <workItem from="1465980700728" duration="3945000" />
       <workItem from="1466130310535" duration="7802000" />
       <workItem from="1466145718493" duration="7985000" />
+      <workItem from="1466564620401" duration="7799000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="90889000" />
+    <option name="totallyTimeSpent" value="98688000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2489019" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -502,28 +562,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/views/new_question_3.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-918">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/standard_1.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="974" column="9" selection-start-line="974" selection-start-column="9" selection-end-line="974" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/edit_question_3.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-408">
-          <caret line="36" column="26" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/pre_new_question.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-136">
@@ -571,7 +609,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="186" column="19" selection-start-line="186" selection-start-column="19" selection-end-line="186" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -607,7 +644,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="303">
           <caret line="130" column="13" selection-start-line="130" selection-start-column="13" selection-end-line="130" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -615,14 +651,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
           <caret line="479" column="165" selection-start-line="479" selection-start-column="165" selection-end-line="479" selection-end-column="165" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="75" column="35" selection-start-line="75" selection-start-column="35" selection-end-line="75" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -661,7 +689,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="259" column="38" selection-start-line="259" selection-start-column="38" selection-end-line="259" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -696,7 +723,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="492">
           <caret line="62" column="21" selection-start-line="62" selection-start-column="21" selection-end-line="62" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -732,27 +758,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-136">
           <caret line="43" column="63" selection-start-line="43" selection-start-column="63" selection-end-line="43" selection-end-column="63" />
-          <folding>
-            <marker date="1465982183234" expanded="true" signature="4774:5001" placeholder="select * fro... savsoft_qbank" />
-            <marker date="1465982183234" expanded="true" signature="5116:5208" placeholder="select * fro... savsoft_options" />
-            <marker date="1465982183234" expanded="true" signature="5318:5384" placeholder="select * fro... savsoft_options" />
-            <marker date="1465982183234" expanded="true" signature="8775:8915" placeholder="select * fro... savsoft_qbank" />
-            <marker date="1465982183234" expanded="true" signature="9744:9904" placeholder="select * fro... savsoft_qbank" />
-            <marker date="1465982183234" expanded="true" signature="10915:10994" placeholder="select * fro... savsoft_result" />
-            <marker date="1465982183234" expanded="true" signature="11182:11293" placeholder="update savso... " />
-            <marker date="1465982183234" expanded="true" signature="11362:11481" placeholder="select * fro... savsoft_result" />
-            <marker date="1465982183234" expanded="true" signature="11587:11650" placeholder="select * fro... savsoft_answers" />
-            <marker date="1465982183234" expanded="true" signature="11788:11907" placeholder="select * fro... savsoft_result" />
-            <marker date="1465982183234" expanded="true" signature="13221:13269" placeholder="update savso... " />
-            <marker date="1465982183234" expanded="true" signature="13489:13608" placeholder="select * fro... savsoft_result" />
-            <marker date="1465982183234" expanded="true" signature="15109:15192" placeholder="update savso... " />
-            <marker date="1465982183234" expanded="true" signature="15351:15569" placeholder="select savso... savsoft_result" />
-            <marker date="1465982183234" expanded="true" signature="18139:18258" placeholder="select * fro... savsoft_result" />
-            <marker date="1465982183234" expanded="true" signature="18829:18875" placeholder="select * fro... savsoft_options" />
-            <marker date="1465982183234" expanded="true" signature="19756:19802" placeholder="select * fro... savsoft_options" />
-            <marker date="1465982183234" expanded="true" signature="21272:21318" placeholder="select * fro... savsoft_options" />
-            <marker date="1465982183234" expanded="true" signature="22309:22383" placeholder="select * fro... savsoft_options" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -760,7 +765,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="233">
           <caret line="100" column="1" selection-start-line="100" selection-start-column="1" selection-end-line="114" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -783,7 +787,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -799,19 +802,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-391">
           <caret line="13" column="33" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
-          <folding>
-            <marker date="1466146332695" expanded="true" signature="2596:2659" placeholder="..." />
-            <marker date="1466146332695" expanded="true" signature="2918:2965" placeholder="..." />
-            <marker date="1466146332695" expanded="true" signature="3088:3142" placeholder="..." />
-            <marker date="1466146332695" expanded="true" signature="3472:3659" placeholder="..." />
-            <marker date="1466146332695" expanded="true" signature="3551:3649" placeholder="..." />
-            <marker date="1466146332695" expanded="true" signature="3835:4113" placeholder="..." />
-            <marker date="1466146332695" expanded="true" signature="3866:4089" placeholder="{...}" />
-            <marker date="1466146332695" expanded="true" signature="3908:3942" placeholder="{...}" />
-            <marker date="1466146332695" expanded="true" signature="3960:3994" placeholder="{...}" />
-            <marker date="1466146332695" expanded="true" signature="4012:4046" placeholder="{...}" />
-            <marker date="1466146332695" expanded="true" signature="4052:4086" placeholder="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -827,7 +817,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="448">
           <caret line="268" column="38" selection-start-line="268" selection-start-column="38" selection-end-line="268" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -835,15 +824,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="680">
           <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/User_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="83" column="23" selection-start-line="83" selection-start-column="18" selection-end-line="83" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -866,39 +846,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="42" column="10" selection-start-line="42" selection-start-column="10" selection-end-line="42" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="91" selection-start-line="14" selection-start-column="91" selection-end-line="14" selection-end-column="91" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/third_party/google-login-api/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-153">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/libraries/Googleplus.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/application/third_party/google-login-api/config.php" />
+    <entry file="file://$PROJECT_DIR$/application/libraries/Googleplus.php" />
     <entry file="file://$USER_HOME$/Desktop/gg/application/views/user_authentication/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-459">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -906,30 +862,77 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="17" column="59" selection-start-line="17" selection-start-column="59" selection-end-line="17" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa0.167/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-459">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/config/googleplus.php">
+    <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        <state relative-caret-position="-3703">
+          <caret line="75" column="35" selection-start-line="75" selection-start-column="35" selection-end-line="75" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Login.php">
+    <entry file="file://$PROJECT_DIR$/application/views/header.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="34" column="29" selection-start-line="34" selection-start-column="29" selection-end-line="34" selection-end-column="29" />
+        <state relative-caret-position="34">
+          <caret line="14" column="94" selection-start-line="14" selection-start-column="94" selection-end-line="14" selection-end-column="94" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/libraries/Tank_auth.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/libraries/oauth/OAuth2.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="42" column="53" selection-start-line="42" selection-start-column="53" selection-end-line="42" selection-end-column="53" />
+        <state relative-caret-position="459">
+          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/config/social.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="54" selection-start-line="3" selection-start-column="54" selection-end-line="3" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/User_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-46">
+          <caret line="171" column="0" selection-start-line="171" selection-start-column="0" selection-end-line="171" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="421">
+          <caret line="237" column="32" selection-start-line="237" selection-start-column="32" selection-end-line="237" selection-end-column="32" />
           <folding />
         </state>
       </provider>
