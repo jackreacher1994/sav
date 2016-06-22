@@ -5,16 +5,18 @@ Class Quiz_model extends CI_Model
   function quiz_list($limit){
 	  
 	  $logged_in=$this->session->userdata('logged_in');
+          $gid=$logged_in['gid'];
 			if($logged_in['su']=='0'){
 			$uid=$logged_in['uid'];
-			$where="FIND_IN_SET('".$uid."', uids)"; 
-			 
-			$gid=$logged_in['gid'];
+			$where="FIND_IN_SET('".$uid."', uids)";
+			
 			$where .=" OR FIND_IN_SET('".$gid."', gids)";  
 			 $this->db->where($where);
-			}
-			
-			
+			} else if ($logged_in['su'] == '2' || $logged_in['su'] == '3') {
+                            $where = "FIND_IN_SET('".$gid."', gids)"; 
+                            $this->db->where($where);
+                        } 
+					
 	 if($this->input->post('search') && $logged_in['su']=='1'){
 		 $search=$this->input->post('search');
 		 $this->db->or_where('quid',$search);

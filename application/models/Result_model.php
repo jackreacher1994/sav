@@ -7,6 +7,8 @@ Class Result_model extends CI_Model
 	$result_open=$this->lang->line('open');
 	$logged_in=$this->session->userdata('logged_in');
 	$uid=$logged_in['uid'];
+        $su = $logged_in['su'];
+        $gid = $logged_in['gid'];
 	  
 		
 	if($this->input->post('search')){
@@ -35,6 +37,18 @@ Class Result_model extends CI_Model
 		$this->db->order_by('rid','desc');
 		$this->db->join('savsoft_users','savsoft_users.uid=savsoft_result.uid');
 		$this->db->join('savsoft_quiz','savsoft_quiz.quid=savsoft_result.quid');
+                $this->db->join('savsoft_group','savsoft_users.gid=savsoft_group.gid');
+                switch($su) {
+                    case 1:
+                        break;
+                    case 2:
+                    case 3:
+                        $where = "FIND_IN_SET('".$gid."', gids)"; 
+                        $this->db->where($where);
+                        break;
+                default:
+                        break;
+                }
 		$query=$this->db->get('savsoft_result');
 		return $query->result_array();
 		

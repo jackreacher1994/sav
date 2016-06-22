@@ -40,9 +40,9 @@ class Quiz extends CI_Controller {
 	public function add_new_quiz($limit='0'){
 
 		$logged_in=$this->session->userdata('logged_in');
-		if($logged_in['su']!='1'){
-			exit($this->lang->line('permission_denied'));
-		}
+//		if($logged_in['su']!='1'){
+//			exit($this->lang->line('permission_denied'));
+//		}
 
 		$data['limit']=$limit;
 		$data['title']='Tạo mới bằng cách sử dụng mẫu';
@@ -57,15 +57,16 @@ class Quiz extends CI_Controller {
 	{
 		
 		$logged_in=$this->session->userdata('logged_in');
-		if($logged_in['su']!='1'){
-			exit($this->lang->line('permission_denied'));
-		}
+		//if($logged_in['su']!='1'){
+		//	exit($this->lang->line('permission_denied'));
+		//}
 
 
 
 		$data['title']=$this->lang->line('add_new').' '.$this->lang->line('quiz');
 		// fetching group list
-		$data['group_list']=$this->user_model->group_list();
+                $logged_in=$this->session->userdata('logged_in');
+		$data['group_list']=$this->user_model->group_list($logged_in);
 		$this->load->view('header',$data);
 		$this->load->view('new_quiz',$data);
 		$this->load->view('footer',$data);
