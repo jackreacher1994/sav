@@ -26,7 +26,7 @@ class Permission extends CI_Controller {
 	public function permission_list(){
 	 	// fetching group list
 		$logged_in=$this->session->userdata('logged_in');
-		if($logged_in['su'] !='1'){
+		if($logged_in['su'] !='1' && $logged_in['su'] !='2' && $logged_in['su'] !='3'){
 			exit($this->lang->line('permission_denied'));
 		}
 		$data['permission_list']=$this->permission_model->permission_list();
@@ -39,7 +39,7 @@ class Permission extends CI_Controller {
 
 	public function insert_permission(){
 		$logged_in=$this->session->userdata('logged_in');
-		if($logged_in['su']!='1'){
+		if($logged_in['su']!='1' && $logged_in['su'] !='2' && $logged_in['su'] !='3' ){
 			exit($this->lang->line('permission_denied'));
 		}
 		$pid = $this->permission_model->insert_permission();
@@ -58,7 +58,7 @@ class Permission extends CI_Controller {
 		
 		
 		$logged_in=$this->session->userdata('logged_in');
-		if($logged_in['su']!='1'){
+		if($logged_in['su']!='1' && $logged_in['su'] !='2' && $logged_in['su'] !='3'){
 			exit($this->lang->line('permission_denied'));
 		}
 
@@ -75,7 +75,7 @@ class Permission extends CI_Controller {
 	public function remove_permission($pid){
 
 		$logged_in=$this->session->userdata('logged_in');
-		if($logged_in['su']!='1'){
+		if($logged_in['su']!='1' && $logged_in['su'] !='2' && $logged_in['su'] !='3'){
 			exit($this->lang->line('permission_denied'));
 		} 
 
@@ -93,11 +93,16 @@ class Permission extends CI_Controller {
 
 	public function user_assign_permission(){
 		$logged_in=$this->session->userdata('logged_in');
-		if($logged_in['su']!='1'){
+		if($logged_in['su']!='1' && $logged_in['su'] !='2' && $logged_in['su'] !='3'){
 			exit($this->lang->line('permission_denied'));
 		} 
 		$data['title']='Assign User Permission';
-		$data['result']=$this->user_model->user_list_2();
+		if($logged_in['su'] == 2 || $logged_in['su'] == 3){
+			$data['result']=$this->user_model->user_list_3();
+		}
+		else {
+			$data['result']=$this->user_model->user_list_2();
+		}
 
 		
 		$this->load->view('header',$data);
@@ -108,7 +113,7 @@ class Permission extends CI_Controller {
 	public function assign_permission($uid){
 
 		$logged_in=$this->session->userdata('logged_in');
-		if($logged_in['su']!='1'){
+		if($logged_in['su']!='1' && $logged_in['su'] !='2' && $logged_in['su'] !='3'){
 			exit($this->lang->line('permission_denied'));
 		} 
 		$data['title']='Assign Permission';
@@ -126,7 +131,7 @@ class Permission extends CI_Controller {
 
 	public function submit_assign_permission(){
 		$logged_in=$this->session->userdata('logged_in');
-		if($logged_in['su']!='1'){
+		if($logged_in['su']!='1' && $logged_in['su'] !='2' && $logged_in['su'] !='3'){
 			exit($this->lang->line('permission_denied'));
 		} 
 		//$quid =$this->input->post('quid');

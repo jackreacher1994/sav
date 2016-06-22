@@ -98,7 +98,26 @@ Class User_model extends CI_Model
 
 		return $query->result_array();
 	}
-        
+     	function user_list_3(){
+     	$logged_in = $this->session->userdata('logged_in');
+		if($this->input->post('search')){
+			$search=$this->input->post('search');
+			$this->db->or_where('savsoft_users.email',$search);
+			$this->db->or_where('savsoft_users.first_name',$search);
+			$this->db->or_where('savsoft_users.last_name',$search);
+			$this->db->or_where('savsoft_users.contact_no',$search);
+		}
+		$this->db->select('parent_id')->where('savsoft_group.gid',$logged_in['gid']);
+		$query2=$this->db->get('savsoft_group');
+		$test = $query2->row_array();
+		$this->db->where('savsoft_users.uid !=', $logged_in['uid']);
+		$this->db->where('parent_id',$test['parent_id']);	
+		$this->db->join('savsoft_group', 'savsoft_group.gid = savsoft_users.gid');	
+		$this->db->order_by('savsoft_users.uid','desc');   	
+		$query=$this->db->get('savsoft_users');
+		
+		return $query->result_array();
+	}  
         
 	function group_list($logged){
  		//$this->db->join('savsoft_office','savsoft_office.id = savsoft_group.oid');
@@ -111,6 +130,7 @@ Class User_model extends CI_Model
                         $this->db->get('savsoft_group');
                         break;
                     case 2:
+                    	
                     case 3:
                         $group = $logged['gid'];
                         $this->db->where('parent_id', $group);
@@ -123,8 +143,7 @@ Class User_model extends CI_Model
                 $result = $query->result_array();
 		return $result;
 	}
-		return $query->result_array();
-	}
+		
 
 	function group_list_user($gid){
 		$this->db->where('gid',$gid);
@@ -158,11 +177,7 @@ Class User_model extends CI_Model
 		return $query->result_array();
 	}
 
-	/*function status_list(){
-		$this->db->order_by('sid','desc');
-		$query=$this->db->get('savsoft_status');
-		return $query->result_array();
-	}*/
+
 	function verify_code($vcode){
 		$this->db->where('verify_code',$vcode);
 		$query=$this->db->get('savsoft_users');
