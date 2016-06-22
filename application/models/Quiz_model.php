@@ -13,8 +13,13 @@ Class Quiz_model extends CI_Model
 			$where .=" OR FIND_IN_SET('".$gid."', gids)";  
 			 $this->db->where($where);
 			} else if ($logged_in['su'] == '2' || $logged_in['su'] == '3') {
-                            $where = "FIND_IN_SET('".$gid."', gids)"; 
-                            $this->db->where($where);
+                            $gid = $this->check_parent_gid($gid);                      
+                            foreach($gid as $item)
+                            {
+                                $this->db->or_where("FIND_IN_SET('".$item['gid']."', gids)");
+                            }
+                            
+                            
                         } 
 					
 	 if($this->input->post('search') && $logged_in['su']=='1'){
@@ -30,6 +35,21 @@ Class Quiz_model extends CI_Model
 		return $query->result_array();
 		
 	 
+ }
+ 
+ public function check_parent_gid($gid)
+ {
+     //echo $gid;die;
+    
+     $this->db->where('parent_id', $gid);
+     $num_rows = $this->db->count_all_results('savsoft_group');
+     if($num_rows > 0)
+     {
+        $this->db->where('parent_id', $gid);
+        $query = $this->db->get('savsoft_group');
+        return $query->result_array();
+     }
+     return $gid;
  }
  
  function num_quiz(){
