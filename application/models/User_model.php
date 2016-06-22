@@ -72,8 +72,45 @@ Class User_model extends CI_Model
 		if($sid!='0'){
 			$this->db->where('savsoft_users.sid',$sid);
 		}
+		//$this->db->where("savsoft_group.parent_id",$gid);
 		$this->db->join('savsoft_group', 'savsoft_group.gid = savsoft_users.gid');
 		//$this->db->join('savsoft_status', 'savsoft_status.sid = savsoft_users.sid');
+		$this->db->limit($this->config->item('number_of_rows'),$limit);
+		$this->db->order_by('savsoft_users.uid','desc');
+		$query=$this->db->get('savsoft_users');
+
+		return $query->result_array();
+	}
+
+	function user_list_su_2($limit,$gid='0',$sid){
+
+		if($this->input->post('search')){
+			$search=$this->input->post('search');
+			$this->db->or_where('savsoft_users.email',$search);
+			$this->db->or_where('savsoft_users.first_name',$search);
+			$this->db->or_where('savsoft_users.last_name',$search);
+			$this->db->or_where('savsoft_users.contact_no',$search);
+		}
+		if($gid!='0'){
+			$this -> db -> where('savsoft_group.parent_id',$gid);
+			$query = $this->db->get('savsoft_group');
+			$test = $query->result_array();
+			//var_dump($test);die();
+			//$this->db->where('savsoft_users.gid',$gid);
+			for ($i=0; $i < sizeof($test) ; $i++) { 
+				$this->db->or_where('savsoft_users.gid',$test[$i]['gid']);
+			}
+			
+			//$this->db->or_where("savsoft_group.parent_id",$gid);
+		}
+		if($sid!='0'){
+			$this->db->where('savsoft_users.sid',$sid);
+		}
+		
+		$this->db->join('savsoft_group', 'savsoft_group.gid = savsoft_users.gid');
+
+		//$this->db->join('savsoft_group')->or_where('savsoft_group.parent_id',$gid);
+		
 		$this->db->limit($this->config->item('number_of_rows'),$limit);
 		$this->db->order_by('savsoft_users.uid','desc');
 		$query=$this->db->get('savsoft_users');

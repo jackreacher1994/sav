@@ -473,9 +473,9 @@ Class Qbank_model extends CI_Model
 	function category_list_user($gid){
 
 		$this->db->where('gid',$gid);
-		$query=$this->db->get('savsoft_group');
+		/*$query=$this->db->get('savsoft_group');
 		$result = $query->row_array();
-		$this->db->where('gid',$result['parent_id']);
+		$this->db->where('gid',$result['parent_id']);*/
 
 		$this->db->order_by('cid','desc');
 		$query2=$this->db->get('savsoft_category');
