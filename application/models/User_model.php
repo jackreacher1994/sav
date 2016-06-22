@@ -123,8 +123,6 @@ Class User_model extends CI_Model
                 $result = $query->result_array();
 		return $result;
 	}
-		return $query->result_array();
-	}
 
 	function group_list_user($gid){
 		$this->db->where('gid',$gid);
