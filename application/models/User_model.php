@@ -119,8 +119,12 @@ Class User_model extends CI_Model
 		return $query->result_array();
 	}  
         
-	function group_list($logged){
+	function group_list($logged=NULL){
  		//$this->db->join('savsoft_office','savsoft_office.id = savsoft_group.oid');
+                if(empty($logged))
+                {
+                    $logged=$this->session->userdata('logged_in');
+                }
                 $result = array();
                 switch($logged['su'])
                 {
