@@ -82,7 +82,7 @@ Class User_model extends CI_Model
 		return $query->result_array();
 	}
 
-	function user_list_su_2($limit,$gid='0',$sid){
+	function user_list_su_2($limit,$gid,$sid){
 
 		if($this->input->post('search')){
 			$search=$this->input->post('search');
@@ -94,21 +94,16 @@ Class User_model extends CI_Model
 		if($gid!='0'){
 			$this -> db -> where('savsoft_group.parent_id',$gid);
 			$this -> db -> or_where('savsoft_group.gid',$gid);
-			$query = $this->db->get('savsoft_group');
-			$test = $query->result_array();
-
-			$this->db->where('savsoft_users.gid',$gid);
-			for ($i=0; $i < sizeof($test) ; $i++) { 
-				
-				$this->db->or_where('savsoft_users.gid',$test[$i+1]['gid']);
+			$query2 = $this->db->get('savsoft_group');
+			$test = $query2->result_array();
+			foreach ($test as $key ) {
+				$this->db->or_where('savsoft_users.gid',$key['gid']);
 			}
-			//$this->db->or_where("savsoft_group.parent_id",$gid);
 		}
 		if($sid!='0'){
 			$this->db->where('savsoft_users.sid',$sid);
 		}
-		//$this->db->join('savsoft_group', 'savsoft_group.gid = savsoft_users.gid');
-		//$this->db->join('savsoft_group')->or_where('savsoft_group.parent_id',$gid);
+		$this->db->join('savsoft_group', 'savsoft_group.gid = savsoft_users.gid');
 		
 		$this->db->limit($this->config->item('number_of_rows'),$limit);
 		$this->db->order_by('savsoft_users.uid','desc');
@@ -189,12 +184,13 @@ Class User_model extends CI_Model
 
 
 	function group_list_user($gid){
+
 		$this->db->where('gid',$gid);
+		$this->db->or_where('parent_id',$gid);
 		$query=$this->db->get('savsoft_group');
-		$result = $query->row_array();
-		$this->db->where('parent_id',$result['parent_id']);
-		$query2=$this->db->get('savsoft_group');
-		return $query2->result_array();
+		$result = $query->result_array();
+		//var_dump($result);die();
+		return $result;
 	}
 
 	function parent_list(){
