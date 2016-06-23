@@ -14,6 +14,7 @@ Class Quiz_model extends CI_Model {
             $this->db->where($where);
         } else if ($logged_in['su'] == '2' || $logged_in['su'] == '3') {
             $gid = $this->check_parent_gid($gid);
+            
             if (is_array($gid)) {
                 foreach ($gid as $item) {
                     $this->db->or_where("FIND_IN_SET('" . $item['gid'] . "', gids)");
@@ -36,14 +37,11 @@ Class Quiz_model extends CI_Model {
     }
 
     public function check_parent_gid($gid) {
-        //echo $gid;die;
-
-        $this->db->where('parent_id', $gid);
-        $num_rows = $this->db->count_all_results('savsoft_group');
-        if ($num_rows > 0) {
-            $this->db->where('parent_id', $gid);
-            $query = $this->db->get('savsoft_group');
-            return $query->result_array();
+        $query = $this->db->query("SELECT * FROM savsoft_group WHERE parent_id = $gid OR gid = $gid");
+        $result = $query->result_array();
+        $num_rows = count($result);        
+        if ($num_rows > 1) {
+            return $result;
         }
         return $gid;
     }

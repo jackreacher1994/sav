@@ -136,9 +136,14 @@ Class User_model extends CI_Model
                     case 2:
                     	
                     case 3:
-                        $group = $logged['gid'];
-                        $this->db->where('parent_id', $group);
-                        $this->db->order_by('gid','desc');
+                         $this->db->where('parent_id', $logged['gid']);
+                         $num_rows = $this->db->count_all_results('savsoft_group');
+                         if ($num_rows > 0) {
+                            $this->db->where('parent_id', $logged['gid']);
+                           // $this->db->or_where('gid', $logged['gid']);
+                         } else {
+                            $this->db->where('gid', $logged['gid']);
+                         }
                         break;
                     default:
                         break;
