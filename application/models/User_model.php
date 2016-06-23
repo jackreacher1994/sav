@@ -93,22 +93,21 @@ Class User_model extends CI_Model
 		}
 		if($gid!='0'){
 			$this -> db -> where('savsoft_group.parent_id',$gid);
+			$this -> db -> or_where('savsoft_group.gid',$gid);
 			$query = $this->db->get('savsoft_group');
 			$test = $query->result_array();
-			//var_dump($test);die();
-			//$this->db->where('savsoft_users.gid',$gid);
+
+			$this->db->where('savsoft_users.gid',$gid);
 			for ($i=0; $i < sizeof($test) ; $i++) { 
-				$this->db->or_where('savsoft_users.gid',$test[$i]['gid']);
+				
+				$this->db->or_where('savsoft_users.gid',$test[$i+1]['gid']);
 			}
-			
 			//$this->db->or_where("savsoft_group.parent_id",$gid);
 		}
 		if($sid!='0'){
 			$this->db->where('savsoft_users.sid',$sid);
 		}
-		
-		$this->db->join('savsoft_group', 'savsoft_group.gid = savsoft_users.gid');
-
+		//$this->db->join('savsoft_group', 'savsoft_group.gid = savsoft_users.gid');
 		//$this->db->join('savsoft_group')->or_where('savsoft_group.parent_id',$gid);
 		
 		$this->db->limit($this->config->item('number_of_rows'),$limit);
@@ -175,6 +174,7 @@ Class User_model extends CI_Model
                     case 3:
                         $group = $logged['gid'];
                         $this->db->where('parent_id', $group);
+                        $this->db->or_where('gid',$group);
                         $this->db->order_by('gid','desc');
                         break;
                     default:

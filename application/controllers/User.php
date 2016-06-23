@@ -37,7 +37,7 @@ class User extends CI_Controller {
 		$data['group_list']=$this->user_model->group_list();
 
 		if($logged_in['su']=='2' || $logged_in['su']=='3'){
-			$gid = $logged_in['gid'];
+			$data['result']=$this->user_model->user_list_su_2($limit,$logged_in['gid'],$sid);
 		}
 
 		//$data['status_list']=$this->user_model->status_list();

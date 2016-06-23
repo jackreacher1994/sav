@@ -22,7 +22,7 @@ Class Quiz_model extends CI_Model
                             
                         } 
 					
-	 if($this->input->post('search') && $logged_in['su']=='1'){
+	 if($this->input->post('search') && ($logged_in['su']=='1' || $logged_in['su']=='2' || $logged_in['su']=='3')){
 		 $search=$this->input->post('search');
 		 $this->db->or_where('quid',$search);
 		 $this->db->or_like('quiz_name',$search);

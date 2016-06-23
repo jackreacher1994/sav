@@ -19,11 +19,12 @@ Class Qbank_model extends CI_Model
 		if($lid!='0'){
 			$this->db->where('savsoft_qbank.lid',$lid);
 		}
-		$this->db->select('parent_id');
+	/*	$this->db->select('parent_id');
 		$this->db->where('gid',$logged_in['gid']);
 		$query = $this->db->get('savsoft_group');
-		$result = $query->row_array();
-		$this->db->where("savsoft_category.gid",$result['parent_id']);
+		$result = $query->row_array();*/
+		
+		$this->db->where("savsoft_category.gid",$logged_in['gid']);
 		$this->db->join('savsoft_category','savsoft_category.cid = savsoft_qbank.cid');
 		$this->db->join('savsoft_level','savsoft_level.lid=savsoft_qbank.lid');
 		$this->db->limit($this->config->item('number_of_rows'),$limit);
