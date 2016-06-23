@@ -13,8 +13,6 @@
  				<div class="login-panel panel panel-default">
  					<div class="panel-body"> 
 
-
-
  						<?php 
  						if($this->session->flashdata('message')){
  							echo $this->session->flashdata('message');	

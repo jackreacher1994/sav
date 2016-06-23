@@ -36,8 +36,10 @@ class User extends CI_Controller {
 		//fetching user group;
 		$data['group_list']=$this->user_model->group_list();
 
-		if($logged_in['su']=='2' || $logged_in['su']=='3'){
+		if($logged_in['su'] =='2' || $logged_in['su'] =='3'){
 			$gid = $logged_in['gid'];
+			$data['result']=$this->user_model->user_list_su_2($limit,$gid,$sid);
+			//$gid = $logged_in['gid'];
 		}
 
 		//$data['status_list']=$this->user_model->status_list();
@@ -48,7 +50,10 @@ class User extends CI_Controller {
 		$data['title']=$this->lang->line('userlist');
 		
 		// fetching user list
-		$data['result']=$this->user_model->user_list($limit,$gid,$sid);
+		if($logged_in['su'] =='1'){
+			$data['result']=$this->user_model->user_list($limit,$gid,$sid);
+		}
+		
 		
 		//var_dump($data);
 		$this->load->view('header',$data);

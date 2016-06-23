@@ -77,7 +77,7 @@ foreach($result as $key => $val){
      ?>
      
 <?php 
-if($logged_in['su']=='1'){
+if($logged_in['su']=='1' || $logged_in['su']=='2' || $logged_in['su']=='3'){
 	?>
 <a href="<?php echo site_url('quiz/assign_user_for_quiz/'.$val['quid']);?>" class="btn btn-success"><?php echo $this->lang->line('assign_user');?></a>
 <a href="<?php echo site_url('quiz/edit_quiz/'.$val['quid']);?>"><img src="<?php echo base_url('images/edit.png');?>"></a>

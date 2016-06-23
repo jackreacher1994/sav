@@ -31,14 +31,14 @@
  			<div class="form-group">
  				<form method="post" action="<?php echo site_url('user/pre_user_list/'.$limit.'/'.$gid.'/'.$sid);?>">
  					<select   name="gid">
- 						<?php if($su == 1){ ?>
+ 						
  						<option value="0"><?php echo $this->lang->line('group_list');?></option>
- 						<?php  }	
+ 						<?php 	
  						foreach($group_list as $key => $val){
 
  							if($su != 1 ){ 
  								?>
- 								<option style="display:none;" value="<?php echo $val['gid'];?>" <?php if($val['gid'] == $gid){ echo 'selected';} ?> ><?php echo $val['group_name'];?></option>
+ 								<option  value="<?php echo $val['gid'];?>" <?php if($val['gid'] == $gid){ echo 'selected';} ?> ><?php echo $val['group_name'];?></option>
  								<?php 
  							} else {
  								?>

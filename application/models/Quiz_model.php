@@ -1,5 +1,7 @@
 <?php
 
+
+
 Class Quiz_model extends CI_Model {
 
     function quiz_list($limit) {
@@ -33,6 +35,7 @@ Class Quiz_model extends CI_Model {
         $this->db->limit($this->config->item('number_of_rows'), $limit);
         $this->db->order_by('quid', 'desc');
         $query = $this->db->get('savsoft_quiz');
+
         return $query->result_array();
     }
 
