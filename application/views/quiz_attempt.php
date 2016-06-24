@@ -88,7 +88,7 @@ window.location="<?php echo site_url('quiz/submit_quiz/');?>";
 
 <div style="float:right;width:150px; margin-right:10px;" >
 
-	Time left: <span id='timer' >
+	Thời gian còn lại: <span id='timer' >
 	<script type="text/javascript">window.onload = CreateTimer("timer", <?php echo $seconds;?>);</script>
 </span>
 </div>
@@ -154,23 +154,23 @@ foreach($questions as $qk => $question){
  <div id="q<?php echo $qk;?>" class="question_div">
 		
 		<div class="question_container" >
-		 <?php echo $this->lang->line('question');?> <?php echo $qk+1;?>)<br>
+		 <?php echo $this->lang->line('question');?> <?php echo $qk+1;?>:<br>
 		 <?php echo $question['question'];?>
 		 
 		 </div>
 		<div class="option_container" >
-		 <?php 
+		 <?php
 		 // multiple single choice
 		 if($question['question_type']==$this->lang->line('multiple_choice_single_answer')){
-			 
+
 			 			 			 $save_ans=array();
 			 foreach($saved_answers as $svk => $saved_answer){
 				 if($question['qid']==$saved_answer['qid']){
 					$save_ans[]=$saved_answer['q_option'];
 				 }
 			 }
-			 
-			 
+
+
 			 ?>
 			 <input type="hidden"  name="question_type[]"  id="q_type<?php echo $qk;?>" value="1">
 			 <?php
@@ -178,24 +178,24 @@ foreach($questions as $qk => $question){
 			foreach($options as $ok => $option){
 				if($option['qid']==$question['qid']){
 			?>
-			 
-		<div class="op"><?php echo $abc[$i];?>) <input type="radio" name="answer[<?php echo $qk;?>][]"  id="answer_value<?php echo $qk.'-'.$i;?>" value="<?php echo $option['oid'];?>"   <?php if(in_array($option['oid'],$save_ans)){ echo 'checked'; } ?>  > <?php echo $option['q_option'];?> </div>
-			 <?php 
+
+		<div class="op"><input type="radio" name="answer[<?php echo $qk;?>][]"  id="answer_value<?php echo $qk.'-'.$i;?>" value="<?php echo $option['oid'];?>"   <?php if(in_array($option['oid'],$save_ans)){ echo 'checked'; } ?>  > <?php echo $abc[$i];?>) <?php echo $option['q_option'];?> </div>
+			 <?php
 			 $i+=1;
 				}
 			}
 		 }
-			
-// multiple_choice_multiple_answer	
 
+		 // multiple_choice_multiple_answer
 		 if($question['question_type']==$this->lang->line('multiple_choice_multiple_answer')){
+
 			 			 $save_ans=array();
 			 foreach($saved_answers as $svk => $saved_answer){
 				 if($question['qid']==$saved_answer['qid']){
 					$save_ans[]=$saved_answer['q_option'];
 				 }
 			 }
-			 
+
 			 ?>
 			 <input type="hidden"  name="question_type[]"  id="q_type<?php echo $qk;?>" value="2">
 			 <?php
@@ -204,7 +204,7 @@ foreach($questions as $qk => $question){
 				if($option['qid']==$question['qid']){
 			?>
 			 
-		<div class="op"><?php echo $abc[$i];?>) <input type="checkbox" name="answer[<?php echo $qk;?>][]" id="answer_value<?php echo $qk.'-'.$i;?>"   value="<?php echo $option['oid'];?>"  <?php if(in_array($option['oid'],$save_ans)){ echo 'checked'; } ?> > <?php echo $option['q_option'];?> </div>
+		<div class="op"><input type="checkbox" name="answer[<?php echo $qk;?>][]" id="answer_value<?php echo $qk.'-'.$i;?>"   value="<?php echo $option['oid'];?>"  <?php if(in_array($option['oid'],$save_ans)){ echo 'checked'; } ?> > <?php echo $abc[$i];?>) <?php echo $option['q_option'];?> </div>
 			 
 			 
 			 <?php 
@@ -212,9 +212,8 @@ foreach($questions as $qk => $question){
 				}
 			}
 		 }
-			 
-	// short answer	
 
+		 // short answer
 		 if($question['question_type']==$this->lang->line('short_answer')){
 			 			 $save_ans="";
 			 foreach($saved_answers as $svk => $saved_answer){
@@ -226,21 +225,19 @@ foreach($questions as $qk => $question){
 			 <input type="hidden"  name="question_type[]"  id="q_type<?php echo $qk;?>" value="3" >
 			 <?php
 			 ?>
-			 
-		<div class="op"> 
-		<?php echo $this->lang->line('answer');?> 
-		<input type="text" name="answer[<?php echo $qk;?>][]" value="<?php echo $save_ans;?>" id="answer_value<?php echo $qk;?>"   >  
-		</div>
-			 
-			 
-			 <?php 
-			 
-			 
-		 }
-		 
-		 
-		 	// long answer	
 
+		<div class="op">
+		<?php echo $this->lang->line('answer');?>
+		<input type="text" name="answer[<?php echo $qk;?>][]" value="<?php echo $save_ans;?>" id="answer_value<?php echo $qk;?>"   >
+		</div>
+
+
+			 <?php
+
+
+		 }
+
+		 // long answer
 		 if($question['question_type']==$this->lang->line('long_answer')){
 			 $save_ans="";
 			 foreach($saved_answers as $svk => $saved_answer){
@@ -252,27 +249,20 @@ foreach($questions as $qk => $question){
 			 <input type="hidden"  name="question_type[]" id="q_type<?php echo $qk;?>" value="4">
 			 <?php
 			 ?>
-			 
-		<div class="op"> 
+
+		<div class="op">
 		<?php echo $this->lang->line('answer');?> <br>
 		<?php echo $this->lang->line('word_counts');?> <span id="char_count<?php echo $qk;?>">0</span>
 		<textarea name="answer[<?php echo $qk;?>][]" id="answer_value<?php echo $qk;?>" style="width:100%;height:100%;" onKeyup="count_char(this.value,'char_count<?php echo $qk;?>');"><?php echo $save_ans;?></textarea>
 		</div>
-			 
-			 
-			 <?php 
-			 
-			 
-		 }
-			 
-		
-		
-		
-		
-		
-		
-		// matching	
 
+
+			 <?php
+
+
+		 }
+
+		 // matching
 		 if($question['question_type']==$this->lang->line('match_the_column')){
 			 			 			 $save_ans=array();
 			 foreach($saved_answers as $svk => $saved_answer){
@@ -281,8 +271,8 @@ foreach($questions as $qk => $question){
 					$save_ans[]=$saved_answer['q_option'];
 				 }
 			 }
-			 
-			 
+
+
 			 ?>
 			 <input type="hidden" name="question_type[]" id="q_type<?php echo $qk;?>" value="5">
 			 <?php
@@ -294,54 +284,53 @@ foreach($questions as $qk => $question){
 					$match_1[]=$option['q_option'];
 					$match_2[]=$option['q_option_match'];
 			?>
-			 
-			 
-			 
-			 <?php 
+
+
+
+			 <?php
 			 $i+=1;
 				}
 			}
 			?>
 			<div class="op">
 						<table>
-						
-						<?php 
+
+						<?php
 			shuffle($match_1);
 			shuffle($match_2);
 			foreach($match_1 as $mk1 =>$mval){
 						?>
 						<tr><td>
-						<?php echo $abc[$mk1];?>)  <?php echo $mval;?> 
+						<?php echo $abc[$mk1];?>)  <?php echo $mval;?>
 						</td><td>
-						
+
 							<select name="answer[<?php echo $qk;?>][]" id="answer_value<?php echo $qk.'-'.$mk1;?>"  >
 							<option value="0"><?php echo $this->lang->line('select');?></option>
-							<?php 
+							<?php
 							foreach($match_2 as $mk2 =>$mval2){
 								?>
 								<option value="<?php echo $mval.'___'.$mval2;?>"  <?php $m1=$mval.'___'.$mval2; if(in_array($m1,$save_ans)){ echo 'selected'; } ?> ><?php echo $mval2;?></option>
-								<?php 
+								<?php
 							}
 							?>
 							</select>
 
 						</td>
 						</tr>
-				
-						
-						<?php 
+
+
+						<?php
 			}
-			
-			
+
+
 			?>
 			</table>
 			 </div>
 			<?php
-			
+
 		 }
 
-		 // sort_answer	
-
+		 // sort_answer
 		 if($question['question_type']==$this->lang->line('sort_answer')){
 			 $save_ans="";
 			 foreach($saved_answers as $svk => $saved_answer){
@@ -447,7 +436,7 @@ foreach($questions as $qk => $question){
 <table>
 <tr><td style="font-size:12px;"><div class="qbtn" style="background:#449d44;">&nbsp;</div> <?php echo $this->lang->line('Answered');?></td></tr>
 <tr><td style="font-size:12px;"><div class="qbtn" style="background:#c9302c;">&nbsp;</div> <?php echo $this->lang->line('UnAnswered');?></td></tr>
-<tr><td style="font-size:12px;"><div class="qbtn" style="background:#ec971f;">&nbsp;</div> <?php echo $this->lang->line('Review-Later');?></td></tr>
+<!--<tr><td style="font-size:12px;"><div class="qbtn" style="background:#ec971f;">&nbsp;</div> --><?php //echo $this->lang->line('Review-Later');?><!--</td></tr>-->
 <tr><td style="font-size:12px;"><div class="qbtn" style="background:#212121;">&nbsp;</div> <?php echo $this->lang->line('Not-visited');?></td></tr>
 </table>
 
@@ -471,9 +460,9 @@ foreach($questions as $qk => $question){
 
 
 <div class="footer_buttons">
-	<button class="btn btn-warning"   onClick="javascript:review_later();" style="margin-top:2px;" ><?php echo $this->lang->line('review_later');?></button>
+<!--	<button class="btn btn-warning"   onClick="javascript:review_later();" style="margin-top:2px;" >--><?php //echo $this->lang->line('review_later');?><!--</button>-->
 	
-	<button class="btn btn-info"  onClick="javascript:clear_response();"  style="margin-top:2px;"  ><?php echo $this->lang->line('clear');?></button>
+<!--	<button class="btn btn-info"  onClick="javascript:clear_response();"  style="margin-top:2px;"  >--><?php //echo $this->lang->line('clear');?><!--</button>-->
 
 	<button class="btn btn-success"  id="backbtn" onClick="javascript:show_back_question();"  style="margin-top:2px;" ><?php echo $this->lang->line('back');?></button>
 	

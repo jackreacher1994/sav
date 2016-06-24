@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ddd2c141-2b8b-4c94-b747-963fdf0fd8f2" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Quiz.php" afterPath="$PROJECT_DIR$/application/controllers/Quiz.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/edit_user.php" afterPath="$PROJECT_DIR$/application/views/edit_user.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/myaccount.php" afterPath="$PROJECT_DIR$/application/views/myaccount.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/question_list.php" afterPath="$PROJECT_DIR$/application/views/question_list.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/quiz_detail.php" afterPath="$PROJECT_DIR$/application/views/quiz_detail.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/language/english/basic_lang.php" afterPath="$PROJECT_DIR$/application/language/english/basic_lang.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/quiz_attempt.php" afterPath="$PROJECT_DIR$/application/views/quiz_attempt.php" />
     </list>
     <ignored path="sav.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,7 +29,7 @@
     <favorites_list name="sav" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -40,9 +37,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/application/views/view_result.php" />
         <option value="$PROJECT_DIR$/application/language/english/basic_lang2.php" />
-        <option value="$PROJECT_DIR$/application/views/quiz_attempt.php" />
         <option value="$PROJECT_DIR$/application/models/Quiz_model.php" />
         <option value="$PROJECT_DIR$/application/libraries/Log.php" />
         <option value="$PROJECT_DIR$/application/logs/log-2016-06-15.txt" />
@@ -90,7 +85,9 @@
         <option value="$PROJECT_DIR$/application/views/question_list.php" />
         <option value="$PROJECT_DIR$/application/views/edit_user.php" />
         <option value="$PROJECT_DIR$/application/views/myaccount.php" />
+        <option value="$PROJECT_DIR$/application/views/view_result.php" />
         <option value="$PROJECT_DIR$/application/language/english/basic_lang.php" />
+        <option value="$PROJECT_DIR$/application/views/quiz_attempt.php" />
       </list>
     </option>
   </component>
@@ -401,15 +398,16 @@
       <workItem from="1466130310535" duration="7802000" />
       <workItem from="1466145718493" duration="7985000" />
       <workItem from="1466564620401" duration="9603000" />
-      <workItem from="1466734660190" duration="10078000" />
+      <workItem from="1466734660190" duration="10133000" />
+      <workItem from="1466750751099" duration="2075000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="110570000" />
+    <option name="totallyTimeSpent" value="112700000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2489019" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -444,32 +442,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="10" />
+      <option name="time" value="11" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/controllers/Role.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/basic.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="488">
-          <caret line="655" column="5" selection-start-line="655" selection-start-column="5" selection-end-line="655" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Dashboard.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://D:/Program Files/VertrigoServ/www/quantri/resources/views/auth/login.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -481,20 +458,7 @@
     <entry file="file://$PROJECT_DIR$/application/libraries/Googleplus.php" />
     <entry file="file://$USER_HOME$/Desktop/gg/application/views/user_authentication/index.php" />
     <entry file="file://$USER_HOME$/Desktop/gg/application/controllers/User_authentication.php" />
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa0.167/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-459">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3703">
-          <caret line="75" column="35" selection-start-line="75" selection-start-column="35" selection-end-line="75" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa0.167/config.php" />
     <entry file="file://$PROJECT_DIR$/application/libraries/Tank_auth.php" />
     <entry file="file://$PROJECT_DIR$/application/libraries/oauth/OAuth2.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -507,9 +471,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3604">
           <caret line="221" column="0" selection-start-line="221" selection-start-column="0" selection-end-line="221" selection-end-column="0" />
-          <folding>
-            <marker date="1466587580431" expanded="true" signature="327:354" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -517,7 +478,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3434">
           <caret line="202" column="0" selection-start-line="202" selection-start-column="0" selection-end-line="202" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -525,7 +485,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="54" selection-start-line="3" selection-start-column="54" selection-end-line="3" selection-end-column="54" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -533,7 +492,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -541,7 +499,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="38" selection-start-line="1" selection-start-column="38" selection-end-line="1" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -549,9 +506,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="25" column="39" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -559,9 +513,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="25" column="40" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -569,9 +520,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-952">
           <caret line="25" column="48" selection-start-line="25" selection-start-column="48" selection-end-line="25" selection-end-column="48" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -579,7 +527,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-54">
           <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -587,7 +534,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-144">
           <caret line="175" column="35" selection-start-line="175" selection-start-column="35" selection-end-line="175" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -595,7 +541,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="422">
           <caret line="68" column="103" selection-start-line="68" selection-start-column="103" selection-end-line="68" selection-end-column="103" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -603,7 +548,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="748">
           <caret line="86" column="74" selection-start-line="86" selection-start-column="74" selection-end-line="86" selection-end-column="74" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -611,7 +555,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="27" column="46" selection-start-line="27" selection-start-column="46" selection-end-line="27" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -619,7 +562,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="57" column="103" selection-start-line="57" selection-start-column="103" selection-end-line="57" selection-end-column="103" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -627,7 +569,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="53" column="173" selection-start-line="53" selection-start-column="173" selection-end-line="53" selection-end-column="173" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -635,7 +576,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="91">
           <caret line="45" column="23" selection-start-line="45" selection-start-column="23" selection-end-line="45" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -643,7 +583,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="99" column="57" selection-start-line="99" selection-start-column="57" selection-end-line="99" selection-end-column="57" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -651,7 +590,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="90" column="35" selection-start-line="90" selection-start-column="35" selection-end-line="90" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -659,7 +597,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="27" column="30" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -667,7 +604,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="241">
           <caret line="141" column="78" selection-start-line="141" selection-start-column="78" selection-end-line="141" selection-end-column="78" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -675,7 +611,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="111" selection-start-line="16" selection-start-column="111" selection-end-line="16" selection-end-column="111" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -683,7 +618,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="94" column="45" selection-start-line="94" selection-start-column="45" selection-end-line="94" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -691,7 +625,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="116">
           <caret line="46" column="67" selection-start-line="46" selection-start-column="67" selection-end-line="46" selection-end-column="67" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -699,7 +632,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-662">
           <caret line="25" column="40" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -707,7 +639,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="71">
           <caret line="74" column="181" selection-start-line="74" selection-start-column="181" selection-end-line="74" selection-end-column="181" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -715,7 +646,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
           <caret line="76" column="177" selection-start-line="76" selection-start-column="121" selection-end-line="76" selection-end-column="177" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -723,7 +653,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="82">
           <caret line="76" column="187" selection-start-line="76" selection-start-column="187" selection-end-line="76" selection-end-column="187" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -731,7 +660,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="77" column="194" selection-start-line="77" selection-start-column="194" selection-end-line="77" selection-end-column="194" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -739,24 +667,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="46" column="56" selection-start-line="46" selection-start-column="56" selection-end-line="46" selection-end-column="56" />
-          <folding>
-            <element signature="n#__construct#0;n#Qbank#0;n#!!top" expanded="false" />
-            <element signature="n#remove_question#0;n#Qbank#0;n#!!top" expanded="false" />
-            <element signature="n#pre_question_list#0;n#Qbank#0;n#!!top" expanded="false" />
-            <element signature="n#edit_question_1#0;n#Qbank#0;n#!!top" expanded="false" />
-            <element signature="n#edit_question_2#0;n#Qbank#0;n#!!top" expanded="false" />
-            <element signature="n#edit_question_3#0;n#Qbank#0;n#!!top" expanded="false" />
-            <element signature="n#edit_question_4#0;n#Qbank#0;n#!!top" expanded="false" />
-            <element signature="n#edit_question_5#0;n#Qbank#0;n#!!top" expanded="false" />
-            <element signature="n#edit_question_6#0;n#Qbank#0;n#!!top" expanded="false" />
-            <element signature="n#category_list#0;n#Qbank#0;n#!!top" expanded="false" />
-            <element signature="n#insert_category#0;n#Qbank#0;n#!!top" expanded="false" />
-            <element signature="n#update_category#0;n#Qbank#0;n#!!top" expanded="false" />
-            <element signature="n#remove_category#0;n#Qbank#0;n#!!top" expanded="false" />
-            <element signature="n#insert_level#0;n#Qbank#0;n#!!top" expanded="false" />
-            <element signature="n#update_level#0;n#Qbank#0;n#!!top" expanded="false" />
-            <element signature="n#remove_level#0;n#Qbank#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -764,28 +674,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1466734549045" expanded="true" signature="1430:1490" placeholder="SELECT * FRO... savsoft_group" />
-            <marker date="1466734549045" expanded="true" signature="6794:7021" placeholder="select * fro... savsoft_qbank" />
-            <marker date="1466734549045" expanded="true" signature="7146:7238" placeholder="select * fro... savsoft_options" />
-            <marker date="1466734549045" expanded="true" signature="7366:7432" placeholder="select * fro... savsoft_options" />
-            <marker date="1466734549045" expanded="true" signature="11899:12039" placeholder="select * fro... savsoft_qbank" />
-            <marker date="1466734549045" expanded="true" signature="13353:13513" placeholder="select * fro... savsoft_qbank" />
-            <marker date="1466734549045" expanded="true" signature="14928:15007" placeholder="select * fro... savsoft_result" />
-            <marker date="1466734549045" expanded="true" signature="15258:15369" placeholder="update savso... " />
-            <marker date="1466734549045" expanded="true" signature="15450:15569" placeholder="select * fro... savsoft_result" />
-            <marker date="1466734549045" expanded="true" signature="15689:15752" placeholder="select * fro... savsoft_answers" />
-            <marker date="1466734549045" expanded="true" signature="15914:16033" placeholder="select * fro... savsoft_result" />
-            <marker date="1466734549045" expanded="true" signature="17763:17811" placeholder="update savso... " />
-            <marker date="1466734549045" expanded="true" signature="18072:18191" placeholder="select * fro... savsoft_result" />
-            <marker date="1466734549045" expanded="true" signature="20194:20277" placeholder="update savso... " />
-            <marker date="1466734549045" expanded="true" signature="20473:20691" placeholder="select savso... savsoft_result" />
-            <marker date="1466734549045" expanded="true" signature="23816:23935" placeholder="select * fro... savsoft_result" />
-            <marker date="1466734549045" expanded="true" signature="24628:24674" placeholder="select * fro... savsoft_options" />
-            <marker date="1466734549045" expanded="true" signature="26129:26175" placeholder="select * fro... savsoft_options" />
-            <marker date="1466734549045" expanded="true" signature="28704:28750" placeholder="select * fro... savsoft_options" />
-            <marker date="1466734549045" expanded="true" signature="30473:30547" placeholder="select * fro... savsoft_options" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -793,7 +681,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-980">
           <caret line="16" column="111" selection-start-line="16" selection-start-column="111" selection-end-line="16" selection-end-column="111" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -801,7 +688,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-156">
           <caret line="89" column="135" selection-start-line="89" selection-start-column="135" selection-end-line="89" selection-end-column="135" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -809,7 +695,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="24" column="67" selection-start-line="24" selection-start-column="67" selection-end-line="24" selection-end-column="67" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -817,22 +702,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="254">
           <caret line="355" column="51" selection-start-line="355" selection-start-column="51" selection-end-line="355" selection-end-column="51" />
-          <folding>
-            <element signature="n#__construct#0;n#Quiz#0;n#!!top" expanded="false" />
-            <element signature="n#no_q_available#0;n#Quiz#0;n#!!top" expanded="false" />
-            <element signature="n#remove_qid#0;n#Quiz#0;n#!!top" expanded="false" />
-            <element signature="n#add_qid#0;n#Quiz#0;n#!!top" expanded="false" />
-            <element signature="n#pre_add_question#0;n#Quiz#0;n#!!top" expanded="false" />
-            <element signature="n#add_question#0;n#Quiz#0;n#!!top" expanded="false" />
-            <element signature="n#up_question#0;n#Quiz#0;n#!!top" expanded="false" />
-            <element signature="n#down_question#0;n#Quiz#0;n#!!top" expanded="false" />
-            <element signature="n#insert_quiz#0;n#Quiz#0;n#!!top" expanded="false" />
-            <element signature="n#insert_quiz_use_old#0;n#Quiz#0;n#!!top" expanded="false" />
-            <element signature="n#update_quiz#0;n#Quiz#0;n#!!top" expanded="false" />
-            <element signature="n#remove_quiz#0;n#Quiz#0;n#!!top" expanded="false" />
-            <element signature="n#validate_quiz#0;n#Quiz#0;n#!!top" expanded="false" />
-            <marker date="1466742846269" expanded="true" signature="3154:3213" placeholder="select * fro... savsoft_qbank" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -840,7 +709,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="302">
           <caret line="200" column="76" selection-start-line="200" selection-start-column="76" selection-end-line="200" selection-end-column="76" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -848,10 +716,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="49" column="36" selection-start-line="49" selection-start-column="36" selection-end-line="49" selection-end-column="36" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <marker date="1466746119846" expanded="true" signature="3235:3251" placeholder="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -859,7 +723,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="734">
           <caret line="95" column="0" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -867,21 +730,56 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="99">
           <caret line="164" column="9" selection-start-line="164" selection-start-column="9" selection-end-line="164" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="75" column="35" selection-start-line="75" selection-start-column="35" selection-end-line="75" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/view_result.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-765">
+          <caret line="75" column="91" selection-start-line="75" selection-start-column="85" selection-end-line="75" selection-end-column="91" />
           <folding>
-            <element signature="n#pre_user_list#0;n#User#0;n#!!top" expanded="false" />
-            <element signature="n#remove_user#0;n#User#0;n#!!top" expanded="false" />
-            <element signature="n#update_user#0;n#User#0;n#!!top" expanded="false" />
-            <element signature="n#remove_group#0;n#User#0;n#!!top" expanded="false" />
-            <element signature="n#logout#0;n#User#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Result.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="95" column="0" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/language/english/basic_lang.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="189" column="31" selection-start-line="189" selection-start-column="31" selection-end-line="189" selection-end-column="31" />
+        <state relative-caret-position="235">
+          <caret line="188" column="39" selection-start-line="188" selection-start-column="39" selection-end-line="188" selection-end-column="39" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/quiz_attempt.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2440">
+          <caret line="181" column="254" selection-start-line="181" selection-start-column="254" selection-end-line="181" selection-end-column="254" />
+          <folding>
+            <element signature="n#style#0;n#div#2;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#4993#5573#0#PHP" expanded="false" />
+            <element signature="e#5596#6357#0#PHP" expanded="false" />
+            <element signature="n#style#0;n#textarea#0;n#div#3;n#div#1;n#div#0;n#form#0;n#div#0;n#div#6;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#div#1;n#div#0;n#form#0;n#div#0;n#div#6;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#div#1;n#div#1;n#div#6;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
