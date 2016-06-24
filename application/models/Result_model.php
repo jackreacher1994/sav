@@ -2,7 +2,6 @@
 Class Result_model extends CI_Model
 {
 	
- 
  function result_list($limit,$status='0'){
 	$result_open=$this->lang->line('open');
 	$logged_in=$this->session->userdata('logged_in');
@@ -31,8 +30,6 @@ Class Result_model extends CI_Model
 			$this->db->where('savsoft_result.result_status',$status);
 		}
 		
-		
-		
 		$this->db->limit($this->config->item('number_of_rows'),$limit);
 		$this->db->order_by('rid','desc');
 		$this->db->join('savsoft_users','savsoft_users.uid=savsoft_result.uid');
@@ -43,7 +40,10 @@ Class Result_model extends CI_Model
                         break;
                     case 2:
                     case 3:
-                        $where = "FIND_IN_SET('".$gid."', gids)"; 
+                    	/*$this->db->where('savsoft_group.parent_id',$gid);
+                    	$query2 = $this->db->get('savsoft_group');
+                    	var_dump($query2 -> result_array());die;*/
+                        $where = " FIND_IN_SET('".$gid."', gids)"; 
                         $this->db->where($where);
                         break;
                 default:
@@ -57,8 +57,8 @@ Class Result_model extends CI_Model
  
  function quiz_list(){
 	 $this->db->order_by('quid','desc');
-$query=$this->db->get('savsoft_quiz');	
-return $query->result_array();	 
+	$query=$this->db->get('savsoft_quiz');	
+	return $query->result_array();	 
  }
  
  

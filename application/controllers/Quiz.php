@@ -152,7 +152,11 @@ class Quiz extends CI_Controller {
 		if($logged_in['su']!='1' && $logged_in['su']!='2' && $logged_in['su']!='3'){
 			exit($this->lang->line('permission_denied'));
 		}
-
+		if($logged_in['su'] =='2' ||  $logged_in['su'] =='3'){
+			$data['category_list']=$this->qbank_model->category_list_user($logged_in['gid']);
+		} else{
+			$data['category_list']=$this->qbank_model->category_list();
+		}
 
 
 		$data['quiz']=$this->quiz_model->get_quiz($quid);
@@ -160,7 +164,7 @@ class Quiz extends CI_Controller {
 		if($data['quiz']['question_selection']=='0'){
 
 			$data['result']=$this->qbank_model->question_list($limit,$cid,$lid);
-			$data['category_list']=$this->qbank_model->category_list();
+			
 			$data['level_list']=$this->qbank_model->level_list();
 
 		}else{

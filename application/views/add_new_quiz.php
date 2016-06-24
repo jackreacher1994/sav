@@ -64,7 +64,7 @@ foreach($result as $key => $val){
 <td><?php echo $val['noq'];?></td>
  <td>  
 <?php 
-if($logged_in['su']=='1'){
+if($logged_in['su']=='1' || $logged_in['su']=='2' || $logged_in['su']=='3'){
 	?>			
 <a href="<?php echo site_url('quiz/insert_quiz_use_old/'.$val['quid']);?>" class="btn btn-warning"><?php echo $this->lang->line('use');?> </a>
 <?php 
