@@ -14,7 +14,7 @@ $logged_in=$this->session->userdata('logged_in');
   <div class="col-lg-6">
     <form method="post" action="<?php echo site_url('quiz/index/');?>">
 	<div class="input-group">
-    <input type="text" class="form-control" name="search" placeholder="<?php echo $this->lang->line('search');?>...">
+    <input type="text" class="form-control" name="search" placeholder="<?php echo $this->lang->line('search_key');?>...">
       <span class="input-group-btn">
         <button class="btn btn-default" type="submit"><?php echo $this->lang->line('search');?></button>
       </span>

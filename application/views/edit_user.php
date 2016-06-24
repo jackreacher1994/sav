@@ -21,7 +21,7 @@
 		}
 		?>	
 		
-				<div class="form-group">	 
+				<div class="form-group" style="display: none;">
 				<?php echo $this->lang->line('group_name');?>: <?php echo $result['group_name'];?>
 				</div>
 				
@@ -47,34 +47,47 @@
 					<label for="inputEmail" class="sr-only"><?php echo $this->lang->line('contact_no');?></label> 
 					<input type="text" name="contact_no"  class="form-control"  value="<?php echo $result['contact_no'];?>"  placeholder="<?php echo $this->lang->line('contact_no');?>"   autofocus>
 			</div>
-				<div class="form-group">	 
-					<label   ><?php echo $this->lang->line('select_group');?></label> 
-					<select class="form-control" name="gid"  onChange="getexpiry();" id="gid">
-					<?php 
-					foreach($group_list as $key => $val){
+
+			<div class="form-group" id="selectGroup">
+				<label   ><?php echo $this->lang->line('select_group');?></label>
+				<select class="form-control" name="gid" id="gid" onChange="getexpiry();">
+					<?php
+					foreach($parent_list as $parent){
 						?>
-						
-						<option value="<?php echo $val['gid'];?>" <?php if($result['gid']==$val['gid']){ echo 'selected';}?> ><?php echo $val['group_name'];?> </option>
-						<?php 
+						<option value="<?php echo $parent['gid'];?>"><?php echo $parent['group_name'];?></option>
+						<?php
+						if($this->user_model->num_child($parent['gid'])) {
+							$child_list = $this->user_model->child_list($parent['gid']);
+							foreach ($child_list as $child) {
+								?>
+								<option value="<?php echo $child['gid']; ?>" <?php if($result['gid']==$val['gid']){ echo 'selected';}?>
+									<?php echo '&nbsp;&nbsp;&nbsp;'.$child['group_name']; ?></option>
+								<?php
+							}
+						}
 					}
 					?>
-					</select>
+				</select>
 			</div>
-			<div class="form-group">	 
+
+			<div class="form-group" style="display: none;">
 					<label for="inputEmail"  ><?php echo $this->lang->line('subscription_expired');?></label> 
 					<input type="text" name="subscription_expired"  id="subscription_expired" class="form-control" value="<?php if($result['subscription_expired']!='0'){ echo date('Y-m-d',$result['subscription_expired']); }else{ echo '0';} ?>" placeholder="<?php echo $this->lang->line('subscription_expired');?>"  value=""  autofocus>
 			</div>
 
 
-				<div class="form-group">	 
-					<label   ><?php echo $this->lang->line('account_type');?></label> 
-					<select class="form-control" name="su">
-						<option value="0" <?php if($result['su']==0){ echo 'selected';}?>  ><?php echo $this->lang->line('user');?></option>
-						<option value="1" <?php if($result['su']==1){ echo 'selected';}?>  ><?php echo $this->lang->line('administrator');?></option>
+			<div class="form-group">
+					<label   ><?php echo $this->lang->line('account_type');?></label>
+					<select class="form-control" name="su" id="su" onchange="change_account_type(this.value)">
+						<option value="1" <?php if($result['su']==1){ echo 'selected';}?>><?php echo $this->lang->line('super_administrator');?></option>
+						<option value="2" <?php if($result['su']==2){ echo 'selected';}?>><?php echo $this->lang->line('group_administrator');?></option>
+						<option value="3" <?php if($result['su']==3){ echo 'selected';}?>><?php echo $this->lang->line('administrator');?></option>
+						<option value="0" <?php if($result['su']==0){ echo 'selected';}?>><?php echo $this->lang->line('examinator');?></option>
 					</select>
 			</div>
-				<div class="form-group">	 
-					<label   >Status</label> 
+
+			<div class="form-group">
+					<label   ><?php echo $this->lang->line('status');?></label>
 					<select class="form-control" name="sid">
 						<option value="1" <?php if($result['sid']==1){ echo 'selected';}?>  >Active</option>
 						<option value="2" <?php if($result['sid']==2){ echo 'selected';}?>  >Inactive</option>
@@ -95,51 +108,19 @@
 </div>
 
 
-
-<!-- <div class="row">
-<div class="col-md-8">
-<h3><?php echo $this->lang->line('payment_history');?></h3>
-<table class="table table-bordered">
-<tr>
- <th><?php echo $this->lang->line('payment_gateway');?></th>
-<th><?php echo $this->lang->line('paid_date');?> </th>
-<th><?php echo $this->lang->line('amount');?></th>
-<th><?php echo $this->lang->line('transaction_id');?> </th>
-<th><?php echo $this->lang->line('status');?> </th>
-</tr>
-<?php 
-if(count($payment_history)==0){
-	?>
-<tr>
- <td colspan="5"><?php echo $this->lang->line('no_record_found');?></td>
-</tr>	
-	
-	
-	<?php
-}
-foreach($payment_history as $key => $val){
-?>
-<tr>
- <td><?php echo $val['payment_gateway'];?></td>
- <td><?php echo date('Y-m-d H:i:s',$val['paid_date']);?></td>
- <td><?php echo $val['amount'];?></td>
- <td><?php echo $val['transaction_id'];?></td>
- <td><?php echo $val['payment_status'];?></td>
- 
-</tr>
-
-<?php 
-}
-?>
-</table>
-
 </div>
-
-</div> -->
-
-
- 
-
-
-
-</div>
+ <script>
+	 $(document).ready(function(){
+		 var su = $("#su").val();
+		 if(su == 1){
+			 $("#selectGroup").hide();
+		 } else if(su == 2) {
+			 $("#selectGroup").show();
+		 } else if(su == 3) {
+			 $("#selectGroup").hide();
+		 } else {
+			 $("#selectGroup").show();
+		 }
+	 });
+	 getexpiry();
+ </script>

@@ -47,7 +47,7 @@ class User extends CI_Controller {
 		$data['limit']=$limit;
 		$data['gid']=$gid;
 		$data['sid']=$sid;
-		$data['title']=$this->lang->line('userlist');
+		$data['title']=$this->lang->line('list_users');
 		
 		// fetching user list
 		if($logged_in['su'] =='1'){
@@ -155,7 +155,7 @@ class User extends CI_Controller {
 		$this->load->model("payment_model");
 		$data['payment_history']=$this->payment_model->get_payment_history($uid);
 		// fetching group list
-		$data['group_list']=$this->user_model->group_list($logged_in);
+		$data['parent_list']=$this->user_model->parent_list();
 		$this->load->view('header',$data);
 		if($logged_in['su']=='1'){
 			$this->load->view('edit_user',$data);

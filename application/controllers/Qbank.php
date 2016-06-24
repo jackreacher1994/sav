@@ -46,7 +46,7 @@ class Qbank extends CI_Controller {
 		$data['lid']=$lid;
 		 
 		
-		$data['title']=$this->lang->line('qbank');
+		$data['title']=$this->lang->line('list_questions');
 		// fetching user list
 		
 
@@ -139,7 +139,7 @@ class Qbank extends CI_Controller {
 
 		}
 		
-		 $data['title']=$this->lang->line('add_new').' '.$this->lang->line('question');
+		 $data['title']=$this->lang->line('add_new_question');
 		 $this->load->view('header',$data);
 		$this->load->view('pre_new_question',$data);
 		$this->load->view('footer',$data);

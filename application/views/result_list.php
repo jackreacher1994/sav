@@ -57,7 +57,7 @@ foreach($group_list as $gk => $group){
   <div class="col-lg-6">
     <form method="post" action="<?php echo site_url('result/index/');?>">
 	<div class="input-group">
-    <input type="text" class="form-control" name="search" placeholder="<?php echo $this->lang->line('search');?>...">
+    <input type="text" class="form-control" name="search" placeholder="<?php echo $this->lang->line('search_key');?>...">
       <span class="input-group-btn">
         <button class="btn btn-default" type="submit"><?php echo $this->lang->line('search');?></button>
       </span>
@@ -79,16 +79,16 @@ foreach($group_list as $gk => $group){
 			echo $this->session->flashdata('message');	
 		}
 		?>	
-		<?php 
-		if($logged_in['su']=='1'){
-			?>
-				<div class='alert alert-danger'><?php echo $this->lang->line('pending_message_admin');?></div>		
-		<?php 
-		}
-		?>
+<!--		--><?php //
+//		if($logged_in['su']=='1'){
+//			?>
+<!--				<div class='alert alert-danger'>--><?php //echo $this->lang->line('pending_message_admin');?><!--</div>		-->
+<!--		--><?php //
+//		}
+//		?>
 <table class="table table-bordered">
 <tr>
- <th><?php echo $this->lang->line('result_id');?></th>
+ <th><?php echo $this->lang->line('id');?></th>
     <?php
     if($logged_in['su']=='1'){
     ?>
@@ -117,7 +117,7 @@ foreach($group_list as $gk => $group){
 if(count($result)==0){
 	?>
 <tr>
- <td colspan="6"><?php echo $this->lang->line('no_record_found');?></td>
+ <td colspan="11"><?php echo $this->lang->line('no_record_found');?></td>
 </tr>	
 	
 	
