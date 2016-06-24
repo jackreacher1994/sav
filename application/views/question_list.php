@@ -7,7 +7,7 @@
   <div class="col-lg-6">
     <form method="post" action="<?php echo site_url('qbank/index/');?>">
 	<div class="input-group">
-    <input type="text" class="form-control" name="search" placeholder="<?php echo $this->lang->line('search');?>...">
+    <input type="text" class="form-control" name="search" placeholder="<?php echo $this->lang->line('search_key');?>...">
       <span class="input-group-btn">
         <button class="btn btn-default" type="submit"><?php echo $this->lang->line('search');?></button>
       </span>
@@ -70,7 +70,7 @@
 if(count($result)==0){
 	?>
 <tr>
- <td colspan="3"><?php echo $this->lang->line('no_record_found');?></td>
+ <td colspan="6"><?php echo $this->lang->line('no_record_found');?></td>
 </tr>	
 	
 	
@@ -170,36 +170,36 @@ if(($limit-($this->config->item('number_of_rows')))>=0){ $back=$limit-($this->co
 		<div class="panel-body"> 
 
 <?php echo form_open('qbank/import',array('enctype'=>'multipart/form-data')); ?>
- <h4><?php echo $this->lang->line('import_question');?></h4> 
+ <h4><?php echo $this->lang->line('import_question');?> <?php echo $this->lang->line('upload_excel');?></h4>
  <select name="cid"   >
  <option value="0"><?php echo $this->lang->line('select_category');?></option>
-<?php 
+<?php
 					foreach($category_list as $key => $val){
 						?>
-						
+
 						<option value="<?php echo $val['cid'];?>" <?php if($val['cid']==$cid){ echo 'selected';} ?> ><?php echo $val['category_name'];?></option>
-						<?php 
+						<?php
 					}
 					?></select>
  <select name="did"  >
  <option value="0"><?php echo $this->lang->line('select_level');?></option>
-<?php 
+<?php
 					foreach($level_list as $key => $val){
 						?>
-						
+
 						<option value="<?php echo $val['lid'];?>"  <?php if($val['lid']==$lid){ echo 'selected';} ?> ><?php echo $val['level_name'];?></option>
-						<?php 
+						<?php
 					}
 					?>
-					</select> 
+					</select>
 
-<?php echo $this->lang->line('upload_excel');?>
 	<input type="hidden" name="size" value="3500000">
-	<input type="file" name="xlsfile" style="width:150px;float:left;margin-left:10px;">
+	<input type="file" name="xlsfile">
 	<div style="clear:both;"></div>
 	<input type="submit" value="Import" style="margin-top:5px;" class="btn btn-default">
 	
-<a href="<?php echo base_url();?>sample/sample.xls" target="new">Click here</a> <?php echo $this->lang->line('upload_excel_info');?> 
+<a href="<?php echo base_url();?>sample/sample.xls" target="new">
+	<br><?php echo $this->lang->line('upload_excel_info');?></a>
 </form>
 
 </div>

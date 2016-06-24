@@ -7,7 +7,7 @@
  		<div class="col-lg-6">
  			<form method="post" action="<?php echo site_url('user/index/');?>">
  				<div class="input-group">
- 					<input type="text" class="form-control" name="search" placeholder="<?php echo $this->lang->line('search');?>...">
+ 					<input type="text" class="form-control" name="search" placeholder="<?php echo $this->lang->line('search_key');?>...">
  					<span class="input-group-btn">
  						<button class="btn btn-default" type="submit"><?php echo $this->lang->line('search');?></button>
  					</span>
@@ -32,7 +32,7 @@
  				<form method="post" action="<?php echo site_url('user/pre_user_list/'.$limit.'/'.$gid.'/'.$sid);?>">
  					<select   name="gid">
  						
- 						<option value="0"><?php echo $this->lang->line('group_list');?></option>
+ 						<option value="0"><?php echo $this->lang->line('group');?></option>
  						<?php 	
  						foreach($group_list as $key => $val){
 
@@ -48,9 +48,9 @@
  							?>
  						</select>
  						<select   name="sid">
- 							<option value="0">Status</option>
- 							<option value="1">Active</option>
- 							<option value="2">Inactive</option>
+ 							<option value="0"><?php echo $this->lang->line('status');?></option>
+ 							<option value="1"><?php echo $this->lang->line('active');?></option>
+ 							<option value="2"><?php echo $this->lang->line('inactive');?></option>
  						</select>
 
  						<button class="btn btn-default" type="submit"><?php echo $this->lang->line('filter');?></button>
@@ -60,9 +60,9 @@
  				<table class="table table-bordered">
  					<tr>
  						<th><?php echo $this->lang->line('email');?></th>
- 						<th>Full name</th>
- 						<th>Group </th>
- 						<th>Status </th>
+ 						<th><?php echo $this->lang->line('full_name');?></th>
+ 						<th><?php echo $this->lang->line('group');?></th>
+ 						<th><?php echo $this->lang->line('status');?></th>
  						<th><?php echo $this->lang->line('action');?> </th>
  					</tr>
  					<?php 
@@ -84,10 +84,10 @@
  							<?php
  							if($val['sid'] == 1){
  								?>
- 								<td>Active</td>
+ 								<td><?php echo $this->lang->line('active');?></td>
  								<?php	
  							} else { ?>
- 							<td>Inactive</td>
+ 							<td><?php echo $this->lang->line('inactive');?></td>
  							<?php	}
  							?>
 

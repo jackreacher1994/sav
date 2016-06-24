@@ -11,7 +11,7 @@ $config['base_url'] = $sq_base_url;
 
 
 // enable webcam js ( true or false )
-$config['webcam']=true;
+$config['webcam']=false;
 
  
 // google chart ( true or false )

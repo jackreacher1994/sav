@@ -42,7 +42,8 @@
 					<label for="inputEmail" class="sr-only"><?php echo $this->lang->line('contact_no');?></label> 
 					<input type="text" name="contact_no"  class="form-control" placeholder="<?php echo $this->lang->line('contact_no');?>"   autofocus>
 			</div>
-				<div class="form-group" id="selectGroup">
+			
+			<div class="form-group" id="selectGroup">
 					<label   ><?php echo $this->lang->line('select_group');?></label> 
 					<select class="form-control" name="gid" id="gid" onChange="getexpiry();">
 					<?php 
@@ -63,25 +64,27 @@
 					?>
 					</select>
 			</div>
-			<div class="form-group">	 
+			
+			<div class="form-group" style="display: none;">
 					<label for="inputEmail"  ><?php echo $this->lang->line('subscription_expired');?></label> 
 					<input type="text" name="subscription_expired"  id="subscription_expired" class="form-control" placeholder="<?php echo $this->lang->line('subscription_expired');?>"    autofocus>
 			</div>
 
-				<div class="form-group">	 
+			<div class="form-group">	 
 					<label   ><?php echo $this->lang->line('account_type');?></label> 
 					<select class="form-control" name="su" id="su" onchange="change_account_type(this.value)">
 						<option value="1"><?php echo $this->lang->line('super_administrator');?></option>
 						<option value="2"><?php echo $this->lang->line('group_administrator');?></option>
 						<option value="3"><?php echo $this->lang->line('administrator');?></option>
-						<option value="0"><?php echo $this->lang->line('user');?></option>
+						<option value="0"><?php echo $this->lang->line('examinator');?></option>
 					</select>
 			</div>
+			
 			<div class="form-group">	 
-					<label   >Status</label> 
+					<label   ><?php echo $this->lang->line('status');?></label>
 					<select class="form-control" name="sid">
-						<option value="1">Active</option>
-						<option value="2">Inactive></option>
+						<option value="1"><?php echo $this->lang->line('active');?></option>
+						<option value="2"><?php echo $this->lang->line('inactive');?></option>
 					</select>
 			</div>
  

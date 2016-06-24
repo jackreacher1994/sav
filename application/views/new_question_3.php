@@ -23,7 +23,7 @@
 		
 		
 		
-				<div class="form-group">	 
+				<div class="form-group" style="display: none;">	 
 					<?php echo $this->lang->line('match_the_column');?>
 
 			</div>

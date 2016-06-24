@@ -7,7 +7,7 @@
  		<div class="col-lg-6">
   <form method="post" action="<?php echo site_url('permission/user_assign_permission/');?>">
  			<div class="input-group">
- 				<input type="text" class="form-control" name="search" placeholder="<?php echo $this->lang->line('search');?>...">
+ 				<input type="text" class="form-control" name="search" placeholder="<?php echo $this->lang->line('search_key');?>...">
  				<span class="input-group-btn">
  					<button class="btn btn-default" type="submit"><?php echo $this->lang->line('search');?></button>
  				</span>
@@ -51,7 +51,7 @@
  				<tr>
  					<td><?php echo $val['email'];?></td>
  					<td>
- 						<a href="<?php echo site_url('permission/assign_permission/'.$val['uid']);?>" class="btn btn-success">Assign Permission</a>
+ 						<a href="<?php echo site_url('permission/assign_permission/'.$val['uid']);?>" class="btn btn-success"><?php echo $this->lang->line('assign_permission');?></a>
  					</td>
  				</tr>
 

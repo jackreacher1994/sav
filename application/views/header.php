@@ -29,8 +29,9 @@
 	<!-- bootstrap js -->
 	<script src="<?php echo base_url('bootstrap/js/bootstrap.min.js');?>"></script>
 
-	<script src="http://code.jquery.com/jquery-1.12.3.js"></script>
-	
+<!--	<script src="http://code.jquery.com/jquery-1.12.3.js"></script>-->
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 </head>
 <body>
 	
@@ -68,11 +69,11 @@
 										<li><a href="<?php echo site_url('user/new_user');?>"><?php echo $this->lang->line('add_new');?></a></li>
 										<?php } 
 										if(in_array('11', $array_pid)) { ?>
-										<li><a href="<?php echo site_url('user');?>"><?php echo $this->lang->line('list');?> <?php echo $this->lang->line('users');?> </a></li>
+										<li><a href="<?php echo site_url('user');?>"><?php echo $this->lang->line('list_users');?></a></li>
 										<?php } 
 										if(in_array('14', $array_pid)) { ?>
 										
-										<li><a href="<?php echo site_url('user/group_list');?>"><?php echo $this->lang->line('group_list');?></a></li>
+										<li><a href="<?php echo site_url('user/group_list');?>"><?php echo $this->lang->line('list_rooms');?></a></li>
 										<?php }?>
 									</ul>
 								</li>
@@ -86,7 +87,7 @@
 										<li><a href="<?php echo site_url('qbank/pre_new_question');?>"><?php echo $this->lang->line('add_new');?></a></li>
 										<?php } 
 										if(in_array('13', $array_pid)) { ?>
-										<li><a href="<?php echo site_url('qbank');?>"><?php echo $this->lang->line('list');?> <?php echo $this->lang->line('question');?> </a></li>
+										<li><a href="<?php echo site_url('qbank');?>"><?php echo $this->lang->line('list_questions');?></a></li>
 										<?php } 
 										if(in_array('16', $array_pid)) { ?>
 
@@ -118,7 +119,7 @@
 									<li><a href="<?php echo site_url('quiz/add_new_quiz');?>"><?php echo $this->lang->line('add_new_with_temp');?></a></li>
 									<?php } 
 									if(in_array('18', $array_pid)) { ?>
-									<li><a href="<?php echo site_url('quiz');?>"><?php echo $this->lang->line('list');?> <?php echo $this->lang->line('quiz');?> </a></li>	
+									<li><a href="<?php echo site_url('quiz');?>"><?php echo $this->lang->line('list_quizs');?></a></li>
 									<?php } ?>
 								</ul>
 							</li>
@@ -129,13 +130,13 @@
 								?>
 								
 								<li class="dropdown" <?php if($this->uri->segment(1)=='permission'){ echo "class='active'"; } ?> >
-									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $this->lang->line('assign_permission');?> <span class="caret"></span></a>
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $this->lang->line('permission');?> <span class="caret"></span></a>
 									<ul class="dropdown-menu">
 									<?php if(in_array('21', $array_pid)) { ?>
-										<li><a href="<?php echo site_url('permission/permission_list');?>">List permission</a></li>
+										<li><a href="<?php echo site_url('permission/permission_list');?>"><?php echo $this->lang->line('list_permissions');?></a></li>
 										<?php } 
 									if(in_array('22', $array_pid)) { ?>
-										<li><a href="<?php echo site_url('permission/user_assign_permission');?>">Assign Permission</a></li>
+										<li><a href="<?php echo site_url('permission/user_assign_permission');?>"><?php echo $this->lang->line('assign_permission');?></a></li>
 										<?php } ?>
 									</ul>
 								</li>
