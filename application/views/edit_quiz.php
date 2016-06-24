@@ -28,11 +28,11 @@
  						</div>
  						<div class="form-group">	 
  							<label for="inputEmail"  ><?php echo $this->lang->line('start_date');?></label> 
- 							<input type="text" name="start_date"  value="<?php echo date('Y-m-d H:i:s',$quiz['start_date']);?>" class="form-control" placeholder="<?php echo $this->lang->line('start_date');?>"   required >
+ 							<input type="date" name="start_date"  value="<?php echo date('Y-m-d',$quiz['start_date']);?>" class="form-control" placeholder="<?php echo $this->lang->line('start_date');?>"   required >
  						</div>
  						<div class="form-group">	 
  							<label for="inputEmail"  ><?php echo $this->lang->line('end_date');?></label> 
- 							<input type="text" name="end_date"  value="<?php echo date('Y-m-d H:i:s',$quiz['end_date']);?>" class="form-control" placeholder="<?php echo $this->lang->line('end_date');?>"   required >
+ 							<input type="date" name="end_date"  value="<?php echo date('Y-m-d',$quiz['end_date']);?>" class="form-control" placeholder="<?php echo $this->lang->line('end_date');?>"   required >
  						</div>
  						<div class="form-group">	 
  							<label for="inputEmail"  ><?php echo $this->lang->line('duration');?></label> 

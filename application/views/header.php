@@ -117,9 +117,9 @@
 									if(in_array('18', $array_pid)) { ?>
 									<li><a href="<?php echo site_url('quiz/add_new_quiz');?>"><?php echo $this->lang->line('add_new_with_temp');?></a></li>
 									<?php } 
-									if(in_array('18', $array_pid)) { ?>
+									 ?>
 									<li><a href="<?php echo site_url('quiz');?>"><?php echo $this->lang->line('list');?> <?php echo $this->lang->line('quiz');?> </a></li>	
-									<?php } ?>
+									
 								</ul>
 							</li>
 							<li><a href="<?php echo site_url('result');?>"><?php echo $this->lang->line('result');?></a></li>

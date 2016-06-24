@@ -71,7 +71,12 @@
 				<div class="form-group">	 
 					<label   ><?php echo $this->lang->line('account_type');?></label> 
 					<select class="form-control" name="su" id="su" onchange="change_account_type(this.value)">
-						<option value="1"><?php echo $this->lang->line('super_administrator');?></option>
+					<?php
+						if($logged_in['su'] == 1){ ?>
+							<option value="1"><?php echo $this->lang->line('super_administrator');?></option>
+							<?php } 
+					?>
+						
 						<option value="2"><?php echo $this->lang->line('group_administrator');?></option>
 						<option value="3"><?php echo $this->lang->line('administrator');?></option>
 						<option value="0"><?php echo $this->lang->line('user');?></option>
