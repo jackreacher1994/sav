@@ -353,7 +353,7 @@ class Quiz extends CI_Controller {
 		
 		$logged_in=$this->session->userdata('logged_in');
 		$gid=$logged_in['gid'];
-		$data['title']=$this->lang->line('attempt').' '.$this->lang->line('quiz');
+		$data['title']=$this->lang->line('attempt');
 		
 		$data['quiz']=$this->quiz_model->get_quiz($quid);
 		$this->load->view('header',$data);

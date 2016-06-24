@@ -3,36 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="ddd2c141-2b8b-4c94-b747-963fdf0fd8f2" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config/config.php" afterPath="$PROJECT_DIR$/application/config/config.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config/sq_config.php" afterPath="$PROJECT_DIR$/application/config/sq_config.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Permission.php" afterPath="$PROJECT_DIR$/application/controllers/Permission.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Qbank.php" afterPath="$PROJECT_DIR$/application/controllers/Qbank.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Quiz.php" afterPath="$PROJECT_DIR$/application/controllers/Quiz.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/User.php" afterPath="$PROJECT_DIR$/application/controllers/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/add_new_quiz.php" afterPath="$PROJECT_DIR$/application/views/add_new_quiz.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/assign_permission.php" afterPath="$PROJECT_DIR$/application/views/assign_permission.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/dashboard.php" afterPath="$PROJECT_DIR$/application/views/dashboard.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/edit_question_1.php" afterPath="$PROJECT_DIR$/application/views/edit_question_1.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/edit_question_2.php" afterPath="$PROJECT_DIR$/application/views/edit_question_2.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/edit_quiz.php" afterPath="$PROJECT_DIR$/application/views/edit_quiz.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/edit_user.php" afterPath="$PROJECT_DIR$/application/views/edit_user.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/header.php" afterPath="$PROJECT_DIR$/application/views/header.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/new_question_1.php" afterPath="$PROJECT_DIR$/application/views/new_question_1.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/new_question_2.php" afterPath="$PROJECT_DIR$/application/views/new_question_2.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/new_question_3.php" afterPath="$PROJECT_DIR$/application/views/new_question_3.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/new_question_4.php" afterPath="$PROJECT_DIR$/application/views/new_question_4.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/new_question_5.php" afterPath="$PROJECT_DIR$/application/views/new_question_5.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/new_question_6.php" afterPath="$PROJECT_DIR$/application/views/new_question_6.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/new_quiz.php" afterPath="$PROJECT_DIR$/application/views/new_quiz.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/new_user.php" afterPath="$PROJECT_DIR$/application/views/new_user.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/permission_list.php" afterPath="$PROJECT_DIR$/application/views/permission_list.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/myaccount.php" afterPath="$PROJECT_DIR$/application/views/myaccount.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/question_list.php" afterPath="$PROJECT_DIR$/application/views/question_list.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/quiz_list.php" afterPath="$PROJECT_DIR$/application/views/quiz_list.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/result_list.php" afterPath="$PROJECT_DIR$/application/views/result_list.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/user_list.php" afterPath="$PROJECT_DIR$/application/views/user_list.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/user_list_2.php" afterPath="$PROJECT_DIR$/application/views/user_list_2.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/user_list_assign.php" afterPath="$PROJECT_DIR$/application/views/user_list_assign.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/language/english/basic_lang.php" afterPath="$PROJECT_DIR$/application/language/english/basic_lang_english.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/quiz_detail.php" afterPath="$PROJECT_DIR$/application/views/quiz_detail.php" />
     </list>
     <ignored path="sav.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -65,8 +40,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/application/models/Option_model.php" />
-        <option value="$PROJECT_DIR$/application/views/edit_question_6.php" />
         <option value="$PROJECT_DIR$/application/views/view_result.php" />
         <option value="$PROJECT_DIR$/application/language/english/basic_lang2.php" />
         <option value="$PROJECT_DIR$/application/views/quiz_attempt.php" />
@@ -94,7 +67,6 @@
         <option value="$PROJECT_DIR$/application/config/config.php" />
         <option value="$PROJECT_DIR$/application/views/new_quiz.php" />
         <option value="$PROJECT_DIR$/application/views/dashboard.php" />
-        <option value="$PROJECT_DIR$/application/views/edit_user.php" />
         <option value="$PROJECT_DIR$/application/views/new_user.php" />
         <option value="$PROJECT_DIR$/application/controllers/User.php" />
         <option value="$PROJECT_DIR$/application/views/user_list.php" />
@@ -107,15 +79,18 @@
         <option value="$PROJECT_DIR$/application/views/header.php" />
         <option value="$PROJECT_DIR$/application/views/add_new_quiz.php" />
         <option value="$PROJECT_DIR$/application/views/quiz_list.php" />
-        <option value="$PROJECT_DIR$/application/controllers/Quiz.php" />
         <option value="$PROJECT_DIR$/application/views/user_list_2.php" />
         <option value="$PROJECT_DIR$/application/views/new_question_1.php" />
         <option value="$PROJECT_DIR$/application/views/new_question_2.php" />
         <option value="$PROJECT_DIR$/application/views/edit_question_2.php" />
         <option value="$PROJECT_DIR$/application/views/edit_question_1.php" />
         <option value="$PROJECT_DIR$/application/controllers/Qbank.php" />
-        <option value="$PROJECT_DIR$/application/language/english/basic_lang.php" />
+        <option value="$PROJECT_DIR$/application/views/quiz_detail.php" />
+        <option value="$PROJECT_DIR$/application/controllers/Quiz.php" />
         <option value="$PROJECT_DIR$/application/views/question_list.php" />
+        <option value="$PROJECT_DIR$/application/views/edit_user.php" />
+        <option value="$PROJECT_DIR$/application/views/myaccount.php" />
+        <option value="$PROJECT_DIR$/application/language/english/basic_lang.php" />
       </list>
     </option>
   </component>
@@ -426,12 +401,12 @@
       <workItem from="1466130310535" duration="7802000" />
       <workItem from="1466145718493" duration="7985000" />
       <workItem from="1466564620401" duration="9603000" />
-      <workItem from="1466734660190" duration="7681000" />
+      <workItem from="1466734660190" duration="10078000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="108173000" />
+    <option name="totallyTimeSpent" value="110570000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
@@ -469,26 +444,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="9" />
+      <option name="time" value="10" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/models/Quiz_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-136">
-          <caret line="43" column="63" selection-start-line="43" selection-start-column="63" selection-end-line="43" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/Result_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="100" column="1" selection-start-line="100" selection-start-column="1" selection-end-line="114" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/logs/log-17-06-2016.txt" />
     <entry file="file://$PROJECT_DIR$/application/controllers/Role.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -647,14 +607,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/edit_user.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="84" column="130" selection-start-line="84" selection-start-column="130" selection-end-line="84" selection-end-column="130" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/group_list.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -719,23 +671,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="89" column="135" selection-start-line="89" selection-start-column="135" selection-end-line="89" selection-end-column="135" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/add_new_quiz.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="111" selection-start-line="16" selection-start-column="111" selection-end-line="16" selection-end-column="111" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/quiz_list.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="111" selection-start-line="16" selection-start-column="111" selection-end-line="16" selection-end-column="111" />
@@ -756,30 +692,6 @@
         <state relative-caret-position="116">
           <caret line="46" column="67" selection-start-line="46" selection-start-column="67" selection-end-line="46" selection-end-column="67" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Quiz.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="559" column="53" selection-start-line="559" selection-start-column="53" selection-end-line="559" selection-end-column="53" />
-          <folding>
-            <element signature="n#__construct#0;n#Quiz#0;n#!!top" expanded="false" />
-            <element signature="n#no_q_available#0;n#Quiz#0;n#!!top" expanded="false" />
-            <element signature="n#remove_qid#0;n#Quiz#0;n#!!top" expanded="false" />
-            <element signature="n#add_qid#0;n#Quiz#0;n#!!top" expanded="false" />
-            <element signature="n#pre_add_question#0;n#Quiz#0;n#!!top" expanded="false" />
-            <element signature="n#add_question#0;n#Quiz#0;n#!!top" expanded="false" />
-            <element signature="n#up_question#0;n#Quiz#0;n#!!top" expanded="false" />
-            <element signature="n#down_question#0;n#Quiz#0;n#!!top" expanded="false" />
-            <element signature="n#insert_quiz#0;n#Quiz#0;n#!!top" expanded="false" />
-            <element signature="n#insert_quiz_use_old#0;n#Quiz#0;n#!!top" expanded="false" />
-            <element signature="n#update_quiz#0;n#Quiz#0;n#!!top" expanded="false" />
-            <element signature="n#remove_quiz#0;n#Quiz#0;n#!!top" expanded="false" />
-            <element signature="n#quiz_detail#0;n#Quiz#0;n#!!top" expanded="false" />
-            <element signature="n#validate_quiz#0;n#Quiz#0;n#!!top" expanded="false" />
-            <marker date="1466741419184" expanded="true" signature="3154:3213" placeholder="select * fro... savsoft_qbank" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -823,17 +735,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/question_list.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-225">
-          <caret line="172" column="103" selection-start-line="172" selection-start-column="103" selection-end-line="172" selection-end-column="103" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#2;n#div#0;n#div#2;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/Qbank.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -859,18 +760,113 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/language/english/basic_lang.php">
+    <entry file="file://$PROJECT_DIR$/application/models/Quiz_model.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="219" column="59" selection-start-line="219" selection-start-column="59" selection-end-line="219" selection-end-column="59" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1466734549045" expanded="true" signature="1430:1490" placeholder="SELECT * FRO... savsoft_group" />
+            <marker date="1466734549045" expanded="true" signature="6794:7021" placeholder="select * fro... savsoft_qbank" />
+            <marker date="1466734549045" expanded="true" signature="7146:7238" placeholder="select * fro... savsoft_options" />
+            <marker date="1466734549045" expanded="true" signature="7366:7432" placeholder="select * fro... savsoft_options" />
+            <marker date="1466734549045" expanded="true" signature="11899:12039" placeholder="select * fro... savsoft_qbank" />
+            <marker date="1466734549045" expanded="true" signature="13353:13513" placeholder="select * fro... savsoft_qbank" />
+            <marker date="1466734549045" expanded="true" signature="14928:15007" placeholder="select * fro... savsoft_result" />
+            <marker date="1466734549045" expanded="true" signature="15258:15369" placeholder="update savso... " />
+            <marker date="1466734549045" expanded="true" signature="15450:15569" placeholder="select * fro... savsoft_result" />
+            <marker date="1466734549045" expanded="true" signature="15689:15752" placeholder="select * fro... savsoft_answers" />
+            <marker date="1466734549045" expanded="true" signature="15914:16033" placeholder="select * fro... savsoft_result" />
+            <marker date="1466734549045" expanded="true" signature="17763:17811" placeholder="update savso... " />
+            <marker date="1466734549045" expanded="true" signature="18072:18191" placeholder="select * fro... savsoft_result" />
+            <marker date="1466734549045" expanded="true" signature="20194:20277" placeholder="update savso... " />
+            <marker date="1466734549045" expanded="true" signature="20473:20691" placeholder="select savso... savsoft_result" />
+            <marker date="1466734549045" expanded="true" signature="23816:23935" placeholder="select * fro... savsoft_result" />
+            <marker date="1466734549045" expanded="true" signature="24628:24674" placeholder="select * fro... savsoft_options" />
+            <marker date="1466734549045" expanded="true" signature="26129:26175" placeholder="select * fro... savsoft_options" />
+            <marker date="1466734549045" expanded="true" signature="28704:28750" placeholder="select * fro... savsoft_options" />
+            <marker date="1466734549045" expanded="true" signature="30473:30547" placeholder="select * fro... savsoft_options" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/quiz_list.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-980">
+          <caret line="16" column="111" selection-start-line="16" selection-start-column="111" selection-end-line="16" selection-end-column="111" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-156">
+          <caret line="89" column="135" selection-start-line="89" selection-start-column="135" selection-end-line="89" selection-end-column="135" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/quiz_detail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="67" selection-start-line="24" selection-start-column="67" selection-end-line="24" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Quiz.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="355" column="51" selection-start-line="355" selection-start-column="51" selection-end-line="355" selection-end-column="51" />
+          <folding>
+            <element signature="n#__construct#0;n#Quiz#0;n#!!top" expanded="false" />
+            <element signature="n#no_q_available#0;n#Quiz#0;n#!!top" expanded="false" />
+            <element signature="n#remove_qid#0;n#Quiz#0;n#!!top" expanded="false" />
+            <element signature="n#add_qid#0;n#Quiz#0;n#!!top" expanded="false" />
+            <element signature="n#pre_add_question#0;n#Quiz#0;n#!!top" expanded="false" />
+            <element signature="n#add_question#0;n#Quiz#0;n#!!top" expanded="false" />
+            <element signature="n#up_question#0;n#Quiz#0;n#!!top" expanded="false" />
+            <element signature="n#down_question#0;n#Quiz#0;n#!!top" expanded="false" />
+            <element signature="n#insert_quiz#0;n#Quiz#0;n#!!top" expanded="false" />
+            <element signature="n#insert_quiz_use_old#0;n#Quiz#0;n#!!top" expanded="false" />
+            <element signature="n#update_quiz#0;n#Quiz#0;n#!!top" expanded="false" />
+            <element signature="n#remove_quiz#0;n#Quiz#0;n#!!top" expanded="false" />
+            <element signature="n#validate_quiz#0;n#Quiz#0;n#!!top" expanded="false" />
+            <marker date="1466742846269" expanded="true" signature="3154:3213" placeholder="select * fro... savsoft_qbank" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/question_list.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="200" column="76" selection-start-line="200" selection-start-column="76" selection-end-line="200" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/myaccount.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="49" column="36" selection-start-line="49" selection-start-column="36" selection-end-line="49" selection-end-column="36" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <marker date="1466746119846" expanded="true" signature="3235:3251" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/edit_user.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="734">
+          <caret line="95" column="0" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="54" column="9" selection-start-line="54" selection-start-column="9" selection-end-line="54" selection-end-column="9" />
+        <state relative-caret-position="99">
+          <caret line="164" column="9" selection-start-line="164" selection-start-column="9" selection-end-line="164" selection-end-column="9" />
           <folding>
             <element signature="n#pre_user_list#0;n#User#0;n#!!top" expanded="false" />
             <element signature="n#remove_user#0;n#User#0;n#!!top" expanded="false" />
@@ -878,6 +874,14 @@
             <element signature="n#remove_group#0;n#User#0;n#!!top" expanded="false" />
             <element signature="n#logout#0;n#User#0;n#!!top" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/language/english/basic_lang.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="189" column="31" selection-start-line="189" selection-start-column="31" selection-end-line="189" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -22,7 +22,7 @@
 		?>	
 <table class="table table-bordered">
 <tr><td><?php echo $this->lang->line('quiz_name');?></td><td><?php echo $quiz['quiz_name'];?></td></tr>
-<tr><td colspan='2'><?php echo $this->lang->line('description');?><br><?php echo $quiz['description'];?></td></tr>
+<tr><td colspan='2'><?php echo $this->lang->line('description');?>:<br><?php echo $quiz['description'];?></td></tr>
 <tr><td><?php echo $this->lang->line('start_date');?></td><td><?php echo date('Y-m-d H:i:s',$quiz['start_date']);?></td></tr>
 <tr><td><?php echo $this->lang->line('end_date');?></td><td><?php echo date('Y-m-d H:i:s',$quiz['end_date']);?></td></tr>
 <tr><td><?php echo $this->lang->line('duration');?></td><td><?php echo $quiz['duration'];?></td></tr>
