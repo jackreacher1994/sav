@@ -268,6 +268,7 @@ $lang['no_parent_group'] = "No parent group";
 $lang['super_administrator'] = "Super administrator";
 $lang['group_administrator'] = "Group administrator";
 $lang['start_time'] = 'Start time';
+$lang['end_time'] = 'End time';
 $lang['execution_time'] = 'Execution time';
 $lang['group'] = 'Group';
 

@@ -98,6 +98,7 @@ foreach($group_list as $gk => $group){
     ?>
 <th><?php echo $this->lang->line('email');?></th>
 <th><?php echo $this->lang->line('start_time');?></th>
+<th><?php echo $this->lang->line('end_time');?></th>
 <th><?php echo $this->lang->line('execution_time');?></th>
  <th><?php echo $this->lang->line('quiz_name');?></th>
  <th><?php echo $this->lang->line('score_obtained');?></th>
@@ -136,7 +137,8 @@ foreach($result as $key => $val){
     }
     ?>
 <td><?php echo $val['email'];?></td>
-<td><?php echo Date('d/m/Y', $val['start_time']).'; '. Date('H:i', $val['start_time']).'/'.Date('H:i', $val['end_time']) ?></td>
+<td><?php echo Date('d/m/Y', $val['start_time']).'; '. Date('H:i', $val['start_time']) ?></td>
+<td><?php echo Date('d/m/Y', $val['end_time']).'; '. Date('H:i', $val['end_time']) ?></td>
 <td><?php echo round(($val['end_time'] - $val['start_time'])/60);?> min</td>
  <td><?php echo $val['quiz_name'];?></td>
  <td><?php echo $val['score_obtained'];?></td>
