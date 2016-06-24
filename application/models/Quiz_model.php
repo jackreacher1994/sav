@@ -437,7 +437,7 @@ Class Quiz_model extends CI_Model {
     }
 
     function open_result($quid, $uid) {
-        $result_open = $this->lang->line('open');
+        $result_open = $this->lang->line('pending');
         $query = $this->db->query("select * from savsoft_result  where savsoft_result.result_status='$result_open' ");
         if ($query->num_rows() >= '1') {
             $result = $query->row_array();
@@ -448,7 +448,7 @@ Class Quiz_model extends CI_Model {
     }
 
     function close_result($uid) {
-        $query = $this->db->query("update savsoft_result  set savsoft_result.result_status='Closed' where  uid = '$uid' and result_status = 'Open'");
+        $query = $this->db->query("update savsoft_result  set savsoft_result.result_status='Closed' where  uid = '$uid' and result_status = 'Pending'");
     }
 
     function quiz_result($rid) {

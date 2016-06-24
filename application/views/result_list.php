@@ -118,7 +118,7 @@ foreach($group_list as $gk => $group){
 if(count($result)==0){
 	?>
 <tr>
- <td colspan="11"><?php echo $this->lang->line('no_record_found');?></td>
+ <td colspan="12"><?php echo $this->lang->line('no_record_found');?></td>
 </tr>	
 	
 	

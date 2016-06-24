@@ -2,7 +2,7 @@
 Class Result_model extends CI_Model {
 
     function result_list($limit, $status = '0') {
-        $result_open = $this->lang->line('open');
+        $result_open = $this->lang->line('pending');
         $logged_in = $this->session->userdata('logged_in');
         $uid = $logged_in['uid'];
         $su = $logged_in['su'];
