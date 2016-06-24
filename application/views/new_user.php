@@ -74,7 +74,8 @@
 					<label   ><?php echo $this->lang->line('account_type');?></label> 
 					<select class="form-control" name="su" id="su" onchange="change_account_type(this.value)">
 					<?php
-						if($logged_in['su'] == 1){ ?>
+					
+						if($logged_in['su'] == '1'){ ?>
 							<option value="1"><?php echo $this->lang->line('super_administrator');?></option>
 							<?php } 
 					?>

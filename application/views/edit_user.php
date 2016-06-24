@@ -60,7 +60,7 @@
 							$child_list = $this->user_model->child_list($parent['gid']);
 							foreach ($child_list as $child) {
 								?>
-								<option value="<?php echo $child['gid']; ?>" <?php if($result['gid']==$val['gid']){ echo 'selected';}?>
+								<option value="<?php echo $child['gid']; ?>" <?php if($result['gid']==$val['gid']){ echo 'selected';}?> >
 									<?php echo '&nbsp;&nbsp;&nbsp;'.$child['group_name']; ?></option>
 								<?php
 							}
@@ -79,7 +79,12 @@
 			<div class="form-group">
 					<label   ><?php echo $this->lang->line('account_type');?></label>
 					<select class="form-control" name="su" id="su" onchange="change_account_type(this.value)">
+					<?php
+					
+						if($logged_in['su'] == '1'){ ?>
 						<option value="1" <?php if($result['su']==1){ echo 'selected';}?>><?php echo $this->lang->line('super_administrator');?></option>
+						<?php } 
+					?>
 						<option value="2" <?php if($result['su']==2){ echo 'selected';}?>><?php echo $this->lang->line('group_administrator');?></option>
 						<option value="3" <?php if($result['su']==3){ echo 'selected';}?>><?php echo $this->lang->line('administrator');?></option>
 						<option value="0" <?php if($result['su']==0){ echo 'selected';}?>><?php echo $this->lang->line('examinator');?></option>

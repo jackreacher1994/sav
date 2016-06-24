@@ -523,6 +523,14 @@ Class User_model extends CI_Model {
         else
             return false;
     }
+    function parent_list_user($gid){
+        $this->db->where('gid', $gid);
+        $this->db->order_by('gid', 'desc');
+        $query = $this->db->get('savsoft_group');
+        return $query->result_array();
+    
+
+    }
 
 }
 
