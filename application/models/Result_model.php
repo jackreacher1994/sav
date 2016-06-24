@@ -1,5 +1,4 @@
 <?php
-
 Class Result_model extends CI_Model {
 
     function result_list($limit, $status = '0') {
@@ -86,6 +85,7 @@ Class Result_model extends CI_Model {
         $query = $this->db->get('savsoft_quiz');
         return $query->result_array();
     }
+
 
     function remove_result($rid) {
 

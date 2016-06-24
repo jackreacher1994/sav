@@ -32,9 +32,11 @@ class Qbank extends CI_Controller {
 			
 		if($logged_in['su'] =='2' || $logged_in['su'] =='3'){
 			$data['category_list']=$this->qbank_model->category_list_user($logged_in['gid']);
+			$data['result']=$this->qbank_model->question_list_2($limit,$cid,$lid);
 		}
 		else {
 			$data['category_list']=$this->qbank_model->category_list();
+			$data['result']=$this->qbank_model->question_list($limit,$cid,$lid);
 		}
 		
 		$data['level_list']=$this->qbank_model->level_list();
@@ -44,9 +46,10 @@ class Qbank extends CI_Controller {
 		$data['lid']=$lid;
 		 
 		
-		$data['title']=$this->lang->line('qbank');
+		$data['title']=$this->lang->line('list_questions');
 		// fetching user list
-		$data['result']=$this->qbank_model->question_list($limit,$cid,$lid);
+		
+
 		$this->load->view('header',$data);
 		$this->load->view('question_list',$data);
 		$this->load->view('footer',$data);
@@ -136,7 +139,7 @@ class Qbank extends CI_Controller {
 
 		}
 		
-		 $data['title']=$this->lang->line('add_new').' '.$this->lang->line('question');
+		 $data['title']=$this->lang->line('add_new_question');
 		 $this->load->view('header',$data);
 		$this->load->view('pre_new_question',$data);
 		$this->load->view('footer',$data);

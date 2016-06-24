@@ -31,7 +31,7 @@ class Quiz extends CI_Controller {
 		$logged_in=$this->session->userdata('logged_in');	
 		//echo $logged_in['uid'];	
 		$data['limit']=$limit;
-		$data['title']=$this->lang->line('quiz');
+		$data['title']=$this->lang->line('list_quizs');
 		// fetching quiz list
 		$data['result']=$this->quiz_model->quiz_list($limit);
 		$this->load->view('header',$data);
@@ -47,7 +47,7 @@ class Quiz extends CI_Controller {
 		}
 
 		$data['limit']=$limit;
-		$data['title']='Tạo mới bằng cách sử dụng mẫu';
+		$data['title']=$this->lang->line('add_new_with_temp');
 		// fetching quiz list
 		$data['result']=$this->quiz_model->quiz_list($limit);
 		$this->load->view('header',$data);
@@ -63,7 +63,7 @@ class Quiz extends CI_Controller {
 			exit($this->lang->line('permission_denied'));
 		}
 
-		$data['title']=$this->lang->line('add_new').' '.$this->lang->line('quiz');
+		$data['title']=$this->lang->line('add_new_quiz');
 		// fetching group list
                 $logged_in=$this->session->userdata('logged_in');
 		$data['group_list']=$this->user_model->group_list($logged_in);
@@ -81,7 +81,7 @@ class Quiz extends CI_Controller {
 			exit($this->lang->line('permission_denied'));
 		}
 
-		$data['title']=$this->lang->line('edit').' '.$this->lang->line('quiz');
+		$data['title']=$this->lang->line('edit_quiz');
 		// fetching group list
 		$data['group_list']=$this->user_model->group_list();
 		$data['quiz']=$this->quiz_model->get_quiz($quid);
@@ -152,7 +152,11 @@ class Quiz extends CI_Controller {
 		if($logged_in['su']!='1' && $logged_in['su']!='2' && $logged_in['su']!='3'){
 			exit($this->lang->line('permission_denied'));
 		}
-
+		if($logged_in['su'] =='2' ||  $logged_in['su'] =='3'){
+			$data['category_list']=$this->qbank_model->category_list_user($logged_in['gid']);
+		} else{
+			$data['category_list']=$this->qbank_model->category_list();
+		}
 
 
 		$data['quiz']=$this->quiz_model->get_quiz($quid);
@@ -160,7 +164,7 @@ class Quiz extends CI_Controller {
 		if($data['quiz']['question_selection']=='0'){
 
 			$data['result']=$this->qbank_model->question_list($limit,$cid,$lid);
-			$data['category_list']=$this->qbank_model->category_list();
+			
 			$data['level_list']=$this->qbank_model->level_list();
 
 		}else{
@@ -353,7 +357,7 @@ class Quiz extends CI_Controller {
 		
 		$logged_in=$this->session->userdata('logged_in');
 		$gid=$logged_in['gid'];
-		$data['title']=$this->lang->line('attempt').' '.$this->lang->line('quiz');
+		$data['title']=$this->lang->line('attempt');
 		
 		$data['quiz']=$this->quiz_model->get_quiz($quid);
 		$this->load->view('header',$data);
@@ -557,7 +561,7 @@ class Quiz extends CI_Controller {
 		if($logged_in['su']!='1' && $logged_in['su']!='2' && $logged_in['su']!='3'){
 			exit($this->lang->line('permission_denied'));
 		} 
-		$data['title']='Assign User Into A Test';
+		$data['title']=$this->lang->line('assign_user');
 		$data['quid'] = $qid;
 		$data['result']=$this->user_model->user_list_2();
 		

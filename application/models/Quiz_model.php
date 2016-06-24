@@ -56,7 +56,7 @@ Class Quiz_model extends CI_Model {
     }
 
     function insert_quiz() {
-
+       
         $userdata = array(
             'quiz_name' => $this->input->post('quiz_name'),
             'description' => $this->input->post('description'),

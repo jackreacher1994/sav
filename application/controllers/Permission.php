@@ -32,7 +32,7 @@ class Permission extends CI_Controller {
 		}
 		$data['permission_list']=$this->permission_model->permission_list();
 		$data['permission_group']= $this->permission_model->group_permission_list();
-		$data['title']='List Permission';
+		$data['title']=$this->lang->line('list_permissions');
 		$this->load->view('header',$data);
 		$this->load->view('permission_list',$data);
 		$this->load->view('footer',$data);
@@ -97,7 +97,7 @@ class Permission extends CI_Controller {
 		if($logged_in['su']!='1' && $logged_in['su'] !='2' && $logged_in['su'] !='3'){
 			exit($this->lang->line('permission_denied'));
 		} 
-		$data['title']='Assign User Permission';
+		$data['title']=$this->lang->line('assign_permission');
 		if($logged_in['su'] == 2 || $logged_in['su'] == 3){
 			$data['result']=$this->user_model->user_list_3();
 		}

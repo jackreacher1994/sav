@@ -59,7 +59,7 @@
      <?php } ?>
      <br>
      <input type="hidden" name = 'uid' value="<?php echo $uid;?>" />
-      <button type="submit" class="btn btn-success">Assign</button>
+      <button type="submit" class="btn btn-success"><?php echo $this->lang->line('submit');?></button>
             </form>
 
     </div>

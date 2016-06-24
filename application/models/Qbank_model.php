@@ -24,7 +24,7 @@ Class Qbank_model extends CI_Model
 		$query = $this->db->get('savsoft_group');
 		$result = $query->row_array();*/
 		
-		$this->db->where("savsoft_category.gid",$logged_in['gid']);
+		//$this->db->where("savsoft_category.gid",$logged_in['gid']);
 		$this->db->join('savsoft_category','savsoft_category.cid = savsoft_qbank.cid');
 		$this->db->join('savsoft_level','savsoft_level.lid=savsoft_qbank.lid');
 		$this->db->limit($this->config->item('number_of_rows'),$limit);
@@ -34,6 +34,35 @@ Class Qbank_model extends CI_Model
 		return $query2->result_array();
 		
 
+	}
+
+	function question_list_2($limit,$cid='0',$lid='0'){
+		$logged_in = $this->session->userdata('logged_in');
+		
+
+		if($this->input->post('search')){
+			$search=$this->input->post('search');
+			$this->db->or_where('savsoft_qbank.qid',$search);
+			$this->db->or_like('savsoft_qbank.question',$search);
+			$this->db->or_like('savsoft_qbank.description',$search);
+
+		}
+		if($cid!='0'){
+			$this->db->where('savsoft_qbank.cid',$cid);
+		}
+		if($lid!='0'){
+			$this->db->where('savsoft_qbank.lid',$lid);
+		}
+	
+		
+		$this->db->where("savsoft_category.gid",$logged_in['gid']);
+		$this->db->join('savsoft_category','savsoft_category.cid = savsoft_qbank.cid');
+		$this->db->join('savsoft_level','savsoft_level.lid=savsoft_qbank.lid');
+		$this->db->limit($this->config->item('number_of_rows'),$limit);
+		$this->db->order_by('savsoft_qbank.qid','desc');
+		$query2=$this->db->get('savsoft_qbank');
+		
+		return $query2->result_array();
 	}
 
 
@@ -466,6 +495,7 @@ Class Qbank_model extends CI_Model
 
  // category function start
 	function category_list(){
+
 		$this->db->order_by('cid','desc');
 		$query=$this->db->get('savsoft_category');
 		return $query->result_array();
@@ -474,10 +504,6 @@ Class Qbank_model extends CI_Model
 	function category_list_user($gid){
 
 		$this->db->where('gid',$gid);
-		/*$query=$this->db->get('savsoft_group');
-		$result = $query->row_array();
-		$this->db->where('gid',$result['parent_id']);*/
-
 		$this->db->order_by('cid','desc');
 		$query2=$this->db->get('savsoft_category');
 		return $query2->result_array();
@@ -518,14 +544,11 @@ Class Qbank_model extends CI_Model
 
 	function insert_category(){
 		$logged_in=$this->session->userdata('logged_in');
-		$this->db->select('parent_id');
-		$this->db->where('gid',$logged_in['gid']);
-		$query = $this->db->get('savsoft_group');
-		$result = $query->row_array();
+		
 
 		$userdata=array(
 			'category_name'=>$this->input->post('category_name'),
-			'gid' => $result['parent_id'],
+			'gid' => $logged_in['gid'],
 			);
 		
 		if($this->db->insert('savsoft_category',$userdata)){

@@ -19,7 +19,7 @@
  						}
  						?>	
  						<div class="form-group">	 
- 							<label for="inputEmail" class="sr-only"><?php echo $this->lang->line('quiz_name');?></label> 
+ 							<label for="inputEmail"><?php echo $this->lang->line('quiz_name');?></label>
  							<input type="text"  name="quiz_name"  value="<?php echo $quiz['quiz_name'];?>" class="form-control" placeholder="<?php echo $this->lang->line('quiz_name');?>"  required autofocus>
  						</div>
  						<div class="form-group">	 
@@ -28,11 +28,11 @@
  						</div>
  						<div class="form-group">	 
  							<label for="inputEmail"  ><?php echo $this->lang->line('start_date');?></label> 
- 							<input type="text" name="start_date"  value="<?php echo date('Y-m-d H:i:s',$quiz['start_date']);?>" class="form-control" placeholder="<?php echo $this->lang->line('start_date');?>"   required >
+ 							<input type="date" name="start_date"  value="<?php echo date('Y-m-d',$quiz['start_date']);?>" class="form-control" placeholder="<?php echo $this->lang->line('start_date');?>"   required >
  						</div>
  						<div class="form-group">	 
  							<label for="inputEmail"  ><?php echo $this->lang->line('end_date');?></label> 
- 							<input type="text" name="end_date"  value="<?php echo date('Y-m-d H:i:s',$quiz['end_date']);?>" class="form-control" placeholder="<?php echo $this->lang->line('end_date');?>"   required >
+ 							<input type="date" name="end_date"  value="<?php echo date('Y-m-d',$quiz['end_date']);?>" class="form-control" placeholder="<?php echo $this->lang->line('end_date');?>"   required >
  						</div>
  						<div class="form-group">	 
  							<label for="inputEmail"  ><?php echo $this->lang->line('duration');?></label> 
@@ -104,13 +104,13 @@
  						</div>
 
 
- 						<div class="form-group">	 
+ 						<div class="form-group" style="display: none;">
  							<label for="inputEmail" ><?php echo $this->lang->line('generate_certificate');?></label> <br>
  							<input type="radio" name="gen_certificate"    value="1"   <?php if($quiz['gen_certificate']==1){ echo 'checked'; } ?> > <?php echo $this->lang->line('yes');?><br>
  							<input type="radio" name="gen_certificate"    value="0"    <?php if($quiz['gen_certificate']==0){ echo 'checked'; } ?> > <?php echo $this->lang->line('no');?>
  						</div>
 
- 						<div class="form-group">	 
+ 						<div class="form-group" style="display: none;">
  							<label for="inputEmail"  ><?php echo $this->lang->line('certificate_text');?></label> 
  							<textarea   name="certificate_text"  class="form-control" style="height:250px;"><?php echo $quiz['certificate_text'];?></textarea><br>
  							<?php echo $this->lang->line('tags_use');?> <?php echo htmlentities("<br>  <center></center>  <b></b>  <h1></h1>  <h2></h2>  <h3></h3>  <font></font>");?><br>
@@ -126,7 +126,7 @@
 
 
  						<hr>
- 						<br><br><br>
+						
  						<?php 
  						if($quiz['question_selection']=='0'){
 
@@ -139,7 +139,7 @@
  									<th>#</th>
  									<th><?php echo $this->lang->line('question');?></th>
  									<th><?php echo $this->lang->line('question_type');?></th>
- 									<th><?php echo $this->lang->line('category_name');?></th>
+ 									<th><?php echo $this->lang->line('category');?></th>
 
  									<th><?php echo $this->lang->line('action');?> </th>
  								</tr>

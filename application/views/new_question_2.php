@@ -23,7 +23,7 @@
 		
 		
 		
-				<div class="form-group">	 
+				<div class="form-group" style="display: none;">	 
 					 
 <?php echo $this->lang->line('multiple_choice_multiple_answer');?>
 			</div>
@@ -72,7 +72,7 @@
 			?>
 			<div class="form-group">	 
 					<label for="inputEmail"  ><?php echo $this->lang->line('options');?> <?php echo $i;?>)</label> <br>
-					<input type="checkbox" name="score[]" value="<?php echo $i-1;?>" <?php if($i==1){ echo 'checked'; } ?> > Select Correct Option 
+					<input type="checkbox" name="score[]" value="<?php echo $i-1;?>" <?php if($i==1){ echo 'checked'; } ?> > <?php echo $this->lang->line('select_correct_option');?> 
 					<br><textarea  name="option[]"  class="form-control"   ></textarea>
 			</div>
 		<?php 

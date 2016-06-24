@@ -23,8 +23,8 @@
 
 
  						<div class="form-group">	 
- 							<label for="inputEmail" class="sr-only"><?php echo $this->lang->line('quiz_name');?></label> 
- 							<input type="text"  name="quiz_name"  class="form-control" placeholder="<?php echo $this->lang->line('quiz_name');?>"  required autofocus>
+ 							<label for="inputEmail" ><?php echo $this->lang->line('quiz_name');?></label>
+ 							<input type="text"  name="quiz_name"  class="form-control"  required autofocus>
  						</div>
  						<div class="form-group">	 
  							<label for="inputEmail"  ><?php echo $this->lang->line('description');?></label> 
@@ -32,11 +32,11 @@
  						</div>
  						<div class="form-group">	 
  							<label for="inputEmail"  ><?php echo $this->lang->line('start_date');?></label> 
- 							<input type="text" name="start_date"  value="<?php echo date('Y-m-d H:m:s', time())?>" class="form-control" placeholder="<?php echo $this->lang->line('start_date');?>"   required >
+ 							<input type="date" name="start_date"  value="<?php echo date('Y-m-d H:m:s', time())?>" class="form-control" placeholder="<?php echo $this->lang->line('start_date');?>"   required >
  						</div>
  						<div class="form-group">	 
  							<label for="inputEmail"  ><?php echo $this->lang->line('end_date');?></label> 
- 							<input type="text" name="end_date"  value="<?php echo date('Y-m-d H:m:s', time())?>" class="form-control" placeholder="<?php echo $this->lang->line('end_date');?>"   required >
+ 							<input type="date" name="end_date"  value="<?php echo date('Y-m-d H:m:s', time())?>" class="form-control" placeholder="<?php echo $this->lang->line('end_date');?>"   required >
  						</div>
  						<div class="form-group">	 
  							<label for="inputEmail"  ><?php echo $this->lang->line('duration');?></label> 
@@ -106,13 +106,13 @@
  							<input type="radio" name="question_selection"    value="1"  > <?php echo $this->lang->line('automatically');?><br>
  							<input type="radio" name="question_selection"    value="0"  checked > <?php echo $this->lang->line('manually');?>
  						</div>
- 						<div class="form-group">	 
+ 						<div class="form-group" style="display: none;">
  							<label for="inputEmail" ><?php echo $this->lang->line('generate_certificate');?></label> <br>
  							<input type="radio" name="gen_certificate"    value="1"  > <?php echo $this->lang->line('yes');?><br>
  							<input type="radio" name="gen_certificate"    value="0"  checked > <?php echo $this->lang->line('no');?>
  						</div>
 
- 						<div class="form-group">	 
+ 						<div class="form-group" style="display: none;">
  							<label for="inputEmail"  ><?php echo $this->lang->line('certificate_text');?></label> 
  							<textarea   name="certificate_text"  class="form-control" ></textarea><br>
  							<?php echo $this->lang->line('tags_use');?> <?php echo htmlentities("<br>  <center></center>  <b></b>  <h1></h1>  <h2></h2>   <h3></h3>    <font></font>");?><br>

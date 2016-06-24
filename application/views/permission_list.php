@@ -19,9 +19,9 @@
 
  				<table class="table table-bordered">
  					<tr>
- 						<th>Permission</th>
+ 						<th><?php echo $this->lang->line('permission_name');?></th>
  						
- 						<th>Description</th>
+ 						<th><?php echo $this->lang->line('description');?></th>
  						<th><?php echo $this->lang->line('action');?> </th>
  					</tr>
  					<?php 
@@ -53,9 +53,9 @@
  					<tr>
  						<td>
 
- 							<input type="text"   class="form-control"   name="permission_name" value="" placeholder="Permission name"  required ></td>
+ 							<input type="text"   class="form-control"   name="permission_name" value="" placeholder="<?php echo $this->lang->line('permission_name');?>"  required ></td>
  							<td><select name="parent_id">
- 								<option value="0">Select Group Permission</option>
+ 								<option value="0"><?php echo $this->lang->line('select_group_permission');?></option>
  								<?php
  								foreach ($permission_group as $key => $val) { 	
  									?>
@@ -67,7 +67,7 @@
  							</select>
  						</td>
  						<td>
- 							<input type="text"   class="form-control"   name="description" value="" placeholder="description"  required ></td>
+ 							<input type="text"   class="form-control"   name="description" value="" placeholder="<?php echo $this->lang->line('description');?>"  required ></td>
  							<td>
  								<button class="btn btn-default" type="submit"><?php echo $this->lang->line('add_new');?></button>
 

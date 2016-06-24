@@ -23,7 +23,7 @@
 		
 		
 		
-				<div class="form-group">	 
+				<div class="form-group" style="display: none;">	 
 					<?php echo $this->lang->line('short_answer');?>
 
 			</div>

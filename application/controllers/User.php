@@ -47,7 +47,7 @@ class User extends CI_Controller {
 		$data['limit']=$limit;
 		$data['gid']=$gid;
 		$data['sid']=$sid;
-		$data['title']=$this->lang->line('userlist');
+		$data['title']=$this->lang->line('list_users');
 		
 		// fetching user list
 		if($logged_in['su'] =='1'){
@@ -75,10 +75,17 @@ class User extends CI_Controller {
 			exit($this->lang->line('permission_denied'));
 		}
 
-
+		$data['logged_in'] =  $logged_in;
 		$data['title']=$this->lang->line('add_new').' '.$this->lang->line('user');
 		// fetching group list
-		$data['parent_list']=$this->user_model->parent_list();
+		if( $logged_in['su'] == '2' || $logged_in['su'] == '3'){
+			$data['parent_list']=$this->user_model->parent_list_user($logged_in['gid']);
+		}
+		else
+		{
+			$data['parent_list']=$this->user_model->parent_list();
+		}
+		
 		
 		$this->load->view('header',$data);
 		$this->load->view('new_user',$data);
@@ -150,14 +157,21 @@ class User extends CI_Controller {
 
 		$data['uid']=$uid;
 		$data['title']=$this->lang->line('edit').' '.$this->lang->line('user');
+		$data['logged_in'] =  $logged_in;
 		// fetching user
 		$data['result']=$this->user_model->get_user($uid);
 		$this->load->model("payment_model");
 		$data['payment_history']=$this->payment_model->get_payment_history($uid);
 		// fetching group list
-		$data['group_list']=$this->user_model->group_list($logged_in);
+		if( $logged_in['su'] == '2' || $logged_in['su'] == '3'){
+			$data['parent_list']=$this->user_model->parent_list_user($logged_in['gid']);
+		}
+		else
+		{
+			$data['parent_list']=$this->user_model->parent_list();
+		}
 		$this->load->view('header',$data);
-		if($logged_in['su']=='1'){
+		if($logged_in['su']=='1' || $logged_in['su']=='2'){
 			$this->load->view('edit_user',$data);
 		}else{
 			$this->load->view('myaccount',$data);
