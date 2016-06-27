@@ -124,12 +124,14 @@ Class User_model extends CI_Model {
             $this->db->or_where('savsoft_users.last_name', $search);
             $this->db->or_where('savsoft_users.contact_no', $search);
         }
-        $this->db->select('parent_id')->where('savsoft_group.gid', $logged_in['gid']);
-        $query2 = $this->db->get('savsoft_group');
-        $test = $query2->row_array();
-        $this->db->where('savsoft_users.uid !=', $logged_in['uid']);
-        $this->db->where('parent_id', $test['parent_id']);
+
+    
+        
+       
+        $this->db->where('parent_id', $logged_in['gid']);
+        $this->db->or_where('savsoft_group.gid', $logged_in['gid']); 
         $this->db->join('savsoft_group', 'savsoft_group.gid = savsoft_users.gid');
+        $this->db->where('savsoft_users.uid !=', $logged_in['uid']);
         $this->db->order_by('savsoft_users.uid', 'desc');
         $query = $this->db->get('savsoft_users');
 

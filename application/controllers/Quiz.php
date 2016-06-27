@@ -65,7 +65,7 @@ class Quiz extends CI_Controller {
 
 		$data['title']=$this->lang->line('add_new_quiz');
 		// fetching group list
-                $logged_in=$this->session->userdata('logged_in');
+		$logged_in=$this->session->userdata('logged_in');
 		$data['group_list']=$this->user_model->group_list($logged_in);
 		$this->load->view('header',$data);
 		$this->load->view('new_quiz',$data);
@@ -92,7 +92,12 @@ class Quiz extends CI_Controller {
 			$this->load->model("qbank_model");
 			$data['qcl']=$this->quiz_model->get_qcl($data['quiz']['quid']);
 
-			$data['category_list']=$this->qbank_model->category_list();
+			if($logged_in['su'] =='2' || $logged_in['su'] =='3'){
+				$data['category_list']=$this->qbank_model->category_list_user($logged_in['gid']);
+			}
+			else {
+				$data['category_list']=$this->qbank_model->category_list();
+			}
 			$data['level_list']=$this->qbank_model->level_list();
 
 		}
@@ -152,10 +157,12 @@ class Quiz extends CI_Controller {
 		if($logged_in['su']!='1' && $logged_in['su']!='2' && $logged_in['su']!='3'){
 			exit($this->lang->line('permission_denied'));
 		}
-		if($logged_in['su'] =='2' ||  $logged_in['su'] =='3'){
+		if($logged_in['su'] =='2' || $logged_in['su'] =='3'){
 			$data['category_list']=$this->qbank_model->category_list_user($logged_in['gid']);
-		} else{
+			$data['result']=$this->qbank_model->question_list_2($limit,$cid,$lid);
+		}else{
 			$data['category_list']=$this->qbank_model->category_list();
+			$data['result']=$this->qbank_model->question_list($limit,$cid,$lid);
 		}
 
 
@@ -163,7 +170,7 @@ class Quiz extends CI_Controller {
 		$data['title']=$this->lang->line('add_question_into_quiz').': '.$data['quiz']['quiz_name'];
 		if($data['quiz']['question_selection']=='0'){
 
-			$data['result']=$this->qbank_model->question_list($limit,$cid,$lid);
+			
 			
 			$data['level_list']=$this->qbank_model->level_list();
 
@@ -251,13 +258,13 @@ class Quiz extends CI_Controller {
 			}
 
 			$message = $this->input->post('form_email');
-
+			//echo $message;die();
 			for ($i=0; $i < count($emails); $i++) {
 
 
 				$this->load->library('email', $config);
 				$this->email->set_newline("\r\n");
-				$this->email->from('noreply@ved.com.vn', 'huyth');
+				$this->email->from('noreply@ved.com.vn', 'VED Adminstrator');
 				$this->email->subject('testing');
 				$this->email->message($message);
 				$this->email->to($emails[$i]);
@@ -563,7 +570,14 @@ class Quiz extends CI_Controller {
 		} 
 		$data['title']=$this->lang->line('assign_user');
 		$data['quid'] = $qid;
-		$data['result']=$this->user_model->user_list_2();
+		if($logged_in['su']=='2' || $logged_in['su']=='3'){
+			$data['result']=$this->user_model->user_list_3();
+
+		}
+		else{
+			$data['result']=$this->user_model->user_list_2();
+		}
+		
 		
 		
 		$this->load->view('header',$data);
@@ -584,7 +598,7 @@ class Quiz extends CI_Controller {
 			array_push($emails,$this->user_model->get_email_user($uids[$i]));
 		}
 		$message = $this->quiz_model->get_formemail_quiz($quid);
-
+		
 		for ($j=0; $j < sizeof($emails); $j++) {
 
 
@@ -592,8 +606,8 @@ class Quiz extends CI_Controller {
 			$this->email->set_newline("\r\n");
 			$this->email->from('noreply@ved.com.vn', 'VED Adminstrator');
 			$this->email->subject('testing');
-			$this->email->message($message);
-			$this->email->to($emails[$i]);
+			$this->email->message($message['form_email']);
+			$this->email->to($emails[$j]);
 
 			if($this->email->send())
 			{

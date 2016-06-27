@@ -71,23 +71,7 @@
 							<input type="radio" name="allow_back"    value="0"   <?php if($quiz['allow_back']==0){ echo 'checked'; } ?>  > <?php echo $this->lang->line('no');?>
 						</div>
 						
- 						<?php 
- 						if($this->config->item('webcam')==true){
- 							?>
- 							<div class="form-group">	 
- 								<label for="inputEmail" ><?php echo $this->lang->line('capture_photo');?></label> <br>
- 								<input type="radio" name="camera_req"    value="1"   <?php if($quiz['camera_req']==1){ echo 'checked'; } ?>  > <?php echo $this->lang->line('yes');?>&nbsp;&nbsp;&nbsp;
- 								<input type="radio" name="camera_req"    value="0"   <?php if($quiz['camera_req']==0){ echo 'checked'; } ?>    > <?php echo $this->lang->line('no');?>
- 							</div>
-
- 							<?php 
- 						}else{
- 							?>
- 							<input type="hidden" name="camera_req" value="0">
-
- 							<?php 
- 						}
- 						?>
+ 						
 
 
  						<div class="form-group">	 

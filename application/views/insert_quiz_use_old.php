@@ -21,7 +21,6 @@
  						}
  						?>	
 
-
  						<div class="form-group">	 
  							<label for="inputEmail" class="sr-only"><?php echo $this->lang->line('quiz_name');?></label> 
  							<input type="text"  name="quiz_name" value="<?php echo $quiz['quiz_name'];?>" class="form-control" placeholder="<?php echo $this->lang->line('quiz_name');?>"  required autofocus>
@@ -67,6 +66,11 @@
  							<input type="radio" name="view_answer"    value="1" <?php if($quiz['view_answer']==1){ echo 'checked'; } ?>  > <?php echo $this->lang->line('yes');?>&nbsp;&nbsp;&nbsp;
  							<input type="radio" name="view_answer"    value="0"   <?php if($quiz['view_answer']==0){ echo 'checked'; } ?>  > <?php echo $this->lang->line('no');?>
  						</div>
+ 						<div class="form-group">
+							<label for="inputEmail" ><?php echo $this->lang->line('allow_back');?></label> <br>
+							<input type="radio" name="allow_back"    value="1" <?php if($quiz['allow_back']==1){ echo 'checked'; } ?>  > <?php echo $this->lang->line('yes');?>&nbsp;&nbsp;&nbsp;
+							<input type="radio" name="allow_back"    value="0"   <?php if($quiz['allow_back']==0){ echo 'checked'; } ?>  > <?php echo $this->lang->line('no');?>
+						</div>
  						<?php 
  						if($this->config->item('webcam')==true){
  							?>
@@ -101,13 +105,13 @@
  							<input type="radio" name="question_selection"    value="1"  > <?php echo $this->lang->line('automatically');?><br>
  							<input type="radio" name="question_selection"    value="0"  checked > <?php echo $this->lang->line('manually');?>
  						</div>
- 						<div class="form-group">	 
+ 						<div class="form-group" style="display:none">	 
  							<label for="inputEmail" ><?php echo $this->lang->line('generate_certificate');?></label> <br>
  							<input type="radio" name="gen_certificate"    value="1"   <?php if($quiz['gen_certificate']==1){ echo 'checked'; } ?> > <?php echo $this->lang->line('yes');?><br>
  							<input type="radio" name="gen_certificate"    value="0"    <?php if($quiz['gen_certificate']==0){ echo 'checked'; } ?> > <?php echo $this->lang->line('no');?>
  						</div>
 
- 						<div class="form-group">	 
+ 						<div class="form-group" style="display:none">	 
  							<label for="inputEmail"  ><?php echo $this->lang->line('certificate_text');?></label> 
  							<textarea   name="certificate_text"  class="form-control" style="height:250px;"><?php echo $quiz['certificate_text'];?></textarea><br>
  							<?php echo $this->lang->line('tags_use');?> <?php echo htmlentities("<br>  <center></center>  <b></b>  <h1></h1>  <h2></h2>  <h3></h3>  <font></font>");?><br>

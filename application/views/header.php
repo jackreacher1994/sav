@@ -60,6 +60,8 @@
 								
 								<li <?php if($this->uri->segment(1)=='dashboard'){ echo "class='active'"; } ?> ><a href="<?php echo site_url('dashboard');?>"><?php echo $this->lang->line('dashboard');?></a></li>
 
+								<?php if($logged_in['su'] == 1 || $logged_in['su'] == 2){ ?>
+
 								
 								<li class="dropdown" <?php if($this->uri->segment(1)=='user'){ echo "class='active'"; } ?>>
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $this->lang->line('users');?> <span class="caret"></span></a>
@@ -78,8 +80,8 @@
 									</ul>
 								</li>
 								
-							
-								
+								<?php } ?>
+								<?php if(in_array('12', $array_pid) || in_array('13', $array_pid) || in_array('16', $array_pid) || in_array('17', $array_pid)){ ?>
 								<li class="dropdown" <?php if($this->uri->segment(1)=='qbank'){ echo "class='active'"; } ?> >
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $this->lang->line('qbank');?> <span class="caret"></span></a>
 									<ul class="dropdown-menu">
@@ -99,7 +101,7 @@
 									</ul>
 								</li>
 								
-								
+								<?php } ?>
 								
 								<?php 
 							}else{
@@ -108,6 +110,7 @@
 								<?php 
 							}
 							?>
+							<?php if($logged_in['su'] == 1 || $logged_in['su'] == 2) { ?> 
 
 							<li class="dropdown" <?php if($this->uri->segment(1)=='qbank'){ echo "class='active'"; } ?> >
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $this->lang->line('quiz');?> <span class="caret"></span></a>
@@ -118,18 +121,17 @@
 									if(in_array('18', $array_pid)) { ?>
 									<li><a href="<?php echo site_url('quiz/add_new_quiz');?>"><?php echo $this->lang->line('add_new_with_temp');?></a></li>
 									<?php } 
-
-
-									?>
+									 } ?>
 									<li><a href="<?php echo site_url('quiz');?>"><?php echo $this->lang->line('list_quizs');?></a></li>
 									
 
 								</ul>
 							</li>
+
 							<li><a href="<?php echo site_url('result');?>"><?php echo $this->lang->line('result');?></a></li>
 
 							<?php  
-							if($logged_in['su'] ==1 || $logged_in['su']==2 || $logged_in['su']==3){
+							if($logged_in['su'] ==1 ){
 								?>
 								
 								<li class="dropdown" <?php if($this->uri->segment(1)=='permission'){ echo "class='active'"; } ?> >
