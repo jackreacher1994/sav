@@ -20,7 +20,7 @@
  				<table class="table table-bordered">
  					<tr>
  						<th><?php echo $this->lang->line('permission_name');?></th>
- 						
+ 						<th>Thuộc Nhóm Quyền</th>
  						<th><?php echo $this->lang->line('description');?></th>
  						<th><?php echo $this->lang->line('action');?> </th>
  					</tr>
@@ -34,12 +34,21 @@
 
  						<?php
  					}
-
+ 					//print_r($permission_list);
  					foreach($permission_list as $key => $val){
  						?>
  						<tr>
  							<td><input type="text"   class="form-control"  value="<?php echo $val['permission_name'];?>" onBlur="updatepermission(this.value,'<?php echo $val['id'];?>');" ></td>
- 							
+ 							<td>
+ 								<?php
+									foreach($permission_group as $parent_permission){
+										if($parent_permission['id'] == $val['parent_id']) {	
+										echo $parent_permission['permission_name'];
+											}
+										}
+									?>
+
+ 							</td>
  							<td><?php echo $val['description']?></td>
 
  							<td>

@@ -5,7 +5,7 @@ Class Permission_model extends CI_Model{
 
 	function group_permission_list(){
 		$this->db->where('parent_id','0');
-		$this->db->order_by('id','asc');
+		$this->db->order_by('id','desc');
 		$query=$this->db->get('savsoft_permission');
 		return $query->result_array();
 	}
@@ -91,7 +91,7 @@ Class Permission_model extends CI_Model{
 
 	// permission
 	function permission_list(){
-		
+		$this->db->where('parent_id != ','0');
 		$this->db->order_by('id','desc');
 		$query=$this->db->get('savsoft_permission');
 		return $query->result_array();

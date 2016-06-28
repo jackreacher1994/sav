@@ -17,6 +17,12 @@ Class User_model extends CI_Model {
         } else {
             return false;
         }
+
+       /* $this->db->select('*');
+        $this->db->where('email','admin@example.com');
+        $query = $this->db->get('savsoft_users');
+        $result = $query->row_array();
+        return $result;*/
     }
 
     function admin_login() {
@@ -239,7 +245,7 @@ Class User_model extends CI_Model {
         );
 
         if ($this->input->post('su') == 1) {
-            $userdata['gid'] = 0;
+            $userdata['gid'] = 1;
         }
 
         if ($this->input->post('su') == 3) {
@@ -447,7 +453,9 @@ Class User_model extends CI_Model {
     function remove_user($uid) {
 
         $this->db->where('uid', $uid);
-        if ($this->db->delete('savsoft_users')) {
+        $userdata = array();
+        $userdata['sid'] = 2;
+        if ($this->db->update('savsoft_users',$userdata)) {
 
             return true;
         } else {

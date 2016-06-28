@@ -58,7 +58,7 @@ class Qbank extends CI_Controller {
 	public function remove_question($qid){
 
 			$logged_in=$this->session->userdata('logged_in');
-			if($logged_in['su']!='1'){
+			if($logged_in['su']!='1' && $logged_in['su']!='2' && $logged_in['su']!='3'){
 				exit($this->lang->line('permission_denied'));
 			} 
 			

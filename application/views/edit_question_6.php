@@ -117,7 +117,13 @@
                             </ul>
                             <input type="hidden" name="right_order">
                         </div>
-
+                            <div class="form-group">
+                    <label   ><?php echo $this->lang->line('status');?></label>
+                    <select class="form-control" name="sid">
+                       <option value="1" <?php if($result['sid']==1){ echo 'selected';}?>  >Kích hoạt</option>
+                        <option value="2" <?php if($result['sid']==2){ echo 'selected';}?>  >Chưa kích hoạt</option>
+                    </select>
+            </div>
 
                         <button class="btn btn-default" type="submit"><?php echo $this->lang->line('submit');?></button>
 

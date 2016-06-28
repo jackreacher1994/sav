@@ -44,6 +44,7 @@ $logged_in=$this->session->userdata('logged_in');
  <th>#</th>
  <th><?php echo $this->lang->line('quiz_name');?></th>
 <th><?php echo $this->lang->line('noq');?></th>
+<td><b><?php echo $this->lang->line('status');?></b></td>
 <th><?php echo $this->lang->line('action');?> </th>
 </tr>
 <?php 
@@ -62,6 +63,13 @@ foreach($result as $key => $val){
  <td><?php echo $val['quid'];?></td>
  <td><?php echo substr(strip_tags($val['quiz_name']),0,50);?></td>
 <td><?php echo $val['noq'];?></td>
+<td>
+	<?php 
+	if($val['end_date'] < time()){ 
+	echo 'Hết hạn';
+ 	} 
+	?>
+</td>
  <td>
      
      <?php
@@ -80,9 +88,14 @@ foreach($result as $key => $val){
 if($logged_in['su']=='1' || $logged_in['su']=='2' || $logged_in['su']=='3'){
 	?>
 <a href="<?php echo site_url('quiz/assign_user_for_quiz/'.$val['quid']);?>" class="btn btn-success"><?php echo $this->lang->line('assign_user');?></a>
+
+<a href="<?php echo site_url('quiz/insert_quiz_use_old/'.$val['quid']);?>" class="btn btn-warning">Sử dụng bài kiểm tra này để tạo mới </a>
 <a href="<?php echo site_url('quiz/edit_quiz/'.$val['quid']);?>"><img src="<?php echo base_url('images/edit.png');?>"></a>
-<a href="javascript:remove_entry('quiz/remove_quiz/<?php echo $val['quid'];?>');"><img src="<?php echo base_url('images/cross.png');?>"></a>
-<?php 
+<!-- <a href="javascript:remove_entry('quiz/remove_quiz/<?php echo $val['quid'];?>');"><img src="<?php echo base_url('images/cross.png');?>"></a> -->
+<?php
+	
+
+
 }
 ?>
 </td>

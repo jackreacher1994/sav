@@ -13,6 +13,9 @@ class Dashboard extends CI_Controller {
 	   $this->load->model("result_model");
 	   $this->lang->load('basic', $this->config->item('language'));
 		// redirect if not loggedin
+
+	  
+	   
 		if(!$this->session->userdata('logged_in')){
 			$this->session->set_userdata('last_page', current_url());
 			redirect('login');

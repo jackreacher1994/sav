@@ -60,7 +60,9 @@
  						</div>
  						<div class="form-group">	 
  							<label for="inputEmail"  ><?php echo $this->lang->line('form_email');?></label><br>
- 							<textarea id="form_email" name="form_email" rows="10" cols="101" class="form-control"></textarea>
+ 							<textarea id="form_email" name="form_email" rows="10" cols="101" class="form-control tinymce_textarea">
+ 								
+ 							</textarea>
  						</div>
  						<div class="form-group">	 
  							<label for="inputEmail" ><?php echo $this->lang->line('view_answer');?></label> <br>
@@ -115,7 +117,7 @@
  						<div class="form-group" style="display: none;">
  							<label for="inputEmail"  ><?php echo $this->lang->line('certificate_text');?></label> 
  							<textarea   name="certificate_text"  class="form-control" ></textarea><br>
- 							<?php echo $this->lang->line('tags_use');?> <?php echo htmlentities("<br>  <center></center>  <b></b>  <h1></h1>  <h2></h2>   <h3></h3>    <font></font>");?><br>
+ 							<?php echo $this->lang->line('tags_use');?> <?php echo htmlentities("<br> {email} <center></center>  <b></b>  <h1></h1>  <h2></h2>   <h3></h3>    <font></font>");?><br>
  							{email}, {first_name}, {last_name}, {quiz_name}, {percentage_obtained}, {score_obtained}, {result}, {generated_date}, {result_id}, {qr_code}
  						</div>
 

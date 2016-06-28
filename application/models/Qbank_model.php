@@ -19,14 +19,39 @@ Class Qbank_model extends CI_Model
 		if($lid!='0'){
 			$this->db->where('savsoft_qbank.lid',$lid);
 		}
-	/*	$this->db->select('parent_id');
-		$this->db->where('gid',$logged_in['gid']);
-		$query = $this->db->get('savsoft_group');
-		$result = $query->row_array();*/
-		
-		//$this->db->where("savsoft_category.gid",$logged_in['gid']);
+	
 		$this->db->join('savsoft_category','savsoft_category.cid = savsoft_qbank.cid');
 		$this->db->join('savsoft_level','savsoft_level.lid=savsoft_qbank.lid');
+		$this->db->limit($this->config->item('number_of_rows'),$limit);
+		$this->db->order_by('savsoft_qbank.qid','desc');
+		$query2=$this->db->get('savsoft_qbank');
+		
+		return $query2->result_array();
+		
+
+	}
+
+	function question_list_active($limit,$cid='0',$lid='0'){
+		$logged_in = $this->session->userdata('logged_in');
+		
+
+		if($this->input->post('search')){
+			$search=$this->input->post('search');
+			$this->db->or_where('savsoft_qbank.qid',$search);
+			$this->db->or_like('savsoft_qbank.question',$search);
+			$this->db->or_like('savsoft_qbank.description',$search);
+
+		}
+		if($cid!='0'){
+			$this->db->where('savsoft_qbank.cid',$cid);
+		}
+		if($lid!='0'){
+			$this->db->where('savsoft_qbank.lid',$lid);
+		}
+	
+		$this->db->join('savsoft_category','savsoft_category.cid = savsoft_qbank.cid');
+		$this->db->join('savsoft_level','savsoft_level.lid=savsoft_qbank.lid');
+		$this->db->where("savsoft_qbank.sid",'1');
 		$this->db->limit($this->config->item('number_of_rows'),$limit);
 		$this->db->order_by('savsoft_qbank.qid','desc');
 		$query2=$this->db->get('savsoft_qbank');
@@ -65,6 +90,37 @@ Class Qbank_model extends CI_Model
 		return $query2->result_array();
 	}
 
+		function question_list_2_active($limit,$cid='0',$lid='0'){
+		$logged_in = $this->session->userdata('logged_in');
+		
+
+		if($this->input->post('search')){
+			$search=$this->input->post('search');
+			$this->db->or_where('savsoft_qbank.qid',$search);
+			$this->db->or_like('savsoft_qbank.question',$search);
+			$this->db->or_like('savsoft_qbank.description',$search);
+
+		}
+		if($cid!='0'){
+			$this->db->where('savsoft_qbank.cid',$cid);
+		}
+		if($lid!='0'){
+			$this->db->where('savsoft_qbank.lid',$lid);
+		}
+	
+		
+		$this->db->where("savsoft_category.gid",$logged_in['gid']);
+		$this->db->join('savsoft_category','savsoft_category.cid = savsoft_qbank.cid');
+		$this->db->join('savsoft_level','savsoft_level.lid=savsoft_qbank.lid');
+		$this->db->where("savsoft_qbank.sid",'1');
+		$this->db->limit($this->config->item('number_of_rows'),$limit);
+		$this->db->order_by('savsoft_qbank.qid','desc');
+		$query2=$this->db->get('savsoft_qbank');
+		//var_dump($query2);die();
+		return $query2->result_array();
+	}
+
+
 
 	function num_qbank(){
 
@@ -101,14 +157,23 @@ Class Qbank_model extends CI_Model
 	function remove_question($qid){
 
 		$this->db->where('qid',$qid);
-		if($this->db->delete('savsoft_qbank')){
+		$question_data = array();
+        $question_data['sid'] = 2;
+        if ($this->db->update('savsoft_qbank',$question_data)) {
+
+            return true;
+        } else {
+
+            return false;
+        }
+		/*if($this->db->delete('savsoft_qbank')){
 			$this->db->where('qid',$qid);
 			$this->db->delete('savsoft_options');
 			return true;
 		}else{
 
 			return false;
-		}
+		}*/
 
 
 	}
@@ -122,7 +187,7 @@ Class Qbank_model extends CI_Model
 			'question_type'=>$this->lang->line('multiple_choice_single_answer'),
 			'cid'=>$this->input->post('cid'),
 			'lid'=>$this->input->post('lid'),
-			
+			'sid' => $this->input->post('sid'),
 			);
 		$this->db->insert('savsoft_qbank',$userdata);
 		$qid=$this->db->insert_id();
@@ -155,7 +220,7 @@ Class Qbank_model extends CI_Model
 			'question_type'=>$this->lang->line('multiple_choice_multiple_answer'),
 			'cid'=>$this->input->post('cid'),
 			'lid'=>$this->input->post('lid'),
-
+			'sid' => $this->input->post('sid'),
 			);
 		$this->db->insert('savsoft_qbank',$userdata);
 		$qid=$this->db->insert_id();
@@ -189,7 +254,7 @@ Class Qbank_model extends CI_Model
 			'question_type'=>$this->lang->line('match_the_column'),
 			'cid'=>$this->input->post('cid'),
 			'lid'=>$this->input->post('lid'),
-
+			'sid' => $this->input->post('sid'),
 			);
 		$this->db->insert('savsoft_qbank',$userdata);
 		$qid=$this->db->insert_id();
@@ -222,7 +287,7 @@ Class Qbank_model extends CI_Model
 			'question_type'=>$this->lang->line('short_answer'),
 			'cid'=>$this->input->post('cid'),
 			'lid'=>$this->input->post('lid'),
-
+			'sid' => $this->input->post('sid'),
 			);
 		$this->db->insert('savsoft_qbank',$userdata);
 		$qid=$this->db->insert_id();
@@ -252,7 +317,7 @@ Class Qbank_model extends CI_Model
 			'question_type'=>$this->lang->line('long_answer'),
 			'cid'=>$this->input->post('cid'),
 			'lid'=>$this->input->post('lid'),
-
+			'sid' => $this->input->post('sid'),
 			);
 		$this->db->insert('savsoft_qbank',$userdata);
 		$qid=$this->db->insert_id();
@@ -271,7 +336,7 @@ Class Qbank_model extends CI_Model
 			'question_type'=>$this->lang->line('sort_answer'),
 			'cid'=>$this->input->post('cid'),
 			'lid'=>$this->input->post('lid'),
-			
+			'sid' => $this->input->post('sid'),
 			);
 		$this->db->insert('savsoft_qbank',$userdata);
 		$qid=$this->db->insert_id();
@@ -308,7 +373,8 @@ Class Qbank_model extends CI_Model
 			'description'=>$this->input->post('description'),
 			'question_type'=>$this->lang->line('multiple_choice_single_answer'),
 			'cid'=>$this->input->post('cid'),
-			'lid'=>$this->input->post('lid')	 
+			'lid'=>$this->input->post('lid'),
+			'sid' => $this->input->post('sid')	 
 			);
 		$this->db->where('qid',$qid);
 		$this->db->update('savsoft_qbank',$userdata);
@@ -347,7 +413,8 @@ Class Qbank_model extends CI_Model
 			'description'=>$this->input->post('description'),
 			'question_type'=>$this->lang->line('multiple_choice_multiple_answer'),
 			'cid'=>$this->input->post('cid'),
-			'lid'=>$this->input->post('lid')	 
+			'lid'=>$this->input->post('lid'),
+			'sid' => $this->input->post('sid')	 
 			);
 		$this->db->where('qid',$qid);
 		$this->db->update('savsoft_qbank',$userdata);
@@ -381,7 +448,8 @@ Class Qbank_model extends CI_Model
 			'description'=>$this->input->post('description'),
 			'question_type'=>$this->lang->line('match_the_column'),
 			'cid'=>$this->input->post('cid'),
-			'lid'=>$this->input->post('lid')	 
+			'lid'=>$this->input->post('lid'),
+			'sid' => $this->input->post('sid')	 
 			);
 		$this->db->where('qid',$qid);
 		$this->db->update('savsoft_qbank',$userdata);
@@ -414,7 +482,8 @@ Class Qbank_model extends CI_Model
 			'description'=>$this->input->post('description'),
 			'question_type'=>$this->lang->line('short_answer'),
 			'cid'=>$this->input->post('cid'),
-			'lid'=>$this->input->post('lid')	 
+			'lid'=>$this->input->post('lid'),
+			'sid' => $this->input->post('sid')	 
 			);
 		$this->db->where('qid',$qid);
 		$this->db->update('savsoft_qbank',$userdata);
@@ -444,7 +513,8 @@ Class Qbank_model extends CI_Model
 			'description'=>$this->input->post('description'),
 			'question_type'=>$this->lang->line('long_answer'),
 			'cid'=>$this->input->post('cid'),
-			'lid'=>$this->input->post('lid')	 
+			'lid'=>$this->input->post('lid'),
+			'sid' => $this->input->post('sid')	 
 			);
 		$this->db->where('qid',$qid);
 		$this->db->update('savsoft_qbank',$userdata);
@@ -464,7 +534,8 @@ Class Qbank_model extends CI_Model
 			'description'=>$this->input->post('description'),
 			'question_type'=>$this->lang->line('match_the_column'),
 			'cid'=>$this->input->post('cid'),
-			'lid'=>$this->input->post('lid')
+			'lid'=>$this->input->post('lid'),
+			'sid' => $this->input->post('sid')
 			);
 		$this->db->where('qid',$qid);
 		$this->db->update('savsoft_qbank',$userdata);

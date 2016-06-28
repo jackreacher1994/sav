@@ -1,7 +1,7 @@
  
 function remove_entry(redir_cont){
 	
-	if(confirm("Do you really want to remove entry?")){
+	if(confirm("Bạn có chắc chắn vô hiệu hóa?")){
 		window.location=base_url+"index.php/"+redir_cont;
 	}
 	
@@ -650,7 +650,7 @@ function change_account_type(su){
 	} else if(su == 2) {
 		$("#selectGroup").show();
 	} else if(su == 3) {
-		$("#selectGroup").hide();
+		$("#selectGroup").show();
 	} else {
 		$("#selectGroup").show();
 	}

@@ -80,7 +80,13 @@
 		<?php 
 		}
 		?>
-
+		<div class="form-group">	 
+					<label   ><?php echo $this->lang->line('status');?></label>
+					<select class="form-control" name="sid">
+						<option value="1"><?php echo $this->lang->line('active');?></option>
+						<option value="2"><?php echo $this->lang->line('inactive');?></option>
+					</select>
+		</div>
  
 	<button class="btn btn-default" type="submit"><?php echo $this->lang->line('submit');?></button>
  

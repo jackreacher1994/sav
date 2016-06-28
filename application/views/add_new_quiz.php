@@ -18,8 +18,6 @@ $logged_in=$this->session->userdata('logged_in');
       <span class="input-group-btn">
         <button class="btn btn-default" type="submit"><?php echo $this->lang->line('search');?></button>
       </span>
-	 
-	  
     </div><!-- /input-group -->
 	 </form>
   </div><!-- /.col-lg-6 -->

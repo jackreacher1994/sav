@@ -92,8 +92,14 @@
  							?>
 
  							<td>
+ 								<?php
+ 								if($val['sid'] == 1){ ?>
  								<a href="<?php echo site_url('user/edit_user/'.$val['uid']);?>"><img src="<?php echo base_url('images/edit.png');?>"></a>
- 								<a href="javascript:remove_entry('user/remove_user/<?php echo $val['uid'];?>');"><img src="<?php echo base_url('images/cross.png');?>"></a>
+ 								
+ 								<a href="javascript:remove_entry('user/remove_user/<?php echo $val['uid'];?>');" class="btn btn-sucess">Vô hiệu hóa</a>
+ 								<?php	} 
+ 								?>
+ 								
 
  							</td>
  						</tr>

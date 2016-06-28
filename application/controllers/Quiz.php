@@ -111,7 +111,7 @@ class Quiz extends CI_Controller {
 	
 	function no_q_available($cid,$lid){
 		$val="<select name='noq[]'>";
-		$query=$this->db->query(" select * from savsoft_qbank where cid='$cid' and lid='$lid' ");
+		$query=$this->db->query(" select * from savsoft_qbank where cid='$cid' and lid='$lid' and sid = 1");
 		$nor=$query->num_rows();
 		for($i=0; $i<= $nor; $i++){
 			$val.="<option value='".$i."' >".$i."</option>";		
@@ -159,21 +159,17 @@ class Quiz extends CI_Controller {
 		}
 		if($logged_in['su'] =='2' || $logged_in['su'] =='3'){
 			$data['category_list']=$this->qbank_model->category_list_user($logged_in['gid']);
-			$data['result']=$this->qbank_model->question_list_2($limit,$cid,$lid);
+			$data['result']=$this->qbank_model->question_list_2_active($limit,$cid,$lid);
 		}else{
 			$data['category_list']=$this->qbank_model->category_list();
-			$data['result']=$this->qbank_model->question_list($limit,$cid,$lid);
+			$data['result']=$this->qbank_model->question_list_active($limit,$cid,$lid);
 		}
 
 
 		$data['quiz']=$this->quiz_model->get_quiz($quid);
 		$data['title']=$this->lang->line('add_question_into_quiz').': '.$data['quiz']['quiz_name'];
 		if($data['quiz']['question_selection']=='0'){
-
-			
-			
 			$data['level_list']=$this->qbank_model->level_list();
-
 		}else{
 			
 			exit($this->lang->line('permission_denied'));
@@ -258,7 +254,7 @@ class Quiz extends CI_Controller {
 			}
 
 			$message = $this->input->post('form_email');
-			//echo $message;die();
+			
 			for ($i=0; $i < count($emails); $i++) {
 
 
@@ -305,7 +301,13 @@ class Quiz extends CI_Controller {
 			$this->load->model("qbank_model");
 			$data['qcl']=$this->quiz_model->get_qcl($data['quiz']['quid']);
 
-			$data['category_list']=$this->qbank_model->category_list();
+			
+			if($logged_in['su'] =='2' || $logged_in['su'] =='3'){
+				$data['category_list']=$this->qbank_model->category_list_user($logged_in['gid']);
+			}
+			else {
+				$data['category_list']=$this->qbank_model->category_list();
+			}
 			$data['level_list']=$this->qbank_model->level_list();
 
 		}
