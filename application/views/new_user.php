@@ -86,7 +86,7 @@
 					</select>
 			</div>
 			
-			<div class="form-group">	 
+			<div class="form-group" style="display:none;">	 
 					<label   ><?php echo $this->lang->line('status');?></label>
 					<select class="form-control" name="sid">
 						<option value="1"><?php echo $this->lang->line('active');?></option>

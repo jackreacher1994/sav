@@ -149,7 +149,13 @@
 								<?php 
 							}
 							?>
-							<li><a href="<?php echo site_url('user/logout');?>"><?php echo $this->lang->line('logout');?></a></li>
+							<li class="dropdown" <?php if($this->uri->segment(1)=='logout'){ echo "class='active'"; } ?> >
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $logged_in['email'];?> <span class="caret"></span></a>
+									<ul class="dropdown-menu">
+										<li><a href="<?php echo site_url('user/logout');?>"><?php echo $this->lang->line('logout');?></a></li>
+									</ul>
+								</li>
+							
 							
 							
 						</ul>

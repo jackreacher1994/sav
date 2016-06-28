@@ -17,12 +17,6 @@ Class User_model extends CI_Model {
         } else {
             return false;
         }
-
-       /* $this->db->select('*');
-        $this->db->where('email','admin@example.com');
-        $query = $this->db->get('savsoft_users');
-        $result = $query->row_array();
-        return $result;*/
     }
 
     function admin_login() {
@@ -54,10 +48,10 @@ Class User_model extends CI_Model {
 
         if ($this->input->post('search')) {
             $search = $this->input->post('search');
-            $this->db->or_where('savsoft_users.email', $search);
-            $this->db->or_where('savsoft_users.first_name', $search);
-            $this->db->or_where('savsoft_users.last_name', $search);
-            $this->db->or_where('savsoft_users.contact_no', $search);
+            $this->db->like('savsoft_users.email', $search);
+            $this->db->or_like('savsoft_users.first_name', $search);
+            $this->db->or_like('savsoft_users.last_name', $search);
+            $this->db->or_like('savsoft_users.contact_no', $search);
         }
         if ($gid != '0') {
             $this->db->where('savsoft_users.gid', $gid);
@@ -115,6 +109,7 @@ Class User_model extends CI_Model {
         }
         $this->db->join('savsoft_group', 'savsoft_group.gid = savsoft_users.gid');
         //$this->db->join('savsoft_status', 'savsoft_status.sid = savsoft_users.sid');
+          $this->db->where('savsoft_users.sid', '1');
         $this->db->order_by('savsoft_users.uid', 'desc');
         $query = $this->db->get('savsoft_users');
 
@@ -130,14 +125,12 @@ Class User_model extends CI_Model {
             $this->db->or_where('savsoft_users.last_name', $search);
             $this->db->or_where('savsoft_users.contact_no', $search);
         }
-
-    
-        
-       
-        $this->db->where('parent_id', $logged_in['gid']);
-        $this->db->or_where('savsoft_group.gid', $logged_in['gid']); 
         $this->db->join('savsoft_group', 'savsoft_group.gid = savsoft_users.gid');
+        $this->db->where('savsoft_group.parent_id', $logged_in['gid']);
+        $this->db->or_where('savsoft_group.gid', $logged_in['gid']); 
+       
         $this->db->where('savsoft_users.uid !=', $logged_in['uid']);
+        $this->db->where('savsoft_users.sid', '1');
         $this->db->order_by('savsoft_users.uid', 'desc');
         $query = $this->db->get('savsoft_users');
 
@@ -540,6 +533,13 @@ Class User_model extends CI_Model {
         return $query->result_array();
     
 
+    }
+
+    function get_su($uid){
+        $this->db->select('su');
+        $this->db->where('uid',$uid);
+        $query = $this->db->get('savsoft_users');
+        return $query->row_array();
     }
 
 }

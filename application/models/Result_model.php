@@ -11,12 +11,12 @@ Class Result_model extends CI_Model {
 
         if ($this->input->post('search')) {
             $search = $this->input->post('search');
-            $this->db->or_where('savsoft_users.email', $search);
-            $this->db->or_where('savsoft_users.first_name', $search);
-            $this->db->or_where('savsoft_users.last_name', $search);
-            $this->db->or_where('savsoft_users.contact_no', $search);
-            $this->db->or_where('savsoft_result.rid', $search);
-            $this->db->or_where('savsoft_quiz.quiz_name', $search);
+            $this->db->or_like('savsoft_users.email', $search);
+            $this->db->or_like('savsoft_users.first_name', $search);
+            $this->db->or_like('savsoft_users.last_name', $search);
+            $this->db->or_like('savsoft_users.contact_no', $search);
+            $this->db->or_like('savsoft_result.rid', $search);
+            $this->db->or_like('savsoft_quiz.quiz_name', $search);
         } else {
             $this->db->where('savsoft_result.result_status !=', $result_open);
         }

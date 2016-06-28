@@ -574,7 +574,6 @@ class Quiz extends CI_Controller {
 		$data['quid'] = $qid;
 		if($logged_in['su']=='2' || $logged_in['su']=='3'){
 			$data['result']=$this->user_model->user_list_3();
-
 		}
 		else{
 			$data['result']=$this->user_model->user_list_2();

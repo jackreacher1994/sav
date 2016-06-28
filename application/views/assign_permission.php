@@ -25,12 +25,10 @@
                 </tr> 
                 <?php
               }
-              $this->db->where('parent_id',$val['id']);
-              $this->db->order_by('savsoft_permission.id','desc');
-              $query = $this->db->get('savsoft_permission');
-              $result2 = $query -> result_array();
+            
            
-              foreach($result2 as $key => $val2){
+              foreach($result as $key => $val2){
+                  if($val2['parent_id'] == $val['id']){
                 ?>
                 <tr>
                 <td><?php echo $val2['permission_name'];?></td>
@@ -48,8 +46,8 @@
                 ?>
                 </td>
                 </tr>
-                <input type="hidden" value="<?php ?>" />
-                <?php } ?>
+               
+                <?php } } ?>
             </table>
 
            

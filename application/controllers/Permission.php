@@ -113,21 +113,39 @@ class Permission extends CI_Controller {
 
 	public function assign_permission($uid){
 
+
+
 		$logged_in=$this->session->userdata('logged_in');
 		if($logged_in['su']!='1' && $logged_in['su'] !='2' && $logged_in['su'] !='3'){
 			exit($this->lang->line('permission_denied'));
-		} 
-		$data['title']='Assign Permission';
-		$data['check_pid'] = $this->permission_model->check_permission($uid);
+		}
+		$su = $this->user_model->get_su($uid);
+		
+		if($su['su'] == 0) {
+			$this->session->set_flashdata('message', "<div class='alert alert-success'>Đây là tài khoản người thi, không được phép cấp quyền </div>");
+			redirect('/permission/user_assign_permission');
+		}
+		else{
+			$data['title']='Assign Permission';
+			$data['check_pid'] = $this->permission_model->check_permission($uid);
+			//echo $su['su'];die();
+			$data['uid'] = $uid;
+			$data['group_permission_list']=$this->permission_model->group_permission_list();
 
-		$data['uid'] = $uid;
-		$data['group_permission_list']=$this->permission_model->group_permission_list();
-		$data['result']=$this->permission_model->permission_list();
+			if($su['su'] == '1'){
+				$data['result']=$this->permission_model->permission_list();
+			}else {
+				$data['result']=$this->permission_model->permission_list_2();
+
+			}
+			
+
+
+			$this->load->view('header',$data);
+			$this->load->view('assign_permission.php',$data);
+			$this->load->view('footer',$data);
+		}
 		
-		
-		$this->load->view('header',$data);
-		$this->load->view('assign_permission.php',$data);
-		$this->load->view('footer',$data);
 	}
 
 	public function submit_assign_permission(){
